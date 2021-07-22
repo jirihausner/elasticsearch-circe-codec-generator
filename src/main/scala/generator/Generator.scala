@@ -2,6 +2,7 @@ package cz.jirihausner.es_codec_generator
 package generator
 
 import Utils._
+import org.scalablytyped.converter.internal.{Comment, Marker}
 
 import java.io.PrintWriter
 import org.scalablytyped.converter.internal.ts._
@@ -18,7 +19,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
   def printFile(file: TsParsedFile): Unit = {
     // print file header (package + circe imports)
-    printFileHeader()
+    printFileHeader(file)
 
     // print AST TODO: remove
     /*file.members.foreach(m => output.println("//" + m))
@@ -28,7 +29,11 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     file.members.foreach(printContainerOrDecl)
   }
 
-  def printFileHeader(): Unit = {
+  def printFileHeader(file: TsParsedFile): Unit = {
+    // print file header comments
+    file.comments.cs.foreach(printComment)
+
+    // pritn package
     output.println(s"package ${basePackageName + '.' + packageName}")
     output.println
     output.println("import io.circe._, io.circe.generic.semiauto._")
@@ -758,6 +763,29 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     // print expression
     if (x.expr.isDefined)
       print(format(x.expr.get))
+  }
+
+  /** --- COMMENT */
+
+  def printComment(x: Comment): Unit = x match {
+    case marker: Marker => marker match {
+      case Marker.CouldBeScalaJsDefined =>
+      case Marker.IsTrivial =>
+      case Marker.ExpandedCallables =>
+      case Marker.ExpandedClass =>
+      case Marker.EnumObject =>
+      case Marker.HasClassParent =>
+      case Marker.NameHint(value) =>
+      case Marker.ModuleAliases(aliases) =>
+      case Marker.WasLiteral(lit) =>
+      case Marker.WasUnion(related) =>
+      case Marker.MinimizationKeep(related) =>
+      case Marker.MinimizationRelated(related) =>
+      case Marker.WasDefaulted(among) =>
+      case Marker.ManglerLeaveAlone =>
+      case Marker.ManglerWasJsNative =>
+    }
+    case Comment.Raw(raw) => print(raw)
   }
 
   /** object stack */

@@ -5,6 +5,7 @@ import generator.Generator
 import java.io.PrintWriter
 import better.files.File
 import better.files.File._
+import java.io.File.separatorChar
 import org.scalablytyped.converter.internal.InFile
 import org.scalablytyped.converter.internal.ts.{TsParsedFile, parser}
 
@@ -46,10 +47,13 @@ object Main {
     val output: PrintWriter = outputFile.newPrintWriter()
 
     // prepare file package name
-    val filePackageName: String = relativePath.toString
-      .replace('/', '.')
-      .replace('\\', '.')
-      .substring(0, relativePath.toString.lastIndexOf("\\"))
+    val hasSubDirectory: Boolean = relativePath.toString.contains(separatorChar)
+    val filePackageName: String = {
+      if (!hasSubDirectory) ""
+      else relativePath.toString
+        .replace(separatorChar, '.')
+        .substring(0, relativePath.toString.lastIndexOf(separatorChar))
+    }
 
     // generate equivalent scala code from typescript AST and print it
     val generator = new Generator(output, filePackageName, packageName)
