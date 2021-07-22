@@ -790,6 +790,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
   }
 
   /** object stack */
+
   def pushObject(obj: (String, TsTypeObject)): Unit =
     objectStack = obj :: objectStack
 

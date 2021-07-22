@@ -20,7 +20,7 @@ object Main {
       inputDir.createDirectory
     if (outputDir.exists)
       outputDir.delete(swallowIOExceptions = true)
-    outputDir.createDirectory
+    outputDir.createDirectoryIfNotExists(createParents = true)
 
     // get all typescript definition files in input directory
     val files: List[File] = inputDir.listRecursively.filter(_.extension.contains(".ts")).toList

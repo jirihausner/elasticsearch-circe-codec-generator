@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package com.converted.elasticsearch
+package org.elasticsearch.circecodecs
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
