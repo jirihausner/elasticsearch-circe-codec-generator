@@ -1,0 +1,72 @@
+package com.converted.elasticsearch.cat.jobs
+
+import io.circe._, io.circe.generic.semiauto._
+import io.circe.generic.JsonCodec, io.circe.syntax._
+
+import com.converted.elasticsearch._ml._types.Job.{ JobState }
+import com.converted.elasticsearch._ml._types.Model.{ CategorizationStatus, MemoryStatus }
+import com.converted.elasticsearch._types.common.{ ByteSize, Id, NodeId }
+
+@JsonCodec case class JobsRecord(
+	id: Id, 
+	state: JobState, 
+	opened_time: String, 
+	assignment_explanation: String, 
+	`data.processed_records`: String, 
+	`data.processed_fields`: String, 
+	`data.input_bytes`: ByteSize, 
+	`data.input_records`: String, 
+	`data.input_fields`: String, 
+	`data.invalid_dates`: String, 
+	`data.missing_fields`: String, 
+	`data.out_of_order_timestamps`: String, 
+	`data.empty_buckets`: String, 
+	`data.sparse_buckets`: String, 
+	`data.buckets`: String, 
+	`data.earliest_record`: String, 
+	`data.latest_record`: String, 
+	`data.last`: String, 
+	`data.last_empty_bucket`: String, 
+	`data.last_sparse_bucket`: String, 
+	`model.bytes`: ByteSize, 
+	`model.memory_status`: MemoryStatus, 
+	`model.bytes_exceeded`: ByteSize, 
+	`model.memory_limit`: String, 
+	`model.by_fields`: String, 
+	`model.over_fields`: String, 
+	`model.partition_fields`: String, 
+	`model.bucket_allocation_failures`: String, 
+	`model.categorization_status`: CategorizationStatus, 
+	`model.categorized_doc_count`: String, 
+	`model.total_category_count`: String, 
+	`model.frequent_category_count`: String, 
+	`model.rare_category_count`: String, 
+	`model.dead_category_count`: String, 
+	`model.failed_category_count`: String, 
+	`model.log_time`: String, 
+	`model.timestamp`: String, 
+	`forecasts.total`: String, 
+	`forecasts.memory.min`: String, 
+	`forecasts.memory.max`: String, 
+	`forecasts.memory.avg`: String, 
+	`forecasts.memory.total`: String, 
+	`forecasts.records.min`: String, 
+	`forecasts.records.max`: String, 
+	`forecasts.records.avg`: String, 
+	`forecasts.records.total`: String, 
+	`forecasts.time.min`: String, 
+	`forecasts.time.max`: String, 
+	`forecasts.time.avg`: String, 
+	`forecasts.time.total`: String, 
+	`node.id`: NodeId, 
+	`node.name`: String, 
+	`node.ephemeral_id`: NodeId, 
+	`node.address`: String, 
+	`buckets.count`: String, 
+	`buckets.time.total`: String, 
+	`buckets.time.min`: String, 
+	`buckets.time.max`: String, 
+	`buckets.time.exp_avg`: String, 
+	`buckets.time.exp_avg_hour`: String
+)
+

@@ -1,10 +1,15 @@
 package cz.jirihausner.es_codec_generator
 package generator
 
+import org.scalablytyped.converter.internal.ts.{TsIdent, TsQIdent}
+
 object Utils {
 
   def toLowerCamelCase(x: String): String =
     Character.toLowerCase(x.charAt(0)) + x.substring(1)
+
+  def toUpperCamelCase(x: String): String =
+    Character.toUpperCase(x.charAt(0)) + x.substring(1)
 
   def normalize(key: String): String =
     key.replaceAllLiterally("-", "").replaceAllLiterally(".", "").replaceAllLiterally("_", "")
@@ -26,4 +31,22 @@ object Utils {
   def scalaEscape(ident: String): String =
     if (needsEscaping(ident)) "`" + ident + "`" else ident
 
+  def parseTsPrimitives(ident: String): String = ident match {
+    // primitives
+    case "any" => "Any"
+    case "bigint" => "BigInt"
+    case "number" => "Numeric"
+    case "boolean" => "Boolean"
+    case "never" => "Unit"
+    case "`null`" => "None"
+    case "`object`" => "Object"
+    case "string" => "String"
+    case "symbol" => "Symbol"
+    //case "undefined" => "None"
+    case "unknown" => "None"
+    case "void" => "Unit"
+    // TODO other
+    case "long" => "Long"
+    case _ => ident
+  }
 }

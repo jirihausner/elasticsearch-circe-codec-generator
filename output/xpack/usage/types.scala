@@ -1,0 +1,470 @@
+package com.converted.elasticsearch.xpack.usage
+
+import io.circe._, io.circe.generic.semiauto._
+import io.circe.generic.JsonCodec, io.circe.syntax._
+
+import com.converted.elasticsearch._ilm._types.Phase.{ Phases }
+import com.converted.elasticsearch._slm._types.SnapshotLifecycle.{ Statistics }
+import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
+import com.converted.elasticsearch._types.common.{ ByteSize, EmptyObject, Field, Name }
+import com.converted.elasticsearch._ml._types.Job.{ Job, JobStatistics }
+import com.converted.elasticsearch._types.Numeric.{ integer, long, uint, ulong }
+
+@JsonCodec case class Base(
+	available: Boolean, 
+	enabled: Boolean
+)
+
+
+@JsonCodec case class Counter(
+	active: Long, 
+	total: Long
+)
+
+
+@JsonCodec case class FeatureToggle(
+	enabled: Boolean
+)
+
+
+@JsonCodec case class BaseUrlConfig(
+	url_name: String, 
+	url_value: String
+)
+
+
+@JsonCodec case class KibanaUrlConfig(
+	time_range: String
+) extends BaseUrlConfig
+
+type UrlConfig = BaseUrlConfig | KibanaUrlConfig
+
+@JsonCodec case class AlertingExecution(
+	actions: Dictionary(String, ExecutionAction)
+)
+
+
+@JsonCodec case class AlertingInput(
+	input: Dictionary(String, Counter), 
+	trigger: Dictionary(String, Counter)
+)
+
+
+@JsonCodec case class AnalyticsStatistics(
+	boxplot_usage: Long, 
+	cumulative_cardinality_usage: Long, 
+	string_stats_usage: Long, 
+	top_metrics_usage: Long, 
+	t_test_usage: Long, 
+	moving_percentiles_usage: Long, 
+	normalize_usage: Long, 
+	rate_usage: Long, 
+	multi_terms_usage: Long
+)
+
+
+@JsonCodec case class Audit(
+	outputs: Array(String)
+) extends FeatureToggle
+
+
+@JsonCodec case class Datafeed(
+	count: Long
+)
+
+
+@JsonCodec case class DataStreams(
+	data_streams: Long, 
+	indices_count: Long
+) extends Base
+
+
+@JsonCodec case class DataTierPhaseStatistics(
+	node_count: Long, 
+	index_count: Long, 
+	total_shard_count: Long, 
+	primary_shard_count: Long, 
+	doc_count: Long, 
+	total_size_bytes: Long, 
+	primary_size_bytes: Long, 
+	primary_shard_size_avg_bytes: Long, 
+	primary_shard_size_median_bytes: Long, 
+	primary_shard_size_mad_bytes: Long
+)
+
+
+@JsonCodec case class EqlFeatures(
+	join: uint, 
+	joins: EqlFeaturesJoin, 
+	keys: EqlFeaturesKeys, 
+	event: uint, 
+	pipes: EqlFeaturesPipes, 
+	sequence: uint, 
+	sequences: EqlFeaturesSequences
+)
+
+
+@JsonCodec case class EqlFeaturesJoin(
+	join_queries_two: uint, 
+	join_queries_three: uint, 
+	join_until: uint, 
+	join_queries_five_or_more: uint, 
+	join_queries_four: uint
+)
+
+
+@JsonCodec case class EqlFeaturesKeys(
+	join_keys_two: uint, 
+	join_keys_one: uint, 
+	join_keys_three: uint, 
+	join_keys_five_or_more: uint, 
+	join_keys_four: uint
+)
+
+
+@JsonCodec case class EqlFeaturesPipes(
+	pipe_tail: uint, 
+	pipe_head: uint
+)
+
+
+@JsonCodec case class EqlFeaturesSequences(
+	sequence_queries_three: uint, 
+	sequence_queries_four: uint, 
+	sequence_queries_two: uint, 
+	sequence_until: uint, 
+	sequence_queries_five_or_more: uint, 
+	sequence_maxspan: uint
+)
+
+
+@JsonCodec case class ExecutionAction(
+	total: Long, 
+	total_in_ms: Long
+)
+
+
+@JsonCodec case class ForecastStatistics(
+	forecasted_jobs: Long, 
+	memory_bytes: JobStatistics, 
+	processing_time_ms: JobStatistics, 
+	records: JobStatistics, 
+	status: Dictionary(String, Long), 
+	total: Long
+)
+
+
+@JsonCodec case class IlmPolicyStatistics(
+	indices_managed: integer, 
+	phases: Phases
+)
+
+
+@JsonCodec case class Ilm(
+	policy_count: integer, 
+	policy_stats: Array(IlmPolicyStatistics)
+)
+
+
+@JsonCodec case class IpFilter(
+	http: Boolean, 
+	transport: Boolean
+)
+
+
+@JsonCodec case class MlJobForecasts(
+	total: Long, 
+	forecasted_jobs: Long
+)
+
+
+@JsonCodec case class MlDataFrameAnalyticsJobs(
+	memory_usage: MlDataFrameAnalyticsJobsMemory, 
+	_all: MlDataFrameAnalyticsJobsCount, 
+	analysis_counts: EmptyObject
+)
+
+
+@JsonCodec case class MlDataFrameAnalyticsJobsMemory(
+	peak_usage_bytes: JobStatistics
+)
+
+
+@JsonCodec case class MlDataFrameAnalyticsJobsCount(
+	count: Long
+)
+
+
+@JsonCodec case class MlInference(
+	ingest_processors: Dictionary(String, MlInferenceIngestProcessor), 
+	trained_models: MlInferenceTrainedModels
+)
+
+
+@JsonCodec case class MlInferenceIngestProcessor(
+	num_docs_processed: MlInferenceIngestProcessorCount, 
+	pipelines: MlCounter, 
+	num_failures: MlInferenceIngestProcessorCount, 
+	time_ms: MlInferenceIngestProcessorCount
+)
+
+
+@JsonCodec case class MlInferenceTrainedModels(
+	estimated_operations: JobStatistics, 
+	estimated_heap_memory_usage_bytes: JobStatistics, 
+	count: MlInferenceTrainedModelsCount, 
+	_all: MlCounter
+)
+
+
+@JsonCodec case class MlInferenceIngestProcessorCount(
+	max: Long, 
+	sum: Long, 
+	min: Long
+)
+
+
+@JsonCodec case class MlInferenceTrainedModelsCount(
+	total: Long, 
+	prepackaged: Long, 
+	other: Long, 
+	regression: Long, 
+	classification: Long
+)
+
+
+@JsonCodec case class MlCounter(
+	count: Long
+)
+
+
+@JsonCodec case class Query(
+	count: integer, 
+	failed: integer, 
+	paging: integer, 
+	total: integer
+)
+
+
+@JsonCodec case class RealmCache(
+	size: Long
+)
+
+
+@JsonCodec case class RoleMapping(
+	enabled: integer, 
+	size: integer
+)
+
+
+@JsonCodec case class RuntimeFieldTypes(
+	field_types: Array(RuntimeFieldsType)
+) extends Base
+
+
+@JsonCodec case class RuntimeFieldsType(
+	chars_max: Long, 
+	chars_total: Long, 
+	count: Long, 
+	doc_max: Long, 
+	doc_total: Long, 
+	index_count: Long, 
+	lang: Array(String), 
+	lines_max: Long, 
+	lines_total: Long, 
+	name: Field, 
+	scriptless_count: Long, 
+	shadowed_count: Long, 
+	source_max: Long, 
+	source_total: Long
+)
+
+
+@JsonCodec case class SecurityRoles(
+	native: SecurityRolesNative, 
+	dls: SecurityRolesDls, 
+	file: SecurityRolesFile
+)
+
+
+@JsonCodec case class SecurityRolesNative(
+	dls: Boolean, 
+	fls: Boolean, 
+	size: Long
+)
+
+
+@JsonCodec case class SecurityRolesDls(
+	bit_set_cache: SecurityRolesDlsBitSetCache
+)
+
+
+@JsonCodec case class SecurityRolesDlsBitSetCache(
+	count: integer, 
+	memory: ByteSize, 
+	memory_in_bytes: ulong
+)
+
+
+@JsonCodec case class SecurityRolesFile(
+	dls: Boolean, 
+	fls: Boolean, 
+	size: Long
+)
+
+
+@JsonCodec case class Alerting(
+	count: Counter, 
+	execution: AlertingExecution, 
+	watch: AlertingInput
+) extends Base
+
+
+@JsonCodec case class Analytics(
+	stats: AnalyticsStatistics
+) extends Base
+
+
+@JsonCodec case class Ccr(
+	auto_follow_patterns_count: integer, 
+	follower_indices_count: integer
+) extends Base
+
+
+@JsonCodec case class DataTiers(
+	data_warm: DataTierPhaseStatistics, 
+	data_frozen: DataTierPhaseStatistics, 
+	data_cold: DataTierPhaseStatistics, 
+	data_content: DataTierPhaseStatistics, 
+	data_hot: DataTierPhaseStatistics
+) extends Base
+
+
+@JsonCodec case class Eql(
+	features: EqlFeatures, 
+	queries: Dictionary(String, Query)
+) extends Base
+
+
+@JsonCodec case class Flattened(
+	field_count: integer
+) extends Base
+
+
+@JsonCodec case class FrozenIndices(
+	indices_count: Long
+) extends Base
+
+
+@JsonCodec case class MachineLearning(
+	datafeeds: Dictionary(String, Datafeed), 
+	jobs: Dictionary(String, Job), 
+	node_count: integer, 
+	data_frame_analytics_jobs: MlDataFrameAnalyticsJobs, 
+	inference: MlInference
+) extends Base
+
+
+@JsonCodec case class Monitoring(
+	collection_enabled: Boolean, 
+	enabled_exporters: Dictionary(String, Long)
+) extends Base
+
+
+@JsonCodec case class Sql(
+	features: Dictionary(String, integer), 
+	queries: Dictionary(String, Query)
+) extends Base
+
+
+@JsonCodec case class Ssl(
+	http: FeatureToggle, 
+	transport: FeatureToggle
+)
+
+
+@JsonCodec case class WatcherActions(
+	actions: Dictionary(Name, WatcherActionTotals)
+)
+
+
+@JsonCodec case class WatcherWatch(
+	input: Dictionary(Name, Counter), 
+	condition: Dictionary(Name, Counter), 
+	action: Dictionary(Name, Counter), 
+	trigger: WatcherWatchTrigger
+)
+
+
+@JsonCodec case class WatcherWatchTrigger(
+	schedule: WatcherWatchTriggerSchedule, 
+	_all: Counter
+)
+
+
+@JsonCodec case class WatcherActionTotals(
+	total: Long, 
+	total_time_in_ms: Long
+)
+
+
+@JsonCodec case class Realm(
+	name: Array(String), 
+	order: Array(Long), 
+	size: Array(Long), 
+	cache: Array(RealmCache), 
+	has_authorization_realms: Array(Boolean), 
+	has_default_username_pattern: Array(Boolean), 
+	has_truststore: Array(Boolean), 
+	is_authentication_delegated: Array(Boolean)
+) extends Base
+
+
+@JsonCodec case class SearchableSnapshots(
+	indices_count: integer, 
+	full_copy_indices_count: integer, 
+	shared_cache_indices_count: integer
+) extends Base
+
+
+@JsonCodec case class Security(
+	api_key_service: FeatureToggle, 
+	anonymous: FeatureToggle, 
+	audit: Audit, 
+	fips_140: FeatureToggle, 
+	ipfilter: IpFilter, 
+	realms: Dictionary(String, Realm), 
+	role_mapping: Dictionary(String, RoleMapping), 
+	roles: SecurityRoles, 
+	ssl: Ssl, 
+	system_key: FeatureToggle, 
+	token_service: FeatureToggle, 
+	operator_privileges: Base
+) extends Base
+
+
+@JsonCodec case class Slm(
+	policy_count: integer, 
+	policy_stats: Statistics
+) extends Base
+
+
+@JsonCodec case class Vector(
+	dense_vector_dims_avg_count: integer, 
+	dense_vector_fields_count: integer, 
+	sparse_vector_fields_count: integer
+) extends Base
+
+
+@JsonCodec case class Watcher(
+	execution: WatcherActions, 
+	watch: WatcherWatch, 
+	count: Counter
+) extends Base
+
+
+@JsonCodec case class WatcherWatchTriggerSchedule(
+	cron: Counter, 
+	_all: Counter
+) extends Counter
+

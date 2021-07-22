@@ -4,6 +4,7 @@ import better.files.File
 
 object Configuration {
   val inputDir: File = File.currentWorkingDirectory / "specification"
-  val outputDir: File = File.currentWorkingDirectory / "output"
+  val outputDir: File = File.currentWorkingDirectory / "output" // "src" / "main" / "scala"
   val packageName: String = "com.converted.elasticsearch"
+  val debug: Boolean = false
 }
