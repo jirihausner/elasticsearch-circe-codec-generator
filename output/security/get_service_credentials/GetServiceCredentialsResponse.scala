@@ -16,8 +16,8 @@ object Response {
 		service_account: String, 
 		node_name: NodeName, 
 		count: integer, 
-		tokens: Dictionary(String, EmptyObject), 
-		file_tokens: Dictionary(String, EmptyObject)
+		tokens: Dictionary[String, EmptyObject], 
+		file_tokens: Dictionary[String, EmptyObject]
 	)
 }
 

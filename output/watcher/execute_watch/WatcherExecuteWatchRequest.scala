@@ -25,8 +25,8 @@ object Request {
 		debug: Boolean
 	)
 	@JsonCodec case class Body(
-		action_modes: Dictionary(String, ActionExecutionMode), 
-		alternative_input: Dictionary(String, UserDefinedValue), 
+		action_modes: Dictionary[String, ActionExecutionMode], 
+		alternative_input: Dictionary[String, UserDefinedValue], 
 		ignore_condition: Boolean, 
 		record_execution: Boolean, 
 		simulated_actions: SimulatedActions, 

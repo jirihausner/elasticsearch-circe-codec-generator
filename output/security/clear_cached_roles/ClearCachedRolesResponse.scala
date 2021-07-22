@@ -16,7 +16,7 @@ object Response {
 	@JsonCodec case class Body(
 		_nodes: NodeStatistics, 
 		cluster_name: Name, 
-		nodes: Dictionary(String, ClusterNode)
+		nodes: Dictionary[String, ClusterNode]
 	)
 }
 

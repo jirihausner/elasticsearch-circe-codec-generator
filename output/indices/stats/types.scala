@@ -30,7 +30,7 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 
 @JsonCodec case class IndicesStats(
 	primaries: IndexStats, 
-	shards: Dictionary(String, Array(ShardStats)), 
+	shards: Dictionary[String, Array[ShardStats]], 
 	total: IndexStats, 
 	uuid: Uuid
 )
@@ -39,7 +39,7 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	generation: integer, 
 	id: Id, 
 	num_docs: long, 
-	user_data: Dictionary(String, String)
+	user_data: Dictionary[String, String]
 )
 
 @JsonCodec case class ShardFielddata(
@@ -82,7 +82,7 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 @JsonCodec case class ShardRetentionLeases(
 	primary_term: long, 
 	version: VersionNumber, 
-	leases: Array(ShardLease)
+	leases: Array[ShardLease]
 )
 
 @JsonCodec case class ShardRouting(

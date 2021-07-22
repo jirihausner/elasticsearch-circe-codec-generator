@@ -12,7 +12,7 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 
 object Response {
 	@JsonCodec case class Body(
-		template_output: Dictionary(String, UserDefinedValue)
+		template_output: Dictionary[String, UserDefinedValue]
 	)
 }
 

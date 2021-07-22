@@ -7,4 +7,4 @@ import com.converted.elasticsearch._slm._types.SnapshotLifecycle.{ SnapshotLifec
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch._types.common.{ Id }
 
-@JsonCodec case class Response extends DictionaryResponseBase(Id, SnapshotLifecycle)
+@JsonCodec case class Response extends DictionaryResponseBase[Id, SnapshotLifecycle]

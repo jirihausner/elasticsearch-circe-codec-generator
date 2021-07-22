@@ -17,7 +17,7 @@ object Response {
 		found: Boolean, 
 		_id: Id, 
 		_index: IndexName, 
-		term_vectors: Dictionary(Field, TermVector), 
+		term_vectors: Dictionary[Field, TermVector], 
 		took: long, 
 		_type: Type, 
 		_version: VersionNumber

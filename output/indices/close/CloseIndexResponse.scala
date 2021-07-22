@@ -14,7 +14,7 @@ import com.converted.elasticsearch._types.Errors.{ ShardFailure }
 
 object Response {
 	@JsonCodec case class Body(
-		indices: Dictionary(IndexName, CloseIndexResult), 
+		indices: Dictionary[IndexName, CloseIndexResult], 
 		shards_acknowledged: Boolean
 	)
 }
@@ -22,9 +22,9 @@ object Response {
 
 @JsonCodec case class CloseIndexResult(
 	closed: Boolean, 
-	shards: Dictionary(String, CloseShardResult)
+	shards: Dictionary[String, CloseShardResult]
 )
 
 @JsonCodec case class CloseShardResult(
-	failures: Array(ShardFailure)
+	failures: Array[ShardFailure]
 )

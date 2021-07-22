@@ -23,7 +23,7 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	_type: String, 
 	_version: VersionNumber, 
 	forced_refresh: Boolean, 
-	get: InlineGet(Dictionary(String, UserDefinedValue))
+	get: InlineGet[Dictionary[String, UserDefinedValue]]
 )
 
 @JsonCodec case class ResponseItemContainer(

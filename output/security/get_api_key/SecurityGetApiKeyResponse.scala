@@ -11,7 +11,7 @@ import com.converted.elasticsearch.security.get_api_key.{ ApiKey }
 
 object Response {
 	@JsonCodec case class Body(
-		api_keys: Array(ApiKey)
+		api_keys: Array[ApiKey]
 	)
 }
 

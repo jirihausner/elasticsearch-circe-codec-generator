@@ -13,7 +13,7 @@ import com.converted.elasticsearch.ilm.explain_lifecycle.{ LifecycleExplain, Lif
 
 object Response {
 	@JsonCodec case class Body(
-		indices: Dictionary(IndexName, LifecycleExplain) | LifecycleExplainProject
+		indices: Dictionary[IndexName, LifecycleExplain] | LifecycleExplainProject
 	)
 }
 

@@ -17,12 +17,12 @@ import com.converted.elasticsearch._types.{ Time }
 )
 
 @JsonCodec case class ChainTransform(
-	transforms: Array(TransformContainer)
+	transforms: Array[TransformContainer]
 )
 
 @JsonCodec case class ScriptTransform(
 	lang: String, 
-	params: Dictionary(String, UserDefinedValue)
+	params: Dictionary[String, UserDefinedValue]
 )
 
 @JsonCodec case class SearchTransform(

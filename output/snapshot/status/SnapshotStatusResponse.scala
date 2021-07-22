@@ -11,7 +11,7 @@ import com.converted.elasticsearch._snapshot._types.SnapshotStatus.{ Status }
 
 object Response {
 	@JsonCodec case class Body(
-		snapshots: Array(Status)
+		snapshots: Array[Status]
 	)
 }
 

@@ -6,7 +6,7 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._types.common.{ Metadata, Name }
 
 @JsonCodec case class Actions(
-	actions: Array(String), 
+	actions: Array[String], 
 	application: String, 
 	name: Name, 
 	metadata: Metadata

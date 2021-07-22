@@ -13,7 +13,7 @@ import com.converted.elasticsearch.indices.shard_stores.{ IndicesShardStores }
 
 object Response {
 	@JsonCodec case class Body(
-		indices: Dictionary(IndexName, IndicesShardStores)
+		indices: Dictionary[IndexName, IndicesShardStores]
 	)
 }
 

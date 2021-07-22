@@ -26,7 +26,7 @@ object Request {
 		typed_keys: Boolean
 	)
 	@JsonCodec case class Body(
-		aggs: Dictionary(String, AggregationContainer), 
+		aggs: Dictionary[String, AggregationContainer], 
 		query: QueryContainer, 
 		size: integer
 	)

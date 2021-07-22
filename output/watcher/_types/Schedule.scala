@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Time.{ DateString, Time }
 @JsonCodec case class CronExpression extends ScheduleBase
 
 @JsonCodec case class DailySchedule(
-	at: Array(String) | TimeOfDay
+	at: Array[String] | TimeOfDay
 )
 
 object Day extends Enumeration {
@@ -32,7 +32,7 @@ implicit val dayDecoder: Decoder[Day.Value] = Decoder.decodeEnumeration(Day)
 implicit val dayEncoder: Encoder[Day.Value] = Decoder.encodeEnumeration(Day)
 
 @JsonCodec case class HourlySchedule(
-	minute: Array(integer)
+	minute: Array[integer]
 )
 
 @JsonCodec case class Interval(
@@ -78,9 +78,9 @@ implicit val monthEncoder: Encoder[Month.Value] = Decoder.encodeEnumeration(Mont
 	daily: DailySchedule, 
 	hourly: HourlySchedule, 
 	interval: Time, 
-	monthly: Array(TimeOfMonth), 
-	weekly: Array(TimeOfWeek), 
-	yearly: Array(TimeOfYear)
+	monthly: Array[TimeOfMonth], 
+	weekly: Array[TimeOfWeek], 
+	yearly: Array[TimeOfYear]
 )
 
 @JsonCodec case class ScheduleTriggerEvent(
@@ -89,22 +89,22 @@ implicit val monthEncoder: Encoder[Month.Value] = Decoder.encodeEnumeration(Mont
 )
 
 @JsonCodec case class TimeOfDay(
-	hour: Array(integer), 
-	minute: Array(integer)
+	hour: Array[integer], 
+	minute: Array[integer]
 )
 
 @JsonCodec case class TimeOfMonth(
-	at: Array(String), 
-	on: Array(integer)
+	at: Array[String], 
+	on: Array[integer]
 )
 
 @JsonCodec case class TimeOfWeek(
-	at: Array(String), 
-	on: Array(Day)
+	at: Array[String], 
+	on: Array[Day]
 )
 
 @JsonCodec case class TimeOfYear(
-	at: Array(String), 
-	int: Array(Month), 
-	on: Array(integer)
+	at: Array[String], 
+	int: Array[Month], 
+	on: Array[integer]
 )

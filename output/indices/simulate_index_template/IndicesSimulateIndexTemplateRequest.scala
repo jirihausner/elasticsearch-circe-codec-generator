@@ -18,9 +18,9 @@ object Request {
 		name: Name
 	)
 	@JsonCodec case class Body(
-		index_patterns: Array(IndexName), 
-		composed_of: Array(Name), 
-		overlapping: Array(OverlappingIndexTemplate), 
+		index_patterns: Array[IndexName], 
+		composed_of: Array[Name], 
+		overlapping: Array[OverlappingIndexTemplate], 
 		template: TemplateMapping
 	)
 }

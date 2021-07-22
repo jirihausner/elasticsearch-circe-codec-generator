@@ -13,12 +13,12 @@ import com.converted.elasticsearch._types.mapping.{ ConstantKeywordProperty, Fie
 
 @JsonCodec case class PropertyBase(
 	local_metadata: Metadata, 
-	meta: Dictionary(String, String), 
+	meta: Dictionary[String, String], 
 	name: PropertyName, 
-	properties: Dictionary(PropertyName, Property), 
+	properties: Dictionary[PropertyName, Property], 
 	ignore_above: integer, 
 	dynamic: Boolean | DynamicMapping, 
-	fields: Dictionary(PropertyName, Property)
+	fields: Dictionary[PropertyName, Property]
 )
 type Property = FlattenedProperty | JoinProperty | PercolatorProperty | RankFeatureProperty | RankFeaturesProperty | ConstantKeywordProperty | FieldAliasProperty | HistogramProperty | CoreProperty
 

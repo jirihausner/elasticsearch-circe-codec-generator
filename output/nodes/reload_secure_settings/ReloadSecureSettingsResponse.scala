@@ -16,7 +16,7 @@ import com.converted.elasticsearch.nodes.reload_secure_settings.{ NodeReloadExce
 object Response {
 	@JsonCodec case class Body(
 		cluster_name: Name, 
-		nodes: Dictionary(String, Stats | NodeReloadException)
+		nodes: Dictionary[String, Stats | NodeReloadException]
 	)
 }
 

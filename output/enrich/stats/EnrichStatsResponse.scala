@@ -11,8 +11,8 @@ import com.converted.elasticsearch.enrich.stats.{ ExecutingPolicy, CoordinatorSt
 
 object Response {
 	@JsonCodec case class Body(
-		coordinator_stats: Array(CoordinatorStats), 
-		executing_policies: Array(ExecutingPolicy)
+		coordinator_stats: Array[CoordinatorStats], 
+		executing_policies: Array[ExecutingPolicy]
 	)
 }
 

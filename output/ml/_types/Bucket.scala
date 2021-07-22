@@ -9,13 +9,13 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class BucketSummary(
 	anomaly_score: double, 
-	bucket_influencers: Array(BucketInfluencer), 
+	bucket_influencers: Array[BucketInfluencer], 
 	bucket_span: Time, 
 	event_count: long, 
 	initial_anomaly_score: double, 
 	is_interim: Boolean, 
 	job_id: Id, 
-	partition_scores: Array(PartitionScore), 
+	partition_scores: Array[PartitionScore], 
 	processing_time_ms: double, 
 	result_type: String, 
 	timestamp: Time
@@ -38,7 +38,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 @JsonCodec case class OverallBucket(
 	bucket_span: long, 
 	is_interim: Boolean, 
-	jobs: Array(OverallBucketJob), 
+	jobs: Array[OverallBucketJob], 
 	overall_score: double, 
 	result_type: String, 
 	timestamp: Time

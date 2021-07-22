@@ -8,11 +8,11 @@ import com.converted.elasticsearch._types.common.{ VersionString }
 import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 
 @JsonCodec case class IndexSegment(
-	shards: Dictionary(String, ShardsSegment | Array(ShardsSegment))
+	shards: Dictionary[String, ShardsSegment | Array[ShardsSegment]]
 )
 
 @JsonCodec case class Segment(
-	attributes: Dictionary(String, String), 
+	attributes: Dictionary[String, String], 
 	committed: Boolean, 
 	compound: Boolean, 
 	deleted_docs: long, 
@@ -34,5 +34,5 @@ import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 	num_committed_segments: integer, 
 	routing: ShardSegmentRouting, 
 	num_search_segments: integer, 
-	segments: Dictionary(String, Segment)
+	segments: Dictionary[String, Segment]
 )

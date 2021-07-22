@@ -20,8 +20,8 @@ object Response {
 		timed_out: Boolean, 
 		terminated_early: Boolean, 
 		_shards: ShardStatistics, 
-		hits: HitsMetadata(TDocument), 
-		aggregations: Dictionary(AggregateName, Aggregate)
+		hits: HitsMetadata[TDocument], 
+		aggregations: Dictionary[AggregateName, Aggregate]
 	)
 }
 

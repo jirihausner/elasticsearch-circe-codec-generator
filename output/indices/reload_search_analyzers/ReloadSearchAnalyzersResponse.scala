@@ -12,7 +12,7 @@ import com.converted.elasticsearch.indices.reload_search_analyzers.{ ReloadDetai
 
 object Response {
 	@JsonCodec case class Body(
-		reload_details: Array(ReloadDetails), 
+		reload_details: Array[ReloadDetails], 
 		_shards: ShardStatistics
 	)
 }

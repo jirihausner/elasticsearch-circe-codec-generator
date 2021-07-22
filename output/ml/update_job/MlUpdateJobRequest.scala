@@ -26,16 +26,16 @@ object Request {
 		allow_lazy_open: Boolean, 
 		analysis_limits: AnalysisMemoryLimit, 
 		background_persist_interval: Time, 
-		custom_settings: Dictionary(String, UserDefinedValue), 
-		categorization_filters: Array(String), 
+		custom_settings: Dictionary[String, UserDefinedValue], 
+		categorization_filters: Array[String], 
 		description: String, 
 		model_plot_config: ModelPlotConfig, 
 		daily_model_snapshot_retention_after_days: long, 
 		model_snapshot_retention_days: long, 
 		renormalization_window_days: long, 
 		results_retention_days: long, 
-		groups: Array(String), 
-		detectors: Array(Detector), 
+		groups: Array[String], 
+		detectors: Array[Detector], 
 		per_partition_categorization: PerPartitionCategorization
 	)
 }

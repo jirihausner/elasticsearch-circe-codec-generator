@@ -46,7 +46,7 @@ implicit val executionPhaseDecoder: Decoder[ExecutionPhase.Value] = Decoder.deco
 implicit val executionPhaseEncoder: Encoder[ExecutionPhase.Value] = Decoder.encodeEnumeration(ExecutionPhase)
 
 @JsonCodec case class ExecutionResult(
-	actions: Array(ExecutionResultAction), 
+	actions: Array[ExecutionResultAction], 
 	condition: ExecutionResultCondition, 
 	execution_duration: integer, 
 	execution_time: DateString, 
@@ -73,7 +73,7 @@ implicit val executionPhaseEncoder: Encoder[ExecutionPhase.Value] = Decoder.enco
 )
 
 @JsonCodec case class ExecutionResultInput(
-	payload: Dictionary(String, UserDefinedValue), 
+	payload: Dictionary[String, UserDefinedValue], 
 	status: ActionStatusOptions, 
 	`type`: InputType
 )

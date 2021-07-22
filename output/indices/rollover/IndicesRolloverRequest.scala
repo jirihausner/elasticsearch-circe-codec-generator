@@ -31,10 +31,10 @@ object Request {
 		wait_for_active_shards: WaitForActiveShards
 	)
 	@JsonCodec case class Body(
-		aliases: Dictionary(IndexName, Alias), 
+		aliases: Dictionary[IndexName, Alias], 
 		conditions: RolloverConditions, 
-		mappings: Dictionary(String, TypeMapping) | TypeMapping, 
-		settings: Dictionary(String, UserDefinedValue)
+		mappings: Dictionary[String, TypeMapping] | TypeMapping, 
+		settings: Dictionary[String, UserDefinedValue]
 	)
 }
 

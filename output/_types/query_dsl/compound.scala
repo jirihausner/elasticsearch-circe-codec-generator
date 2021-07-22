@@ -13,11 +13,11 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase, QueryContainer 
 import com.converted.elasticsearch._types.query_dsl.{ GeoLocation }
 
 @JsonCodec case class BoolQuery(
-	filter: QueryContainer | Array(QueryContainer), 
+	filter: QueryContainer | Array[QueryContainer], 
 	minimum_should_match: MinimumShouldMatch, 
-	must: QueryContainer | Array(QueryContainer), 
-	must_not: QueryContainer | Array(QueryContainer), 
-	should: QueryContainer | Array(QueryContainer)
+	must: QueryContainer | Array[QueryContainer], 
+	must_not: QueryContainer | Array[QueryContainer], 
+	should: QueryContainer | Array[QueryContainer]
 ) extends QueryBase
 
 @JsonCodec case class BoostingQuery(
@@ -31,13 +31,13 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoLocation }
 ) extends QueryBase
 
 @JsonCodec case class DisMaxQuery(
-	queries: Array(QueryContainer), 
+	queries: Array[QueryContainer], 
 	tie_breaker: double
 ) extends QueryBase
 
 @JsonCodec case class FunctionScoreQuery(
 	boost_mode: FunctionBoostMode, 
-	functions: Array(FunctionScoreContainer), 
+	functions: Array[FunctionScoreContainer], 
 	max_boost: double, 
 	min_score: double, 
 	query: QueryContainer, 
@@ -78,11 +78,11 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoLocation }
 	multi_value_mode: MultiValueMode
 ) extends ScoreFunctionBase
 
-@JsonCodec case class NumericDecayFunction extends DecayFunctionBase, AdditionalProperties(String, DecayPlacement(double, double))
+@JsonCodec case class NumericDecayFunction extends DecayFunctionBase, AdditionalProperties[String, DecayPlacement[double, double]]
 
-@JsonCodec case class DateDecayFunction extends DecayFunctionBase, AdditionalProperties(String, DecayPlacement(DateMath, Time))
+@JsonCodec case class DateDecayFunction extends DecayFunctionBase, AdditionalProperties[String, DecayPlacement[DateMath, Time]]
 
-@JsonCodec case class GeoDecayFunction extends DecayFunctionBase, AdditionalProperties(String, DecayPlacement(GeoLocation, Distance))
+@JsonCodec case class GeoDecayFunction extends DecayFunctionBase, AdditionalProperties[String, DecayPlacement[GeoLocation, Distance]]
 type DecayFunction = DateDecayFunction | NumericDecayFunction | GeoDecayFunction
 
 @JsonCodec case class FunctionScoreContainer(

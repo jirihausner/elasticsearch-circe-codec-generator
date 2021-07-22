@@ -69,6 +69,6 @@ implicit val quantifierEncoder: Encoder[Quantifier.Value] = Decoder.encodeEnumer
 
 @JsonCodec case class ScriptCondition(
 	lang: String, 
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	source: String
 )

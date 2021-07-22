@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.common.{ Metadata, Name, Username }
 	email: String, 
 	full_name: Name, 
 	metadata: Metadata, 
-	roles: Array(String), 
+	roles: Array[String], 
 	username: Username, 
 	enabled: Boolean
 )

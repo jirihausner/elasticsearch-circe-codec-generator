@@ -7,5 +7,5 @@ import com.converted.elasticsearch._types.common.{ IndexName, Name }
 
 @JsonCodec case class OverlappingIndexTemplate(
 	name: Name, 
-	index_patterns: Array(IndexName)
+	index_patterns: Array[IndexName]
 )

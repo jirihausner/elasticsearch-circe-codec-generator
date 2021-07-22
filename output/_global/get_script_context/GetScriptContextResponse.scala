@@ -11,7 +11,7 @@ import com.converted.elasticsearch._global.get_script_context.{ Context }
 
 object Response {
 	@JsonCodec case class Body(
-		contexts: Array(Context)
+		contexts: Array[Context]
 	)
 }
 

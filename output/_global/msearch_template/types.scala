@@ -10,6 +10,6 @@ import com.converted.elasticsearch._types.common.{ Id, Indices }
 @JsonCodec case class TemplateItem(
 	id: Id, 
 	index: Indices, 
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	source: String
 )

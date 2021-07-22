@@ -12,10 +12,10 @@ import com.converted.elasticsearch.migration.deprecation_info.{ Deprecation }
 
 object Response {
 	@JsonCodec case class Body(
-		cluster_settings: Array(Deprecation), 
-		index_settings: Dictionary(String, Array(Deprecation)), 
-		node_settings: Array(Deprecation), 
-		ml_settings: Array(Deprecation)
+		cluster_settings: Array[Deprecation], 
+		index_settings: Dictionary[String, Array[Deprecation]], 
+		node_settings: Array[Deprecation], 
+		ml_settings: Array[Deprecation]
 	)
 }
 

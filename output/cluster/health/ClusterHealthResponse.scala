@@ -20,7 +20,7 @@ object Response {
 		active_shards_percent_as_number: Percentage, 
 		cluster_name: String, 
 		delayed_unassigned_shards: integer, 
-		indices: Dictionary(IndexName, IndexHealthStats), 
+		indices: Dictionary[IndexName, IndexHealthStats], 
 		initializing_shards: integer, 
 		number_of_data_nodes: integer, 
 		number_of_in_flight_fetch: integer, 

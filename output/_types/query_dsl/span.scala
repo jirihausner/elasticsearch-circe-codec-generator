@@ -32,7 +32,7 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 ) extends QueryBase
 
 @JsonCodec case class SpanNearQuery(
-	clauses: Array(SpanQuery), 
+	clauses: Array[SpanQuery], 
 	in_order: Boolean, 
 	slop: integer
 ) extends QueryBase
@@ -46,7 +46,7 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 ) extends QueryBase
 
 @JsonCodec case class SpanOrQuery(
-	clauses: Array(SpanQuery)
+	clauses: Array[SpanQuery]
 ) extends QueryBase
 
 @JsonCodec case class SpanTermQuery(
@@ -59,16 +59,16 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 ) extends QueryBase
 
 @JsonCodec case class SpanQuery(
-	span_containing: NamedQuery(SpanContainingQuery | String), 
-	field_masking_span: NamedQuery(SpanFieldMaskingQuery | String), 
-	span_first: NamedQuery(SpanFirstQuery | String), 
-	span_gap: NamedQuery(SpanGapQuery | integer), 
+	span_containing: NamedQuery[SpanContainingQuery | String], 
+	field_masking_span: NamedQuery[SpanFieldMaskingQuery | String], 
+	span_first: NamedQuery[SpanFirstQuery | String], 
+	span_gap: NamedQuery[SpanGapQuery | integer], 
 	span_multi: SpanMultiTermQuery, 
-	span_near: NamedQuery(SpanNearQuery | String), 
-	span_not: NamedQuery(SpanNotQuery | String), 
-	span_or: NamedQuery(SpanOrQuery | String), 
-	span_term: NamedQuery(SpanTermQuery | String), 
-	span_within: NamedQuery(SpanWithinQuery | String)
+	span_near: NamedQuery[SpanNearQuery | String], 
+	span_not: NamedQuery[SpanNotQuery | String], 
+	span_or: NamedQuery[SpanOrQuery | String], 
+	span_term: NamedQuery[SpanTermQuery | String], 
+	span_within: NamedQuery[SpanWithinQuery | String]
 ) extends QueryBase
 
 @JsonCodec case class SpanSubQuery extends QueryBase

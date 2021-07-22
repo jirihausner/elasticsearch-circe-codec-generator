@@ -13,8 +13,8 @@ import com.converted.elasticsearch._types.Errors.{ ErrorCause }
 
 object Response {
 	@JsonCodec case class Body(
-		node_failures: Array(ErrorCause), 
-		nodes: Dictionary(String, TaskExecutingNode)
+		node_failures: Array[ErrorCause], 
+		nodes: Dictionary[String, TaskExecutingNode]
 	)
 }
 

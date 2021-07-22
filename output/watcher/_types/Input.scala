@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class ChainInput(
-	inputs: Array(InputContainer)
+	inputs: Array[InputContainer]
 )
 
 object ConnectionScheme extends Enumeration {
@@ -28,7 +28,7 @@ implicit val connectionSchemeEncoder: Encoder[ConnectionScheme.Value] = Decoder.
 
 @JsonCodec case class HttpInput(
 	http: HttpInput, 
-	extract: Array(String), 
+	extract: Array[String], 
 	request: HttpInputRequestDefinition, 
 	response_content_type: ResponseContentType
 )
@@ -64,10 +64,10 @@ implicit val httpInputMethodEncoder: Encoder[HttpInputMethod.Value] = Decoder.en
 	auth: HttpInputAuthentication, 
 	body: String, 
 	connection_timeout: Time, 
-	headers: Dictionary(String, String), 
+	headers: Dictionary[String, String], 
 	host: Host, 
 	method: HttpInputMethod, 
-	params: Dictionary(String, String), 
+	params: Dictionary[String, String], 
 	path: String, 
 	port: uint, 
 	proxy: HttpInputProxy, 
@@ -89,7 +89,7 @@ implicit val httpInputMethodEncoder: Encoder[HttpInputMethod.Value] = Decoder.en
 	chain: ChainInput, 
 	http: HttpInput, 
 	search: SearchInput, 
-	simple: Dictionary(String, UserDefinedValue)
+	simple: Dictionary[String, UserDefinedValue]
 )
 
 object InputType extends Enumeration {
@@ -115,14 +115,14 @@ implicit val responseContentTypeDecoder: Decoder[ResponseContentType.Value] = De
 implicit val responseContentTypeEncoder: Encoder[ResponseContentType.Value] = Decoder.encodeEnumeration(ResponseContentType)
 
 @JsonCodec case class SearchInput(
-	extract: Array(String), 
+	extract: Array[String], 
 	request: SearchInputRequestDefinition, 
 	timeout: Time
 )
 
 @JsonCodec case class SearchInputRequestDefinition(
 	body: SearchInputRequestBody, 
-	indices: Array(IndexName), 
+	indices: Array[IndexName], 
 	indices_options: IndicesOptions, 
 	search_type: SearchType, 
 	template: SearchTemplateRequest, 
@@ -134,5 +134,5 @@ implicit val responseContentTypeEncoder: Encoder[ResponseContentType.Value] = De
 )
 
 @JsonCodec case class SimpleInput(
-	payload: Dictionary(String, UserDefinedValue)
+	payload: Dictionary[String, UserDefinedValue]
 )

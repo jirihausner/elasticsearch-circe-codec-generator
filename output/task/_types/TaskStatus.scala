@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	created: long, 
 	deleted: long, 
 	noops: long, 
-	failures: Array(String), 
+	failures: Array[String], 
 	requests_per_second: float, 
 	retries: Retries, 
 	throttled: Time, 

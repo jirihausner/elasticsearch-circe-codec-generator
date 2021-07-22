@@ -14,7 +14,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	model_id: Id, 
 	pipeline_count: integer, 
 	inference_stats: TrainedModelInferenceStats, 
-	ingest: Dictionary(String, UserDefinedValue)
+	ingest: Dictionary[String, UserDefinedValue]
 )
 
 @JsonCodec case class TrainedModelInferenceStats(
@@ -27,12 +27,12 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class TrainedModelConfig(
 	model_id: Id, 
-	tags: Array(String), 
+	tags: Array[String], 
 	version: VersionString, 
 	compressed_definition: String, 
 	created_by: String, 
 	create_time: Time, 
-	default_field_map: Dictionary(String, String), 
+	default_field_map: Dictionary[String, String], 
 	description: String, 
 	estimated_heap_memory_usage_bytes: integer, 
 	estimated_operations: integer, 
@@ -43,14 +43,14 @@ import com.converted.elasticsearch._types.Time.{ Time }
 )
 
 @JsonCodec case class TrainedModelConfigInput(
-	field_names: Array(Field)
+	field_names: Array[Field]
 )
 
 @JsonCodec case class TrainedModelConfigMetadata(
-	model_aliases: Array(String), 
-	feature_importance_baseline: Dictionary(String, String), 
-	hyperparameters: Array(Hyperparameter), 
-	total_feature_importance: Array(TotalFeatureImportance)
+	model_aliases: Array[String], 
+	feature_importance_baseline: Dictionary[String, String], 
+	hyperparameters: Array[Hyperparameter], 
+	total_feature_importance: Array[TotalFeatureImportance]
 )
 
 @JsonCodec case class Hyperparameter(
@@ -63,13 +63,13 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class TotalFeatureImportance(
 	feature_name: Name, 
-	importance: Array(TotalFeatureImportanceStatistics), 
-	classes: Array(TotalFeatureImportanceClass)
+	importance: Array[TotalFeatureImportanceStatistics], 
+	classes: Array[TotalFeatureImportanceClass]
 )
 
 @JsonCodec case class TotalFeatureImportanceClass(
 	class_name: Name, 
-	importance: Array(TotalFeatureImportanceStatistics)
+	importance: Array[TotalFeatureImportanceStatistics]
 )
 
 @JsonCodec case class TotalFeatureImportanceStatistics(

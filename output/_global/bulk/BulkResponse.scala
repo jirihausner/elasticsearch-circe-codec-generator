@@ -13,7 +13,7 @@ import com.converted.elasticsearch._global.bulk.{ ResponseItemContainer }
 object Response {
 	@JsonCodec case class Body(
 		errors: Boolean, 
-		items: Array(ResponseItemContainer), 
+		items: Array[ResponseItemContainer], 
 		took: long, 
 		ingest_took: long
 	)

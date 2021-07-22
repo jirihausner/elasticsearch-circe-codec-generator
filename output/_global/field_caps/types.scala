@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.common.{ Indices }
 @JsonCodec case class FieldCapability(
 	aggregatable: Boolean, 
 	indices: Indices, 
-	meta: Dictionary(String, Array(String)), 
+	meta: Dictionary[String, Array[String]], 
 	non_aggregatable_indices: Indices, 
 	non_searchable_indices: Indices, 
 	searchable: Boolean, 

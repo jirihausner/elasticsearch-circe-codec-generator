@@ -8,14 +8,14 @@ import com.converted.elasticsearch._types.common.{ Name }
 
 @JsonCodec case class ApplicationPrivilegesCheck(
 	application: String, 
-	privileges: Array(String), 
-	resources: Array(String)
+	privileges: Array[String], 
+	resources: Array[String]
 )
 
 @JsonCodec case class IndexPrivilegesCheck(
-	names: Array(String), 
-	privileges: Array(String)
+	names: Array[String], 
+	privileges: Array[String]
 )
-type ApplicationsPrivileges = Dictionary(Name, ResourcePrivileges)
-type ResourcePrivileges = Dictionary(Name, Privileges)
-type Privileges = Dictionary(String, Boolean)
+type ApplicationsPrivileges = Dictionary[Name, ResourcePrivileges]
+type ResourcePrivileges = Dictionary[Name, Privileges]
+type Privileges = Dictionary[String, Boolean]

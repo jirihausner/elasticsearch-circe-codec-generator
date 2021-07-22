@@ -8,11 +8,11 @@ import com.converted.elasticsearch._types.common.{ Field, Id, IndexName }
 import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class IndexCapabilities(
-	rollup_jobs: Array(RollupJobSummary)
+	rollup_jobs: Array[RollupJobSummary]
 )
 
 @JsonCodec case class RollupJobSummary(
-	fields: Dictionary(Field, Array(RollupJobSummaryField)), 
+	fields: Dictionary[Field, Array[RollupJobSummaryField]], 
 	index_pattern: String, 
 	job_id: Id, 
 	rollup_index: IndexName

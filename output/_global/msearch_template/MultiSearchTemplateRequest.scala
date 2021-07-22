@@ -11,7 +11,7 @@ import com.converted.elasticsearch._global.msearch_template.{ TemplateItem }
 @JsonCodec case class Request(
 	path_parts: PathParts, 
 	query_parameters: QueryParameters, 
-	body: Array(TemplateItem)
+	body: Array[TemplateItem]
 ) extends RequestBase
 
 object Request {

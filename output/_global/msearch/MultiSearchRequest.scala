@@ -11,7 +11,7 @@ import com.converted.elasticsearch._global.msearch.{ Body, Header }
 @JsonCodec case class Request(
 	path_parts: PathParts, 
 	query_parameters: QueryParameters, 
-	body: Array(Header | Body)
+	body: Array[Header | Body]
 ) extends RequestBase
 
 object Request {

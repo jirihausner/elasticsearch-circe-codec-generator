@@ -17,7 +17,7 @@ object Response {
 		_id: Id, 
 		matched: Boolean, 
 		explanation: ExplanationDetail, 
-		get: InlineGet(TDocument)
+		get: InlineGet[TDocument]
 	)
 }
 

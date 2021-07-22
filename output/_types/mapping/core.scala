@@ -62,7 +62,7 @@ type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateN
 ) extends DocValuesPropertyBase
 
 @JsonCodec case class JoinProperty(
-	relations: Dictionary(RelationName, RelationName | Array(RelationName)), 
+	relations: Dictionary[RelationName, RelationName | Array[RelationName]], 
 	`type`: "join""
 ) extends PropertyBase
 

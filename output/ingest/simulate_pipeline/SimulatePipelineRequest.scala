@@ -22,7 +22,7 @@ object Request {
 		verbose: Boolean
 	)
 	@JsonCodec case class Body(
-		docs: Array(Document), 
+		docs: Array[Document], 
 		pipeline: Pipeline
 	)
 }

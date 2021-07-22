@@ -44,9 +44,9 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 @JsonCodec case class RankEvalRequestItem(
 	id: Id, 
 	request: RankEvalQuery, 
-	ratings: Array(DocumentRating), 
+	ratings: Array[DocumentRating], 
 	template_id: Id, 
-	params: Dictionary(String, UserDefinedValue)
+	params: Dictionary[String, UserDefinedValue]
 )
 
 @JsonCodec case class RankEvalQuery(
@@ -62,9 +62,9 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 
 @JsonCodec case class RankEvalMetricDetail(
 	metric_score: double, 
-	unrated_docs: Array(UnratedDocument), 
-	hits: Array(RankEvalHitItem), 
-	metric_details: Dictionary(String, Dictionary(String, UserDefinedValue))
+	unrated_docs: Array[UnratedDocument], 
+	hits: Array[RankEvalHitItem], 
+	metric_details: Dictionary[String, Dictionary[String, UserDefinedValue]]
 )
 
 @JsonCodec case class RankEvalHitItem(

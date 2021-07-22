@@ -30,7 +30,7 @@ object Request {
 		version: VersionNumber
 	)
 	@JsonCodec case class Body(
-		actions: Dictionary(String, Action), 
+		actions: Dictionary[String, Action], 
 		condition: ConditionContainer, 
 		input: InputContainer, 
 		metadata: Metadata, 

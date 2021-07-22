@@ -55,7 +55,7 @@ object Request {
 		routing: Routing, 
 		scroll: Time, 
 		search_type: SearchType, 
-		stats: Array(String), 
+		stats: Array[String], 
 		stored_fields: Fields, 
 		suggest_field: Field, 
 		suggest_mode: SuggestMode, 
@@ -75,31 +75,31 @@ object Request {
 		q: String, 
 		size: integer, 
 		from: integer, 
-		sort: String | Array(String)
+		sort: String | Array[String]
 	)
 	@JsonCodec case class Body(
-		aggs: Dictionary(String, AggregationContainer), 
-		aggregations: Dictionary(String, AggregationContainer), 
+		aggs: Dictionary[String, AggregationContainer], 
+		aggregations: Dictionary[String, AggregationContainer], 
 		collapse: FieldCollapse, 
 		explain: Boolean, 
 		from: integer, 
 		highlight: Highlight, 
 		track_total_hits: Boolean | integer, 
-		indices_boost: Array(Dictionary(IndexName, double)), 
-		docvalue_fields: DocValueField | Array(Field | DocValueField), 
+		indices_boost: Array[Dictionary[IndexName, double]], 
+		docvalue_fields: DocValueField | Array[Field | DocValueField], 
 		min_score: double, 
 		post_filter: QueryContainer, 
 		profile: Boolean, 
 		query: QueryContainer, 
-		rescore: Rescore | Array(Rescore), 
-		script_fields: Dictionary(String, ScriptField), 
-		search_after: Array(integer | String), 
+		rescore: Rescore | Array[Rescore], 
+		script_fields: Dictionary[String, ScriptField], 
+		search_after: Array[integer | String], 
 		size: integer, 
 		slice: SlicedScroll, 
 		sort: Sort, 
 		_source: Boolean | Fields | SourceFilter, 
-		fields: Array(Field | DateField), 
-		suggest: SuggestContainer | Dictionary(String, SuggestContainer), 
+		fields: Array[Field | DateField], 
+		suggest: SuggestContainer | Dictionary[String, SuggestContainer], 
 		terminate_after: long, 
 		timeout: String, 
 		track_scores: Boolean, 
@@ -108,7 +108,7 @@ object Request {
 		stored_fields: Fields, 
 		pit: PointInTimeReference, 
 		runtime_mappings: RuntimeFields, 
-		stats: Array(String)
+		stats: Array[String]
 	)
 }
 

@@ -9,7 +9,7 @@ import com.converted.elasticsearch.snapshot._types.{ SnapshotShardsStatus }
 import com.converted.elasticsearch.snapshot._types.{ SnapshotStats }
 
 @JsonCodec case class SnapshotIndexStats(
-	shards: Dictionary(String, SnapshotShardsStatus), 
+	shards: Dictionary[String, SnapshotShardsStatus], 
 	shards_stats: ShardsStats, 
 	stats: SnapshotStats
 )

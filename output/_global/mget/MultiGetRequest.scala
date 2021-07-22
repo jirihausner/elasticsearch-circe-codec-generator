@@ -29,8 +29,8 @@ object Request {
 		stored_fields: Fields
 	)
 	@JsonCodec case class Body(
-		docs: Array(Operation), 
-		ids: Array(MultiGetId)
+		docs: Array[Operation], 
+		ids: Array[MultiGetId]
 	)
 }
 

@@ -11,7 +11,7 @@ import com.converted.elasticsearch._ml._types.DataframeAnalytics.{ DataframeAnal
 
 object Response {
 	@JsonCodec case class Body(
-		field_selection: Array(DataframeAnalyticsFieldSelection), 
+		field_selection: Array[DataframeAnalyticsFieldSelection], 
 		memory_estimation: DataframeAnalyticsMemoryEstimation
 	)
 }

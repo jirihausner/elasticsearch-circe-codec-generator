@@ -8,8 +8,8 @@ import com.converted.elasticsearch.ingest._types.{ ProcessorContainer }
 
 @JsonCodec case class Pipeline(
 	description: String, 
-	on_failure: Array(ProcessorContainer), 
-	processors: Array(ProcessorContainer), 
+	on_failure: Array[ProcessorContainer], 
+	processors: Array[ProcessorContainer], 
 	version: VersionNumber
 )
 
@@ -34,5 +34,5 @@ implicit val pipelineFailureEncoder: Encoder[PipelineFailure.Value] = Decoder.en
 @JsonCodec case class PipelineConfig(
 	description: String, 
 	version: VersionNumber, 
-	processors: Array(ProcessorContainer)
+	processors: Array[ProcessorContainer]
 )

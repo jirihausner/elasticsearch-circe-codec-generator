@@ -9,13 +9,13 @@ import com.converted.elasticsearch._types.common.{ Id, VersionNumber, Name }
 import com.converted.elasticsearch._types.Networking.{ TransportAddress }
 
 @JsonCodec case class IndicesShardStores(
-	shards: Dictionary(String, ShardStoreWrapper)
+	shards: Dictionary[String, ShardStoreWrapper]
 )
 
 @JsonCodec case class ShardStore(
 	allocation: ShardStoreAllocation, 
 	allocation_id: Id, 
-	attributes: Dictionary(String, UserDefinedValue), 
+	attributes: Dictionary[String, UserDefinedValue], 
 	id: Id, 
 	legacy_version: VersionNumber, 
 	name: Name, 
@@ -40,5 +40,5 @@ implicit val shardStoreAllocationEncoder: Encoder[ShardStoreAllocation.Value] = 
 )
 
 @JsonCodec case class ShardStoreWrapper(
-	stores: Array(ShardStore)
+	stores: Array[ShardStore]
 )

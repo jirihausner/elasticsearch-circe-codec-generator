@@ -7,4 +7,4 @@ import com.converted.elasticsearch._security.put_privileges.types.{ Actions }
 import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 
-@JsonCodec case class Response extends DictionaryResponseBase(String, Dictionary(String, Actions))
+@JsonCodec case class Response extends DictionaryResponseBase[String, Dictionary[String, Actions]]

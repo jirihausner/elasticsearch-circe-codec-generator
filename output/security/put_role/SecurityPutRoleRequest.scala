@@ -25,12 +25,12 @@ object Request {
 		refresh: Refresh
 	)
 	@JsonCodec case class Body(
-		applications: Array(ApplicationPrivileges), 
-		cluster: Array(String), 
-		global: Dictionary(String, UserDefinedValue), 
-		indices: Array(IndicesPrivileges), 
+		applications: Array[ApplicationPrivileges], 
+		cluster: Array[String], 
+		global: Dictionary[String, UserDefinedValue], 
+		indices: Array[IndicesPrivileges], 
 		metadata: Metadata, 
-		run_as: Array(String), 
+		run_as: Array[String], 
 		transient_metadata: TransientMetadata
 	)
 }

@@ -16,8 +16,8 @@ import com.converted.elasticsearch._global.rank_eval.{ RankEvalMetricDetail }
 object Response {
 	@JsonCodec case class Body(
 		metric_score: double, 
-		details: Dictionary(Id, RankEvalMetricDetail), 
-		failures: Dictionary(String, UserDefinedValue)
+		details: Dictionary[Id, RankEvalMetricDetail], 
+		failures: Dictionary[String, UserDefinedValue]
 	)
 }
 

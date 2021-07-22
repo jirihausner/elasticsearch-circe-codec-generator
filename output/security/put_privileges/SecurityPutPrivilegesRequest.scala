@@ -10,7 +10,7 @@ import com.converted.elasticsearch.security.put_privileges.{ Actions }
 
 @JsonCodec case class Request(
 	query_parameters: QueryParameters, 
-	body: Dictionary(String, Dictionary(String, Actions))
+	body: Dictionary[String, Dictionary[String, Actions]]
 ) extends RequestBase
 
 object Request {

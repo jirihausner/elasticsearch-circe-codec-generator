@@ -11,7 +11,7 @@ import com.converted.elasticsearch.snapshot._types.{ SnapshotStats }
 
 @JsonCodec case class Status(
 	include_global_state: Boolean, 
-	indices: Dictionary(String, SnapshotIndexStats), 
+	indices: Dictionary[String, SnapshotIndexStats], 
 	repository: String, 
 	shards_stats: ShardsStats, 
 	snapshot: String, 

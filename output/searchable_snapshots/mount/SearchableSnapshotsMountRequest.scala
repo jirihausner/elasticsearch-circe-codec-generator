@@ -28,8 +28,8 @@ object Request {
 	@JsonCodec case class Body(
 		index: IndexName, 
 		renamed_index: IndexName, 
-		index_settings: Dictionary(String, UserDefinedValue), 
-		ignore_index_settings: Array(String)
+		index_settings: Dictionary[String, UserDefinedValue], 
+		ignore_index_settings: Array[String]
 	)
 }
 

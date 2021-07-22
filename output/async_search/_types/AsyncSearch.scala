@@ -14,17 +14,17 @@ import com.converted.elasticsearch._types.Numeric.{ double, long }
 import com.converted.elasticsearch._types.Stats.{ ClusterStatistics, ShardStatistics }
 
 @JsonCodec case class AsyncSearch[TDocument](
-	aggregations: Dictionary(String, Aggregate), 
+	aggregations: Dictionary[String, Aggregate], 
 	_clusters: ClusterStatistics, 
-	fields: Dictionary(String, UserDefinedValue), 
-	hits: HitsMetadata(TDocument), 
+	fields: Dictionary[String, UserDefinedValue], 
+	hits: HitsMetadata[TDocument], 
 	max_score: double, 
 	num_reduce_phases: long, 
 	profile: Profile, 
 	pit_id: Id, 
 	_scroll_id: Id, 
 	_shards: ShardStatistics, 
-	suggest: Dictionary(SuggestionName, Array(Suggest(TDocument))), 
+	suggest: Dictionary[SuggestionName, Array[Suggest[TDocument]]], 
 	terminated_early: Boolean, 
 	timed_out: Boolean, 
 	took: long

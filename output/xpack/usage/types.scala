@@ -35,12 +35,12 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long, uint, ulong }
 type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class AlertingExecution(
-	actions: Dictionary(String, ExecutionAction)
+	actions: Dictionary[String, ExecutionAction]
 )
 
 @JsonCodec case class AlertingInput(
-	input: Dictionary(String, Counter), 
-	trigger: Dictionary(String, Counter)
+	input: Dictionary[String, Counter], 
+	trigger: Dictionary[String, Counter]
 )
 
 @JsonCodec case class AnalyticsStatistics(
@@ -56,7 +56,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class Audit(
-	outputs: Array(String)
+	outputs: Array[String]
 ) extends FeatureToggle
 
 @JsonCodec case class Datafeed(
@@ -131,7 +131,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	memory_bytes: JobStatistics, 
 	processing_time_ms: JobStatistics, 
 	records: JobStatistics, 
-	status: Dictionary(String, long), 
+	status: Dictionary[String, long], 
 	total: long
 )
 
@@ -142,7 +142,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class Ilm(
 	policy_count: integer, 
-	policy_stats: Array(IlmPolicyStatistics)
+	policy_stats: Array[IlmPolicyStatistics]
 )
 
 @JsonCodec case class IpFilter(
@@ -170,7 +170,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class MlInference(
-	ingest_processors: Dictionary(String, MlInferenceIngestProcessor), 
+	ingest_processors: Dictionary[String, MlInferenceIngestProcessor], 
 	trained_models: MlInferenceTrainedModels
 )
 
@@ -223,7 +223,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class RuntimeFieldTypes(
-	field_types: Array(RuntimeFieldsType)
+	field_types: Array[RuntimeFieldsType]
 ) extends Base
 
 @JsonCodec case class RuntimeFieldsType(
@@ -233,7 +233,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	doc_max: long, 
 	doc_total: long, 
 	index_count: long, 
-	lang: Array(String), 
+	lang: Array[String], 
 	lines_max: long, 
 	lines_total: long, 
 	name: Field, 
@@ -296,7 +296,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class Eql(
 	features: EqlFeatures, 
-	queries: Dictionary(String, Query)
+	queries: Dictionary[String, Query]
 ) extends Base
 
 @JsonCodec case class Flattened(
@@ -308,8 +308,8 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 ) extends Base
 
 @JsonCodec case class MachineLearning(
-	datafeeds: Dictionary(String, Datafeed), 
-	jobs: Dictionary(String, Job), 
+	datafeeds: Dictionary[String, Datafeed], 
+	jobs: Dictionary[String, Job], 
 	node_count: integer, 
 	data_frame_analytics_jobs: MlDataFrameAnalyticsJobs, 
 	inference: MlInference
@@ -317,12 +317,12 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class Monitoring(
 	collection_enabled: Boolean, 
-	enabled_exporters: Dictionary(String, long)
+	enabled_exporters: Dictionary[String, long]
 ) extends Base
 
 @JsonCodec case class Sql(
-	features: Dictionary(String, integer), 
-	queries: Dictionary(String, Query)
+	features: Dictionary[String, integer], 
+	queries: Dictionary[String, Query]
 ) extends Base
 
 @JsonCodec case class Ssl(
@@ -331,13 +331,13 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class WatcherActions(
-	actions: Dictionary(Name, WatcherActionTotals)
+	actions: Dictionary[Name, WatcherActionTotals]
 )
 
 @JsonCodec case class WatcherWatch(
-	input: Dictionary(Name, Counter), 
-	condition: Dictionary(Name, Counter), 
-	action: Dictionary(Name, Counter), 
+	input: Dictionary[Name, Counter], 
+	condition: Dictionary[Name, Counter], 
+	action: Dictionary[Name, Counter], 
 	trigger: WatcherWatchTrigger
 )
 
@@ -352,14 +352,14 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class Realm(
-	name: Array(String), 
-	order: Array(long), 
-	size: Array(long), 
-	cache: Array(RealmCache), 
-	has_authorization_realms: Array(Boolean), 
-	has_default_username_pattern: Array(Boolean), 
-	has_truststore: Array(Boolean), 
-	is_authentication_delegated: Array(Boolean)
+	name: Array[String], 
+	order: Array[long], 
+	size: Array[long], 
+	cache: Array[RealmCache], 
+	has_authorization_realms: Array[Boolean], 
+	has_default_username_pattern: Array[Boolean], 
+	has_truststore: Array[Boolean], 
+	is_authentication_delegated: Array[Boolean]
 ) extends Base
 
 @JsonCodec case class SearchableSnapshots(
@@ -374,8 +374,8 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	audit: Audit, 
 	fips_140: FeatureToggle, 
 	ipfilter: IpFilter, 
-	realms: Dictionary(String, Realm), 
-	role_mapping: Dictionary(String, RoleMapping), 
+	realms: Dictionary[String, Realm], 
+	role_mapping: Dictionary[String, RoleMapping], 
 	roles: SecurityRoles, 
 	ssl: Ssl, 
 	system_key: FeatureToggle, 

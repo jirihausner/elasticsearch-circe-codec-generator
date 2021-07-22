@@ -36,7 +36,7 @@ object Request {
 	@JsonCodec case class Body(
 		doc: TDocument, 
 		filter: Filter, 
-		per_field_analyzer: Dictionary(Field, String)
+		per_field_analyzer: Dictionary[Field, String]
 	)
 }
 

@@ -8,8 +8,8 @@ import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch._types.common.{ IndexName }
 
-@JsonCodec case class Response extends DictionaryResponseBase(IndexName, IndexAliases)
+@JsonCodec case class Response extends DictionaryResponseBase[IndexName, IndexAliases]
 
 @JsonCodec case class IndexAliases(
-	aliases: Dictionary(String, AliasDefinition)
+	aliases: Dictionary[String, AliasDefinition]
 )

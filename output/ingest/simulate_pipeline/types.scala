@@ -16,7 +16,7 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 
 @JsonCodec case class PipelineSimulation(
 	doc: DocumentSimulation, 
-	processor_results: Array(PipelineSimulation), 
+	processor_results: Array[PipelineSimulation], 
 	tag: String, 
 	processor_type: String, 
 	status: ActionStatusOptions
@@ -34,6 +34,6 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	_ingest: Ingest, 
 	_parent: String, 
 	_routing: String, 
-	_source: Dictionary(String, UserDefinedValue), 
+	_source: Dictionary[String, UserDefinedValue], 
 	_type: Type
 )

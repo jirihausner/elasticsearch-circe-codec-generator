@@ -11,7 +11,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 @JsonCodec case class ApiKey(
 	name: Name, 
 	expiration: Time, 
-	role_descriptors: Array(Dictionary(String, UserDefinedValue))
+	role_descriptors: Array[Dictionary[String, UserDefinedValue]]
 )
 
 object ApiKeyGrantType extends Enumeration {

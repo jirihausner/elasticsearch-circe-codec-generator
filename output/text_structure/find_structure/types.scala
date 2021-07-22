@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 @JsonCodec case class FieldStat(
 	count: integer, 
 	cardinality: integer, 
-	top_hits: Array(TopHit), 
+	top_hits: Array[TopHit], 
 	mean_value: integer, 
 	median_value: integer, 
 	max_value: integer, 

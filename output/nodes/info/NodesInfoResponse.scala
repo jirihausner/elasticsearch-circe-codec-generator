@@ -15,7 +15,7 @@ import com.converted.elasticsearch.nodes.info.{ NodeInfo }
 object Response {
 	@JsonCodec case class Body(
 		cluster_name: Name, 
-		nodes: Dictionary(String, NodeInfo)
+		nodes: Dictionary[String, NodeInfo]
 	)
 }
 

@@ -13,9 +13,9 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 object Response {
 	@JsonCodec case class Body(
 		error_count: integer, 
-		error_details: Array(ErrorCause), 
-		invalidated_api_keys: Array(String), 
-		previously_invalidated_api_keys: Array(String)
+		error_details: Array[ErrorCause], 
+		invalidated_api_keys: Array[String], 
+		previously_invalidated_api_keys: Array[String]
 	)
 }
 

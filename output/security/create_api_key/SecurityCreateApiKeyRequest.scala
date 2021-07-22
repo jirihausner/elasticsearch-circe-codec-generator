@@ -21,7 +21,7 @@ object Request {
 	@JsonCodec case class Body(
 		expiration: Time, 
 		name: Name, 
-		role_descriptors: Dictionary(String, RoleDescriptor), 
+		role_descriptors: Dictionary[String, RoleDescriptor], 
 		metadata: Metadata
 	)
 }

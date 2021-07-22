@@ -6,7 +6,7 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._types.common.{ Field }
 import com.converted.elasticsearch._types.Scripting.{ Script }
-type RuntimeFields = Dictionary(Field, RuntimeField)
+type RuntimeFields = Dictionary[Field, RuntimeField]
 
 @JsonCodec case class RuntimeField(
 	format: String, 

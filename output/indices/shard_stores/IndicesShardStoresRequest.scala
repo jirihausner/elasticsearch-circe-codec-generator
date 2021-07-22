@@ -20,7 +20,7 @@ object Request {
 		allow_no_indices: Boolean, 
 		expand_wildcards: ExpandWildcards, 
 		ignore_unavailable: Boolean, 
-		status: String | Array(String)
+		status: String | Array[String]
 	)
 	@JsonCodec case class Body(
 	)

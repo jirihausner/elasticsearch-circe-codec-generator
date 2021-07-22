@@ -14,9 +14,9 @@ import com.converted.elasticsearch._types.analysis.token_filters.{ TokenFilter }
 @JsonCodec case class AnalysisConfig(
 	bucket_span: TimeSpan, 
 	categorization_field_name: Field, 
-	categorization_filters: Array(String), 
-	detectors: Array(Detector), 
-	influencers: Array(Field), 
+	categorization_filters: Array[String], 
+	detectors: Array[Detector], 
+	influencers: Array[Field], 
 	latency: Time, 
 	multivariate_by_fields: Boolean, 
 	per_partition_categorization: PerPartitionCategorization, 
@@ -39,7 +39,7 @@ import com.converted.elasticsearch._types.analysis.token_filters.{ TokenFilter }
 )
 
 @JsonCodec case class CategorizationAnalyzer(
-	filter: Array(String | TokenFilter), 
+	filter: Array[String | TokenFilter], 
 	tokenizer: String | Tokenizer, 
-	char_filter: Array(String | CharFilter)
+	char_filter: Array[String | CharFilter]
 )

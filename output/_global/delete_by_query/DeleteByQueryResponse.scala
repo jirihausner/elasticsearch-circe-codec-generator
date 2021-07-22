@@ -16,7 +16,7 @@ object Response {
 	@JsonCodec case class Body(
 		batches: long, 
 		deleted: long, 
-		failures: Array(BulkIndexByScrollFailure), 
+		failures: Array[BulkIndexByScrollFailure], 
 		noops: long, 
 		requests_per_second: float, 
 		retries: Retries, 

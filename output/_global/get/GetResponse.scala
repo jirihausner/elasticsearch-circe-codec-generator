@@ -15,7 +15,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 object Response {
 	@JsonCodec case class Body(
 		_index: IndexName, 
-		fields: Dictionary(String, UserDefinedValue), 
+		fields: Dictionary[String, UserDefinedValue], 
 		found: Boolean, 
 		_id: Id, 
 		_primary_term: long, 

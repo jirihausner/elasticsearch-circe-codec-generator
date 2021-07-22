@@ -14,18 +14,18 @@ import com.converted.elasticsearch._types.Time.{ Time, Timestamp }
 import com.converted.elasticsearch.ml._types.{ DiscoveryNode }
 
 @JsonCodec case class Datafeed(
-	aggregations: Dictionary(String, AggregationContainer), 
-	aggs: Dictionary(String, AggregationContainer), 
+	aggregations: Dictionary[String, AggregationContainer], 
+	aggs: Dictionary[String, AggregationContainer], 
 	chunking_config: ChunkingConfig, 
 	datafeed_id: Id, 
 	frequency: Timestamp, 
-	indices: Array(String), 
-	indexes: Array(String), 
+	indices: Array[String], 
+	indexes: Array[String], 
 	job_id: Id, 
 	max_empty_searches: integer, 
 	query: QueryContainer, 
 	query_delay: Timestamp, 
-	script_fields: Dictionary(String, ScriptField), 
+	script_fields: Dictionary[String, ScriptField], 
 	scroll_size: integer, 
 	delayed_data_check_config: DelayedDataCheckConfig, 
 	runtime_mappings: RuntimeFields, 

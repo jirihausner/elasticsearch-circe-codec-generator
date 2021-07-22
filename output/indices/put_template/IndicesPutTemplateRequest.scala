@@ -30,11 +30,11 @@ object Request {
 		timeout: Time
 	)
 	@JsonCodec case class Body(
-		aliases: Dictionary(IndexName, Alias), 
-		index_patterns: String | Array(String), 
+		aliases: Dictionary[IndexName, Alias], 
+		index_patterns: String | Array[String], 
 		mappings: TypeMapping, 
 		order: integer, 
-		settings: Dictionary(String, UserDefinedValue), 
+		settings: Dictionary[String, UserDefinedValue], 
 		version: VersionNumber
 	)
 }

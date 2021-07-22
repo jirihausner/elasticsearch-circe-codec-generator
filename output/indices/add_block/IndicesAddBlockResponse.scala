@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.common.{ IndexName }
 object Response {
 	@JsonCodec case class Body(
 		shards_acknowledged: Boolean, 
-		indices: Array(IndicesBlockStatus)
+		indices: Array[IndicesBlockStatus]
 	)
 }
 

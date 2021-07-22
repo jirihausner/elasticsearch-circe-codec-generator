@@ -7,7 +7,7 @@ import com.converted.elasticsearch._ingest._types.Processors.{ ProcessorContaine
 import com.converted.elasticsearch._types.common.{ Id, VersionNumber }
 
 @JsonCodec case class ClusterStateIngest(
-	pipeline: Array(ClusterStateIngestPipeline)
+	pipeline: Array[ClusterStateIngestPipeline]
 )
 
 @JsonCodec case class ClusterStateIngestPipeline(
@@ -18,5 +18,5 @@ import com.converted.elasticsearch._types.common.{ Id, VersionNumber }
 @JsonCodec case class ClusterStateIngestPipelineConfig(
 	description: String, 
 	version: VersionNumber, 
-	processors: Array(ProcessorContainer)
+	processors: Array[ProcessorContainer]
 )

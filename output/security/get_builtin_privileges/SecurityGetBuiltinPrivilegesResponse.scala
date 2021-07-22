@@ -11,7 +11,7 @@ import com.converted.elasticsearch._types.common.{ Indices }
 
 object Response {
 	@JsonCodec case class Body(
-		cluster: Array(String), 
+		cluster: Array[String], 
 		index: Indices
 	)
 }

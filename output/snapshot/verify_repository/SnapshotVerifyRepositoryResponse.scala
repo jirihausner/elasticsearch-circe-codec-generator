@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.common.{ Name }
 
 object Response {
 	@JsonCodec case class Body(
-		nodes: Dictionary(String, CompactNodeInfo)
+		nodes: Dictionary[String, CompactNodeInfo]
 	)
 }
 

@@ -37,7 +37,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		id: Id, 
-		params: Dictionary(String, UserDefinedValue), 
+		params: Dictionary[String, UserDefinedValue], 
 		source: String
 	)
 }

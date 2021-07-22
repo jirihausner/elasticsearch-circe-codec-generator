@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class Request[TJsonDocument](
 	query_parameters: QueryParameters, 
-	body: Array(TJsonDocument)
+	body: Array[TJsonDocument]
 )
 
 object Request {

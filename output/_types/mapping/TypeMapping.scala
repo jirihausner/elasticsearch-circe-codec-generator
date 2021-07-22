@@ -14,15 +14,15 @@ import com.converted.elasticsearch._types.mapping.{ RuntimeField }
 	all_field: AllField, 
 	date_detection: Boolean, 
 	dynamic: Boolean | DynamicMapping, 
-	dynamic_date_formats: Array(String), 
-	dynamic_templates: Dictionary(String, DynamicTemplate) | Array(Dictionary(String, DynamicTemplate)), 
+	dynamic_date_formats: Array[String], 
+	dynamic_templates: Dictionary[String, DynamicTemplate] | Array[Dictionary[String, DynamicTemplate]], 
 	_field_names: FieldNamesField, 
 	index_field: IndexField, 
 	_meta: Metadata, 
 	numeric_detection: Boolean, 
-	properties: Dictionary(PropertyName, Property), 
+	properties: Dictionary[PropertyName, Property], 
 	_routing: RoutingField, 
 	_size: SizeField, 
 	_source: SourceField, 
-	runtime: Dictionary(String, RuntimeField)
+	runtime: Dictionary[String, RuntimeField]
 )

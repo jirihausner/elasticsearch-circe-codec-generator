@@ -576,13 +576,13 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
     // print type params
     if (x.tparams.nonEmpty) {
-      print("(")
+      print("[")
       printType(x.tparams.head)
       x.tparams.tail.foreach(p => {
         print(", ")
         printType(p)
       })
-      print(")")
+      print("]")
     }
   }
 
@@ -603,7 +603,6 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     }
     printLn
     printLn(")", padding = true)
-    //printLn
   }
 
   def printTypeFunction(x: TsTypeFunction): Unit =
@@ -614,16 +613,16 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
   def printTypeIs(x: TsTypeIs): Unit = {
     printIdent(x.ident)
-    print(".isInstanceOf(")
+    print(".isInstanceOf[")
     printType(x.tpe)
-    print(")")
+    print("]")
   }
 
   def printTypeAssers(x: TsTypeAsserts): Unit = {
     if (x.isOpt.isDefined) {
-      print(s"assert(${x.ident}.isInstanceOf(")
+      print(s"assert(${x.ident}.isInstanceOf[")
       printType(x.isOpt.get)
-      print(")")
+      print("])")
     }
   }
 

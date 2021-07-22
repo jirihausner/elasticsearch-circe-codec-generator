@@ -22,17 +22,17 @@ object Response {
 		took: long, 
 		timed_out: Boolean, 
 		_shards: ShardStatistics, 
-		hits: HitsMetadata(TDocument), 
-		aggregations: Dictionary(AggregateName, Aggregate), 
+		hits: HitsMetadata[TDocument], 
+		aggregations: Dictionary[AggregateName, Aggregate], 
 		_clusters: ClusterStatistics, 
-		documents: Array(TDocument), 
-		fields: Dictionary(String, UserDefinedValue), 
+		documents: Array[TDocument], 
+		fields: Dictionary[String, UserDefinedValue], 
 		max_score: double, 
 		num_reduce_phases: long, 
 		profile: Profile, 
 		pit_id: Id, 
 		_scroll_id: ScrollId, 
-		suggest: Dictionary(SuggestionName, Array(Suggest(TDocument))), 
+		suggest: Dictionary[SuggestionName, Array[Suggest[TDocument]]], 
 		terminated_early: Boolean
 	)
 }

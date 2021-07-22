@@ -10,7 +10,7 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 @JsonCodec case class IndicesPrivileges(
 	field_security: FieldSecurity, 
 	names: Indices, 
-	privileges: Array(String), 
+	privileges: Array[String], 
 	query: String | QueryContainer, 
 	allow_restricted_indices: Boolean
 )

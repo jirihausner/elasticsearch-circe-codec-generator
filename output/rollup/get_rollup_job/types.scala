@@ -22,7 +22,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	groups: Groupings, 
 	id: Id, 
 	index_pattern: String, 
-	metrics: Array(FieldMetric), 
+	metrics: Array[FieldMetric], 
 	page_size: long, 
 	rollup_index: IndexName, 
 	timeout: Time
@@ -44,7 +44,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 )
 
 @JsonCodec case class RollupJobStatus(
-	current_position: Dictionary(String, UserDefinedValue), 
+	current_position: Dictionary[String, UserDefinedValue], 
 	job_state: IndexingJobState, 
 	upgraded_doc_id: Boolean
 )

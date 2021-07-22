@@ -10,7 +10,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class CommonQueryParameters(
 	error_trace: Boolean, 
-	filter_path: String | Array(String), 
+	filter_path: String | Array[String], 
 	human: Boolean, 
 	pretty: Boolean, 
 	source_query_string: String
@@ -22,6 +22,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	help: Boolean, 
 	local: Boolean, 
 	master_timeout: Time, 
-	s: Array(String), 
+	s: Array[String], 
 	v: Boolean
 )

@@ -8,7 +8,7 @@ import com.converted.elasticsearch._types.common.{ Id, Name }
 import com.converted.elasticsearch._types.Networking.{ TransportAddress }
 
 @JsonCodec case class DiscoveryNode(
-	attributes: Dictionary(String, String), 
+	attributes: Dictionary[String, String], 
 	ephemeral_id: Id, 
 	id: Id, 
 	name: Name, 

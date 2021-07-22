@@ -14,7 +14,7 @@ import com.converted.elasticsearch.ingest.geo_ip_stats.{ GeoIpDownloadStatistics
 object Response {
 	@JsonCodec case class Body(
 		stats: GeoIpDownloadStatistics, 
-		nodes: Dictionary(Id, GeoIpNodeDatabases)
+		nodes: Dictionary[Id, GeoIpNodeDatabases]
 	)
 }
 

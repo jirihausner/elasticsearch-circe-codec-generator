@@ -13,5 +13,5 @@ import com.converted.elasticsearch.eql._types.{ EqlHits }
 	is_running: Boolean, 
 	took: integer, 
 	timed_out: Boolean, 
-	hits: EqlHits(TEvent)
+	hits: EqlHits[TEvent]
 )

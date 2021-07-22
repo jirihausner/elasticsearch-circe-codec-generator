@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 import com.converted.elasticsearch._spec_utils.{ Dictionary }
 
 @JsonCodec case class BaseNode(
-	attributes: Dictionary(String, String), 
+	attributes: Dictionary[String, String], 
 	host: Host, 
 	ip: Ip, 
 	name: Name, 

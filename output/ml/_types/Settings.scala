@@ -7,7 +7,7 @@ import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._xpack.usage.types.{ UrlConfig }
 
 @JsonCodec case class CustomSettings(
-	custom_urls: Array(UrlConfig), 
+	custom_urls: Array[UrlConfig], 
 	created_by: String, 
-	job_tags: Dictionary(String, String)
+	job_tags: Dictionary[String, String]
 )

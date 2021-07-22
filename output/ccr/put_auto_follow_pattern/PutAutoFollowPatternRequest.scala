@@ -27,7 +27,7 @@ object Request {
 		follow_index_pattern: IndexPattern, 
 		leader_index_patterns: IndexPatterns, 
 		max_outstanding_read_requests: integer, 
-		settings: Dictionary(String, UserDefinedValue), 
+		settings: Dictionary[String, UserDefinedValue], 
 		max_outstanding_write_requests: integer, 
 		read_poll_timeout: Time, 
 		max_read_request_operation_count: integer, 

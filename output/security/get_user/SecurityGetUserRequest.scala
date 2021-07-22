@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.common.{ Username }
 
 object Request {
 	@JsonCodec case class PathParts(
-		username: Username | Array(Username)
+		username: Username | Array[Username]
 	)
 }
 

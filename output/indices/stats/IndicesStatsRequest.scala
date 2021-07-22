@@ -23,7 +23,7 @@ object Request {
 		fielddata_fields: Fields, 
 		fields: Fields, 
 		forbid_closed_indices: Boolean, 
-		groups: String | Array(String), 
+		groups: String | Array[String], 
 		include_segment_file_sizes: Boolean, 
 		include_unloaded_segments: Boolean, 
 		level: Level, 

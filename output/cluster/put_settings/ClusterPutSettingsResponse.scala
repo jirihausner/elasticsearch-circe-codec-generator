@@ -13,8 +13,8 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 object Response {
 	@JsonCodec case class Body(
 		acknowledged: Boolean, 
-		persistent: Dictionary(String, UserDefinedValue), 
-		transient: Dictionary(String, UserDefinedValue)
+		persistent: Dictionary[String, UserDefinedValue], 
+		transient: Dictionary[String, UserDefinedValue]
 	)
 }
 

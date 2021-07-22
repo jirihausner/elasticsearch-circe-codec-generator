@@ -7,6 +7,6 @@ import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedValue }
 
 @JsonCodec case class Aggregation(
-	meta: Dictionary(String, UserDefinedValue), 
+	meta: Dictionary[String, UserDefinedValue], 
 	name: String
 )

@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 object Response {
 	@JsonCodec case class Body(
 		count: integer, 
-		data_frame_analytics: Array(DataframeAnalyticsSummary)
+		data_frame_analytics: Array[DataframeAnalyticsSummary]
 	)
 }
 

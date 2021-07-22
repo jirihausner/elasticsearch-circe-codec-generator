@@ -15,11 +15,11 @@ import com.converted.elasticsearch._types.common.{ Metadata }
 )
 
 @JsonCodec case class RoleDescriptor(
-	cluster: Array(String), 
-	indices: Array(IndicesPrivileges), 
-	global: Array(GlobalPrivileges), 
-	applications: Array(ApplicationPrivileges), 
+	cluster: Array[String], 
+	indices: Array[IndicesPrivileges], 
+	global: Array[GlobalPrivileges], 
+	applications: Array[ApplicationPrivileges], 
 	metadata: Metadata, 
-	run_as: Array(String), 
-	transient_metadata: Dictionary(String, UserDefinedValue)
+	run_as: Array[String], 
+	transient_metadata: Dictionary[String, UserDefinedValue]
 )

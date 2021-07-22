@@ -7,7 +7,7 @@ import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class Phase(
-	actions: Dictionary(String, Action) | Array(String), 
+	actions: Dictionary[String, Action] | Array[String], 
 	min_age: Time
 )
 

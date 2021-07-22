@@ -10,7 +10,7 @@ import com.converted.elasticsearch._types.aggregations.{ Aggregation }
 
 @JsonCodec case class MatrixAggregation(
 	fields: Fields, 
-	missing: Dictionary(Field, double)
+	missing: Dictionary[Field, double]
 ) extends Aggregation
 
 @JsonCodec case class MatrixStatsAggregation(

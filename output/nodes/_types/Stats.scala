@@ -11,29 +11,29 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long }
 
 @JsonCodec case class Stats(
-	adaptive_selection: Dictionary(String, AdaptiveSelection), 
-	breakers: Dictionary(String, Breaker), 
+	adaptive_selection: Dictionary[String, AdaptiveSelection], 
+	breakers: Dictionary[String, Breaker], 
 	fs: FileSystem, 
 	host: Host, 
 	http: Http, 
 	indices: IndexStats, 
 	ingest: Ingest, 
-	ip: Ip | Array(Ip), 
+	ip: Ip | Array[Ip], 
 	jvm: Jvm, 
 	name: Name, 
 	os: OperatingSystem, 
 	process: Process, 
 	roles: NodeRoles, 
 	script: Scripting, 
-	thread_pool: Dictionary(String, ThreadCount), 
+	thread_pool: Dictionary[String, ThreadCount], 
 	timestamp: long, 
 	transport: Transport, 
 	transport_address: TransportAddress, 
-	attributes: Dictionary(Field, String)
+	attributes: Dictionary[Field, String]
 )
 
 @JsonCodec case class Ingest(
-	pipelines: Dictionary(String, IngestTotal), 
+	pipelines: Dictionary[String, IngestTotal], 
 	total: IngestTotal
 )
 
@@ -41,7 +41,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	count: long, 
 	current: long, 
 	failed: long, 
-	processors: Array(KeyedProcessor), 
+	processors: Array[KeyedProcessor], 
 	time_in_millis: long
 )
 
@@ -77,7 +77,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	total_in_millis: long, 
 	user: String, 
 	user_in_millis: long, 
-	load_average: Dictionary(String, double)
+	load_average: Dictionary[String, double]
 )
 
 @JsonCodec case class DataPathStats(
@@ -125,7 +125,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 )
 
 @JsonCodec case class FileSystem(
-	data: Array(DataPathStats), 
+	data: Array[DataPathStats], 
 	timestamp: long, 
 	total: FileSystemTotal
 )
@@ -148,7 +148,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 )
 
 @JsonCodec case class Jvm(
-	buffer_pools: Dictionary(String, NodeBufferPool), 
+	buffer_pools: Dictionary[String, NodeBufferPool], 
 	classes: JvmClasses, 
 	gc: GarbageCollector, 
 	mem: MemoryStats, 
@@ -170,7 +170,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 )
 
 @JsonCodec case class GarbageCollector(
-	collectors: Dictionary(String, GarbageCollectorTotal)
+	collectors: Dictionary[String, GarbageCollectorTotal]
 )
 
 @JsonCodec case class GarbageCollectorTotal(

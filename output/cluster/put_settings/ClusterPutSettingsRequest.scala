@@ -20,8 +20,8 @@ object Request {
 		timeout: Time
 	)
 	@JsonCodec case class Body(
-		persistent: Dictionary(String, UserDefinedValue), 
-		transient: Dictionary(String, UserDefinedValue)
+		persistent: Dictionary[String, UserDefinedValue], 
+		transient: Dictionary[String, UserDefinedValue]
 	)
 }
 

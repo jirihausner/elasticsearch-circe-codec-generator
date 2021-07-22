@@ -14,9 +14,9 @@ import com.converted.elasticsearch.task.list.{ TaskExecutingNode }
 
 object Response {
 	@JsonCodec case class Body(
-		node_failures: Array(ErrorCause), 
-		nodes: Dictionary(String, TaskExecutingNode), 
-		tasks: Dictionary(String, Info) | Array(Info)
+		node_failures: Array[ErrorCause], 
+		nodes: Dictionary[String, TaskExecutingNode], 
+		tasks: Dictionary[String, Info] | Array[Info]
 	)
 }
 

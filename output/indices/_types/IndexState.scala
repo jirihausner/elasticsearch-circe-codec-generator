@@ -10,7 +10,7 @@ import com.converted.elasticsearch.indices._types.{ Alias }
 import com.converted.elasticsearch.indices._types.{ IndexSettings }
 
 @JsonCodec case class IndexState(
-	aliases: Dictionary(IndexName, Alias), 
+	aliases: Dictionary[IndexName, Alias], 
 	mappings: TypeMapping, 
 	settings: IndexSettings | IndexStatePrefixedSettings
 )

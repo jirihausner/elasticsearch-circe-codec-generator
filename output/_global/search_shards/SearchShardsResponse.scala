@@ -14,14 +14,14 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 
 object Response {
 	@JsonCodec case class Body(
-		nodes: Dictionary(String, NodeAttributes), 
-		shards: Array(Array(NodeShard)), 
-		indices: Dictionary(IndexName, ShardStoreIndex)
+		nodes: Dictionary[String, NodeAttributes], 
+		shards: Array[Array[NodeShard]], 
+		indices: Dictionary[IndexName, ShardStoreIndex]
 	)
 }
 
 
 @JsonCodec case class ShardStoreIndex(
-	aliases: Array(Name), 
+	aliases: Array[Name], 
 	filter: QueryContainer
 )

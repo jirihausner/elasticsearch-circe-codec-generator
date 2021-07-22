@@ -16,7 +16,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		id: Id, 
-		ids: Array(Id), 
+		ids: Array[Id], 
 		name: Name, 
 		owner: Boolean, 
 		realm_name: String, 

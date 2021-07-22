@@ -13,14 +13,14 @@ import com.converted.elasticsearch._types.Errors.{ ErrorCause }
 
 object Response {
 	@JsonCodec case class Body(
-		responses: Array(SnapshotResponseItem), 
-		snapshots: Array(SnapshotInfo)
+		responses: Array[SnapshotResponseItem], 
+		snapshots: Array[SnapshotInfo]
 	)
 }
 
 
 @JsonCodec case class SnapshotResponseItem(
 	repository: Name, 
-	snapshots: Array(SnapshotInfo), 
+	snapshots: Array[SnapshotInfo], 
 	error: ErrorCause
 )

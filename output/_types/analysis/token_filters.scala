@@ -20,7 +20,7 @@ import com.converted.elasticsearch._types.analysis.{ StopWords }
 	min_subword_size: integer, 
 	min_word_size: integer, 
 	only_longest_match: Boolean, 
-	word_list: Array(String), 
+	word_list: Array[String], 
 	word_list_path: String
 ) extends TokenFilterBase
 
@@ -90,7 +90,7 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	expand: Boolean, 
 	format: SynonymFormat, 
 	lenient: Boolean, 
-	synonyms: Array(String), 
+	synonyms: Array[String], 
 	synonyms_path: String, 
 	tokenizer: String, 
 	updateable: Boolean
@@ -100,7 +100,7 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	expand: Boolean, 
 	format: SynonymFormat, 
 	lenient: Boolean, 
-	synonyms: Array(String), 
+	synonyms: Array[String], 
 	synonyms_path: String, 
 	tokenizer: String, 
 	updateable: Boolean
@@ -113,12 +113,12 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	generate_number_parts: Boolean, 
 	generate_word_parts: Boolean, 
 	preserve_original: Boolean, 
-	protected_words: Array(String), 
+	protected_words: Array[String], 
 	protected_words_path: String, 
 	split_on_case_change: Boolean, 
 	split_on_numerics: Boolean, 
 	stem_english_possessive: Boolean, 
-	type_table: Array(String), 
+	type_table: Array[String], 
 	type_table_path: String
 ) extends TokenFilterBase
 
@@ -130,12 +130,12 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	generate_number_parts: Boolean, 
 	generate_word_parts: Boolean, 
 	preserve_original: Boolean, 
-	protected_words: Array(String), 
+	protected_words: Array[String], 
 	protected_words_path: String, 
 	split_on_case_change: Boolean, 
 	split_on_numerics: Boolean, 
 	stem_english_possessive: Boolean, 
-	type_table: Array(String), 
+	type_table: Array[String], 
 	type_table_path: String
 ) extends TokenFilterBase
 
@@ -144,19 +144,19 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 ) extends TokenFilterBase
 
 @JsonCodec case class CommonGramsTokenFilter(
-	common_words: Array(String), 
+	common_words: Array[String], 
 	common_words_path: String, 
 	ignore_case: Boolean, 
 	query_mode: Boolean
 ) extends TokenFilterBase
 
 @JsonCodec case class ConditionTokenFilter(
-	filter: Array(String), 
+	filter: Array[String], 
 	script: Script
 ) extends TokenFilterBase
 
 @JsonCodec case class ElisionTokenFilter(
-	articles: Array(String), 
+	articles: Array[String], 
 	articles_case: Boolean
 ) extends TokenFilterBase
 
@@ -184,18 +184,18 @@ implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encode
 
 @JsonCodec case class KeepTypesTokenFilter(
 	mode: KeepTypesMode, 
-	types: Array(String)
+	types: Array[String]
 ) extends TokenFilterBase
 
 @JsonCodec case class KeepWordsTokenFilter(
-	keep_words: Array(String), 
+	keep_words: Array[String], 
 	keep_words_case: Boolean, 
 	keep_words_path: String
 ) extends TokenFilterBase
 
 @JsonCodec case class KeywordMarkerTokenFilter(
 	ignore_case: Boolean, 
-	keywords: Array(String), 
+	keywords: Array[String], 
 	keywords_path: String, 
 	keywords_pattern: String
 ) extends TokenFilterBase
@@ -217,7 +217,7 @@ implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encode
 ) extends TokenFilterBase
 
 @JsonCodec case class MultiplexerTokenFilter(
-	filters: Array(String), 
+	filters: Array[String], 
 	preserve_original: Boolean
 ) extends TokenFilterBase
 
@@ -227,11 +227,11 @@ implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encode
 ) extends TokenFilterBase
 
 @JsonCodec case class NoriPartOfSpeechTokenFilter(
-	stoptags: Array(String)
+	stoptags: Array[String]
 ) extends TokenFilterBase
 
 @JsonCodec case class PatternCaptureTokenFilter(
-	patterns: Array(String), 
+	patterns: Array[String], 
 	preserve_original: Boolean
 ) extends TokenFilterBase
 
@@ -256,7 +256,7 @@ implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encode
 ) extends TokenFilterBase
 
 @JsonCodec case class StemmerOverrideTokenFilter(
-	rules: Array(String), 
+	rules: Array[String], 
 	rules_path: String
 ) extends TokenFilterBase
 

@@ -11,7 +11,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 import com.converted.elasticsearch._types.Time.{ DateString }
 
 @JsonCodec case class ClusterStateIndexLifecycle(
-	policies: Dictionary(IndexName, ClusterStateIndexLifecycleSummary), 
+	policies: Dictionary[IndexName, ClusterStateIndexLifecycleSummary], 
 	operation_mode: LifecycleOperationMode
 )
 

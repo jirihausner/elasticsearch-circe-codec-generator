@@ -11,7 +11,7 @@ import com.converted.elasticsearch._enrich._types.Policy.{ Summary }
 
 object Response {
 	@JsonCodec case class Body(
-		policies: Array(Summary)
+		policies: Array[Summary]
 	)
 }
 

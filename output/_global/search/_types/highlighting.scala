@@ -20,7 +20,7 @@ implicit val boundaryScannerDecoder: Decoder[BoundaryScanner.Value] = Decoder.de
 implicit val boundaryScannerEncoder: Encoder[BoundaryScanner.Value] = Decoder.encodeEnumeration(BoundaryScanner)
 
 @JsonCodec case class Highlight(
-	fields: Dictionary(Field, HighlightField), 
+	fields: Dictionary[Field, HighlightField], 
 	`type`: HighlighterType, 
 	boundary_chars: String, 
 	boundary_max_scan: integer, 
@@ -34,8 +34,8 @@ implicit val boundaryScannerEncoder: Encoder[BoundaryScanner.Value] = Decoder.en
 	no_match_size: integer, 
 	number_of_fragments: integer, 
 	order: HighlighterOrder, 
-	post_tags: Array(String), 
-	pre_tags: Array(String), 
+	post_tags: Array[String], 
+	pre_tags: Array[String], 
 	require_field_match: Boolean, 
 	tags_schema: HighlighterTagsSchema, 
 	highlight_query: QueryContainer, 
@@ -108,8 +108,8 @@ implicit val highlighterTypeEncoder: Encoder[HighlighterType.Value] = Decoder.en
 	number_of_fragments: integer, 
 	order: HighlighterOrder, 
 	phrase_limit: integer, 
-	post_tags: Array(String), 
-	pre_tags: Array(String), 
+	post_tags: Array[String], 
+	pre_tags: Array[String], 
 	require_field_match: Boolean, 
 	tags_schema: HighlighterTagsSchema, 
 	`type`: HighlighterType | String

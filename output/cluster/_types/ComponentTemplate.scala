@@ -23,7 +23,7 @@ import com.converted.elasticsearch._types.mapping.TypeMapping.{ TypeMapping }
 @JsonCodec case class ComponentTemplateSummary(
 	_meta: Metadata, 
 	version: VersionNumber, 
-	settings: Dictionary(IndexName, IndexSettings), 
+	settings: Dictionary[IndexName, IndexSettings], 
 	mappings: TypeMapping, 
-	aliases: Dictionary(String, AliasDefinition)
+	aliases: Dictionary[String, AliasDefinition]
 )

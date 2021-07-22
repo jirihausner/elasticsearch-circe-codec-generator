@@ -17,8 +17,8 @@ object Request {
 		task_id: TaskId
 	)
 	@JsonCodec case class QueryParameters(
-		actions: String | Array(String), 
-		nodes: Array(String), 
+		actions: String | Array[String], 
+		nodes: Array[String], 
 		parent_task_id: String, 
 		wait_for_completion: Boolean
 	)

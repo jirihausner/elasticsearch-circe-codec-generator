@@ -12,7 +12,7 @@ import com.converted.elasticsearch._global.update_by_query_rethrottle.{ UpdateBy
 
 object Response {
 	@JsonCodec case class Body(
-		nodes: Dictionary(String, UpdateByQueryRethrottleNode)
+		nodes: Dictionary[String, UpdateByQueryRethrottleNode]
 	)
 }
 

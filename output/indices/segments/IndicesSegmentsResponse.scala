@@ -13,7 +13,7 @@ import com.converted.elasticsearch.indices.segments.{ IndexSegment }
 
 object Response {
 	@JsonCodec case class Body(
-		indices: Dictionary(String, IndexSegment), 
+		indices: Dictionary[String, IndexSegment], 
 		_shards: ShardStatistics
 	)
 }

@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.Base.{ WriteResponseBase }
 
 object Response {
 	@JsonCodec case class Body(
-		get: InlineGet(TDocument)
+		get: InlineGet[TDocument]
 	)
 }
 

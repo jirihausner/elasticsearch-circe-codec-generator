@@ -20,7 +20,7 @@ import com.converted.elasticsearch._types.analysis.{ TokenFilterBase }
 ) extends CharFilterBase
 
 @JsonCodec case class KuromojiPartOfSpeechTokenFilter(
-	stoptags: Array(String)
+	stoptags: Array[String]
 ) extends TokenFilterBase
 
 @JsonCodec case class KuromojiReadingFormTokenFilter(
@@ -48,5 +48,5 @@ implicit val kuromojiTokenizationModeEncoder: Encoder[KuromojiTokenizationMode.V
 	nbest_cost: integer, 
 	nbest_examples: String, 
 	user_dictionary: String, 
-	user_dictionary_rules: Array(String)
+	user_dictionary_rules: Array[String]
 ) extends TokenizerBase

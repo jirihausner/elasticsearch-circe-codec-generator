@@ -23,7 +23,7 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis, Time }
 	phase_time_millis: EpochMillis, 
 	policy: Name, 
 	step: Name, 
-	step_info: Dictionary(String, UserDefinedValue), 
+	step_info: Dictionary[String, UserDefinedValue], 
 	step_time_millis: EpochMillis, 
 	phase_execution: LifecycleExplainPhaseExecution
 )

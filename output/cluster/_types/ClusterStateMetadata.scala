@@ -16,18 +16,18 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 	cluster_uuid: Uuid, 
 	cluster_uuid_committed: Boolean, 
 	templates: ClusterStateMetadataTemplate, 
-	indices: Dictionary(IndexName, ClusterStateBlockIndex), 
+	indices: Dictionary[IndexName, ClusterStateBlockIndex], 
 	`index-graveyard`: ClusterStateMetadataIndexGraveyard, 
 	cluster_coordination: ClusterStateMetadataClusterCoordination, 
 	ingest: ClusterStateIngest, 
-	repositories: Dictionary(String, String), 
-	component_template: Dictionary(String, UserDefinedValue), 
-	index_template: Dictionary(String, UserDefinedValue), 
+	repositories: Dictionary[String, String], 
+	component_template: Dictionary[String, UserDefinedValue], 
+	index_template: Dictionary[String, UserDefinedValue], 
 	index_lifecycle: ClusterStateIndexLifecycle
 )
 
 @JsonCodec case class ClusterStateMetadataIndexGraveyard(
-	tombstones: Array(Tombstone)
+	tombstones: Array[Tombstone]
 )
 
 @JsonCodec case class Tombstone(
@@ -45,9 +45,9 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 
 @JsonCodec case class ClusterStateMetadataClusterCoordination(
 	term: integer, 
-	last_committed_config: Array(String), 
-	last_accepted_config: Array(String), 
-	voting_config_exclusions: Array(VotingConfigExclusionsItem)
+	last_committed_config: Array[String], 
+	last_accepted_config: Array[String], 
+	voting_config_exclusions: Array[VotingConfigExclusionsItem]
 )
 
 @JsonCodec case class VotingConfigExclusionsItem(

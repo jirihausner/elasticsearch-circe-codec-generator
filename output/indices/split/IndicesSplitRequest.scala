@@ -27,8 +27,8 @@ object Request {
 		wait_for_active_shards: WaitForActiveShards
 	)
 	@JsonCodec case class Body(
-		aliases: Dictionary(IndexName, Alias), 
-		settings: Dictionary(String, UserDefinedValue)
+		aliases: Dictionary[IndexName, Alias], 
+		settings: Dictionary[String, UserDefinedValue]
 	)
 }
 

@@ -20,12 +20,12 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 	_score: double, 
 	_type: Type, 
 	_explanation: Explanation, 
-	fields: Dictionary(String, UserDefinedValue), 
-	highlight: Dictionary(String, Array(String)), 
-	inner_hits: Dictionary(String, InnerHitsResult), 
-	matched_queries: Array(String), 
+	fields: Dictionary[String, UserDefinedValue], 
+	highlight: Dictionary[String, Array[String]], 
+	inner_hits: Dictionary[String, InnerHitsResult], 
+	matched_queries: Array[String], 
 	_nested: NestedIdentity, 
-	_ignored: Array(String), 
+	_ignored: Array[String], 
 	_shard: String, 
 	_node: String, 
 	_routing: String, 
@@ -38,7 +38,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 
 @JsonCodec case class HitsMetadata[T](
 	total: TotalHits | long, 
-	hits: Array(Hit(T)), 
+	hits: Array[Hit[T]], 
 	max_score: double
 )
 
@@ -55,7 +55,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 
 @JsonCodec case class InnerHitsMetadata(
 	total: TotalHits | long, 
-	hits: Array(Hit(Dictionary(String, UserDefinedValue))), 
+	hits: Array[Hit[Dictionary[String, UserDefinedValue]]], 
 	max_score: double
 )
 
@@ -93,7 +93,7 @@ implicit val totalHitsRelationEncoder: Encoder[TotalHitsRelation.Value] = Decode
 	explain: Boolean, 
 	highlight: Highlight, 
 	ignore_unmapped: Boolean, 
-	script_fields: Dictionary(String, ScriptField), 
+	script_fields: Dictionary[String, ScriptField], 
 	seq_no_primary_term: Boolean, 
 	fields: Fields, 
 	sort: Sort, 

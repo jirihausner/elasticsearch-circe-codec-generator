@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 
 @JsonCodec case class Response(
 	body: Body
-) extends DictionaryResponseBase(IndexName, ShardStatistics)
+) extends DictionaryResponseBase[IndexName, ShardStatistics]
 
 object Response {
 	@JsonCodec case class Body(

@@ -20,5 +20,5 @@ implicit val metricEncoder: Encoder[Metric.Value] = Decoder.encodeEnumeration(Me
 
 @JsonCodec case class FieldMetric(
 	field: Field, 
-	metrics: Array(Metric)
+	metrics: Array[Metric]
 )

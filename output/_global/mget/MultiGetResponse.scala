@@ -11,7 +11,7 @@ import com.converted.elasticsearch._global.mget.{ Hit }
 
 object Response {
 	@JsonCodec case class Body(
-		docs: Array(Hit(TDocument))
+		docs: Array[Hit[TDocument]]
 	)
 }
 

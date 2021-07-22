@@ -51,7 +51,7 @@ import com.converted.elasticsearch._types.Scripting.{ Script }
 @JsonCodec case class ProcessorBase(
 	`if`: String, 
 	ignore_failure: Boolean, 
-	on_failure: Array(ProcessorContainer), 
+	on_failure: Array[ProcessorContainer], 
 	tag: String
 )
 
@@ -75,7 +75,7 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 
 @JsonCodec case class AppendProcessor(
 	field: Field, 
-	value: Array(UserDefinedValue), 
+	value: Array[UserDefinedValue], 
 	allow_duplicates: Boolean
 ) extends ProcessorBase
 
@@ -84,7 +84,7 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 	ignore_missing: Boolean, 
 	indexed_chars: long, 
 	indexed_chars_field: Field, 
-	properties: Array(String), 
+	properties: Array[String], 
 	target_field: Field, 
 	resource_name: String
 ) extends ProcessorBase
@@ -94,14 +94,14 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 	field: Field, 
 	first_only: Boolean, 
 	ignore_missing: Boolean, 
-	properties: Array(String), 
+	properties: Array[String], 
 	target_field: Field
 ) extends ProcessorBase
 
 @JsonCodec case class UserAgentProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
-	options: Array(UserAgentProperty), 
+	options: Array[UserAgentProperty], 
 	regex_file: String, 
 	target_field: Field
 ) extends ProcessorBase
@@ -169,7 +169,7 @@ implicit val dateRoundingDecoder: Decoder[DateRounding.Value] = Decoder.decodeEn
 implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEnumeration(DateRounding)
 
 @JsonCodec case class DateIndexNameProcessor(
-	date_formats: Array(String), 
+	date_formats: Array[String], 
 	date_rounding: String | DateRounding, 
 	field: Field, 
 	index_name_format: String, 
@@ -180,7 +180,7 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 
 @JsonCodec case class DateProcessor(
 	field: Field, 
-	formats: Array(String), 
+	formats: Array[String], 
 	locale: String, 
 	target_field: Field, 
 	timezone: String
@@ -223,8 +223,8 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 @JsonCodec case class GrokProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
-	pattern_definitions: Dictionary(String, String), 
-	patterns: Array(String), 
+	pattern_definitions: Dictionary[String, String], 
+	patterns: Array[String], 
 	trace_match: Boolean
 ) extends ProcessorBase
 
@@ -239,7 +239,7 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 @JsonCodec case class InferenceProcessor(
 	model_id: Id, 
 	target_field: Field, 
-	field_map: Dictionary(Field, UserDefinedValue), 
+	field_map: Dictionary[Field, UserDefinedValue], 
 	inference_config: InferenceConfig
 ) extends ProcessorBase
 
@@ -264,11 +264,11 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 ) extends ProcessorBase
 
 @JsonCodec case class KeyValueProcessor(
-	exclude_keys: Array(String), 
+	exclude_keys: Array[String], 
 	field: Field, 
 	field_split: String, 
 	ignore_missing: Boolean, 
-	include_keys: Array(String), 
+	include_keys: Array[String], 
 	prefix: String, 
 	strip_brackets: Boolean, 
 	target_field: Field, 
@@ -301,7 +301,7 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 @JsonCodec case class ScriptProcessor(
 	id: Id, 
 	lang: String, 
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	source: String
 ) extends ProcessorBase
 
@@ -313,7 +313,7 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 
 @JsonCodec case class SetSecurityUserProcessor(
 	field: Field, 
-	properties: Array(String)
+	properties: Array[String]
 ) extends ProcessorBase
 
 object ShapeType extends Enumeration {

@@ -12,7 +12,7 @@ import com.converted.elasticsearch._global.reindex_rethrottle.{ ReindexNode }
 
 object Response {
 	@JsonCodec case class Body(
-		nodes: Dictionary(String, ReindexNode)
+		nodes: Dictionary[String, ReindexNode]
 	)
 }
 

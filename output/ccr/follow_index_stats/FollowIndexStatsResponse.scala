@@ -11,7 +11,7 @@ import com.converted.elasticsearch._ccr._types.FollowIndexStats.{ FollowIndexSta
 
 object Response {
 	@JsonCodec case class Body(
-		indices: Array(FollowIndexStats)
+		indices: Array[FollowIndexStats]
 	)
 }
 

@@ -10,7 +10,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 @JsonCodec case class Info(
 	action: String, 
 	cancellable: Boolean, 
-	children: Array(Info), 
+	children: Array[Info], 
 	description: String, 
 	headers: HttpHeaders, 
 	id: long, 

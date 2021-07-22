@@ -6,5 +6,5 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch.cat.thread_pool.{ ThreadPoolRecord }
 
 @JsonCodec case class Response(
-	body: Array(ThreadPoolRecord)
+	body: Array[ThreadPoolRecord]
 )

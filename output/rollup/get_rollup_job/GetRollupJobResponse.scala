@@ -11,7 +11,7 @@ import com.converted.elasticsearch.rollup.get_rollup_job.{ RollupJob }
 
 object Response {
 	@JsonCodec case class Body(
-		jobs: Array(RollupJob)
+		jobs: Array[RollupJob]
 	)
 }
 

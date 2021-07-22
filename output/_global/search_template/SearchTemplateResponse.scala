@@ -16,7 +16,7 @@ object Response {
 		_shards: ShardStatistics, 
 		timed_out: Boolean, 
 		took: integer, 
-		hits: HitsMetadata(TDocument)
+		hits: HitsMetadata[TDocument]
 	)
 }
 

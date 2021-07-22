@@ -14,9 +14,9 @@ import com.converted.elasticsearch.security.has_privileges.{ ApplicationsPrivile
 object Response {
 	@JsonCodec case class Body(
 		application: ApplicationsPrivileges, 
-		cluster: Dictionary(String, Boolean), 
+		cluster: Dictionary[String, Boolean], 
 		has_all_requested: Boolean, 
-		index: Dictionary(IndexName, Privileges), 
+		index: Dictionary[IndexName, Privileges], 
 		username: Username
 	)
 }

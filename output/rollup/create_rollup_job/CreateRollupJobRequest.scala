@@ -22,7 +22,7 @@ object Request {
 		cron: String, 
 		groups: Groupings, 
 		index_pattern: String, 
-		metrics: Array(FieldMetric), 
+		metrics: Array[FieldMetric], 
 		page_size: long, 
 		rollup_index: IndexName
 	)

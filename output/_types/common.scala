@@ -14,32 +14,32 @@ type ScrollIds = String
 type CategoryId = String
 type ActionIds = String
 type Id = String
-type Ids = Id | Array(Id)
+type Ids = Id | Array[Id]
 type NodeId = String
 type IndexName = String
-type Indices = String | Array(String)
+type Indices = String | Array[String]
 type IndexAlias = String
 type IndexPattern = String
-type IndexPatterns = Array(IndexPattern)
+type IndexPatterns = Array[IndexPattern]
 type Type = String
-type Types = Type | Array(Type)
+type Types = Type | Array[Type]
 type Routing = String | Double
 type LongId = String
 type IndexMetrics = String
-type Metrics = String | Array(String)
+type Metrics = String | Array[String]
 type Name = String
-type Names = String | Array(String)
+type Names = String | Array[String]
 type Namespace = String
 type Service = String
 type PipelineName = String
 type NodeName = String
 type DataStreamName = String
 type ByteSize = long | String
-type Metadata = Dictionary(String, UserDefinedValue)
+type Metadata = Dictionary[String, UserDefinedValue]
 type VersionNumber = long
-type VersionNumbers = Array(VersionNumber)
+type VersionNumbers = Array[VersionNumber]
 type VersionString = String
-type VersionStrings = Array(VersionString)
+type VersionStrings = Array[VersionString]
 
 object VersionType extends Enumeration {
 	type VersionType = Value
@@ -61,11 +61,11 @@ type TaskId = String | integer
 type Fuzziness = String | integer
 type MultiTermQueryRewrite = String
 type Field = String
-type Fields = Field | Array(Field)
+type Fields = Field | Array[Field]
 type WaitForActiveShards = integer | WaitForActiveShardOptions
 type AggregateName = String
 type SuggestionName = String
-type HttpHeaders = Dictionary(String, String | Array(String))
+type HttpHeaders = Dictionary[String, String | Array[String]]
 
 @JsonCodec sealed trait EmptyObject
 type MinimumShouldMatch = integer | String
@@ -138,7 +138,7 @@ object ExpandWildcardOptions extends Enumeration {
 
 implicit val expandWildcardOptionsDecoder: Decoder[ExpandWildcardOptions.Value] = Decoder.decodeEnumeration(ExpandWildcardOptions)
 implicit val expandWildcardOptionsEncoder: Encoder[ExpandWildcardOptions.Value] = Decoder.encodeEnumeration(ExpandWildcardOptions)
-type ExpandWildcards = ExpandWildcardOptions | Array(ExpandWildcardOptions) | String
+type ExpandWildcards = ExpandWildcardOptions | Array[ExpandWildcardOptions] | String
 
 object GroupBy extends Enumeration {
 	type GroupBy = Value
@@ -287,7 +287,7 @@ implicit val waitForStatusDecoder: Decoder[WaitForStatus.Value] = Decoder.decode
 implicit val waitForStatusEncoder: Encoder[WaitForStatus.Value] = Decoder.encodeEnumeration(WaitForStatus)
 
 @JsonCodec case class InlineGet[TDocument](
-	fields: Dictionary(String, UserDefinedValue), 
+	fields: Dictionary[String, UserDefinedValue], 
 	found: Boolean, 
 	_seq_no: SequenceNumber, 
 	_primary_term: long, 

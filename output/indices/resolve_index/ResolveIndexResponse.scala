@@ -11,17 +11,17 @@ import com.converted.elasticsearch._types.common.{ DataStreamName, Field, Indice
 
 object Response {
 	@JsonCodec case class Body(
-		indices: Array(ResolveIndexItem), 
-		aliases: Array(ResolveIndexAliasItem), 
-		data_streams: Array(ResolveIndexDataStreamsItem)
+		indices: Array[ResolveIndexItem], 
+		aliases: Array[ResolveIndexAliasItem], 
+		data_streams: Array[ResolveIndexDataStreamsItem]
 	)
 }
 
 
 @JsonCodec case class ResolveIndexItem(
 	name: Name, 
-	aliases: Array(String), 
-	attributes: Array(String), 
+	aliases: Array[String], 
+	attributes: Array[String], 
 	data_stream: DataStreamName
 )
 

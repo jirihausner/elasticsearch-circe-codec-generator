@@ -83,5 +83,5 @@ implicit val indexCheckOnStartupEncoder: Encoder[IndexCheckOnStartup.Value] = De
 )
 
 @JsonCodec case class IndexSettingsAnalysis(
-	char_filter: Dictionary(String, CharFilter)
+	char_filter: Dictionary[String, CharFilter]
 )

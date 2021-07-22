@@ -10,7 +10,7 @@ import com.converted.elasticsearch._types.Numeric.{ float, long }
 import com.converted.elasticsearch._types.Retries.{ Retries }
 
 @JsonCodec case class ReindexNode(
-	tasks: Dictionary(TaskId, ReindexTask)
+	tasks: Dictionary[TaskId, ReindexTask]
 ) extends BaseNode
 
 @JsonCodec case class ReindexStatus(

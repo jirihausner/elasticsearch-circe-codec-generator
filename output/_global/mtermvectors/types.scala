@@ -28,7 +28,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	found: Boolean, 
 	id: Id, 
 	index: IndexName, 
-	term_vectors: Dictionary(Field, TermVector), 
+	term_vectors: Dictionary[Field, TermVector], 
 	took: long, 
 	version: VersionNumber
 )

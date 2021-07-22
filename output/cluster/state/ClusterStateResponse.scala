@@ -20,13 +20,13 @@ object Response {
 		cluster_name: Name, 
 		cluster_uuid: Uuid, 
 		master_node: String, 
-		state: Array(String), 
+		state: Array[String], 
 		state_uuid: Uuid, 
 		version: VersionNumber, 
 		blocks: ClusterStateBlocks, 
 		metadata: ClusterStateMetadata, 
-		nodes: Dictionary(NodeName, NodeAttributes), 
-		routing_table: Dictionary(String, EmptyObject), 
+		nodes: Dictionary[NodeName, NodeAttributes], 
+		routing_table: Dictionary[String, EmptyObject], 
 		routing_nodes: ClusterStateRoutingNodes, 
 		snapshots: ClusterStateSnapshots, 
 		snapshot_deletions: ClusterStateDeletedSnapshots
@@ -35,5 +35,5 @@ object Response {
 
 
 @JsonCodec case class ClusterStateBlocks(
-	indices: Dictionary(IndexName, Dictionary(String, ClusterStateBlockIndex))
+	indices: Dictionary[IndexName, Dictionary[String, ClusterStateBlockIndex]]
 )

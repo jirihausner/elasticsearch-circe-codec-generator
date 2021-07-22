@@ -19,12 +19,12 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class Latest(
 	sort: Field, 
-	unique_key: Array(Field)
+	unique_key: Array[Field]
 )
 
 @JsonCodec case class Pivot(
-	aggregations: Dictionary(String, AggregationContainer), 
-	group_by: Dictionary(String, PivotGroupByContainer), 
+	aggregations: Dictionary[String, AggregationContainer], 
+	group_by: Dictionary[String, PivotGroupByContainer], 
 	max_page_search_size: integer
 )
 

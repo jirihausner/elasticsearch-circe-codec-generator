@@ -12,7 +12,7 @@ import com.converted.elasticsearch.cluster.reroute.{ RerouteExplanation, Reroute
 
 object Response {
 	@JsonCodec case class Body(
-		explanations: Array(RerouteExplanation), 
+		explanations: Array[RerouteExplanation], 
 		state: RerouteState
 	)
 }

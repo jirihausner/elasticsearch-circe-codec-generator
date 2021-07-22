@@ -23,14 +23,14 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 )
 
 @JsonCodec case class IntervalsAllOf(
-	intervals: Array(IntervalsContainer), 
+	intervals: Array[IntervalsContainer], 
 	max_gaps: integer, 
 	ordered: Boolean, 
 	filter: IntervalsFilter
 )
 
 @JsonCodec case class IntervalsAnyOf(
-	intervals: Array(IntervalsContainer), 
+	intervals: Array[IntervalsContainer], 
 	filter: IntervalsFilter
 )
 

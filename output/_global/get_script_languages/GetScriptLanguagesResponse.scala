@@ -11,8 +11,8 @@ import com.converted.elasticsearch._global.get_script_languages.{ LanguageContex
 
 object Response {
 	@JsonCodec case class Body(
-		language_contexts: Array(LanguageContext), 
-		types_allowed: Array(String)
+		language_contexts: Array[LanguageContext], 
+		types_allowed: Array[String]
 	)
 }
 

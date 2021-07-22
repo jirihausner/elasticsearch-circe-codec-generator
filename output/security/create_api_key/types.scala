@@ -7,12 +7,12 @@ import com.converted.elasticsearch._security._types.ApplicationPrivileges.{ Appl
 import com.converted.elasticsearch._types.common.{ Indices }
 
 @JsonCodec case class RoleDescriptor(
-	cluster: Array(String), 
-	index: Array(IndexPrivileges), 
-	applications: Array(ApplicationPrivileges)
+	cluster: Array[String], 
+	index: Array[IndexPrivileges], 
+	applications: Array[ApplicationPrivileges]
 )
 
 @JsonCodec case class IndexPrivileges(
 	names: Indices, 
-	privileges: Array(String)
+	privileges: Array[String]
 )

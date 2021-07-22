@@ -7,4 +7,4 @@ import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch._types.common.{ IndexName }
 import com.converted.elasticsearch.indices.recovery.{ RecoveryStatus }
 
-@JsonCodec case class Response extends DictionaryResponseBase(IndexName, RecoveryStatus)
+@JsonCodec case class Response extends DictionaryResponseBase[IndexName, RecoveryStatus]

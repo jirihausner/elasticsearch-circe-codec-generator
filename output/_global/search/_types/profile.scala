@@ -28,18 +28,18 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	time_in_nanos: long, 
 	`type`: String, 
 	debug: AggregationProfileDebug, 
-	children: Array(AggregationProfileDebug)
+	children: Array[AggregationProfileDebug]
 )
 
 @JsonCodec case class Collector(
 	name: String, 
 	reason: String, 
 	time_in_nanos: long, 
-	children: Array(Collector)
+	children: Array[Collector]
 )
 
 @JsonCodec case class Profile(
-	shards: Array(ShardProfile)
+	shards: Array[ShardProfile]
 )
 
 @JsonCodec case class QueryBreakdown(
@@ -68,17 +68,17 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	description: String, 
 	time_in_nanos: long, 
 	`type`: String, 
-	children: Array(QueryProfile)
+	children: Array[QueryProfile]
 )
 
 @JsonCodec case class SearchProfile(
-	collector: Array(Collector), 
-	query: Array(QueryProfile), 
+	collector: Array[Collector], 
+	query: Array[QueryProfile], 
 	rewrite_time: long
 )
 
 @JsonCodec case class ShardProfile(
-	aggregations: Array(AggregationProfile), 
+	aggregations: Array[AggregationProfile], 
 	id: String, 
-	searches: Array(SearchProfile)
+	searches: Array[SearchProfile]
 )

@@ -24,16 +24,16 @@ import com.converted.elasticsearch._global.search.SearchResponse.{ Response as S
 )
 
 @JsonCodec case class Body(
-	aggregations: Dictionary(String, AggregationContainer), 
-	aggs: Dictionary(String, AggregationContainer), 
+	aggregations: Dictionary[String, AggregationContainer], 
+	aggs: Dictionary[String, AggregationContainer], 
 	query: QueryContainer, 
 	from: integer, 
 	size: integer, 
 	pit: PointInTimeReference, 
 	track_total_hits: Boolean | integer, 
-	suggest: SuggestContainer | Dictionary(String, SuggestContainer)
+	suggest: SuggestContainer | Dictionary[String, SuggestContainer]
 )
 
 @JsonCodec case class SearchResult[TDocument](
 	status: integer
-) extends SearchResponse(TDocument)
+) extends SearchResponse[TDocument]

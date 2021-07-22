@@ -14,7 +14,7 @@ import com.converted.elasticsearch._global.field_caps.{ FieldCapability }
 object Response {
 	@JsonCodec case class Body(
 		indices: Indices, 
-		fields: Dictionary(Field, Dictionary(String, FieldCapability))
+		fields: Dictionary[Field, Dictionary[String, FieldCapability]]
 	)
 }
 

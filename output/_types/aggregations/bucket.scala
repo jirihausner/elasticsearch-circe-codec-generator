@@ -18,11 +18,11 @@ import com.converted.elasticsearch._types.aggregations.{ Aggregation }
 import com.converted.elasticsearch._types.aggregations.{ AggregationContainer, Missing }
 
 @JsonCodec case class BucketAggregationBase(
-	aggregations: Dictionary(String, AggregationContainer)
+	aggregations: Dictionary[String, AggregationContainer]
 ) extends Aggregation
 
 @JsonCodec case class AdjacencyMatrixAggregation(
-	filters: Dictionary(String, QueryContainer)
+	filters: Dictionary[String, QueryContainer]
 ) extends BucketAggregationBase
 
 @JsonCodec case class AutoDateHistogramAggregation(
@@ -32,7 +32,7 @@ import com.converted.elasticsearch._types.aggregations.{ AggregationContainer, M
 	minimum_interval: MinimumInterval, 
 	missing: DateString, 
 	offset: String, 
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	script: Script, 
 	time_zone: String
 ) extends BucketAggregationBase
@@ -56,9 +56,9 @@ implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.en
 ) extends BucketAggregationBase
 
 @JsonCodec case class CompositeAggregation(
-	after: Dictionary(String, String | float | null), 
+	after: Dictionary[String, String | float | null], 
 	size: integer, 
-	sources: Array(Dictionary(String, CompositeAggregationSource))
+	sources: Array[Dictionary[String, CompositeAggregationSource]]
 ) extends BucketAggregationBase
 
 @JsonCodec case class CompositeAggregationSource(
@@ -70,8 +70,8 @@ implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.en
 
 @JsonCodec case class DateHistogramAggregation(
 	calendar_interval: DateInterval | Time, 
-	extended_bounds: ExtendedBounds(DateMath | long), 
-	hard_bounds: ExtendedBounds(DateMath | long), 
+	extended_bounds: ExtendedBounds[DateMath | long], 
+	hard_bounds: ExtendedBounds[DateMath | long], 
 	field: Field, 
 	fixed_interval: DateInterval | Time, 
 	format: String, 
@@ -80,7 +80,7 @@ implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.en
 	missing: DateString, 
 	offset: Time, 
 	order: HistogramOrder, 
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	script: Script, 
 	time_zone: String
 ) extends BucketAggregationBase
@@ -105,7 +105,7 @@ implicit val dateIntervalEncoder: Encoder[DateInterval.Value] = Decoder.encodeEn
 	field: Field, 
 	format: String, 
 	missing: Missing, 
-	ranges: Array(DateRangeExpression), 
+	ranges: Array[DateRangeExpression], 
 	time_zone: String
 ) extends BucketAggregationBase
 
@@ -138,7 +138,7 @@ implicit val samplerAggregationExecutionHintDecoder: Decoder[SamplerAggregationE
 implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationExecutionHint.Value] = Decoder.encodeEnumeration(SamplerAggregationExecutionHint)
 
 @JsonCodec case class FiltersAggregation(
-	filters: Dictionary(String, QueryContainer) | Array(QueryContainer), 
+	filters: Dictionary[String, QueryContainer] | Array[QueryContainer], 
 	other_bucket: Boolean, 
 	other_bucket_key: String
 ) extends BucketAggregationBase
@@ -147,7 +147,7 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	distance_type: GeoDistanceType, 
 	field: Field, 
 	origin: GeoLocation | String, 
-	ranges: Array(AggregationRange), 
+	ranges: Array[AggregationRange], 
 	unit: DistanceUnit
 ) extends BucketAggregationBase
 
@@ -175,8 +175,8 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 )
 
 @JsonCodec case class HistogramAggregation(
-	extended_bounds: ExtendedBounds(double), 
-	hard_bounds: ExtendedBounds(double), 
+	extended_bounds: ExtendedBounds[double], 
+	hard_bounds: ExtendedBounds[double], 
 	field: Field, 
 	interval: double, 
 	min_doc_count: integer, 
@@ -194,7 +194,7 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 
 @JsonCodec case class IpRangeAggregation(
 	field: Field, 
-	ranges: Array(IpRangeAggregationRange)
+	ranges: Array[IpRangeAggregationRange]
 ) extends BucketAggregationBase
 
 @JsonCodec case class IpRangeAggregationRange(
@@ -209,7 +209,7 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 ) extends BucketAggregationBase
 
 @JsonCodec case class MultiTermsAggregation(
-	terms: Array(MultiTermLookup)
+	terms: Array[MultiTermLookup]
 ) extends BucketAggregationBase
 
 @JsonCodec case class MultiTermLookup(
@@ -226,7 +226,7 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 
 @JsonCodec case class RangeAggregation(
 	field: Field, 
-	ranges: Array(AggregationRange), 
+	ranges: Array[AggregationRange], 
 	script: Script
 ) extends BucketAggregationBase
 
@@ -237,9 +237,9 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 )
 
 @JsonCodec case class RareTermsAggregation(
-	exclude: String | Array(String), 
+	exclude: String | Array[String], 
 	field: Field, 
-	include: String | Array(String) | TermsInclude, 
+	include: String | Array[String] | TermsInclude, 
 	max_doc_count: long, 
 	missing: Missing, 
 	precision: double, 
@@ -277,11 +277,11 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 @JsonCodec case class SignificantTermsAggregation(
 	background_filter: QueryContainer, 
 	chi_square: ChiSquareHeuristic, 
-	exclude: String | Array(String), 
+	exclude: String | Array[String], 
 	execution_hint: TermsAggregationExecutionHint, 
 	field: Field, 
 	gnd: GoogleNormalizedDistanceHeuristic, 
-	include: String | Array(String), 
+	include: String | Array[String], 
 	min_doc_count: long, 
 	mutual_information: MutualInformationHeuristic, 
 	percentage: PercentageScoreHeuristic, 
@@ -294,12 +294,12 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 @JsonCodec case class SignificantTextAggregation(
 	background_filter: QueryContainer, 
 	chi_square: ChiSquareHeuristic, 
-	exclude: String | Array(String), 
+	exclude: String | Array[String], 
 	execution_hint: TermsAggregationExecutionHint, 
 	field: Field, 
 	filter_duplicate_text: Boolean, 
 	gnd: GoogleNormalizedDistanceHeuristic, 
-	include: String | Array(String), 
+	include: String | Array[String], 
 	min_doc_count: long, 
 	mutual_information: MutualInformationHeuristic, 
 	percentage: PercentageScoreHeuristic, 
@@ -312,10 +312,10 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 
 @JsonCodec case class TermsAggregation(
 	collect_mode: TermsAggregationCollectMode, 
-	exclude: String | Array(String), 
+	exclude: String | Array[String], 
 	execution_hint: TermsAggregationExecutionHint, 
 	field: Field, 
-	include: String | Array(String) | TermsInclude, 
+	include: String | Array[String] | TermsInclude, 
 	min_doc_count: integer, 
 	missing: Missing, 
 	missing_bucket: Boolean, 
@@ -326,7 +326,7 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	show_term_doc_count_error: Boolean, 
 	size: integer
 ) extends BucketAggregationBase
-type TermsAggregationOrder = SortOrder | Dictionary(String, SortOrder) | Array(Dictionary(String, SortOrder))
+type TermsAggregationOrder = SortOrder | Dictionary[String, SortOrder] | Array[Dictionary[String, SortOrder]]
 
 object TermsAggregationCollectMode extends Enumeration {
 	type TermsAggregationCollectMode = Value

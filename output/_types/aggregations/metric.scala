@@ -81,14 +81,14 @@ import com.converted.elasticsearch._types.aggregations.{ DateInterval }
 
 @JsonCodec case class PercentileRanksAggregation(
 	keyed: Boolean, 
-	values: Array(double), 
+	values: Array[double], 
 	hdr: HdrMethod, 
 	tdigest: TDigest
 ) extends FormatMetricAggregationBase
 
 @JsonCodec case class PercentilesAggregation(
 	keyed: Boolean, 
-	percents: Array(double), 
+	percents: Array[double], 
 	hdr: HdrMethod, 
 	tdigest: TDigest
 ) extends FormatMetricAggregationBase
@@ -120,7 +120,7 @@ implicit val rateModeEncoder: Encoder[RateMode.Value] = Decoder.encodeEnumeratio
 	combine_script: Script, 
 	init_script: Script, 
 	map_script: Script, 
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	reduce_script: Script
 ) extends MetricAggregationBase
 
@@ -160,7 +160,7 @@ implicit val tTestTypeEncoder: Encoder[TTestType.Value] = Decoder.encodeEnumerat
 	explain: Boolean, 
 	from: integer, 
 	highlight: Highlight, 
-	script_fields: Dictionary(String, ScriptField), 
+	script_fields: Dictionary[String, ScriptField], 
 	size: integer, 
 	sort: Sort, 
 	_source: Boolean | SourceFilter | Fields, 
@@ -171,7 +171,7 @@ implicit val tTestTypeEncoder: Encoder[TTestType.Value] = Decoder.encodeEnumerat
 ) extends MetricAggregationBase
 
 @JsonCodec case class TopMetricsAggregation(
-	metrics: TopMetricsValue | Array(TopMetricsValue), 
+	metrics: TopMetricsValue | Array[TopMetricsValue], 
 	size: integer, 
 	sort: Sort
 ) extends MetricAggregationBase

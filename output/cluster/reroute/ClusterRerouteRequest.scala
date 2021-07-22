@@ -23,7 +23,7 @@ object Request {
 		timeout: Time
 	)
 	@JsonCodec case class Body(
-		commands: Array(Command)
+		commands: Array[Command]
 	)
 }
 

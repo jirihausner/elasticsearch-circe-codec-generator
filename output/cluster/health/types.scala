@@ -14,7 +14,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	number_of_replicas: integer, 
 	number_of_shards: integer, 
 	relocating_shards: integer, 
-	shards: Dictionary(String, ShardHealthStats), 
+	shards: Dictionary[String, ShardHealthStats], 
 	status: Health, 
 	unassigned_shards: integer
 )

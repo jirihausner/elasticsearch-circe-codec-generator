@@ -11,7 +11,7 @@ import com.converted.elasticsearch.ccr.get_auto_follow_pattern.{ AutoFollowPatte
 
 object Response {
 	@JsonCodec case class Body(
-		patterns: Array(AutoFollowPattern)
+		patterns: Array[AutoFollowPattern]
 	)
 }
 

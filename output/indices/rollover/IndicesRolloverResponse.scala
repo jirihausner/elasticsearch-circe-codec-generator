@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.Base.{ AcknowledgedResponseBase }
 
 object Response {
 	@JsonCodec case class Body(
-		conditions: Dictionary(String, Boolean), 
+		conditions: Dictionary[String, Boolean], 
 		dry_run: Boolean, 
 		new_index: String, 
 		old_index: String, 

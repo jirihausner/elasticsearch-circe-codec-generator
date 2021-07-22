@@ -18,7 +18,7 @@ object Response {
 		data_stream_count: integer, 
 		total_store_sizes: ByteSize, 
 		total_store_size_bytes: integer, 
-		data_streams: Array(DataStreamsStatsItem)
+		data_streams: Array[DataStreamsStatsItem]
 	)
 }
 

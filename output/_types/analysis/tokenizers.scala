@@ -15,14 +15,14 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	custom_token_chars: String, 
 	max_gram: integer, 
 	min_gram: integer, 
-	token_chars: Array(TokenChar)
+	token_chars: Array[TokenChar]
 ) extends TokenizerBase
 
 @JsonCodec case class NGramTokenizer(
 	custom_token_chars: String, 
 	max_gram: integer, 
 	min_gram: integer, 
-	token_chars: Array(TokenChar)
+	token_chars: Array[TokenChar]
 ) extends TokenizerBase
 
 object TokenChar extends Enumeration {
@@ -40,7 +40,7 @@ implicit val tokenCharDecoder: Decoder[TokenChar.Value] = Decoder.decodeEnumerat
 implicit val tokenCharEncoder: Encoder[TokenChar.Value] = Decoder.encodeEnumeration(TokenChar)
 
 @JsonCodec case class CharGroupTokenizer(
-	tokenize_on_chars: Array(String)
+	tokenize_on_chars: Array[String]
 ) extends TokenizerBase
 
 @JsonCodec case class KeywordTokenizer(
@@ -66,7 +66,7 @@ implicit val noriDecompoundModeEncoder: Encoder[NoriDecompoundMode.Value] = Deco
 	decompound_mode: NoriDecompoundMode, 
 	discard_punctuation: Boolean, 
 	user_dictionary: String, 
-	user_dictionary_rules: Array(String)
+	user_dictionary_rules: Array[String]
 ) extends TokenizerBase
 
 @JsonCodec case class PathHierarchyTokenizer(

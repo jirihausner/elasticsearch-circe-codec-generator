@@ -11,10 +11,10 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 import com.converted.elasticsearch.indices._types.{ Alias }
 
 @JsonCodec case class TemplateMapping(
-	aliases: Dictionary(IndexName, Alias), 
-	index_patterns: Array(Name), 
+	aliases: Dictionary[IndexName, Alias], 
+	index_patterns: Array[Name], 
 	mappings: TypeMapping, 
 	order: integer, 
-	settings: Dictionary(String, UserDefinedValue), 
+	settings: Dictionary[String, UserDefinedValue], 
 	version: VersionNumber
 )

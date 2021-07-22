@@ -26,7 +26,7 @@ implicit val scriptLanguageEncoder: Encoder[ScriptLanguage.Value] = Decoder.enco
 
 @JsonCodec case class ScriptBase(
 	lang: ScriptLanguage, 
-	params: Dictionary(String, UserDefinedValue)
+	params: Dictionary[String, UserDefinedValue]
 )
 
 @JsonCodec case class InlineScript(

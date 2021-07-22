@@ -37,11 +37,11 @@ implicit val allocationExplainDecisionEncoder: Encoder[AllocationExplainDecision
 )
 
 @JsonCodec case class ClusterInfo(
-	nodes: Dictionary(String, NodeDiskUsage), 
-	shard_sizes: Dictionary(String, long), 
-	shard_data_set_sizes: Dictionary(String, String), 
-	shard_paths: Dictionary(String, String), 
-	reserved_sizes: Array(ReservedSize)
+	nodes: Dictionary[String, NodeDiskUsage], 
+	shard_sizes: Dictionary[String, long], 
+	shard_data_set_sizes: Dictionary[String, String], 
+	shard_paths: Dictionary[String, String], 
+	reserved_sizes: Array[ReservedSize]
 )
 
 @JsonCodec case class NodeDiskUsage(
@@ -63,13 +63,13 @@ implicit val allocationExplainDecisionEncoder: Encoder[AllocationExplainDecision
 	node_id: Id, 
 	path: String, 
 	total: long, 
-	shards: Array(String)
+	shards: Array[String]
 )
 
 @JsonCodec case class CurrentNode(
 	id: Id, 
 	name: Name, 
-	attributes: Dictionary(String, String), 
+	attributes: Dictionary[String, String], 
 	transport_address: TransportAddress, 
 	weight_ranking: integer
 )
@@ -91,8 +91,8 @@ implicit val decisionDecoder: Decoder[Decision.Value] = Decoder.decodeEnumeratio
 implicit val decisionEncoder: Encoder[Decision.Value] = Decoder.encodeEnumeration(Decision)
 
 @JsonCodec case class NodeAllocationExplanation(
-	deciders: Array(AllocationDecision), 
-	node_attributes: Dictionary(String, String), 
+	deciders: Array[AllocationDecision], 
+	node_attributes: Dictionary[String, String], 
 	node_decision: Decision, 
 	node_id: Id, 
 	node_name: Name, 

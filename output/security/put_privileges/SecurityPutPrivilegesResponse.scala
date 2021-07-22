@@ -7,4 +7,4 @@ import com.converted.elasticsearch._security._types.CreatedStatus.{ CreatedStatu
 import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 
-@JsonCodec case class Response extends DictionaryResponseBase(String, Dictionary(String, CreatedStatus))
+@JsonCodec case class Response extends DictionaryResponseBase[String, Dictionary[String, CreatedStatus]]

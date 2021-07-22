@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 object Response {
 	@JsonCodec case class Body(
 		error_count: long, 
-		error_details: Array(ErrorCause), 
+		error_details: Array[ErrorCause], 
 		invalidated_tokens: long, 
 		previously_invalidated_tokens: long
 	)

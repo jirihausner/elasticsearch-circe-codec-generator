@@ -11,7 +11,7 @@ import com.converted.elasticsearch._spec_utils.Dictionary.{ Dictionary }
 
 object Response {
 	@JsonCodec case class Body(
-		patterns: Dictionary(String, String)
+		patterns: Dictionary[String, String]
 	)
 }
 

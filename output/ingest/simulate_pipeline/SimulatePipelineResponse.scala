@@ -11,7 +11,7 @@ import com.converted.elasticsearch.ingest.simulate_pipeline.{ PipelineSimulation
 
 object Response {
 	@JsonCodec case class Body(
-		docs: Array(PipelineSimulation)
+		docs: Array[PipelineSimulation]
 	)
 }
 

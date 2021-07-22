@@ -19,7 +19,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	failed: uint, 
 	successful: uint, 
 	total: uint, 
-	failures: Array(ShardFailure), 
+	failures: Array[ShardFailure], 
 	skipped: uint
 )
 
@@ -38,7 +38,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 @JsonCodec case class CompletionStats(
 	size_in_bytes: long, 
 	size: ByteSize, 
-	fields: Dictionary(Field, FieldSizeUsage)
+	fields: Dictionary[Field, FieldSizeUsage]
 )
 
 @JsonCodec case class FieldSizeUsage(
@@ -55,7 +55,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	evictions: long, 
 	memory_size: ByteSize, 
 	memory_size_in_bytes: long, 
-	fields: Dictionary(Field, FieldMemoryUsage)
+	fields: Dictionary[Field, FieldMemoryUsage]
 )
 
 @JsonCodec case class FieldMemoryUsage(
@@ -97,7 +97,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	index_time_in_millis: long, 
 	index_total: long, 
 	index_failed: long, 
-	types: Dictionary(String, IndexingStats)
+	types: Dictionary[String, IndexingStats]
 )
 
 @JsonCodec case class MergesStats(
@@ -123,7 +123,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	classname: String, 
 	description: String, 
 	elasticsearch_version: VersionString, 
-	extended_plugins: Array(String), 
+	extended_plugins: Array[String], 
 	has_native_controller: Boolean, 
 	java_version: VersionString, 
 	name: Name, 
@@ -181,14 +181,14 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	suggest_current: long, 
 	suggest_time_in_millis: long, 
 	suggest_total: long, 
-	groups: Dictionary(String, SearchStats)
+	groups: Dictionary[String, SearchStats]
 )
 
 @JsonCodec case class SegmentsStats(
 	count: integer, 
 	doc_values_memory: ByteSize, 
 	doc_values_memory_in_bytes: integer, 
-	file_sizes: Dictionary(String, ShardFileSizeInfo), 
+	file_sizes: Dictionary[String, ShardFileSizeInfo], 
 	fixed_bit_set: ByteSize, 
 	fixed_bit_set_memory_in_bytes: integer, 
 	index_writer_memory: ByteSize, 

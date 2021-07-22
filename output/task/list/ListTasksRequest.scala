@@ -14,10 +14,10 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 object Request {
 	@JsonCodec case class QueryParameters(
-		actions: String | Array(String), 
+		actions: String | Array[String], 
 		detailed: Boolean, 
 		group_by: GroupBy, 
-		nodes: Array(String), 
+		nodes: Array[String], 
 		parent_task_id: Id, 
 		timeout: Time, 
 		wait_for_completion: Boolean

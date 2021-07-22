@@ -15,7 +15,7 @@ import com.converted.elasticsearch.watcher._types.{ InputContainer }
 import com.converted.elasticsearch.watcher._types.{ TriggerContainer }
 
 @JsonCodec case class Watch(
-	actions: Dictionary(IndexName, Action), 
+	actions: Dictionary[IndexName, Action], 
 	condition: ConditionContainer, 
 	input: InputContainer, 
 	metadata: Metadata, 

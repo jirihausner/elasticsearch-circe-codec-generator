@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.common.{ Field }
 
 object Response {
 	@JsonCodec case class Body(
-		feature_values: Array(Dictionary(Field, String))
+		feature_values: Array[Dictionary[Field, String]]
 	)
 }
 

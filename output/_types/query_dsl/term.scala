@@ -24,7 +24,7 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase }
 ) extends QueryBase
 
 @JsonCodec case class IdsQuery(
-	values: Array(Id) | Array(long)
+	values: Array[Id] | Array[long]
 ) extends QueryBase
 
 @JsonCodec case class PrefixQuery(
@@ -65,7 +65,7 @@ implicit val rangeRelationEncoder: Encoder[RangeRelation.Value] = Decoder.encode
 ) extends QueryBase
 
 @JsonCodec case class TermsQuery(
-	terms: Array(String), 
+	terms: Array[String], 
 	index: IndexName, 
 	id: Id, 
 	path: String, 
@@ -75,7 +75,7 @@ implicit val rangeRelationEncoder: Encoder[RangeRelation.Value] = Decoder.encode
 @JsonCodec case class TermsSetQuery(
 	minimum_should_match_field: Field, 
 	minimum_should_match_script: Script, 
-	terms: Array(String)
+	terms: Array[String]
 ) extends QueryBase
 
 @JsonCodec case class TypeQuery(

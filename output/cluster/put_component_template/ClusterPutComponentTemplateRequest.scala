@@ -28,7 +28,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		template: IndexState, 
-		aliases: Dictionary(String, AliasDefinition), 
+		aliases: Dictionary[String, AliasDefinition], 
 		mappings: TypeMapping, 
 		settings: IndexSettings, 
 		version: VersionNumber, 

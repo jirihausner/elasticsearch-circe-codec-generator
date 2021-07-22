@@ -13,10 +13,10 @@ import com.converted.elasticsearch._types.aggregations.{ AverageAggregation, Box
 import com.converted.elasticsearch._types.aggregations.{ AverageBucketAggregation, BucketScriptAggregation, BucketSelectorAggregation, BucketSortAggregation, CumulativeCardinalityAggregation, CumulativeSumAggregation, DerivativeAggregation, ExtendedStatsBucketAggregation, InferenceAggregation, MaxBucketAggregation, MinBucketAggregation, MovingAverageAggregation, MovingPercentilesAggregation, MovingFunctionAggregation, NormalizeAggregation, PercentilesBucketAggregation, SerialDifferencingAggregation, StatsBucketAggregation, SumBucketAggregation }
 
 @JsonCodec case class AggregationContainer(
-	aggs: Dictionary(String, AggregationContainer), 
-	meta: Dictionary(String, UserDefinedValue), 
+	aggs: Dictionary[String, AggregationContainer], 
+	meta: Dictionary[String, UserDefinedValue], 
 	adjacency_matrix: AdjacencyMatrixAggregation, 
-	aggregations: Dictionary(String, AggregationContainer), 
+	aggregations: Dictionary[String, AggregationContainer], 
 	auto_date_histogram: AutoDateHistogramAggregation, 
 	avg: AverageAggregation, 
 	avg_bucket: AverageBucketAggregation, 

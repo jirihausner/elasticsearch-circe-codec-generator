@@ -21,9 +21,9 @@ implicit val watcherStateDecoder: Decoder[WatcherState.Value] = Decoder.decodeEn
 implicit val watcherStateEncoder: Encoder[WatcherState.Value] = Decoder.encodeEnumeration(WatcherState)
 
 @JsonCodec case class WatcherNodeStats(
-	current_watches: Array(WatchRecordStats), 
+	current_watches: Array[WatchRecordStats], 
 	execution_thread_pool: ExecutionThreadPool, 
-	queued_watches: Array(WatchRecordQueuedStats), 
+	queued_watches: Array[WatchRecordQueuedStats], 
 	watch_count: long, 
 	watcher_state: WatcherState, 
 	node_id: Id
@@ -48,7 +48,7 @@ implicit val watcherMetricEncoder: Encoder[WatcherMetric.Value] = Decoder.encode
 @JsonCodec case class WatchRecordStats(
 	execution_phase: ExecutionPhase, 
 	triggered_time: DateString, 
-	executed_actions: Array(String), 
+	executed_actions: Array[String], 
 	watch_id: Id, 
 	watch_record_id: Id
 ) extends WatchRecordQueuedStats

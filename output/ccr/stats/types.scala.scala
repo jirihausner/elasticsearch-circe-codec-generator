@@ -16,13 +16,13 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 )
 
 @JsonCodec case class AutoFollowStats(
-	auto_followed_clusters: Array(AutoFollowedCluster), 
+	auto_followed_clusters: Array[AutoFollowedCluster], 
 	number_of_failed_follow_indices: long, 
 	number_of_failed_remote_cluster_state_requests: long, 
 	number_of_successful_follow_indices: long, 
-	recent_auto_follow_errors: Array(ErrorCause)
+	recent_auto_follow_errors: Array[ErrorCause]
 )
 
 @JsonCodec case class FollowStats(
-	indices: Array(FollowIndexStats)
+	indices: Array[FollowIndexStats]
 )

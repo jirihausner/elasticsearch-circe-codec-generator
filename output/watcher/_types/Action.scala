@@ -23,7 +23,7 @@ import com.converted.elasticsearch.watcher._types.{ ConditionContainer }
 	index: Index, 
 	logging: Logging
 )
-type Actions = Dictionary(IndexName, ActionStatus)
+type Actions = Dictionary[IndexName, ActionStatus]
 
 object ActionType extends Enumeration {
 	type ActionType = Value
@@ -53,7 +53,7 @@ implicit val actionExecutionModeDecoder: Decoder[ActionExecutionMode.Value] = De
 implicit val actionExecutionModeEncoder: Encoder[ActionExecutionMode.Value] = Decoder.encodeEnumeration(ActionExecutionMode)
 
 @JsonCodec case class SimulatedActions(
-	actions: Array(String), 
+	actions: Array[String], 
 	all: SimulatedActions, 
 	use_all: Boolean
 )

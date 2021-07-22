@@ -31,19 +31,19 @@ object Request {
 		ignore_unavailable: Boolean
 	)
 	@JsonCodec case class Body(
-		aggregations: Dictionary(String, AggregationContainer), 
+		aggregations: Dictionary[String, AggregationContainer], 
 		chunking_config: ChunkingConfig, 
 		delayed_data_check_config: DelayedDataCheckConfig, 
 		frequency: Time, 
-		indices: Array(String), 
-		indexes: Array(String), 
+		indices: Array[String], 
+		indexes: Array[String], 
 		indices_options: DatafeedIndicesOptions, 
 		job_id: Id, 
 		max_empty_searches: integer, 
 		query: QueryContainer, 
 		query_delay: Time, 
 		runtime_mappings: RuntimeFields, 
-		script_fields: Dictionary(String, ScriptField), 
+		script_fields: Dictionary[String, ScriptField], 
 		scroll_size: integer
 	)
 }

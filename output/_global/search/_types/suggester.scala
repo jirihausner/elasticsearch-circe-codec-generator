@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.query_dsl.geo.{ GeoLocation }
 @JsonCodec case class Suggest[T](
 	length: integer, 
 	offset: integer, 
-	options: Array(SuggestOption(T)), 
+	options: Array[SuggestOption[T]], 
 	text: String
 )
 
@@ -31,12 +31,12 @@ import com.converted.elasticsearch._types.query_dsl.geo.{ GeoLocation }
 	analyzer: String, 
 	size: integer
 )
-type SuggestOption[TDocument]  = CompletionSuggestOption(TDocument) | PhraseSuggestOption | TermSuggestOption
+type SuggestOption[TDocument]  = CompletionSuggestOption[TDocument] | PhraseSuggestOption | TermSuggestOption
 
 @JsonCodec case class CompletionSuggestOption[TDocument](
 	collate_match: Boolean, 
-	contexts: Dictionary(String, Array(Context)), 
-	fields: Dictionary(String, UserDefinedValue), 
+	contexts: Dictionary[String, Array[Context]], 
+	fields: Dictionary[String, UserDefinedValue], 
 	_id: String, 
 	_index: IndexName, 
 	_type: Type, 
@@ -59,7 +59,7 @@ type SuggestOption[TDocument]  = CompletionSuggestOption(TDocument) | PhraseSugg
 )
 
 @JsonCodec case class CompletionSuggester(
-	contexts: Dictionary(String, String | Array(String) | GeoLocation | Array(SuggestContextQuery)), 
+	contexts: Dictionary[String, String | Array[String] | GeoLocation | Array[SuggestContextQuery]], 
 	fuzzy: SuggestFuzziness, 
 	prefix: String, 
 	regex: String, 
@@ -78,7 +78,7 @@ type Context = String | GeoLocation
 @JsonCodec case class SuggestContextQuery(
 	boost: double, 
 	context: Context, 
-	neighbours: Array(Distance) | Array(integer), 
+	neighbours: Array[Distance] | Array[integer], 
 	precision: Distance | integer, 
 	prefix: Boolean
 )
@@ -98,7 +98,7 @@ type Context = String | GeoLocation
 )
 
 @JsonCodec case class PhraseSuggestCollate(
-	params: Dictionary(String, UserDefinedValue), 
+	params: Dictionary[String, UserDefinedValue], 
 	prune: Boolean, 
 	query: PhraseSuggestCollateQuery
 )
@@ -111,7 +111,7 @@ type Context = String | GeoLocation
 @JsonCodec case class PhraseSuggester(
 	collate: PhraseSuggestCollate, 
 	confidence: double, 
-	direct_generator: Array(DirectGenerator), 
+	direct_generator: Array[DirectGenerator], 
 	force_unigrams: Boolean, 
 	gram_size: integer, 
 	highlight: PhraseSuggestHighlight, 

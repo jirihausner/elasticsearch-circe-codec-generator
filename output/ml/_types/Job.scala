@@ -49,7 +49,7 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	renormalization_window_days: long, 
 	results_index_name: IndexName, 
 	results_retention_days: long, 
-	groups: Array(String), 
+	groups: Array[String], 
 	model_plot_config: ModelPlotConfig, 
 	custom_settings: CustomSettings, 
 	job_version: VersionString, 
@@ -85,7 +85,7 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	memory_bytes: JobStatistics, 
 	processing_time_ms: JobStatistics, 
 	records: JobStatistics, 
-	status: Dictionary(String, long), 
+	status: Dictionary[String, long], 
 	total: long, 
 	forecasted_jobs: integer
 )

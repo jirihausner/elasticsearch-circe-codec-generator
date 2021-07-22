@@ -16,7 +16,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 object Response {
 	@JsonCodec case class Body(
-		index_templates: Array(IndexTemplateItem)
+		index_templates: Array[IndexTemplateItem]
 	)
 }
 
@@ -27,18 +27,18 @@ object Response {
 )
 
 @JsonCodec case class IndexTemplate(
-	index_patterns: Array(Name), 
-	composed_of: Array(Name), 
+	index_patterns: Array[Name], 
+	composed_of: Array[Name], 
 	template: IndexTemplateSummary, 
 	version: VersionNumber, 
 	priority: long, 
 	_meta: Metadata, 
 	allow_auto_create: Boolean, 
-	data_stream: Dictionary(String, UserDefinedValue)
+	data_stream: Dictionary[String, UserDefinedValue]
 )
 
 @JsonCodec case class IndexTemplateSummary(
-	aliases: Dictionary(IndexName, Alias), 
+	aliases: Dictionary[IndexName, Alias], 
 	mappings: TypeMapping, 
-	settings: Dictionary(String, UserDefinedValue)
+	settings: Dictionary[String, UserDefinedValue]
 )

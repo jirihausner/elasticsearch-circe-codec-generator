@@ -9,8 +9,8 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 import com.converted.elasticsearch._types.Time.{ EpochMillis }
 
 @JsonCodec case class NodeUsage(
-	rest_actions: Dictionary(String, integer), 
+	rest_actions: Dictionary[String, integer], 
 	since: EpochMillis, 
 	timestamp: EpochMillis, 
-	aggregations: Dictionary(String, UserDefinedValue)
+	aggregations: Dictionary[String, UserDefinedValue]
 )

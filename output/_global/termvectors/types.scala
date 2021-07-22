@@ -8,7 +8,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 
 @JsonCodec case class TermVector(
 	field_statistics: FieldStatistics, 
-	terms: Dictionary(String, Term)
+	terms: Dictionary[String, Term]
 )
 
 @JsonCodec case class FieldStatistics(
@@ -21,7 +21,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	doc_freq: integer, 
 	score: double, 
 	term_freq: integer, 
-	tokens: Array(Token), 
+	tokens: Array[Token], 
 	ttf: integer
 )
 

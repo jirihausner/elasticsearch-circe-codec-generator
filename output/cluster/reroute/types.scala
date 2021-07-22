@@ -61,7 +61,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 
 @JsonCodec case class RerouteExplanation(
 	command: String, 
-	decisions: Array(RerouteDecision), 
+	decisions: Array[RerouteDecision], 
 	parameters: RerouteParameters
 )
 
@@ -80,10 +80,10 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	master_node: String, 
 	version: VersionNumber, 
 	blocks: EmptyObject, 
-	nodes: Dictionary(NodeName, NodeAttributes), 
-	routing_table: Dictionary(String, EmptyObject), 
+	nodes: Dictionary[NodeName, NodeAttributes], 
+	routing_table: Dictionary[String, EmptyObject], 
 	routing_nodes: ClusterStateRoutingNodes, 
-	security_tokens: Dictionary(String, String), 
+	security_tokens: Dictionary[String, String], 
 	snapshots: ClusterStateSnapshots, 
 	snapshot_deletions: ClusterStateDeletedSnapshots, 
 	metadata: ClusterStateMetadata

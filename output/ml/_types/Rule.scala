@@ -9,9 +9,9 @@ import com.converted.elasticsearch._types.Numeric.{ double }
 import com.converted.elasticsearch.ml._types.{ FilterRef }
 
 @JsonCodec case class DetectionRule(
-	actions: Array(RuleAction), 
-	conditions: Array(RuleCondition), 
-	scope: Dictionary(Field, FilterRef)
+	actions: Array[RuleAction], 
+	conditions: Array[RuleCondition], 
+	scope: Dictionary[Field, FilterRef]
 )
 
 object RuleAction extends Enumeration {

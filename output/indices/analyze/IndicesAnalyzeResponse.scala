@@ -12,7 +12,7 @@ import com.converted.elasticsearch.indices.analyze.{ AnalyzeDetail, AnalyzeToken
 object Response {
 	@JsonCodec case class Body(
 		detail: AnalyzeDetail, 
-		tokens: Array(AnalyzeToken)
+		tokens: Array[AnalyzeToken]
 	)
 }
 

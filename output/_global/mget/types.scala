@@ -24,7 +24,7 @@ type MultiGetId = String | integer
 
 @JsonCodec case class Hit[TDocument](
 	error: MainError, 
-	fields: Dictionary(String, UserDefinedValue), 
+	fields: Dictionary[String, UserDefinedValue], 
 	found: Boolean, 
 	_id: Id, 
 	_index: IndexName, 

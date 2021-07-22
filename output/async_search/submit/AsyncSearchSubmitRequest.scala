@@ -37,7 +37,7 @@ object Request {
 		typed_keys: Boolean
 	)
 	@JsonCodec case class Body(
-		aggs: Dictionary(String, AggregationContainer), 
+		aggs: Dictionary[String, AggregationContainer], 
 		allow_no_indices: Boolean, 
 		allow_partial_search_results: Boolean, 
 		analyzer: String, 
@@ -53,7 +53,7 @@ object Request {
 		highlight: Highlight, 
 		ignore_throttled: Boolean, 
 		ignore_unavailable: Boolean, 
-		indices_boost: Array(Dictionary(IndexName, double)), 
+		indices_boost: Array[Dictionary[IndexName, double]], 
 		keep_alive: Time, 
 		keep_on_completion: Boolean, 
 		lenient: Boolean, 
@@ -66,18 +66,18 @@ object Request {
 		query: QueryContainer, 
 		query_on_query_string: String, 
 		request_cache: Boolean, 
-		rescore: Array(Rescore), 
+		rescore: Array[Rescore], 
 		routing: Routing, 
-		script_fields: Dictionary(String, ScriptField), 
-		search_after: Array(UserDefinedValue), 
+		script_fields: Dictionary[String, ScriptField], 
+		search_after: Array[UserDefinedValue], 
 		search_type: SearchType, 
 		sequence_number_primary_term: Boolean, 
 		size: integer, 
 		sort: Sort, 
 		_source: Boolean | SourceFilter, 
-		stats: Array(String), 
+		stats: Array[String], 
 		stored_fields: Fields, 
-		suggest: Dictionary(String, SuggestContainer), 
+		suggest: Dictionary[String, SuggestContainer], 
 		suggest_field: Field, 
 		suggest_mode: SuggestMode, 
 		suggest_size: long, 
@@ -89,7 +89,7 @@ object Request {
 		typed_keys: Boolean, 
 		version: Boolean, 
 		wait_for_completion_timeout: Time, 
-		fields: Array(Field | DateField)
+		fields: Array[Field | DateField]
 	)
 }
 

@@ -25,7 +25,7 @@ object Response {
 		custom_settings: CustomSettings, 
 		data_description: DataDescription, 
 		daily_model_snapshot_retention_after_days: long, 
-		groups: Array(String), 
+		groups: Array[String], 
 		description: String, 
 		job_id: Id, 
 		job_type: String, 
