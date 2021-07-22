@@ -27,7 +27,7 @@ object Request {
 		level: Level, 
 		master_timeout: Time, 
 		timeout: Time, 
-		types: Array[String], 
+		types: Seq[String], 
 		include_unloaded_segments: Boolean
 	)
 }

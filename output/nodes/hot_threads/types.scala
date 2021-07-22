@@ -7,8 +7,8 @@ import com.converted.elasticsearch._types.common.{ Id, Name }
 import com.converted.elasticsearch._types.Networking.{ Host }
 
 @JsonCodec case class HotThread(
-	hosts: Array[Host], 
+	hosts: Seq[Host], 
 	node_id: Id, 
 	node_name: Name, 
-	threads: Array[String]
+	threads: Seq[String]
 )

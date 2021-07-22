@@ -56,7 +56,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class Audit(
-	outputs: Array[String]
+	outputs: Seq[String]
 ) extends FeatureToggle
 
 @JsonCodec case class Datafeed(
@@ -142,7 +142,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class Ilm(
 	policy_count: integer, 
-	policy_stats: Array[IlmPolicyStatistics]
+	policy_stats: Seq[IlmPolicyStatistics]
 )
 
 @JsonCodec case class IpFilter(
@@ -223,7 +223,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class RuntimeFieldTypes(
-	field_types: Array[RuntimeFieldsType]
+	field_types: Seq[RuntimeFieldsType]
 ) extends Base
 
 @JsonCodec case class RuntimeFieldsType(
@@ -233,7 +233,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	doc_max: long, 
 	doc_total: long, 
 	index_count: long, 
-	lang: Array[String], 
+	lang: Seq[String], 
 	lines_max: long, 
 	lines_total: long, 
 	name: Field, 
@@ -352,14 +352,14 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 )
 
 @JsonCodec case class Realm(
-	name: Array[String], 
-	order: Array[long], 
-	size: Array[long], 
-	cache: Array[RealmCache], 
-	has_authorization_realms: Array[Boolean], 
-	has_default_username_pattern: Array[Boolean], 
-	has_truststore: Array[Boolean], 
-	is_authentication_delegated: Array[Boolean]
+	name: Seq[String], 
+	order: Seq[long], 
+	size: Seq[long], 
+	cache: Seq[RealmCache], 
+	has_authorization_realms: Seq[Boolean], 
+	has_default_username_pattern: Seq[Boolean], 
+	has_truststore: Seq[Boolean], 
+	is_authentication_delegated: Seq[Boolean]
 ) extends Base
 
 @JsonCodec case class SearchableSnapshots(

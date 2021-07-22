@@ -14,11 +14,11 @@ import com.converted.elasticsearch.graph.explore.{ Connection }
 
 object Response {
 	@JsonCodec case class Body(
-		connections: Array[Connection], 
-		failures: Array[ShardFailure], 
+		connections: Seq[Connection], 
+		failures: Seq[ShardFailure], 
 		timed_out: Boolean, 
 		took: long, 
-		vertices: Array[Vertex]
+		vertices: Seq[Vertex]
 	)
 }
 

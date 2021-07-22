@@ -8,7 +8,7 @@ import com.converted.elasticsearch._types.Numeric.{ long, ulong }
 
 @JsonCodec case class Category(
 	category_id: ulong, 
-	examples: Array[String], 
+	examples: Seq[String], 
 	grok_pattern: String, 
 	job_id: Id, 
 	max_matching_length: ulong, 
@@ -17,7 +17,7 @@ import com.converted.elasticsearch._types.Numeric.{ long, ulong }
 	regex: String, 
 	terms: String, 
 	num_matches: long, 
-	preferred_to_categories: Array[Id], 
+	preferred_to_categories: Seq[Id], 
 	p: String, 
 	result_type: String, 
 	mlcategory: String

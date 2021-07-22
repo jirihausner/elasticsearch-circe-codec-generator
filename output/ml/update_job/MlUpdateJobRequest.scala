@@ -27,15 +27,15 @@ object Request {
 		analysis_limits: AnalysisMemoryLimit, 
 		background_persist_interval: Time, 
 		custom_settings: Dictionary[String, UserDefinedValue], 
-		categorization_filters: Array[String], 
+		categorization_filters: Seq[String], 
 		description: String, 
 		model_plot_config: ModelPlotConfig, 
 		daily_model_snapshot_retention_after_days: long, 
 		model_snapshot_retention_days: long, 
 		renormalization_window_days: long, 
 		results_retention_days: long, 
-		groups: Array[String], 
-		detectors: Array[Detector], 
+		groups: Seq[String], 
+		detectors: Seq[Detector], 
 		per_partition_categorization: PerPartitionCategorization
 	)
 }

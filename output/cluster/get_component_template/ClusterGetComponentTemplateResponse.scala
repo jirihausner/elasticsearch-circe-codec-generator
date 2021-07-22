@@ -11,7 +11,7 @@ import com.converted.elasticsearch._cluster._types.ComponentTemplate.{ Component
 
 object Response {
 	@JsonCodec case class Body(
-		component_templates: Array[ComponentTemplate]
+		component_templates: Seq[ComponentTemplate]
 	)
 }
 

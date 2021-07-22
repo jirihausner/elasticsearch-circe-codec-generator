@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.mapping.{ TermVectorOption }
 
 @JsonCodec case class CompletionProperty(
 	analyzer: String, 
-	contexts: Array[SuggestContext], 
+	contexts: Seq[SuggestContext], 
 	max_input_length: integer, 
 	preserve_position_increments: Boolean, 
 	preserve_separators: Boolean, 

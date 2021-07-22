@@ -9,5 +9,5 @@ import com.converted.elasticsearch.graph._types.{ VertexDefinition }
 @JsonCodec case class Hop(
 	connections: Hop, 
 	query: QueryContainer, 
-	vertices: Array[VertexDefinition]
+	vertices: Seq[VertexDefinition]
 )

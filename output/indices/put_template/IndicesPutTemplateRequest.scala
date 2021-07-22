@@ -31,7 +31,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		aliases: Dictionary[IndexName, Alias], 
-		index_patterns: String | Array[String], 
+		index_patterns: String | Seq[String], 
 		mappings: TypeMapping, 
 		order: integer, 
 		settings: Dictionary[String, UserDefinedValue], 

@@ -19,7 +19,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	failed: uint, 
 	successful: uint, 
 	total: uint, 
-	failures: Array[ShardFailure], 
+	failures: Seq[ShardFailure], 
 	skipped: uint
 )
 
@@ -123,7 +123,7 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	classname: String, 
 	description: String, 
 	elasticsearch_version: VersionString, 
-	extended_plugins: Array[String], 
+	extended_plugins: Seq[String], 
 	has_native_controller: Boolean, 
 	java_version: VersionString, 
 	name: Name, 

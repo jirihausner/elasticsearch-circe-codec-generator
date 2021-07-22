@@ -26,5 +26,5 @@ object Response {
 )
 
 @JsonCodec case class CloseShardResult(
-	failures: Array[ShardFailure]
+	failures: Seq[ShardFailure]
 )

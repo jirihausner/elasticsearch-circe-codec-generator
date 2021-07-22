@@ -13,7 +13,7 @@ import com.converted.elasticsearch.transform.get_transform_stats.{ TransformStat
 object Response {
 	@JsonCodec case class Body(
 		count: long, 
-		transforms: Array[TransformStats]
+		transforms: Seq[TransformStats]
 	)
 }
 

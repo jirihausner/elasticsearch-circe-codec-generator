@@ -40,5 +40,5 @@ implicit val shardStoreAllocationEncoder: Encoder[ShardStoreAllocation.Value] = 
 )
 
 @JsonCodec case class ShardStoreWrapper(
-	stores: Array[ShardStore]
+	stores: Seq[ShardStore]
 )

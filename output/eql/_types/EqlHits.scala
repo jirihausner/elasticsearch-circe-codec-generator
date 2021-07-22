@@ -10,18 +10,18 @@ import com.converted.elasticsearch._types.common.{ Field, Id, IndexName }
 
 @JsonCodec case class EqlHits[TEvent](
 	total: TotalHits, 
-	events: Array[HitsEvent[TEvent]], 
-	sequences: Array[HitsSequence[TEvent]]
+	events: Seq[HitsEvent[TEvent]], 
+	sequences: Seq[HitsSequence[TEvent]]
 )
 
 @JsonCodec case class HitsEvent[TEvent](
 	_index: IndexName, 
 	_id: Id, 
 	_source: TEvent, 
-	fields: Dictionary[Field, Array[UserDefinedValue]]
+	fields: Dictionary[Field, Seq[UserDefinedValue]]
 )
 
 @JsonCodec case class HitsSequence[TEvent](
-	events: Array[HitsEvent[TEvent]], 
-	join_keys: Array[UserDefinedValue]
+	events: Seq[HitsEvent[TEvent]], 
+	join_keys: Seq[UserDefinedValue]
 )

@@ -29,7 +29,7 @@ object Request {
 		index: IndexName, 
 		renamed_index: IndexName, 
 		index_settings: Dictionary[String, UserDefinedValue], 
-		ignore_index_settings: Array[String]
+		ignore_index_settings: Seq[String]
 	)
 }
 

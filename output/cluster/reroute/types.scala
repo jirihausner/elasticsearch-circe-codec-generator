@@ -61,7 +61,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 
 @JsonCodec case class RerouteExplanation(
 	command: String, 
-	decisions: Array[RerouteDecision], 
+	decisions: Seq[RerouteDecision], 
 	parameters: RerouteParameters
 )
 

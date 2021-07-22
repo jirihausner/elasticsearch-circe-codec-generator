@@ -17,7 +17,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		license: License, 
-		licenses: Array[License]
+		licenses: Seq[License]
 	)
 }
 

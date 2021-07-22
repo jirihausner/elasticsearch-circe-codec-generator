@@ -39,6 +39,6 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	compress: Boolean, 
 	compress_threshold: String, 
 	enabled: Boolean, 
-	excludes: Array[String], 
-	includes: Array[String]
+	excludes: Seq[String], 
+	includes: Seq[String]
 )

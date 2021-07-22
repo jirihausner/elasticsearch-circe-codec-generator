@@ -24,7 +24,7 @@ import com.converted.elasticsearch._types.Stats.{ ClusterStatistics, ShardStatis
 	pit_id: Id, 
 	_scroll_id: Id, 
 	_shards: ShardStatistics, 
-	suggest: Dictionary[SuggestionName, Array[Suggest[TDocument]]], 
+	suggest: Dictionary[SuggestionName, Seq[Suggest[TDocument]]], 
 	terminated_early: Boolean, 
 	timed_out: Boolean, 
 	took: long

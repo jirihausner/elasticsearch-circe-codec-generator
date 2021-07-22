@@ -574,7 +574,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     // print type name
     printQIdent(x.name)
 
-    // print type params
+    // print type params (array)
     if (x.tparams.nonEmpty) {
       print("[")
       printType(x.tparams.head)

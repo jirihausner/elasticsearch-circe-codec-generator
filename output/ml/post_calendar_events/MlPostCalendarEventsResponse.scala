@@ -11,7 +11,7 @@ import com.converted.elasticsearch.ml.post_calendar_events.{ CalendarEvent }
 
 object Response {
 	@JsonCodec case class Body(
-		events: Array[CalendarEvent]
+		events: Seq[CalendarEvent]
 	)
 }
 

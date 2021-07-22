@@ -12,14 +12,14 @@ import com.converted.elasticsearch.snapshot._types.{ InfoFeatureState }
 import com.converted.elasticsearch.snapshot._types.{ SnapshotShardFailure }
 
 @JsonCodec case class SnapshotInfo(
-	data_streams: Array[String], 
+	data_streams: Seq[String], 
 	duration: Time, 
 	duration_in_millis: EpochMillis, 
 	end_time: Time, 
 	end_time_in_millis: EpochMillis, 
-	failures: Array[SnapshotShardFailure], 
+	failures: Seq[SnapshotShardFailure], 
 	include_global_state: Boolean, 
-	indices: Array[IndexName], 
+	indices: Seq[IndexName], 
 	index_details: Dictionary[IndexName, IndexDetails], 
 	metadata: Metadata, 
 	reason: String, 
@@ -31,5 +31,5 @@ import com.converted.elasticsearch.snapshot._types.{ SnapshotShardFailure }
 	uuid: Uuid, 
 	version: VersionString, 
 	version_id: VersionNumber, 
-	feature_states: Array[InfoFeatureState]
+	feature_states: Seq[InfoFeatureState]
 )

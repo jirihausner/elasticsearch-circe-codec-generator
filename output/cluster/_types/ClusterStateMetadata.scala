@@ -27,7 +27,7 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 )
 
 @JsonCodec case class ClusterStateMetadataIndexGraveyard(
-	tombstones: Array[Tombstone]
+	tombstones: Seq[Tombstone]
 )
 
 @JsonCodec case class Tombstone(
@@ -45,9 +45,9 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 
 @JsonCodec case class ClusterStateMetadataClusterCoordination(
 	term: integer, 
-	last_committed_config: Array[String], 
-	last_accepted_config: Array[String], 
-	voting_config_exclusions: Array[VotingConfigExclusionsItem]
+	last_committed_config: Seq[String], 
+	last_accepted_config: Seq[String], 
+	voting_config_exclusions: Seq[VotingConfigExclusionsItem]
 )
 
 @JsonCodec case class VotingConfigExclusionsItem(

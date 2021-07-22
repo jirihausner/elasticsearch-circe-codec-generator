@@ -22,7 +22,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	groups: Groupings, 
 	id: Id, 
 	index_pattern: String, 
-	metrics: Array[FieldMetric], 
+	metrics: Seq[FieldMetric], 
 	page_size: long, 
 	rollup_index: IndexName, 
 	timeout: Time

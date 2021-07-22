@@ -11,7 +11,7 @@ import com.converted.elasticsearch._global.mtermvectors.{ TermVectorsResult }
 
 object Response {
 	@JsonCodec case class Body(
-		docs: Array[TermVectorsResult]
+		docs: Seq[TermVectorsResult]
 	)
 }
 

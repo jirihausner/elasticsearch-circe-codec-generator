@@ -14,9 +14,9 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 )
 
 @JsonCodec case class VertexDefinition(
-	exclude: Array[String], 
+	exclude: Seq[String], 
 	field: Field, 
-	include: Array[VertexInclude], 
+	include: Seq[VertexInclude], 
 	min_doc_count: long, 
 	shard_min_doc_count: long, 
 	size: integer

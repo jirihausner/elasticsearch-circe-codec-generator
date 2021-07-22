@@ -6,9 +6,9 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._snapshot._types.SnapshotStatus.{ Status }
 
 @JsonCodec case class ClusterStateSnapshots(
-	snapshots: Array[Status]
+	snapshots: Seq[Status]
 )
 
 @JsonCodec case class ClusterStateDeletedSnapshots(
-	snapshot_deletions: Array[String]
+	snapshot_deletions: Seq[String]
 )

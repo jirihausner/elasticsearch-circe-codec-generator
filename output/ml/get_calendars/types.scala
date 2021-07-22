@@ -8,5 +8,5 @@ import com.converted.elasticsearch._types.common.{ Id }
 @JsonCodec case class Calendar(
 	calendar_id: Id, 
 	description: String, 
-	job_ids: Array[Id]
+	job_ids: Seq[Id]
 )

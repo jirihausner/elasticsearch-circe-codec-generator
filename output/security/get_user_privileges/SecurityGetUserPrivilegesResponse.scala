@@ -13,11 +13,11 @@ import com.converted.elasticsearch._security._types.IndicesPrivileges.{ IndicesP
 
 object Response {
 	@JsonCodec case class Body(
-		applications: Array[ApplicationPrivileges], 
-		cluster: Array[String], 
-		global: Array[GlobalPrivileges], 
-		indices: Array[IndicesPrivileges], 
-		run_as: Array[String]
+		applications: Seq[ApplicationPrivileges], 
+		cluster: Seq[String], 
+		global: Seq[GlobalPrivileges], 
+		indices: Seq[IndicesPrivileges], 
+		run_as: Seq[String]
 	)
 }
 

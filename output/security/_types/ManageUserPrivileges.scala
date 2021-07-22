@@ -5,5 +5,5 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 
 @JsonCodec case class ManageUserPrivileges(
-	applications: Array[String]
+	applications: Seq[String]
 )

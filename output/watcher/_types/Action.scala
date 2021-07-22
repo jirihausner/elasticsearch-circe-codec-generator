@@ -53,7 +53,7 @@ implicit val actionExecutionModeDecoder: Decoder[ActionExecutionMode.Value] = De
 implicit val actionExecutionModeEncoder: Encoder[ActionExecutionMode.Value] = Decoder.encodeEnumeration(ActionExecutionMode)
 
 @JsonCodec case class SimulatedActions(
-	actions: Array[String], 
+	actions: Seq[String], 
 	all: SimulatedActions, 
 	use_all: Boolean
 )

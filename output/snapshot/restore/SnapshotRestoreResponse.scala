@@ -18,7 +18,7 @@ object Response {
 
 
 @JsonCodec case class SnapshotRestore(
-	indices: Array[IndexName], 
+	indices: Seq[IndexName], 
 	snapshot: String, 
 	shards: ShardStatistics
 )

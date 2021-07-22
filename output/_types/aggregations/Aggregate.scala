@@ -43,7 +43,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 )
 
 @JsonCodec case class MultiBucketAggregate[TBucket](
-	buckets: Array[TBucket]
+	buckets: Seq[TBucket]
 ) extends AggregateBase
 
 @JsonCodec case class ValueAggregate(
@@ -56,7 +56,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 ) extends AggregateBase, AdditionalProperties[AggregateName, Aggregate]
 
 @JsonCodec case class KeyedValueAggregate(
-	keys: Array[String]
+	keys: Seq[String]
 ) extends ValueAggregate
 
 @JsonCodec case class AutoDateHistogramAggregate(
@@ -64,7 +64,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 ) extends MultiBucketAggregate[KeyedBucket[long]]
 
 @JsonCodec case class FiltersAggregate(
-	buckets: Array[FiltersBucketItem] | Dictionary[String, FiltersBucketItem]
+	buckets: Seq[FiltersBucketItem] | Dictionary[String, FiltersBucketItem]
 ) extends AggregateBase
 
 @JsonCodec case class SignificantTermsAggregate[TKey](
@@ -160,11 +160,11 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 
 @JsonCodec case class GeoLineProperties(
 	complete: Boolean, 
-	sort_values: Array[double]
+	sort_values: Seq[double]
 )
 
 @JsonCodec case class LineStringGeoShape(
-	coordinates: Array[GeoCoordinate]
+	coordinates: Seq[GeoCoordinate]
 )
 
 @JsonCodec case class PercentileItem(
@@ -173,7 +173,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 )
 
 @JsonCodec case class PercentilesAggregate(
-	items: Array[PercentileItem]
+	items: Seq[PercentileItem]
 ) extends AggregateBase
 
 @JsonCodec case class TDigestPercentilesAggregate(
@@ -186,7 +186,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 )
 
 @JsonCodec case class HdrPercentilesAggregate(
-	values: Array[HdrPercentileItem]
+	values: Seq[HdrPercentileItem]
 ) extends AggregateBase
 
 @JsonCodec case class ScriptedMetricAggregate(
@@ -207,10 +207,10 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 ) extends AggregateBase
 
 @JsonCodec case class TopMetricsAggregate(
-	top: Array[TopMetrics]
+	top: Seq[TopMetrics]
 ) extends AggregateBase
 
 @JsonCodec case class TopMetrics(
-	sort: Array[long | double | String], 
+	sort: Seq[long | double | String], 
 	metrics: Dictionary[String, long | double | String]
 )

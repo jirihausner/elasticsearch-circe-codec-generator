@@ -26,7 +26,7 @@ object Request {
 		metadata: Metadata, 
 		password: Password, 
 		password_hash: String, 
-		roles: Array[String], 
+		roles: Seq[String], 
 		enabled: Boolean
 	)
 }

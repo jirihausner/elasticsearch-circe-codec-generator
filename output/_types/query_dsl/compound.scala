@@ -13,11 +13,11 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase, QueryContainer 
 import com.converted.elasticsearch._types.query_dsl.{ GeoLocation }
 
 @JsonCodec case class BoolQuery(
-	filter: QueryContainer | Array[QueryContainer], 
+	filter: QueryContainer | Seq[QueryContainer], 
 	minimum_should_match: MinimumShouldMatch, 
-	must: QueryContainer | Array[QueryContainer], 
-	must_not: QueryContainer | Array[QueryContainer], 
-	should: QueryContainer | Array[QueryContainer]
+	must: QueryContainer | Seq[QueryContainer], 
+	must_not: QueryContainer | Seq[QueryContainer], 
+	should: QueryContainer | Seq[QueryContainer]
 ) extends QueryBase
 
 @JsonCodec case class BoostingQuery(
@@ -31,13 +31,13 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoLocation }
 ) extends QueryBase
 
 @JsonCodec case class DisMaxQuery(
-	queries: Array[QueryContainer], 
+	queries: Seq[QueryContainer], 
 	tie_breaker: double
 ) extends QueryBase
 
 @JsonCodec case class FunctionScoreQuery(
 	boost_mode: FunctionBoostMode, 
-	functions: Array[FunctionScoreContainer], 
+	functions: Seq[FunctionScoreContainer], 
 	max_boost: double, 
 	min_score: double, 
 	query: QueryContainer, 

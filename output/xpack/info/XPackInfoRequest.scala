@@ -11,7 +11,7 @@ import com.converted.elasticsearch._types.Base.{ RequestBase }
 
 object Request {
 	@JsonCodec case class QueryParameters(
-		categories: Array[String]
+		categories: Seq[String]
 	)
 }
 

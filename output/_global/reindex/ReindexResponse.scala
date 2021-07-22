@@ -18,7 +18,7 @@ object Response {
 		batches: long, 
 		created: long, 
 		deleted: long, 
-		failures: Array[BulkIndexByScrollFailure], 
+		failures: Seq[BulkIndexByScrollFailure], 
 		noops: long, 
 		retries: Retries, 
 		requests_per_second: long, 

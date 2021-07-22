@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.query_dsl.geo.{ GeoLocation }
 @JsonCodec case class Suggest[T](
 	length: integer, 
 	offset: integer, 
-	options: Array[SuggestOption[T]], 
+	options: Seq[SuggestOption[T]], 
 	text: String
 )
 
@@ -35,7 +35,7 @@ type SuggestOption[TDocument]  = CompletionSuggestOption[TDocument] | PhraseSugg
 
 @JsonCodec case class CompletionSuggestOption[TDocument](
 	collate_match: Boolean, 
-	contexts: Dictionary[String, Array[Context]], 
+	contexts: Dictionary[String, Seq[Context]], 
 	fields: Dictionary[String, UserDefinedValue], 
 	_id: String, 
 	_index: IndexName, 
@@ -59,7 +59,7 @@ type SuggestOption[TDocument]  = CompletionSuggestOption[TDocument] | PhraseSugg
 )
 
 @JsonCodec case class CompletionSuggester(
-	contexts: Dictionary[String, String | Array[String] | GeoLocation | Array[SuggestContextQuery]], 
+	contexts: Dictionary[String, String | Seq[String] | GeoLocation | Seq[SuggestContextQuery]], 
 	fuzzy: SuggestFuzziness, 
 	prefix: String, 
 	regex: String, 
@@ -78,7 +78,7 @@ type Context = String | GeoLocation
 @JsonCodec case class SuggestContextQuery(
 	boost: double, 
 	context: Context, 
-	neighbours: Array[Distance] | Array[integer], 
+	neighbours: Seq[Distance] | Seq[integer], 
 	precision: Distance | integer, 
 	prefix: Boolean
 )
@@ -111,7 +111,7 @@ type Context = String | GeoLocation
 @JsonCodec case class PhraseSuggester(
 	collate: PhraseSuggestCollate, 
 	confidence: double, 
-	direct_generator: Array[DirectGenerator], 
+	direct_generator: Seq[DirectGenerator], 
 	force_unigrams: Boolean, 
 	gram_size: integer, 
 	highlight: PhraseSuggestHighlight, 

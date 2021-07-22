@@ -8,13 +8,13 @@ import com.converted.elasticsearch._security._types.IndicesPrivileges.{ IndicesP
 import com.converted.elasticsearch._types.common.{ Metadata }
 
 @JsonCodec case class Role(
-	cluster: Array[String], 
-	indices: Array[IndicesPrivileges], 
+	cluster: Seq[String], 
+	indices: Seq[IndicesPrivileges], 
 	metadata: Metadata, 
-	run_as: Array[String], 
+	run_as: Seq[String], 
 	transient_metadata: TransientMetadata, 
-	applications: Array[ApplicationPrivileges], 
-	role_templates: Array[RoleTemplate]
+	applications: Seq[ApplicationPrivileges], 
+	role_templates: Seq[RoleTemplate]
 )
 
 @JsonCodec case class TransientMetadata(

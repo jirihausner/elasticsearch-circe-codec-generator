@@ -25,14 +25,14 @@ object Response {
 		hits: HitsMetadata[TDocument], 
 		aggregations: Dictionary[AggregateName, Aggregate], 
 		_clusters: ClusterStatistics, 
-		documents: Array[TDocument], 
+		documents: Seq[TDocument], 
 		fields: Dictionary[String, UserDefinedValue], 
 		max_score: double, 
 		num_reduce_phases: long, 
 		profile: Profile, 
 		pit_id: Id, 
 		_scroll_id: ScrollId, 
-		suggest: Dictionary[SuggestionName, Array[Suggest[TDocument]]], 
+		suggest: Dictionary[SuggestionName, Seq[Suggest[TDocument]]], 
 		terminated_early: Boolean
 	)
 }

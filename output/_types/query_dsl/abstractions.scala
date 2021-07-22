@@ -68,7 +68,7 @@ import com.converted.elasticsearch._types.query_dsl.{ ExistsQuery, FuzzyQuery, I
 	span_within: SpanWithinQuery, 
 	template: QueryTemplate, 
 	term: NamedQuery[TermQuery | String | float | Boolean], 
-	terms: NamedQuery[TermsQuery | Array[String] | Array[long]], 
+	terms: NamedQuery[TermsQuery | Seq[String] | Seq[long]], 
 	terms_set: NamedQuery[TermsSetQuery | String], 
 	wildcard: NamedQuery[WildcardQuery | String], 
 	`type`: TypeQuery
@@ -102,6 +102,6 @@ import com.converted.elasticsearch._types.query_dsl.{ ExistsQuery, FuzzyQuery, I
 
 @JsonCodec case class CombinedFieldsQuery(
 	query: String, 
-	fields: Array[Field], 
+	fields: Seq[Field], 
 	operator: String
 )

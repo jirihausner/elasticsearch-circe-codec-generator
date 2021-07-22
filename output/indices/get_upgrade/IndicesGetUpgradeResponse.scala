@@ -12,7 +12,7 @@ import com.converted.elasticsearch._indices._types.TemplateMapping.{ TemplateMap
 
 object Response {
 	@JsonCodec case class Body(
-		overlapping: Array[OverlappingIndexTemplate], 
+		overlapping: Seq[OverlappingIndexTemplate], 
 		template: TemplateMapping
 	)
 }

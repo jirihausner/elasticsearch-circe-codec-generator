@@ -15,8 +15,8 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 )
 
 @JsonCodec case class GeoIpNodeDatabases(
-	databases: Array[GeoIpNodeDatabaseName], 
-	files_in_temp: Array[String]
+	databases: Seq[GeoIpNodeDatabaseName], 
+	files_in_temp: Seq[String]
 )
 
 @JsonCodec case class GeoIpNodeDatabaseName(

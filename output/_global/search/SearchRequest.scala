@@ -55,7 +55,7 @@ object Request {
 		routing: Routing, 
 		scroll: Time, 
 		search_type: SearchType, 
-		stats: Array[String], 
+		stats: Seq[String], 
 		stored_fields: Fields, 
 		suggest_field: Field, 
 		suggest_mode: SuggestMode, 
@@ -75,7 +75,7 @@ object Request {
 		q: String, 
 		size: integer, 
 		from: integer, 
-		sort: String | Array[String]
+		sort: String | Seq[String]
 	)
 	@JsonCodec case class Body(
 		aggs: Dictionary[String, AggregationContainer], 
@@ -85,20 +85,20 @@ object Request {
 		from: integer, 
 		highlight: Highlight, 
 		track_total_hits: Boolean | integer, 
-		indices_boost: Array[Dictionary[IndexName, double]], 
-		docvalue_fields: DocValueField | Array[Field | DocValueField], 
+		indices_boost: Seq[Dictionary[IndexName, double]], 
+		docvalue_fields: DocValueField | Seq[Field | DocValueField], 
 		min_score: double, 
 		post_filter: QueryContainer, 
 		profile: Boolean, 
 		query: QueryContainer, 
-		rescore: Rescore | Array[Rescore], 
+		rescore: Rescore | Seq[Rescore], 
 		script_fields: Dictionary[String, ScriptField], 
-		search_after: Array[integer | String], 
+		search_after: Seq[integer | String], 
 		size: integer, 
 		slice: SlicedScroll, 
 		sort: Sort, 
 		_source: Boolean | Fields | SourceFilter, 
-		fields: Array[Field | DateField], 
+		fields: Seq[Field | DateField], 
 		suggest: SuggestContainer | Dictionary[String, SuggestContainer], 
 		terminate_after: long, 
 		timeout: String, 
@@ -108,7 +108,7 @@ object Request {
 		stored_fields: Fields, 
 		pit: PointInTimeReference, 
 		runtime_mappings: RuntimeFields, 
-		stats: Array[String]
+		stats: Seq[String]
 	)
 }
 

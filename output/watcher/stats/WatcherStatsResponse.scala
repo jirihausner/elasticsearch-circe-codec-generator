@@ -15,7 +15,7 @@ object Response {
 	@JsonCodec case class Body(
 		cluster_name: Name, 
 		manually_stopped: Boolean, 
-		stats: Array[WatcherNodeStats], 
+		stats: Seq[WatcherNodeStats], 
 		_nodes: NodeStatistics
 	)
 }

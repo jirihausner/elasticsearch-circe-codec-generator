@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.common.{ Id, Metadata, Username }
 @JsonCodec case class WatchRecord(
 	condition: ConditionContainer, 
 	input: InputContainer, 
-	messages: Array[String], 
+	messages: Seq[String], 
 	metadata: Metadata, 
 	node: String, 
 	result: ExecutionResult, 

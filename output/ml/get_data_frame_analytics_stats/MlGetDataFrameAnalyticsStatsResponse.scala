@@ -14,7 +14,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 object Response {
 	@JsonCodec case class Body(
 		count: long, 
-		data_frame_analytics: Array[DataframeAnalytics]
+		data_frame_analytics: Seq[DataframeAnalytics]
 	)
 }
 

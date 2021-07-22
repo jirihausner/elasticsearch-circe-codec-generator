@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.Base.{ AcknowledgedResponseBase }
 
 object Response {
 	@JsonCodec case class Body(
-		task_failures: Array[TaskFailure]
+		task_failures: Seq[TaskFailure]
 	)
 }
 

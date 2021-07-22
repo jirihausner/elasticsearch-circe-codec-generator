@@ -11,7 +11,7 @@ import com.converted.elasticsearch.cluster.pending_tasks.{ PendingTask }
 
 object Response {
 	@JsonCodec case class Body(
-		tasks: Array[PendingTask]
+		tasks: Seq[PendingTask]
 	)
 }
 

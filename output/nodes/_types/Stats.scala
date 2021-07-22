@@ -18,7 +18,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	http: Http, 
 	indices: IndexStats, 
 	ingest: Ingest, 
-	ip: Ip | Array[Ip], 
+	ip: Ip | Seq[Ip], 
 	jvm: Jvm, 
 	name: Name, 
 	os: OperatingSystem, 
@@ -41,7 +41,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	count: long, 
 	current: long, 
 	failed: long, 
-	processors: Array[KeyedProcessor], 
+	processors: Seq[KeyedProcessor], 
 	time_in_millis: long
 )
 
@@ -125,7 +125,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 )
 
 @JsonCodec case class FileSystem(
-	data: Array[DataPathStats], 
+	data: Seq[DataPathStats], 
 	timestamp: long, 
 	total: FileSystemTotal
 )

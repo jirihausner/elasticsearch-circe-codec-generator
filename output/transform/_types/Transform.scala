@@ -19,7 +19,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class Latest(
 	sort: Field, 
-	unique_key: Array[Field]
+	unique_key: Seq[Field]
 )
 
 @JsonCodec case class Pivot(

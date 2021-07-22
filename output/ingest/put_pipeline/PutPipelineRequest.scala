@@ -24,8 +24,8 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		description: String, 
-		on_failure: Array[ProcessorContainer], 
-		processors: Array[ProcessorContainer], 
+		on_failure: Seq[ProcessorContainer], 
+		processors: Seq[ProcessorContainer], 
 		version: VersionNumber
 	)
 }

@@ -32,7 +32,7 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 ) extends QueryBase
 
 @JsonCodec case class SpanNearQuery(
-	clauses: Array[SpanQuery], 
+	clauses: Seq[SpanQuery], 
 	in_order: Boolean, 
 	slop: integer
 ) extends QueryBase
@@ -46,7 +46,7 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 ) extends QueryBase
 
 @JsonCodec case class SpanOrQuery(
-	clauses: Array[SpanQuery]
+	clauses: Seq[SpanQuery]
 ) extends QueryBase
 
 @JsonCodec case class SpanTermQuery(

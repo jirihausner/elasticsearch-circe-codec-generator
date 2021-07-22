@@ -24,7 +24,7 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	is_included: Boolean, 
 	is_required: Boolean, 
 	feature_type: String, 
-	mapping_types: Array[String], 
+	mapping_types: Seq[String], 
 	name: Field, 
 	reason: String
 )
@@ -70,7 +70,7 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	max_optimization_rounds_per_hyperparameter: integer, 
 	early_stopping_enabled: Boolean, 
 	num_top_feature_importance_values: integer, 
-	feature_processors: Array[DataframeAnalysisFeatureProcessor], 
+	feature_processors: Seq[DataframeAnalysisFeatureProcessor], 
 	randomize_seed: double, 
 	training_percent: Percentage
 )
@@ -84,11 +84,11 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	class_assignment_objective: String, 
 	num_top_classes: integer
 ) extends DataframeAnalysis
-type DataframeAnalysisAnalyzedFields = Array[String] | DataframeAnalysisAnalyzedFieldsIncludeExclude
+type DataframeAnalysisAnalyzedFields = Seq[String] | DataframeAnalysisAnalyzedFieldsIncludeExclude
 
 @JsonCodec case class DataframeAnalysisAnalyzedFieldsIncludeExclude(
-	includes: Array[String], 
-	excludes: Array[String]
+	includes: Seq[String], 
+	excludes: Seq[String]
 )
 
 @JsonCodec case class DataframeAnalysisFeatureProcessor(
@@ -106,14 +106,14 @@ type DataframeAnalysisAnalyzedFields = Array[String] | DataframeAnalysisAnalyzed
 )
 
 @JsonCodec case class DataframeAnalysisFeatureProcessorMultiEncoding(
-	processors: Array[integer]
+	processors: Seq[integer]
 )
 
 @JsonCodec case class DataframeAnalysisFeatureProcessorNGramEncoding(
 	feature_prefix: String, 
 	field: Field, 
 	length: integer, 
-	n_grams: Array[integer], 
+	n_grams: Seq[integer], 
 	start: integer, 
 	custom: Boolean
 )
@@ -151,7 +151,7 @@ type DataframeAnalysisAnalyzedFields = Array[String] | DataframeAnalysisAnalyzed
 	id: Id, 
 	memory_usage: DataframeAnalyticsStatsMemoryUsage, 
 	node: NodeAttributes, 
-	progress: Array[DataframeAnalyticsStatsProgress], 
+	progress: Seq[DataframeAnalyticsStatsProgress], 
 	state: DataframeState
 )
 
@@ -225,6 +225,6 @@ type DataframeAnalysisAnalyzedFields = Array[String] | DataframeAnalysisAnalyzed
 )
 
 @JsonCodec case class ValidationLoss(
-	fold_values: Array[String], 
+	fold_values: Seq[String], 
 	loss_type: String
 )

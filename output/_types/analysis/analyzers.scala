@@ -15,8 +15,8 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 )
 
 @JsonCodec case class CustomAnalyzer(
-	char_filter: Array[String], 
-	filter: Array[String], 
+	char_filter: Seq[String], 
+	filter: Seq[String], 
 	position_increment_gap: integer, 
 	position_offset_gap: integer, 
 	tokenizer: String
@@ -34,7 +34,7 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 
 @JsonCodec case class LanguageAnalyzer(
 	language: Language, 
-	stem_exclusion: Array[String], 
+	stem_exclusion: Seq[String], 
 	stopwords: StopWords, 
 	stopwords_path: String, 
 	`type`: String
@@ -42,7 +42,7 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 
 @JsonCodec case class NoriAnalyzer(
 	decompound_mode: NoriDecompoundMode, 
-	stoptags: Array[String], 
+	stoptags: Seq[String], 
 	user_dictionary: String
 ) extends AnalyzerBase
 

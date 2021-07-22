@@ -9,6 +9,6 @@ import com.converted.elasticsearch.security._types.{ RoleMappingRuleBase }
 @JsonCodec case class RoleMapping(
 	enabled: Boolean, 
 	metadata: Metadata, 
-	roles: Array[String], 
+	roles: Seq[String], 
 	rules: RoleMappingRuleBase
 )

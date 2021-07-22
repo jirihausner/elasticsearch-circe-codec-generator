@@ -29,7 +29,7 @@ object Request {
 		custom_settings: CustomSettings, 
 		data_description: DataDescription, 
 		daily_model_snapshot_retention_after_days: long, 
-		groups: Array[String], 
+		groups: Seq[String], 
 		description: String, 
 		model_plot_config: ModelPlotConfig, 
 		model_snapshot_retention_days: long, 

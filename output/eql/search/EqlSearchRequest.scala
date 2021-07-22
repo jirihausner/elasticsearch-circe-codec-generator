@@ -35,12 +35,12 @@ object Request {
 		tiebreaker_field: Field, 
 		timestamp_field: Field, 
 		fetch_size: uint, 
-		filter: QueryContainer | Array[QueryContainer], 
+		filter: QueryContainer | Seq[QueryContainer], 
 		keep_alive: Time, 
 		keep_on_completion: Boolean, 
 		wait_for_completion_timeout: Time, 
 		size: uint | float, 
-		fields: Array[Field | SearchFieldFormatted], 
+		fields: Seq[Field | SearchFieldFormatted], 
 		result_position: ResultPosition
 	)
 }

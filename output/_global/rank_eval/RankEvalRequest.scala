@@ -24,7 +24,7 @@ object Request {
 		search_type: String
 	)
 	@JsonCodec case class Body(
-		requests: Array[RankEvalRequestItem], 
+		requests: Seq[RankEvalRequestItem], 
 		metric: RankEvalMetric
 	)
 }

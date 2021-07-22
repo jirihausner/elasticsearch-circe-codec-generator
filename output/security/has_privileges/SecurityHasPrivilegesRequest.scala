@@ -20,9 +20,9 @@ object Request {
 	@JsonCodec case class QueryParameters(
 	)
 	@JsonCodec case class Body(
-		application: Array[ApplicationPrivilegesCheck], 
-		cluster: Array[String], 
-		index: Array[IndexPrivilegesCheck]
+		application: Seq[ApplicationPrivilegesCheck], 
+		cluster: Seq[String], 
+		index: Seq[IndexPrivilegesCheck]
 	)
 }
 

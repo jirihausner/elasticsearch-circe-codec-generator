@@ -11,7 +11,7 @@ import com.converted.elasticsearch.ccr.follow_info.{ FollowerIndex }
 
 object Response {
 	@JsonCodec case class Body(
-		follower_indices: Array[FollowerIndex]
+		follower_indices: Seq[FollowerIndex]
 	)
 }
 

@@ -161,7 +161,7 @@ implicit val normalizeMethodDecoder: Decoder[NormalizeMethod.Value] = Decoder.de
 implicit val normalizeMethodEncoder: Encoder[NormalizeMethod.Value] = Decoder.encodeEnumeration(NormalizeMethod)
 
 @JsonCodec case class PercentilesBucketAggregation(
-	percents: Array[double]
+	percents: Seq[double]
 ) extends PipelineAggregationBase
 
 @JsonCodec case class SerialDifferencingAggregation(

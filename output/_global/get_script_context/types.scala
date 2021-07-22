@@ -6,14 +6,14 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._types.common.{ Name }
 
 @JsonCodec case class Context(
-	methods: Array[ContextMethod], 
+	methods: Seq[ContextMethod], 
 	name: Name
 )
 
 @JsonCodec case class ContextMethod(
 	name: Name, 
 	return_type: String, 
-	params: Array[ContextMethodParam]
+	params: Seq[ContextMethodParam]
 )
 
 @JsonCodec case class ContextMethodParam(

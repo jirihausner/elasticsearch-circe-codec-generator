@@ -10,7 +10,7 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis }
 
 @JsonCodec case class FollowIndexStats(
 	index: IndexName, 
-	shards: Array[ShardStats]
+	shards: Seq[ShardStats]
 )
 
 @JsonCodec case class ShardStats(
@@ -32,7 +32,7 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis }
 	operations_written: long, 
 	outstanding_read_requests: integer, 
 	outstanding_write_requests: integer, 
-	read_exceptions: Array[ReadException], 
+	read_exceptions: Seq[ReadException], 
 	remote_cluster: String, 
 	shard_id: integer, 
 	successful_read_requests: long, 

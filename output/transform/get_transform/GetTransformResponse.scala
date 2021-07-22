@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Transform.{ Transform }
 object Response {
 	@JsonCodec case class Body(
 		count: long, 
-		transforms: Array[Transform]
+		transforms: Seq[Transform]
 	)
 }
 

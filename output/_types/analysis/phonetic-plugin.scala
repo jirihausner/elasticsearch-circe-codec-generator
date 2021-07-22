@@ -69,7 +69,7 @@ implicit val phoneticRuleTypeEncoder: Encoder[PhoneticRuleType.Value] = Decoder.
 
 @JsonCodec case class PhoneticTokenFilter(
 	encoder: PhoneticEncoder, 
-	languageset: Array[PhoneticLanguage], 
+	languageset: Seq[PhoneticLanguage], 
 	max_code_len: integer, 
 	name_type: PhoneticNameType, 
 	replace: Boolean, 

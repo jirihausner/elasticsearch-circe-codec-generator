@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.{ Id, IndexName, Name, NodeName }
 import com.converted.elasticsearch._types.{ TransportAddress }
 
 @JsonCodec case class NodeStatistics(
-	failures: Array[ErrorCause], 
+	failures: Seq[ErrorCause], 
 	total: integer, 
 	successful: integer, 
 	failed: integer
@@ -59,4 +59,4 @@ object NodeRole extends Enumeration {
 
 implicit val nodeRoleDecoder: Decoder[NodeRole.Value] = Decoder.decodeEnumeration(NodeRole)
 implicit val nodeRoleEncoder: Encoder[NodeRole.Value] = Decoder.encodeEnumeration(NodeRole)
-type NodeRoles = Array[NodeRole]
+type NodeRoles = Seq[NodeRole]

@@ -30,7 +30,7 @@ object Request {
 		connections: Hop, 
 		controls: ExploreControls, 
 		query: QueryContainer, 
-		vertices: Array[VertexDefinition]
+		vertices: Seq[VertexDefinition]
 	)
 }
 

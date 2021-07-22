@@ -23,7 +23,7 @@ object Request {
 		reset_start: DateString
 	)
 	@JsonCodec case class Body(
-		data: Array[UserDefinedValue]
+		data: Seq[UserDefinedValue]
 	)
 }
 

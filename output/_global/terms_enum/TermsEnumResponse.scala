@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 object Response {
 	@JsonCodec case class Body(
 		_shards: ShardStatistics, 
-		terms: Array[String], 
+		terms: Seq[String], 
 		complete: Boolean
 	)
 }

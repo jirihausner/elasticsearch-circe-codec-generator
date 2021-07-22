@@ -13,9 +13,9 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 object Request {
 	@JsonCodec case class QueryParameters(
-		actions: Array[String], 
+		actions: Seq[String], 
 		detailed: Boolean, 
-		node_id: Array[String], 
+		node_id: Seq[String], 
 		parent_task: long
 	)
 	@JsonCodec case class Body(

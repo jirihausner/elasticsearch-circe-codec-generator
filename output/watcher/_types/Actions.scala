@@ -14,7 +14,7 @@ import com.converted.elasticsearch.watcher._types.{ HttpInputRequestDefinition }
 	attach_payload: Boolean, 
 	client: String, 
 	client_url: String, 
-	context: Array[PagerDutyContext], 
+	context: Seq[PagerDutyContext], 
 	description: String, 
 	event_type: PagerDutyEventType, 
 	incident_key: String
@@ -69,7 +69,7 @@ implicit val pagerDutyEventTypeEncoder: Encoder[PagerDutyEventType.Value] = Deco
 	author_name: String, 
 	color: String, 
 	fallback: String, 
-	fields: Array[SlackAttachmentField], 
+	fields: Seq[SlackAttachmentField], 
 	footer: String, 
 	footer_icon: String, 
 	image_url: String, 
@@ -93,12 +93,12 @@ implicit val pagerDutyEventTypeEncoder: Encoder[PagerDutyEventType.Value] = Deco
 )
 
 @JsonCodec case class SlackMessage(
-	attachments: Array[SlackAttachment], 
+	attachments: Seq[SlackAttachment], 
 	dynamic_attachments: SlackDynamicAttachment, 
 	from: String, 
 	icon: String, 
 	text: String, 
-	to: Array[String]
+	to: Seq[String]
 )
 
 @JsonCodec case class SlackActionMessageResult(
@@ -142,16 +142,16 @@ implicit val emailPriorityEncoder: Encoder[EmailPriority.Value] = Decoder.encode
 )
 
 @JsonCodec case class Email(
-	bcc: Array[String], 
+	bcc: Seq[String], 
 	body: EmailBody, 
-	cc: Array[String], 
+	cc: Seq[String], 
 	from: String, 
 	id: Id, 
 	priority: EmailPriority, 
-	reply_to: Array[String], 
+	reply_to: Seq[String], 
 	sent_date: DateString, 
 	subject: String, 
-	to: Array[String]
+	to: Seq[String]
 )
 
 @JsonCodec case class Index(

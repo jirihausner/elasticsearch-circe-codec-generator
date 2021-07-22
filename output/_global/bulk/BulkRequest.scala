@@ -11,7 +11,7 @@ import com.converted.elasticsearch._global.bulk.{ OperationContainer }
 @JsonCodec case class Request[TSource](
 	path_parts: PathParts, 
 	query_parameters: QueryParameters, 
-	body: Array[OperationContainer | TSource]
+	body: Seq[OperationContainer | TSource]
 ) extends RequestBase
 
 object Request {

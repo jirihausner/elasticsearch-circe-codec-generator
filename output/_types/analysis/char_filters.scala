@@ -15,7 +15,7 @@ type CharFilter = HtmlStripCharFilter | MappingCharFilter | PatternReplaceTokenF
 @JsonCodec case class HtmlStripCharFilter extends CharFilterBase
 
 @JsonCodec case class MappingCharFilter(
-	mappings: Array[String], 
+	mappings: Seq[String], 
 	mappings_path: String
 ) extends CharFilterBase
 

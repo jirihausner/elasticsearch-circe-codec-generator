@@ -8,7 +8,7 @@ import com.converted.elasticsearch._types.common.{ VersionString }
 import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 
 @JsonCodec case class IndexSegment(
-	shards: Dictionary[String, ShardsSegment | Array[ShardsSegment]]
+	shards: Dictionary[String, ShardsSegment | Seq[ShardsSegment]]
 )
 
 @JsonCodec case class Segment(

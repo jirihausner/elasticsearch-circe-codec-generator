@@ -11,9 +11,9 @@ import com.converted.elasticsearch.sql.query.{ Column, Row }
 
 object Response {
 	@JsonCodec case class Body(
-		columns: Array[Column], 
+		columns: Seq[Column], 
 		cursor: String, 
-		rows: Array[Row]
+		rows: Seq[Row]
 	)
 }
 

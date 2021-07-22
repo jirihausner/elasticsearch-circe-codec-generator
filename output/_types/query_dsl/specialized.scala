@@ -15,7 +15,7 @@ import com.converted.elasticsearch._types.query_dsl.{ FieldLookup, QueryBase, Qu
 import com.converted.elasticsearch._types.query_dsl.{ GeoCoordinate, GeoShape }
 
 @JsonCodec case class DistanceFeatureQuery(
-	origin: Array[Double] | GeoCoordinate | DateMath, 
+	origin: Seq[Double] | GeoCoordinate | DateMath, 
 	pivot: Distance | Time, 
 	field: Field
 ) extends QueryBase
@@ -25,7 +25,7 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoCoordinate, GeoShape }
 	boost_terms: double, 
 	fields: Fields, 
 	include: Boolean, 
-	like: Like | Array[Like], 
+	like: Like | Seq[Like], 
 	max_doc_freq: integer, 
 	max_query_terms: integer, 
 	max_word_length: integer, 
@@ -36,7 +36,7 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoCoordinate, GeoShape }
 	per_field_analyzer: Dictionary[Field, String], 
 	routing: Routing, 
 	stop_words: StopWords, 
-	unlike: Like | Array[Like], 
+	unlike: Like | Seq[Like], 
 	version: VersionNumber, 
 	version_type: VersionType
 ) extends QueryBase
@@ -54,7 +54,7 @@ type Like = String | LikeDocument
 
 @JsonCodec case class PercolateQuery(
 	document: UserDefinedValue, 
-	documents: Array[UserDefinedValue], 
+	documents: Seq[UserDefinedValue], 
 	field: Field, 
 	id: Id, 
 	index: IndexName, 
@@ -64,7 +64,7 @@ type Like = String | LikeDocument
 ) extends QueryBase
 
 @JsonCodec case class PinnedQuery(
-	ids: Array[Id] | Array[long], 
+	ids: Seq[Id] | Seq[long], 
 	organic: QueryContainer
 ) extends QueryBase
 

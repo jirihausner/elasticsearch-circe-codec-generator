@@ -17,7 +17,7 @@ object Request {
 		timeout: Time
 	)
 	@JsonCodec case class Body(
-		actions: Array[IndicesUpdateAliasBulk]
+		actions: Seq[IndicesUpdateAliasBulk]
 	)
 }
 

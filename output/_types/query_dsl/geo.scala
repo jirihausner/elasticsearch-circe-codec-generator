@@ -39,7 +39,7 @@ implicit val geoExecutionEncoder: Encoder[GeoExecution.Value] = Decoder.encodeEn
 ) extends QueryBase, AdditionalProperties[String, GeoLocation]
 
 @JsonCodec case class GeoPolygonQuery(
-	points: Array[GeoLocation], 
+	points: Seq[GeoLocation], 
 	validation_method: GeoValidationMethod
 ) extends QueryBase
 
@@ -98,8 +98,8 @@ implicit val tokenTypeEncoder: Encoder[TokenType.Value] = Decoder.encodeEnumerat
 	lon: double, 
 	z: double
 )
-type GeoLocation = String | Array[double] | TwoDimensionalPoint
-type GeoCoordinate = String | Array[double] | ThreeDimensionalPoint
+type GeoLocation = String | Seq[double] | TwoDimensionalPoint
+type GeoCoordinate = String | Seq[double] | ThreeDimensionalPoint
 
 object GeoValidationMethod extends Enumeration {
 	type GeoValidationMethod = Value

@@ -22,7 +22,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		index_patterns: Indices, 
-		composed_of: Array[Name], 
+		composed_of: Seq[Name], 
 		template: IndexTemplateMapping, 
 		data_stream: EmptyObject, 
 		priority: integer, 

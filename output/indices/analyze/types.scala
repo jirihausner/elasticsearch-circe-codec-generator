@@ -7,15 +7,15 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 @JsonCodec case class AnalyzeDetail(
 	analyzer: AnalyzerDetail, 
-	charfilters: Array[CharFilterDetail], 
+	charfilters: Seq[CharFilterDetail], 
 	custom_analyzer: Boolean, 
-	tokenfilters: Array[TokenDetail], 
+	tokenfilters: Seq[TokenDetail], 
 	tokenizer: TokenDetail
 )
 
 @JsonCodec case class AnalyzerDetail(
 	name: String, 
-	tokens: Array[ExplainAnalyzeToken]
+	tokens: Seq[ExplainAnalyzeToken]
 )
 
 @JsonCodec case class AnalyzeToken(
@@ -28,7 +28,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 )
 
 @JsonCodec case class CharFilterDetail(
-	filtered_text: Array[String], 
+	filtered_text: Seq[String], 
 	name: String
 )
 
@@ -43,9 +43,9 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	token: String, 
 	`type`: String
 )
-type TextToAnalyze = String | Array[String]
+type TextToAnalyze = String | Seq[String]
 
 @JsonCodec case class TokenDetail(
 	name: String, 
-	tokens: Array[ExplainAnalyzeToken]
+	tokens: Seq[ExplainAnalyzeToken]
 )

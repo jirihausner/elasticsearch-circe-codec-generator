@@ -27,7 +27,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class TrainedModelConfig(
 	model_id: Id, 
-	tags: Array[String], 
+	tags: Seq[String], 
 	version: VersionString, 
 	compressed_definition: String, 
 	created_by: String, 
@@ -43,14 +43,14 @@ import com.converted.elasticsearch._types.Time.{ Time }
 )
 
 @JsonCodec case class TrainedModelConfigInput(
-	field_names: Array[Field]
+	field_names: Seq[Field]
 )
 
 @JsonCodec case class TrainedModelConfigMetadata(
-	model_aliases: Array[String], 
+	model_aliases: Seq[String], 
 	feature_importance_baseline: Dictionary[String, String], 
-	hyperparameters: Array[Hyperparameter], 
-	total_feature_importance: Array[TotalFeatureImportance]
+	hyperparameters: Seq[Hyperparameter], 
+	total_feature_importance: Seq[TotalFeatureImportance]
 )
 
 @JsonCodec case class Hyperparameter(
@@ -63,13 +63,13 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class TotalFeatureImportance(
 	feature_name: Name, 
-	importance: Array[TotalFeatureImportanceStatistics], 
-	classes: Array[TotalFeatureImportanceClass]
+	importance: Seq[TotalFeatureImportanceStatistics], 
+	classes: Seq[TotalFeatureImportanceClass]
 )
 
 @JsonCodec case class TotalFeatureImportanceClass(
 	class_name: Name, 
-	importance: Array[TotalFeatureImportanceStatistics]
+	importance: Seq[TotalFeatureImportanceStatistics]
 )
 
 @JsonCodec case class TotalFeatureImportanceStatistics(

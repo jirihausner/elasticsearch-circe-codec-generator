@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class ChainInput(
-	inputs: Array[InputContainer]
+	inputs: Seq[InputContainer]
 )
 
 object ConnectionScheme extends Enumeration {
@@ -28,7 +28,7 @@ implicit val connectionSchemeEncoder: Encoder[ConnectionScheme.Value] = Decoder.
 
 @JsonCodec case class HttpInput(
 	http: HttpInput, 
-	extract: Array[String], 
+	extract: Seq[String], 
 	request: HttpInputRequestDefinition, 
 	response_content_type: ResponseContentType
 )
@@ -115,14 +115,14 @@ implicit val responseContentTypeDecoder: Decoder[ResponseContentType.Value] = De
 implicit val responseContentTypeEncoder: Encoder[ResponseContentType.Value] = Decoder.encodeEnumeration(ResponseContentType)
 
 @JsonCodec case class SearchInput(
-	extract: Array[String], 
+	extract: Seq[String], 
 	request: SearchInputRequestDefinition, 
 	timeout: Time
 )
 
 @JsonCodec case class SearchInputRequestDefinition(
 	body: SearchInputRequestBody, 
-	indices: Array[IndexName], 
+	indices: Seq[IndexName], 
 	indices_options: IndicesOptions, 
 	search_type: SearchType, 
 	template: SearchTemplateRequest, 

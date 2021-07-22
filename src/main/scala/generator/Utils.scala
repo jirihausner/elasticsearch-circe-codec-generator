@@ -1,8 +1,6 @@
 package cz.jirihausner.es_codec_generator
 package generator
 
-import org.scalablytyped.converter.internal.ts.{TsIdent, TsQIdent}
-
 object Utils {
 
   def toLowerCamelCase(x: String): String =
@@ -46,9 +44,9 @@ object Utils {
     //case "undefined" => "None"
     case "unknown" => "None"
     case "void" => "Unit"
-    case "Array" => "Array"
-    case "ConcatArray" => "Array"
-    case "ReadonlyArray" => "Array"
+    case "Array" => "Seq"
+    case "ConcatArray" => "Seq"
+    case "ReadonlyArray" => "Seq"
     case _ => ident
   }
 }

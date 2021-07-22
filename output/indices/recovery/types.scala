@@ -25,7 +25,7 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 )
 
 @JsonCodec case class RecoveryFiles(
-	details: Array[FileDetails], 
+	details: Seq[FileDetails], 
 	percent: Percentage, 
 	recovered: long, 
 	reused: long, 
@@ -65,7 +65,7 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 )
 
 @JsonCodec case class RecoveryStatus(
-	shards: Array[ShardRecovery]
+	shards: Seq[ShardRecovery]
 )
 
 @JsonCodec case class TranslogStatus(

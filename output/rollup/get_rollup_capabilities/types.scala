@@ -8,7 +8,7 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 import com.converted.elasticsearch._types.common.{ Field }
 
 @JsonCodec case class RollupCapabilities(
-	rollup_jobs: Array[RollupCapabilitySummary]
+	rollup_jobs: Seq[RollupCapabilitySummary]
 )
 
 @JsonCodec case class RollupCapabilitySummary(

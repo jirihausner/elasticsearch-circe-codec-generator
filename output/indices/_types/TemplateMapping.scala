@@ -12,7 +12,7 @@ import com.converted.elasticsearch.indices._types.{ Alias }
 
 @JsonCodec case class TemplateMapping(
 	aliases: Dictionary[IndexName, Alias], 
-	index_patterns: Array[Name], 
+	index_patterns: Seq[Name], 
 	mappings: TypeMapping, 
 	order: integer, 
 	settings: Dictionary[String, UserDefinedValue], 

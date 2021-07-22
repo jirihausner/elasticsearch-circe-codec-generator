@@ -13,7 +13,7 @@ object Response {
 	@JsonCodec case class Body(
 		description: String, 
 		filter_id: Id, 
-		items: Array[String]
+		items: Seq[String]
 	)
 }
 

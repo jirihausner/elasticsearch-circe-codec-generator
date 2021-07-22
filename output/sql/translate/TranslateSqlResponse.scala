@@ -17,7 +17,7 @@ object Response {
 	@JsonCodec case class Body(
 		size: long, 
 		_source: Boolean | Fields | SourceFilter, 
-		fields: Array[Dictionary[Field, String]], 
+		fields: Seq[Dictionary[Field, String]], 
 		sort: Sort
 	)
 }

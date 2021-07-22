@@ -20,7 +20,7 @@ object Response {
 		cluster_name: Name, 
 		cluster_uuid: Uuid, 
 		master_node: String, 
-		state: Array[String], 
+		state: Seq[String], 
 		state_uuid: Uuid, 
 		version: VersionNumber, 
 		blocks: ClusterStateBlocks, 

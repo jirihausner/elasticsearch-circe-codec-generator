@@ -9,7 +9,7 @@ import com.converted.elasticsearch.ml._types.{ DetectionRule }
 
 @JsonCodec case class Detector(
 	by_field_name: Field, 
-	custom_rules: Array[DetectionRule], 
+	custom_rules: Seq[DetectionRule], 
 	detector_description: String, 
 	detector_index: integer, 
 	exclude_frequent: ExcludeFrequent, 

@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 
 object Response {
 	@JsonCodec case class Body(
-		data_streams: Array[IndicesGetDataStreamItem]
+		data_streams: Seq[IndicesGetDataStreamItem]
 	)
 }
 
@@ -21,7 +21,7 @@ object Response {
 @JsonCodec case class IndicesGetDataStreamItem(
 	name: DataStreamName, 
 	timestamp_field: IndicesGetDataStreamItemTimestampField, 
-	indices: Array[IndicesGetDataStreamItemIndex], 
+	indices: Seq[IndicesGetDataStreamItemIndex], 
 	generation: integer, 
 	template: Name, 
 	hidden: Boolean, 

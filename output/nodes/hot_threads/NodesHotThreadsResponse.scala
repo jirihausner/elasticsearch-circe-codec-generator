@@ -11,7 +11,7 @@ import com.converted.elasticsearch.nodes.hot_threads.{ HotThread }
 
 object Response {
 	@JsonCodec case class Body(
-		hot_threads: Array[HotThread]
+		hot_threads: Seq[HotThread]
 	)
 }
 

@@ -17,7 +17,7 @@ object Request {
 		calendar_id: Id
 	)
 	@JsonCodec case class Body(
-		events: Array[CalendarEvent]
+		events: Seq[CalendarEvent]
 	)
 }
 

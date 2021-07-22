@@ -10,7 +10,7 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 object Response {
 	@JsonCodec case class Body(
-		data: Array[TDocument]
+		data: Seq[TDocument]
 	)
 }
 

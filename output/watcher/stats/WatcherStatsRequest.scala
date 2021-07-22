@@ -13,11 +13,11 @@ import com.converted.elasticsearch.watcher.stats.{ WatcherMetric }
 
 object Request {
 	@JsonCodec case class PathParts(
-		metric: WatcherMetric | Array[WatcherMetric]
+		metric: WatcherMetric | Seq[WatcherMetric]
 	)
 	@JsonCodec case class QueryParameters(
 		emit_stacktraces: Boolean, 
-		metric: WatcherMetric | Array[WatcherMetric]
+		metric: WatcherMetric | Seq[WatcherMetric]
 	)
 }
 

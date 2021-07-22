@@ -12,7 +12,7 @@ import com.converted.elasticsearch._indices._types.IndexState.{ IndexState }
 object Response {
 	@JsonCodec case class Body(
 		generated_dest_index: IndexState, 
-		preview: Array[TTransform]
+		preview: Seq[TTransform]
 	)
 }
 

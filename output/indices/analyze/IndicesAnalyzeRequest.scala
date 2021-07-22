@@ -24,11 +24,11 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		analyzer: String, 
-		attributes: Array[String], 
-		char_filter: Array[String | CharFilter], 
+		attributes: Seq[String], 
+		char_filter: Seq[String | CharFilter], 
 		explain: Boolean, 
 		field: Field, 
-		filter: Array[String | TokenFilter], 
+		filter: Seq[String | TokenFilter], 
 		normalizer: String, 
 		text: TextToAnalyze, 
 		tokenizer: String | Tokenizer

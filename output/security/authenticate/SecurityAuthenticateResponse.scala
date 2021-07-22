@@ -18,7 +18,7 @@ object Response {
 		full_name: Name, 
 		lookup_realm: RealmInfo, 
 		metadata: Metadata, 
-		roles: Array[String], 
+		roles: Seq[String], 
 		username: Username, 
 		enabled: Boolean, 
 		authentication_type: String, 

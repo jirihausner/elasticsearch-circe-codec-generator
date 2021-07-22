@@ -17,7 +17,7 @@ object Request {
 		realms: Names
 	)
 	@JsonCodec case class QueryParameters(
-		usernames: Array[String]
+		usernames: Seq[String]
 	)
 	@JsonCodec case class Body(
 	)

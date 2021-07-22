@@ -24,7 +24,7 @@ object Request {
 		wait_for_completion: Boolean
 	)
 	@JsonCodec case class Body(
-		ignore_index_settings: Array[String], 
+		ignore_index_settings: Seq[String], 
 		ignore_unavailable: Boolean, 
 		include_aliases: Boolean, 
 		include_global_state: Boolean, 

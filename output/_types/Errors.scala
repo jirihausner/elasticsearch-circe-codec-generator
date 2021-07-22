@@ -14,12 +14,12 @@ import com.converted.elasticsearch._types.{ integer, long }
 	caused_by: ErrorCause, 
 	shard: integer | String, 
 	stack_trace: String, 
-	root_cause: Array[ErrorCause], 
+	root_cause: Seq[ErrorCause], 
 	bytes_limit: long, 
 	bytes_wanted: long, 
 	column: integer, 
 	col: integer, 
-	failed_shards: Array[ShardFailure], 
+	failed_shards: Seq[ShardFailure], 
 	grouped: Boolean, 
 	index: IndexName, 
 	index_uuid: Uuid, 
@@ -33,7 +33,7 @@ import com.converted.elasticsearch._types.{ integer, long }
 	resource_id: Ids, 
 	resource_type: String, 
 	script: String, 
-	script_stack: Array[String], 
+	script_stack: Seq[String], 
 	header: HttpHeaders, 
 	lang: String, 
 	position: PainlessExecutionPosition
@@ -41,7 +41,7 @@ import com.converted.elasticsearch._types.{ integer, long }
 
 @JsonCodec case class MainError(
 	headers: Dictionary[String, String], 
-	root_cause: Array[ErrorCause]
+	root_cause: Seq[ErrorCause]
 ) extends ErrorCause
 
 @JsonCodec case class ShardFailure(

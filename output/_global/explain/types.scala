@@ -7,12 +7,12 @@ import com.converted.elasticsearch._types.Numeric.{ float }
 
 @JsonCodec case class Explanation(
 	description: String, 
-	details: Array[ExplanationDetail], 
+	details: Seq[ExplanationDetail], 
 	value: float
 )
 
 @JsonCodec case class ExplanationDetail(
 	description: String, 
-	details: Array[ExplanationDetail], 
+	details: Seq[ExplanationDetail], 
 	value: float
 )

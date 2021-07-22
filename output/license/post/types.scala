@@ -5,6 +5,6 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 
 @JsonCodec case class Acknowledgement(
-	license: Array[String], 
+	license: Seq[String], 
 	message: String
 )

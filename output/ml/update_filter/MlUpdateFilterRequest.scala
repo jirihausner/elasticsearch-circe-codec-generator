@@ -16,9 +16,9 @@ object Request {
 		filter_id: Id
 	)
 	@JsonCodec case class Body(
-		add_items: Array[String], 
+		add_items: Seq[String], 
 		description: String, 
-		remove_items: Array[String]
+		remove_items: Seq[String]
 	)
 }
 

@@ -21,11 +21,11 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 	_type: Type, 
 	_explanation: Explanation, 
 	fields: Dictionary[String, UserDefinedValue], 
-	highlight: Dictionary[String, Array[String]], 
+	highlight: Dictionary[String, Seq[String]], 
 	inner_hits: Dictionary[String, InnerHitsResult], 
-	matched_queries: Array[String], 
+	matched_queries: Seq[String], 
 	_nested: NestedIdentity, 
-	_ignored: Array[String], 
+	_ignored: Seq[String], 
 	_shard: String, 
 	_node: String, 
 	_routing: String, 
@@ -38,7 +38,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 
 @JsonCodec case class HitsMetadata[T](
 	total: TotalHits | long, 
-	hits: Array[Hit[T]], 
+	hits: Seq[Hit[T]], 
 	max_score: double
 )
 
@@ -55,7 +55,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 
 @JsonCodec case class InnerHitsMetadata(
 	total: TotalHits | long, 
-	hits: Array[Hit[Dictionary[String, UserDefinedValue]]], 
+	hits: Seq[Hit[Dictionary[String, UserDefinedValue]]], 
 	max_score: double
 )
 

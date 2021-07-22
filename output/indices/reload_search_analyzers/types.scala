@@ -6,6 +6,6 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 @JsonCodec case class ReloadDetails(
 	index: String, 
-	reloaded_analyzers: Array[String], 
-	reloaded_node_ids: Array[String]
+	reloaded_analyzers: Seq[String], 
+	reloaded_node_ids: Seq[String]
 )

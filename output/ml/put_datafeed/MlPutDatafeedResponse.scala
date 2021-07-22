@@ -24,7 +24,7 @@ object Response {
 		delayed_data_check_config: DelayedDataCheckConfig, 
 		datafeed_id: Id, 
 		frequency: Time, 
-		indices: Array[String], 
+		indices: Seq[String], 
 		job_id: Id, 
 		indices_options: DatafeedIndicesOptions, 
 		max_empty_searches: integer, 

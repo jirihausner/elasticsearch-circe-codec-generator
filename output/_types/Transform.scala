@@ -17,7 +17,7 @@ import com.converted.elasticsearch._types.{ Time }
 )
 
 @JsonCodec case class ChainTransform(
-	transforms: Array[TransformContainer]
+	transforms: Seq[TransformContainer]
 )
 
 @JsonCodec case class ScriptTransform(

@@ -32,8 +32,8 @@ object Request {
 		version_type: VersionType
 	)
 	@JsonCodec case class Body(
-		docs: Array[Operation], 
-		ids: Array[Id]
+		docs: Seq[Operation], 
+		ids: Seq[Id]
 	)
 }
 

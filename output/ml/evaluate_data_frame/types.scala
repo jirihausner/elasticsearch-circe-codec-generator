@@ -34,7 +34,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer }
 )
 
 @JsonCodec case class DataframeEvaluationSummaryAucRoc(
-	curve: Array[DataframeEvaluationSummaryAucRocCurveItem]
+	curve: Seq[DataframeEvaluationSummaryAucRocCurveItem]
 ) extends DataframeEvaluationValue
 
 @JsonCodec case class DataframeEvaluationSummaryAucRocCurveItem(
@@ -44,17 +44,17 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer }
 )
 
 @JsonCodec case class DataframeClassificationSummaryPrecision(
-	classes: Array[DataframeEvaluationClass], 
+	classes: Seq[DataframeEvaluationClass], 
 	avg_precision: double
 )
 
 @JsonCodec case class DataframeClassificationSummaryRecall(
-	classes: Array[DataframeEvaluationClass], 
+	classes: Seq[DataframeEvaluationClass], 
 	avg_recall: double
 )
 
 @JsonCodec case class DataframeClassificationSummaryAccuracy(
-	classes: Array[DataframeEvaluationClass], 
+	classes: Seq[DataframeEvaluationClass], 
 	overall_accuracy: double
 )
 
@@ -63,14 +63,14 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer }
 ) extends DataframeEvaluationValue
 
 @JsonCodec case class DataframeClassificationSummaryMulticlassConfusionMatrix(
-	confusion_matrix: Array[ConfusionMatrixItem], 
+	confusion_matrix: Seq[ConfusionMatrixItem], 
 	other_actual_class_count: integer
 )
 
 @JsonCodec case class ConfusionMatrixItem(
 	actual_class: Name, 
 	actual_class_doc_count: integer, 
-	predicted_classes: Array[ConfusionMatrixPrediction], 
+	predicted_classes: Seq[ConfusionMatrixPrediction], 
 	other_predicted_class_doc_count: integer
 )
 

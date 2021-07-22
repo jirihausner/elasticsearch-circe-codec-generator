@@ -10,4 +10,4 @@ import com.converted.elasticsearch._types.common.{ Name }
 	name: Name, 
 	`type`: String
 )
-type Row = Array[UserDefinedValue]
+type Row = Seq[UserDefinedValue]

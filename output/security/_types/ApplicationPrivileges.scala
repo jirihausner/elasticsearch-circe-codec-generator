@@ -6,6 +6,6 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 @JsonCodec case class ApplicationPrivileges(
 	application: String, 
-	privileges: Array[String], 
-	resources: Array[String]
+	privileges: Seq[String], 
+	resources: Seq[String]
 )

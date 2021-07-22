@@ -53,7 +53,7 @@ object Request {
 		highlight: Highlight, 
 		ignore_throttled: Boolean, 
 		ignore_unavailable: Boolean, 
-		indices_boost: Array[Dictionary[IndexName, double]], 
+		indices_boost: Seq[Dictionary[IndexName, double]], 
 		keep_alive: Time, 
 		keep_on_completion: Boolean, 
 		lenient: Boolean, 
@@ -66,16 +66,16 @@ object Request {
 		query: QueryContainer, 
 		query_on_query_string: String, 
 		request_cache: Boolean, 
-		rescore: Array[Rescore], 
+		rescore: Seq[Rescore], 
 		routing: Routing, 
 		script_fields: Dictionary[String, ScriptField], 
-		search_after: Array[UserDefinedValue], 
+		search_after: Seq[UserDefinedValue], 
 		search_type: SearchType, 
 		sequence_number_primary_term: Boolean, 
 		size: integer, 
 		sort: Sort, 
 		_source: Boolean | SourceFilter, 
-		stats: Array[String], 
+		stats: Seq[String], 
 		stored_fields: Fields, 
 		suggest: Dictionary[String, SuggestContainer], 
 		suggest_field: Field, 
@@ -89,7 +89,7 @@ object Request {
 		typed_keys: Boolean, 
 		version: Boolean, 
 		wait_for_completion_timeout: Time, 
-		fields: Array[Field | DateField]
+		fields: Seq[Field | DateField]
 	)
 }
 

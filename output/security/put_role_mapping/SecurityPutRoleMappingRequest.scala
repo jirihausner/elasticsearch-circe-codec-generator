@@ -23,9 +23,9 @@ object Request {
 	@JsonCodec case class Body(
 		enabled: Boolean, 
 		metadata: Metadata, 
-		roles: Array[String], 
+		roles: Seq[String], 
 		rules: RoleMappingRuleBase, 
-		run_as: Array[String]
+		run_as: Seq[String]
 	)
 }
 

@@ -21,7 +21,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	doc_freq: integer, 
 	score: double, 
 	term_freq: integer, 
-	tokens: Array[Token], 
+	tokens: Seq[Token], 
 	ttf: integer
 )
 

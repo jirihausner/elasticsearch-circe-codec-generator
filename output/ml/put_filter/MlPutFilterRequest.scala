@@ -17,7 +17,7 @@ object Request {
 	)
 	@JsonCodec case class Body(
 		description: String, 
-		items: Array[String]
+		items: Seq[String]
 	)
 }
 

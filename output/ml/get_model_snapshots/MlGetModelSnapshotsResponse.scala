@@ -13,7 +13,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 object Response {
 	@JsonCodec case class Body(
 		count: long, 
-		model_snapshots: Array[ModelSnapshot]
+		model_snapshots: Seq[ModelSnapshot]
 	)
 }
 

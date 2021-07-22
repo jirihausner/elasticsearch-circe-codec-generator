@@ -11,7 +11,7 @@ import com.converted.elasticsearch._types.common.{ IndexName }
 
 object Response {
 	@JsonCodec case class Body(
-		failed_indexes: Array[IndexName], 
+		failed_indexes: Seq[IndexName], 
 		has_failures: Boolean
 	)
 }

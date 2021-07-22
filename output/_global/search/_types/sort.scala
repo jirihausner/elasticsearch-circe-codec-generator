@@ -49,7 +49,7 @@ implicit val numericTypeEncoder: Encoder[NumericType.Value] = Decoder.encodeEnum
 	distance_type: GeoDistanceType, 
 	order: SortOrder, 
 	unit: DistanceUnit
-) extends AdditionalProperties[String, GeoLocation | Array[GeoLocation]]
+) extends AdditionalProperties[String, GeoLocation | Seq[GeoLocation]]
 
 @JsonCodec case class ScriptSort(
 	order: SortOrder, 
@@ -64,8 +64,8 @@ implicit val numericTypeEncoder: Encoder[NumericType.Value] = Decoder.encodeEnum
 	_script: ScriptSort
 ) extends AdditionalProperties[String, FieldSort | SortOrder]
 type SortCombinations = Field | SortContainer | SortOrder
-type Sort = SortCombinations | Array[SortCombinations]
-type SortResults = Array[long | double | String | null]
+type Sort = SortCombinations | Seq[SortCombinations]
+type SortResults = Seq[long | double | String | null]
 
 object SortMode extends Enumeration {
 	type SortMode = Value

@@ -21,7 +21,7 @@ object Response {
 		total_snapshot_deletion_failures: long, 
 		total_snapshots_failed: long, 
 		total_snapshots_taken: long, 
-		policy_stats: Array[String]
+		policy_stats: Seq[String]
 	)
 }
 

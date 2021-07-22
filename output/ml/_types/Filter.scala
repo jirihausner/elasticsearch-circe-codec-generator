@@ -8,7 +8,7 @@ import com.converted.elasticsearch._types.common.{ Id }
 @JsonCodec case class Filter(
 	description: String, 
 	filter_id: Id, 
-	items: Array[String]
+	items: Seq[String]
 )
 
 @JsonCodec case class FilterRef(

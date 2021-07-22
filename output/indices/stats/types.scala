@@ -30,7 +30,7 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 
 @JsonCodec case class IndicesStats(
 	primaries: IndexStats, 
-	shards: Dictionary[String, Array[ShardStats]], 
+	shards: Dictionary[String, Seq[ShardStats]], 
 	total: IndexStats, 
 	uuid: Uuid
 )
@@ -82,7 +82,7 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 @JsonCodec case class ShardRetentionLeases(
 	primary_term: long, 
 	version: VersionNumber, 
-	leases: Array[ShardLease]
+	leases: Seq[ShardLease]
 )
 
 @JsonCodec case class ShardRouting(

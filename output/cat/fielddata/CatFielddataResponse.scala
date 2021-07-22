@@ -6,5 +6,5 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch.cat.fielddata.{ FielddataRecord }
 
 @JsonCodec case class Response(
-	body: Array[FielddataRecord]
+	body: Seq[FielddataRecord]
 )

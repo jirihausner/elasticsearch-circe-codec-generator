@@ -9,6 +9,6 @@ import com.converted.elasticsearch._global.search._types.{ InnerHits }
 
 @JsonCodec case class FieldCollapse(
 	field: Field, 
-	inner_hits: InnerHits | Array[InnerHits], 
+	inner_hits: InnerHits | Seq[InnerHits], 
 	max_concurrent_group_searches: integer
 )

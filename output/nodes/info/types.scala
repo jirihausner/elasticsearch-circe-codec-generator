@@ -24,7 +24,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 	name: Name, 
 	network: NodeInfoNetwork, 
 	os: NodeOperatingSystemInfo, 
-	plugins: Array[PluginStats], 
+	plugins: Seq[PluginStats], 
 	process: NodeProcessInfo, 
 	roles: NodeRoles, 
 	settings: NodeInfoSettings, 
@@ -34,7 +34,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 	transport: NodeInfoTransport, 
 	transport_address: TransportAddress, 
 	version: VersionString, 
-	modules: Array[PluginStats], 
+	modules: Seq[PluginStats], 
 	ingest: NodeInfoIngest, 
 	aggregations: Dictionary[String, NodeInfoAggregation]
 )
@@ -76,8 +76,8 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 @JsonCodec case class NodeInfoPath(
 	logs: String, 
 	home: String, 
-	repo: Array[String], 
-	data: Array[String]
+	repo: Seq[String], 
+	data: Seq[String]
 )
 
 @JsonCodec case class NodeInfoRepositories(
@@ -134,7 +134,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 )
 
 @JsonCodec case class NodeInfoIngest(
-	processors: Array[NodeInfoIngestProcessor]
+	processors: Seq[NodeInfoIngestProcessor]
 )
 
 @JsonCodec case class NodeInfoIngestProcessor(
@@ -142,7 +142,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 )
 
 @JsonCodec case class NodeInfoAggregation(
-	types: Array[String]
+	types: Seq[String]
 )
 
 @JsonCodec case class NodeInfoXpack(
@@ -213,7 +213,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 )
 
 @JsonCodec case class NodeInfoHttp(
-	bound_address: Array[String], 
+	bound_address: Seq[String], 
 	max_content_length: ByteSize, 
 	max_content_length_in_bytes: long, 
 	publish_address: String
@@ -260,15 +260,15 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 )
 
 @JsonCodec case class NodeInfoTransport(
-	bound_address: Array[String], 
+	bound_address: Seq[String], 
 	publish_address: String, 
 	profiles: Dictionary[String, String]
 )
 
 @JsonCodec case class NodeJvmInfo(
-	gc_collectors: Array[String], 
+	gc_collectors: Seq[String], 
 	mem: NodeInfoJvmMemory, 
-	memory_pools: Array[String], 
+	memory_pools: Seq[String], 
 	pid: integer, 
 	start_time_in_millis: long, 
 	version: VersionString, 
@@ -278,7 +278,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 	bundled_jdk: Boolean, 
 	using_bundled_jdk: Boolean, 
 	using_compressed_ordinary_object_pointers: Boolean | String, 
-	input_arguments: Array[String]
+	input_arguments: Seq[String]
 )
 
 @JsonCodec case class NodeOperatingSystemInfo(

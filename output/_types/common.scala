@@ -14,21 +14,21 @@ type ScrollIds = String
 type CategoryId = String
 type ActionIds = String
 type Id = String
-type Ids = Id | Array[Id]
+type Ids = Id | Seq[Id]
 type NodeId = String
 type IndexName = String
-type Indices = String | Array[String]
+type Indices = String | Seq[String]
 type IndexAlias = String
 type IndexPattern = String
-type IndexPatterns = Array[IndexPattern]
+type IndexPatterns = Seq[IndexPattern]
 type Type = String
-type Types = Type | Array[Type]
+type Types = Type | Seq[Type]
 type Routing = String | Double
 type LongId = String
 type IndexMetrics = String
-type Metrics = String | Array[String]
+type Metrics = String | Seq[String]
 type Name = String
-type Names = String | Array[String]
+type Names = String | Seq[String]
 type Namespace = String
 type Service = String
 type PipelineName = String
@@ -37,9 +37,9 @@ type DataStreamName = String
 type ByteSize = long | String
 type Metadata = Dictionary[String, UserDefinedValue]
 type VersionNumber = long
-type VersionNumbers = Array[VersionNumber]
+type VersionNumbers = Seq[VersionNumber]
 type VersionString = String
-type VersionStrings = Array[VersionString]
+type VersionStrings = Seq[VersionString]
 
 object VersionType extends Enumeration {
 	type VersionType = Value
@@ -61,11 +61,11 @@ type TaskId = String | integer
 type Fuzziness = String | integer
 type MultiTermQueryRewrite = String
 type Field = String
-type Fields = Field | Array[Field]
+type Fields = Field | Seq[Field]
 type WaitForActiveShards = integer | WaitForActiveShardOptions
 type AggregateName = String
 type SuggestionName = String
-type HttpHeaders = Dictionary[String, String | Array[String]]
+type HttpHeaders = Dictionary[String, String | Seq[String]]
 
 @JsonCodec sealed trait EmptyObject
 type MinimumShouldMatch = integer | String
@@ -138,7 +138,7 @@ object ExpandWildcardOptions extends Enumeration {
 
 implicit val expandWildcardOptionsDecoder: Decoder[ExpandWildcardOptions.Value] = Decoder.decodeEnumeration(ExpandWildcardOptions)
 implicit val expandWildcardOptionsEncoder: Encoder[ExpandWildcardOptions.Value] = Decoder.encodeEnumeration(ExpandWildcardOptions)
-type ExpandWildcards = ExpandWildcardOptions | Array[ExpandWildcardOptions] | String
+type ExpandWildcards = ExpandWildcardOptions | Seq[ExpandWildcardOptions] | String
 
 object GroupBy extends Enumeration {
 	type GroupBy = Value
