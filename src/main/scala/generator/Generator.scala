@@ -154,7 +154,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
   def printQIdent(x: TsQIdent): Unit =
     x.parts.map(i => parseTsPrimitives(i.value)).foreach(i => print(i))
 
-  def printType(x: TsType, name: String = ""): Unit = x match {
+  def printType(x: TsType, name: String = "Undefined"): Unit = x match {
     case x: TsTypeRef => printTypeRef(x)
     case x: TsTypeLiteral => printTypeLiteral(x)
     case x: TsTypeObject => printTypeObject(x, name)

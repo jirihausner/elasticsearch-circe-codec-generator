@@ -63,7 +63,7 @@ implicit val datafeedStateEncoder: Encoder[DatafeedState.Value] = Decoder.encode
 	job_id: Id, 
 	search_count: long, 
 	total_search_time_ms: double, 
-	average_search_time_per_bucket_ms: Numeric
+	average_search_time_per_bucket_ms: Double
 )
 
 object ChunkingMode extends Enumeration {

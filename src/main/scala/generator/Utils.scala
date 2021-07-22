@@ -35,7 +35,8 @@ object Utils {
     // primitives
     case "any" => "Any"
     case "bigint" => "BigInt"
-    case "number" => "Numeric"
+    case "number" => "Double"
+    case "Number" => "Double"
     case "boolean" => "Boolean"
     case "never" => "Unit"
     case "`null`" => "None"
@@ -45,8 +46,9 @@ object Utils {
     //case "undefined" => "None"
     case "unknown" => "None"
     case "void" => "Unit"
-    // TODO other
-    //case "long" => "Long"
+    case "Array" => "Array"
+    case "ConcatArray" => "Array"
+    case "ReadonlyArray" => "Array"
     case _ => ident
   }
 }
