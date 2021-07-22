@@ -34,12 +34,13 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     file.comments.cs.foreach(printComment)
 
     // pritn package
-    output.println(s"package ${basePackageName + '.' + packageName}")
-    output.println
-    output.println("import io.circe._, io.circe.generic.semiauto._")
-    //output.println("import io.circe.{Decoder, Encoder, KeyDecoder, KeyEncoder}")
-    output.println("import io.circe.generic.JsonCodec, io.circe.syntax._")
-    output.println
+    print(s"package $basePackageName")
+    if (packageName.nonEmpty)
+      print(s"${'.' + packageName}")
+    printLn("\n")
+    printLn("import io.circe._, io.circe.generic.semiauto._")
+    //printLn("import io.circe.{Decoder, Encoder, KeyDecoder, KeyEncoder}")
+    printLn("import io.circe.generic.JsonCodec, io.circe.syntax._")
   }
 
   /** --- TREE */

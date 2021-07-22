@@ -17,11 +17,10 @@
  * under the License.
  */
 
-package com.converted.elasticsearch.
+package com.converted.elasticsearch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-
 
 @JsonCodec case class BulkCreateOperation extends BulkOperation
 
