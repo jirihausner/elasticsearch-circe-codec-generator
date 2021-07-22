@@ -9,9 +9,9 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, FielddataStats, QueryCacheStats, SegmentsStats, StoreStats, PluginStats }
 
 @JsonCodec case class ClusterFileSystem(
-	available_in_bytes: Long, 
-	free_in_bytes: Long, 
-	total_in_bytes: Long
+	available_in_bytes: long, 
+	free_in_bytes: long, 
+	total_in_bytes: long
 )
 
 
@@ -32,7 +32,7 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 
 @JsonCodec case class ClusterIndices(
 	completion: CompletionStats, 
-	count: Long, 
+	count: long, 
 	docs: DocStats, 
 	fielddata: FielddataStats, 
 	query_cache: QueryCacheStats, 
@@ -92,7 +92,7 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 @JsonCodec case class IndicesVersions(
 	index_count: integer, 
 	primary_shard_count: integer, 
-	total_primary_bytes: Long, 
+	total_primary_bytes: long, 
 	version: VersionString
 )
 
@@ -104,16 +104,16 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 
 
 @JsonCodec case class ClusterJvm(
-	max_uptime_in_millis: Long, 
+	max_uptime_in_millis: long, 
 	mem: ClusterJvmMemory, 
-	threads: Long, 
+	threads: long, 
 	versions: Array(ClusterJvmVersion)
 )
 
 
 @JsonCodec case class ClusterJvmMemory(
-	heap_max_in_bytes: Long, 
-	heap_used_in_bytes: Long
+	heap_max_in_bytes: long, 
+	heap_used_in_bytes: long
 )
 
 
@@ -201,17 +201,17 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 
 
 @JsonCodec case class ClusterProcessOpenFileDescriptors(
-	avg: Long, 
-	max: Long, 
-	min: Long
+	avg: long, 
+	max: long, 
+	min: long
 )
 
 
 @JsonCodec case class ClusterProcessor(
-	count: Long, 
-	current: Long, 
-	failed: Long, 
-	time_in_millis: Long
+	count: long, 
+	current: long, 
+	failed: long, 
+	time_in_millis: long
 )
 
 
@@ -230,10 +230,10 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 
 
 @JsonCodec case class OperatingSystemMemoryInfo(
-	free_in_bytes: Long, 
+	free_in_bytes: long, 
 	free_percent: integer, 
-	total_in_bytes: Long, 
-	used_in_bytes: Long, 
+	total_in_bytes: long, 
+	used_in_bytes: long, 
 	used_percent: integer
 )
 

@@ -20,8 +20,8 @@ object Request {
 	@JsonCodec case class QueryParameters(
 		ignore_idle_threads: Boolean, 
 		interval: Time, 
-		snapshots: Long, 
-		threads: Long, 
+		snapshots: long, 
+		threads: long, 
 		thread_type: ThreadType, 
 		timeout: Time
 	)

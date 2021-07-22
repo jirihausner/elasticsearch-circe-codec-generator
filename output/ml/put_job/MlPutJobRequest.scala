@@ -28,13 +28,13 @@ object Request {
 		background_persist_interval: Time, 
 		custom_settings: CustomSettings, 
 		data_description: DataDescription, 
-		daily_model_snapshot_retention_after_days: Long, 
+		daily_model_snapshot_retention_after_days: long, 
 		groups: Array(String), 
 		description: String, 
 		model_plot_config: ModelPlotConfig, 
-		model_snapshot_retention_days: Long, 
+		model_snapshot_retention_days: long, 
 		results_index_name: IndexName, 
-		results_retention_days: Long
+		results_retention_days: long
 	)
 }
 

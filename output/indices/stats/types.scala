@@ -40,31 +40,31 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 @JsonCodec case class ShardCommit(
 	generation: integer, 
 	id: Id, 
-	num_docs: Long, 
+	num_docs: long, 
 	user_data: Dictionary(String, String)
 )
 
 
 @JsonCodec case class ShardFielddata(
-	evictions: Long, 
-	memory_size_in_bytes: Long
+	evictions: long, 
+	memory_size_in_bytes: long
 )
 
 
 @JsonCodec case class ShardFileSizeInfo(
 	description: String, 
-	size_in_bytes: Long, 
-	min_size_in_bytes: Long, 
-	max_size_in_bytes: Long, 
-	average_size_in_bytes: Long, 
-	count: Long
+	size_in_bytes: long, 
+	min_size_in_bytes: long, 
+	max_size_in_bytes: long, 
+	average_size_in_bytes: long, 
+	count: long
 )
 
 
 @JsonCodec case class ShardLease(
 	id: Id, 
 	retaining_seq_no: SequenceNumber, 
-	timestamp: Long, 
+	timestamp: long, 
 	source: String
 )
 
@@ -77,18 +77,18 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 
 
 @JsonCodec case class ShardQueryCache(
-	cache_count: Long, 
-	cache_size: Long, 
-	evictions: Long, 
-	hit_count: Long, 
-	memory_size_in_bytes: Long, 
-	miss_count: Long, 
-	total_count: Long
+	cache_count: long, 
+	cache_size: long, 
+	evictions: long, 
+	hit_count: long, 
+	memory_size_in_bytes: long, 
+	miss_count: long, 
+	total_count: long
 )
 
 
 @JsonCodec case class ShardRetentionLeases(
-	primary_term: Long, 
+	primary_term: long, 
 	version: VersionNumber, 
 	leases: Array(ShardLease)
 )
@@ -116,8 +116,8 @@ implicit val shardRoutingStateEncoder: Encoder[ShardRoutingState.Value] = Decode
 
 
 @JsonCodec case class ShardSequenceNumber(
-	global_checkpoint: Long, 
-	local_checkpoint: Long, 
+	global_checkpoint: long, 
+	local_checkpoint: long, 
 	max_seq_no: SequenceNumber
 )
 

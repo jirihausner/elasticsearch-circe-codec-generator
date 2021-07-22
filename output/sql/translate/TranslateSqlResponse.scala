@@ -15,7 +15,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 object Response {
 	@JsonCodec case class Body(
-		size: Long, 
+		size: long, 
 		_source: Boolean | Fields | SourceFilter, 
 		fields: Array(Dictionary(Field, String)), 
 		sort: Sort

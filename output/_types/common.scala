@@ -35,9 +35,9 @@ type Service = String
 type PipelineName = String
 type NodeName = String
 type DataStreamName = String
-type ByteSize = Long | String
+type ByteSize = long | String
 type Metadata = Dictionary(String, UserDefinedValue)
-type VersionNumber = Long
+type VersionNumber = long
 type VersionNumbers = Array(VersionNumber)
 type VersionString = String
 type VersionStrings = Array(VersionString)
@@ -313,7 +313,7 @@ implicit val waitForStatusEncoder: Encoder[WaitForStatus.Value] = Decoder.encode
 	fields: Dictionary(String, UserDefinedValue), 
 	found: Boolean, 
 	_seq_no: SequenceNumber, 
-	_primary_term: Long, 
+	_primary_term: long, 
 	_routing: Routing, 
 	_source: TDocument
 )

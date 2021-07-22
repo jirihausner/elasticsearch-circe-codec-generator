@@ -86,7 +86,7 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 @JsonCodec case class AttachmentProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
-	indexed_chars: Long, 
+	indexed_chars: long, 
 	indexed_chars_field: Field, 
 	properties: Array(String), 
 	target_field: Field, 

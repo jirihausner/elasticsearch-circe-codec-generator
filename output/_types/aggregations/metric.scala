@@ -59,7 +59,7 @@ import com.converted.elasticsearch._types.aggregations.{ DateInterval }
 
 
 @JsonCodec case class GeoCentroidAggregation(
-	count: Long, 
+	count: long, 
 	location: GeoLocation
 ) extends MetricAggregationBase
 

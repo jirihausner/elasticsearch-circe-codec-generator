@@ -14,7 +14,7 @@ object Response {
 	@JsonCodec case class Body(
 		created: Boolean, 
 		_id: Id, 
-		_primary_term: Long, 
+		_primary_term: long, 
 		_seq_no: SequenceNumber, 
 		_version: VersionNumber
 	)

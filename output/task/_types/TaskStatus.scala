@@ -8,22 +8,22 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class Status(
-	batches: Long, 
+	batches: long, 
 	canceled: String, 
-	created: Long, 
-	deleted: Long, 
-	noops: Long, 
+	created: long, 
+	deleted: long, 
+	noops: long, 
 	failures: Array(String), 
 	requests_per_second: float, 
 	retries: Retries, 
 	throttled: Time, 
-	throttled_millis: Long, 
+	throttled_millis: long, 
 	throttled_until: Time, 
-	throttled_until_millis: Long, 
+	throttled_until_millis: long, 
 	timed_out: Boolean, 
-	took: Long, 
-	total: Long, 
-	updated: Long, 
-	version_conflicts: Long
+	took: long, 
+	total: long, 
+	updated: long, 
+	version_conflicts: long
 )
 

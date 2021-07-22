@@ -13,10 +13,10 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	children: Array(Info), 
 	description: String, 
 	headers: HttpHeaders, 
-	id: Long, 
+	id: long, 
 	node: String, 
-	running_time_in_nanos: Long, 
-	start_time_in_millis: Long, 
+	running_time_in_nanos: long, 
+	start_time_in_millis: long, 
 	status: Status, 
 	`type`: String, 
 	parent_task_id: Id

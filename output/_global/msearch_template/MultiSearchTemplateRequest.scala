@@ -21,7 +21,7 @@ object Request {
 	)
 	@JsonCodec case class QueryParameters(
 		ccs_minimize_roundtrips: Boolean, 
-		max_concurrent_searches: Long, 
+		max_concurrent_searches: long, 
 		search_type: SearchType, 
 		rest_total_hits_as_int: Boolean, 
 		typed_keys: Boolean

@@ -19,10 +19,10 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 
 @JsonCodec case class TrainedModelInferenceStats(
-	failure_count: Long, 
-	inference_count: Long, 
-	cache_miss_count: Long, 
-	missing_all_fields_count: Long, 
+	failure_count: long, 
+	inference_count: long, 
+	cache_miss_count: long, 
+	missing_all_fields_count: long, 
 	timestamp: Time
 )
 

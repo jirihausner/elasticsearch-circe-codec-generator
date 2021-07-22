@@ -25,9 +25,9 @@ object Request {
 		expand_wildcards: ExpandWildcards, 
 		ignore_throttled: Boolean, 
 		ignore_unavailable: Boolean, 
-		max_concurrent_searches: Long, 
-		max_concurrent_shard_requests: Long, 
-		pre_filter_shard_size: Long, 
+		max_concurrent_searches: long, 
+		max_concurrent_shard_requests: long, 
+		pre_filter_shard_size: long, 
 		search_type: SearchType, 
 		rest_total_hits_as_int: Boolean, 
 		typed_keys: Boolean

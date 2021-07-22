@@ -14,10 +14,10 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 
 
 @JsonCodec case class CoordinatorStats(
-	executed_searches_total: Long, 
+	executed_searches_total: long, 
 	node_id: Id, 
 	queue_size: integer, 
 	remote_requests_current: integer, 
-	remote_requests_total: Long
+	remote_requests_total: long
 )
 

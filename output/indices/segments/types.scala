@@ -16,12 +16,12 @@ import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 	attributes: Dictionary(String, String), 
 	committed: Boolean, 
 	compound: Boolean, 
-	deleted_docs: Long, 
+	deleted_docs: long, 
 	generation: integer, 
 	memory_in_bytes: double, 
 	search: Boolean, 
 	size_in_bytes: double, 
-	num_docs: Long, 
+	num_docs: long, 
 	version: VersionString
 )
 

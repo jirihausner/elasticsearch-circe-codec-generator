@@ -23,12 +23,12 @@ object Request {
 		`type`: Type
 	)
 	@JsonCodec case class QueryParameters(
-		if_primary_term: Long, 
+		if_primary_term: long, 
 		if_seq_no: SequenceNumber, 
 		lang: String, 
 		refresh: Refresh, 
 		require_alias: Boolean, 
-		retry_on_conflict: Long, 
+		retry_on_conflict: long, 
 		routing: Routing, 
 		source_enabled: Boolean, 
 		timeout: Time, 

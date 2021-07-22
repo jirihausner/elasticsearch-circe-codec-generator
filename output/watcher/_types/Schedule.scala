@@ -42,7 +42,7 @@ implicit val dayEncoder: Encoder[Day.Value] = Decoder.encodeEnumeration(Day)
 
 
 @JsonCodec case class Interval(
-	factor: Long, 
+	factor: long, 
 	unit: IntervalUnit
 ) extends ScheduleBase
 

@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class RolloverConditions(
 	max_age: Time, 
-	max_docs: Long, 
+	max_docs: long, 
 	max_size: String, 
 	max_primary_shard_size: ByteSize
 )

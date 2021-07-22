@@ -12,21 +12,21 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 
 object Response {
 	@JsonCodec case class Body(
-		bucket_count: Long, 
+		bucket_count: long, 
 		earliest_record_timestamp: integer, 
-		empty_bucket_count: Long, 
-		input_bytes: Long, 
-		input_field_count: Long, 
-		input_record_count: Long, 
-		invalid_date_count: Long, 
+		empty_bucket_count: long, 
+		input_bytes: long, 
+		input_field_count: long, 
+		input_record_count: long, 
+		invalid_date_count: long, 
 		job_id: Id, 
 		last_data_time: integer, 
 		latest_record_timestamp: integer, 
-		missing_field_count: Long, 
-		out_of_order_timestamp_count: Long, 
-		processed_field_count: Long, 
-		processed_record_count: Long, 
-		sparse_bucket_count: Long
+		missing_field_count: long, 
+		out_of_order_timestamp_count: long, 
+		processed_field_count: long, 
+		processed_record_count: long, 
+		sparse_bucket_count: long
 	)
 }
 

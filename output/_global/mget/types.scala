@@ -29,7 +29,7 @@ type MultiGetId = String | integer
 	found: Boolean, 
 	_id: Id, 
 	_index: IndexName, 
-	_primary_term: Long, 
+	_primary_term: long, 
 	_routing: Routing, 
 	_seq_no: SequenceNumber, 
 	_source: TDocument, 

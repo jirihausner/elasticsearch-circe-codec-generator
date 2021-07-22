@@ -17,7 +17,7 @@ object Response {
 		connections: Array(Connection), 
 		failures: Array(ShardFailure), 
 		timed_out: Boolean, 
-		took: Long, 
+		took: long, 
 		vertices: Array(Vertex)
 	)
 }

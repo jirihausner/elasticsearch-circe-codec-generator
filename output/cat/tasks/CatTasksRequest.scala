@@ -16,7 +16,7 @@ object Request {
 		actions: Array(String), 
 		detailed: Boolean, 
 		node_id: Array(String), 
-		parent_task: Long
+		parent_task: long
 	)
 	@JsonCodec case class Body(
 	)

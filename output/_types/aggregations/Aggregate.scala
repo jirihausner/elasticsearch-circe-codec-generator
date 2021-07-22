@@ -21,7 +21,7 @@ type Bucket = CompositeBucket | DateHistogramBucket | FiltersBucketItem | IpRang
 
 
 @JsonCodec case class FiltersBucketItem(
-	doc_count: Long
+	doc_count: long
 ) extends AdditionalProperties(AggregateName, Aggregate)
 
 
@@ -38,7 +38,7 @@ type Bucket = CompositeBucket | DateHistogramBucket | FiltersBucketItem | IpRang
 
 
 @JsonCodec case class KeyedBucket[TKey](
-	doc_count: Long, 
+	doc_count: long, 
 	key: TKey, 
 	key_as_string: String
 ) extends AdditionalProperties(AggregateName, Aggregate)
@@ -74,7 +74,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 
 @JsonCodec case class AutoDateHistogramAggregate(
 	interval: DateMathTime
-) extends MultiBucketAggregate(KeyedBucket(Long))
+) extends MultiBucketAggregate(KeyedBucket(long))
 
 
 @JsonCodec case class FiltersAggregate(
@@ -83,23 +83,23 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 
 
 @JsonCodec case class SignificantTermsAggregate[TKey](
-	bg_count: Long, 
-	doc_count: Long
+	bg_count: long, 
+	doc_count: long
 ) extends MultiBucketAggregate(TKey)
 
 
 @JsonCodec case class TermsAggregate[TKey](
-	doc_count_error_upper_bound: Long, 
-	sum_other_doc_count: Long
+	doc_count_error_upper_bound: long, 
+	sum_other_doc_count: long
 ) extends MultiBucketAggregate(TKey)
 
 
 @JsonCodec case class BucketAggregate(
 	after_key: Dictionary(String, UserDefinedValue), 
-	bg_count: Long, 
-	doc_count: Long, 
-	doc_count_error_upper_bound: Long, 
-	sum_other_doc_count: Long, 
+	bg_count: long, 
+	doc_count: long, 
+	doc_count_error_upper_bound: long, 
+	sum_other_doc_count: long, 
 	interval: DateMathTime, 
 	items: Bucket
 ) extends AggregateBase
@@ -174,7 +174,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 
 
 @JsonCodec case class GeoCentroidAggregate(
-	count: Long, 
+	count: long, 
 	location: GeoLocation
 ) extends AggregateBase
 
@@ -230,7 +230,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 
 
 @JsonCodec case class StringStatsAggregate(
-	count: Long, 
+	count: long, 
 	min_length: integer, 
 	max_length: integer, 
 	avg_length: double, 
@@ -250,7 +250,7 @@ type MetricAggregate = ValueAggregate | BoxPlotAggregate | GeoBoundsAggregate | 
 
 
 @JsonCodec case class TopMetrics(
-	sort: Array(Long | double | String), 
-	metrics: Dictionary(String, Long | double | String)
+	sort: Array(long | double | String), 
+	metrics: Dictionary(String, long | double | String)
 )
 

@@ -19,35 +19,35 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 
 
 @JsonCodec case class TransformProgress(
-	docs_indexed: Long, 
-	docs_processed: Long, 
-	docs_remaining: Long, 
+	docs_indexed: long, 
+	docs_processed: long, 
+	docs_remaining: long, 
 	percent_complete: double, 
-	total_docs: Long
+	total_docs: long
 )
 
 
 @JsonCodec case class TransformIndexerStats(
-	documents_indexed: Long, 
-	documents_processed: Long, 
+	documents_indexed: long, 
+	documents_processed: long, 
 	exponential_avg_checkpoint_duration_ms: double, 
 	exponential_avg_documents_indexed: double, 
 	exponential_avg_documents_processed: double, 
-	index_failures: Long, 
-	index_time_in_ms: Long, 
-	index_total: Long, 
-	pages_processed: Long, 
-	processing_time_in_ms: Long, 
-	processing_total: Long, 
-	search_failures: Long, 
-	search_time_in_ms: Long, 
-	search_total: Long, 
-	trigger_count: Long
+	index_failures: long, 
+	index_time_in_ms: long, 
+	index_total: long, 
+	pages_processed: long, 
+	processing_time_in_ms: long, 
+	processing_total: long, 
+	search_failures: long, 
+	search_time_in_ms: long, 
+	search_total: long, 
+	trigger_count: long
 )
 
 
 @JsonCodec case class CheckpointStats(
-	checkpoint: Long, 
+	checkpoint: long, 
 	checkpoint_progress: TransformProgress, 
 	timestamp: DateString, 
 	timestamp_millis: EpochMillis, 
@@ -57,10 +57,10 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 
 
 @JsonCodec case class Checkpointing(
-	changes_last_detected_at: Long, 
+	changes_last_detected_at: long, 
 	changes_last_detected_at_date_time: DateString, 
 	last: CheckpointStats, 
 	next: CheckpointStats, 
-	operations_behind: Long
+	operations_behind: long
 )
 

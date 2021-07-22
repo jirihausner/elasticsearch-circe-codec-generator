@@ -32,6 +32,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class HistogramGrouping(
 	fields: Fields, 
-	interval: Long
+	interval: long
 )
 

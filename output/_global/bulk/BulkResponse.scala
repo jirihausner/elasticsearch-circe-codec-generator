@@ -14,8 +14,8 @@ object Response {
 	@JsonCodec case class Body(
 		errors: Boolean, 
 		items: Array(ResponseItemContainer), 
-		took: Long, 
-		ingest_took: Long
+		took: long, 
+		ingest_took: long
 	)
 }
 

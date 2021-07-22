@@ -68,7 +68,7 @@ import com.converted.elasticsearch._types.query_dsl.{ ExistsQuery, FuzzyQuery, I
 	span_within: SpanWithinQuery, 
 	template: QueryTemplate, 
 	term: NamedQuery(TermQuery | String | float | Boolean), 
-	terms: NamedQuery(TermsQuery | Array(String) | Array(Long)), 
+	terms: NamedQuery(TermsQuery | Array(String) | Array(long)), 
 	terms_set: NamedQuery(TermsSetQuery | String), 
 	wildcard: NamedQuery(WildcardQuery | String), 
 	`type`: TypeQuery

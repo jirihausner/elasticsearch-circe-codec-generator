@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.Transform.{ Transform }
 
 object Response {
 	@JsonCodec case class Body(
-		count: Long, 
+		count: long, 
 		transforms: Array(Transform)
 	)
 }

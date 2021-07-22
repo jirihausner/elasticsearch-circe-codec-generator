@@ -13,7 +13,7 @@ import com.converted.elasticsearch.security.get_token.{ AuthenticatedUser }
 object Response {
 	@JsonCodec case class Body(
 		access_token: String, 
-		expires_in: Long, 
+		expires_in: long, 
 		scope: String, 
 		`type`: String, 
 		refresh_token: String, 

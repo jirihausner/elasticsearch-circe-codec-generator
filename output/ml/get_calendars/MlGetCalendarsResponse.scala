@@ -13,7 +13,7 @@ import com.converted.elasticsearch.ml.get_calendars.{ Calendar }
 object Response {
 	@JsonCodec case class Body(
 		calendars: Array(Calendar), 
-		count: Long
+		count: long
 	)
 }
 

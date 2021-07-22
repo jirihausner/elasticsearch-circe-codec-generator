@@ -14,13 +14,13 @@ object Response {
 	@JsonCodec case class Body(
 		retention_deletion_time: String, 
 		retention_deletion_time_millis: EpochMillis, 
-		retention_failed: Long, 
-		retention_runs: Long, 
-		retention_timed_out: Long, 
-		total_snapshots_deleted: Long, 
-		total_snapshot_deletion_failures: Long, 
-		total_snapshots_failed: Long, 
-		total_snapshots_taken: Long, 
+		retention_failed: long, 
+		retention_runs: long, 
+		retention_timed_out: long, 
+		total_snapshots_deleted: long, 
+		total_snapshot_deletion_failures: long, 
+		total_snapshots_failed: long, 
+		total_snapshots_taken: long, 
 		policy_stats: Array(String)
 	)
 }

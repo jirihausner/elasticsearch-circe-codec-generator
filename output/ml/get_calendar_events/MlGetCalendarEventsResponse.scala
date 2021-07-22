@@ -12,7 +12,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 object Response {
 	@JsonCodec case class Body(
-		count: Long, 
+		count: long, 
 		events: Array(CalendarEvent)
 	)
 }

@@ -46,7 +46,7 @@ object Utils {
     case "unknown" => "None"
     case "void" => "Unit"
     // TODO other
-    case "long" => "Long"
+    //case "long" => "Long"
     case _ => ident
   }
 }

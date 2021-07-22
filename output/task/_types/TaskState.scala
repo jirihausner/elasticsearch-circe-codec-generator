@@ -12,11 +12,11 @@ import com.converted.elasticsearch.task._types.{ Status }
 	cancellable: Boolean, 
 	description: String, 
 	headers: HttpHeaders, 
-	id: Long, 
+	id: long, 
 	node: String, 
 	parent_task_id: TaskId, 
-	running_time_in_nanos: Long, 
-	start_time_in_millis: Long, 
+	running_time_in_nanos: long, 
+	start_time_in_millis: long, 
 	status: Status, 
 	`type`: String
 )

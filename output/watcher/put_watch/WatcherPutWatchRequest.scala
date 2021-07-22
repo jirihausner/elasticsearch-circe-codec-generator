@@ -25,8 +25,8 @@ object Request {
 	)
 	@JsonCodec case class QueryParameters(
 		active: Boolean, 
-		if_primary_term: Long, 
-		if_sequence_number: Long, 
+		if_primary_term: long, 
+		if_sequence_number: long, 
 		version: VersionNumber
 	)
 	@JsonCodec case class Body(

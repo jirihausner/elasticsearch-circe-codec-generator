@@ -85,7 +85,7 @@ implicit val executionPhaseEncoder: Encoder[ExecutionPhase.Value] = Decoder.enco
 
 
 @JsonCodec case class ExecutionThreadPool(
-	max_size: Long, 
-	queue_size: Long
+	max_size: long, 
+	queue_size: long
 )
 

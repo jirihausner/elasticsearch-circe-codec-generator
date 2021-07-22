@@ -26,7 +26,7 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase }
 
 
 @JsonCodec case class IdsQuery(
-	values: Array(Id) | Array(Long)
+	values: Array(Id) | Array(long)
 ) extends QueryBase
 
 

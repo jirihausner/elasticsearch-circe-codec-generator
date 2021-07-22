@@ -6,7 +6,7 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._types.{ long }
 
 @JsonCodec case class Retries(
-	bulk: Long, 
-	search: Long
+	bulk: long, 
+	search: long
 )
 

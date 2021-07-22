@@ -7,8 +7,8 @@ import com.converted.elasticsearch._types.common.{ Id, Metadata, Name, Username 
 import com.converted.elasticsearch._types.Numeric.{ long }
 
 @JsonCodec case class ApiKey(
-	creation: Long, 
-	expiration: Long, 
+	creation: long, 
+	expiration: long, 
 	id: Id, 
 	invalidated: Boolean, 
 	name: Name, 

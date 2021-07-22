@@ -20,7 +20,7 @@ object Response {
 		indices: ClusterIndices, 
 		nodes: ClusterNodes, 
 		status: ClusterStatus, 
-		timestamp: Long
+		timestamp: long
 	)
 }
 

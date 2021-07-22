@@ -16,7 +16,7 @@ import com.converted.elasticsearch._types.Numeric.{ long, ulong }
 	partition_field_value: String, 
 	regex: String, 
 	terms: String, 
-	num_matches: Long, 
+	num_matches: long, 
 	preferred_to_categories: Array(Id), 
 	p: String, 
 	result_type: String, 

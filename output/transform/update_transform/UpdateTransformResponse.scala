@@ -15,7 +15,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 object Response {
 	@JsonCodec case class Body(
-		create_time: Long, 
+		create_time: long, 
 		description: String, 
 		dest: Destination, 
 		frequency: Time, 

@@ -156,7 +156,7 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	max_num_threads: integer, 
 	analyzed_fields: DataframeAnalysisAnalyzedFields, 
 	allow_lazy_start: Boolean, 
-	create_time: Long, 
+	create_time: long, 
 	version: VersionString
 )
 
@@ -180,8 +180,8 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 
 
 @JsonCodec case class DataframeAnalyticsStatsMemoryUsage(
-	memory_reestimate_bytes: Long, 
-	peak_usage_bytes: Long, 
+	memory_reestimate_bytes: long, 
+	peak_usage_bytes: long, 
 	status: String, 
 	timestamp: DateString
 )

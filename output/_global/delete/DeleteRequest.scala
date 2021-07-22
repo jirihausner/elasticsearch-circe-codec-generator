@@ -21,7 +21,7 @@ object Request {
 		`type`: Type
 	)
 	@JsonCodec case class QueryParameters(
-		if_primary_term: Long, 
+		if_primary_term: long, 
 		if_seq_no: SequenceNumber, 
 		refresh: Refresh, 
 		routing: Routing, 

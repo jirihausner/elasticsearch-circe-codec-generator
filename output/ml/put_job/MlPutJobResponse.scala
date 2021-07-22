@@ -24,17 +24,17 @@ object Response {
 		create_time: DateString, 
 		custom_settings: CustomSettings, 
 		data_description: DataDescription, 
-		daily_model_snapshot_retention_after_days: Long, 
+		daily_model_snapshot_retention_after_days: long, 
 		groups: Array(String), 
 		description: String, 
 		job_id: Id, 
 		job_type: String, 
 		model_plot_config: ModelPlotConfig, 
 		model_snapshot_id: Id, 
-		model_snapshot_retention_days: Long, 
-		renormalization_window_days: Long, 
+		model_snapshot_retention_days: long, 
+		renormalization_window_days: long, 
 		results_index_name: String, 
-		results_retention_days: Long
+		results_retention_days: long
 	)
 }
 

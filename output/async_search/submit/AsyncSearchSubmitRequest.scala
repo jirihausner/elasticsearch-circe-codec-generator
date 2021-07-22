@@ -31,7 +31,7 @@ object Request {
 		index: Indices
 	)
 	@JsonCodec case class QueryParameters(
-		batched_reduce_size: Long, 
+		batched_reduce_size: long, 
 		wait_for_completion_timeout: Time, 
 		keep_on_completion: Boolean, 
 		typed_keys: Boolean
@@ -42,7 +42,7 @@ object Request {
 		allow_partial_search_results: Boolean, 
 		analyzer: String, 
 		analyze_wildcard: Boolean, 
-		batched_reduce_size: Long, 
+		batched_reduce_size: long, 
 		collapse: FieldCollapse, 
 		default_operator: DefaultOperator, 
 		df: String, 
@@ -57,7 +57,7 @@ object Request {
 		keep_alive: Time, 
 		keep_on_completion: Boolean, 
 		lenient: Boolean, 
-		max_concurrent_shard_requests: Long, 
+		max_concurrent_shard_requests: long, 
 		min_score: double, 
 		post_filter: QueryContainer, 
 		preference: String, 
@@ -80,9 +80,9 @@ object Request {
 		suggest: Dictionary(String, SuggestContainer), 
 		suggest_field: Field, 
 		suggest_mode: SuggestMode, 
-		suggest_size: Long, 
+		suggest_size: long, 
 		suggest_text: String, 
-		terminate_after: Long, 
+		terminate_after: long, 
 		timeout: String, 
 		track_scores: Boolean, 
 		track_total_hits: Boolean, 

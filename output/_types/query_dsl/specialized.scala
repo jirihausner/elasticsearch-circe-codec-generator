@@ -68,7 +68,7 @@ type Like = String | LikeDocument
 
 
 @JsonCodec case class PinnedQuery(
-	ids: Array(Id) | Array(Long), 
+	ids: Array(Id) | Array(long), 
 	organic: QueryContainer
 ) extends QueryBase
 

@@ -15,7 +15,7 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	issue_date_in_millis: EpochMillis, 
 	issued_to: String, 
 	issuer: String, 
-	max_nodes: Long, 
+	max_nodes: long, 
 	max_resource_units: integer, 
 	status: LicenseStatus, 
 	`type`: LicenseType, 

@@ -11,7 +11,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	anomaly_score: double, 
 	bucket_influencers: Array(BucketInfluencer), 
 	bucket_span: Time, 
-	event_count: Long, 
+	event_count: long, 
 	initial_anomaly_score: double, 
 	is_interim: Boolean, 
 	job_id: Id, 
@@ -23,7 +23,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 
 @JsonCodec case class BucketInfluencer(
-	bucket_span: Long, 
+	bucket_span: long, 
 	influencer_score: double, 
 	influencer_field_name: Field, 
 	influencer_field_value: String, 
@@ -38,7 +38,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 
 @JsonCodec case class OverallBucket(
-	bucket_span: Long, 
+	bucket_span: long, 
 	is_interim: Boolean, 
 	jobs: Array(OverallBucketJob), 
 	overall_score: double, 

@@ -14,20 +14,20 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 
 object Response {
 	@JsonCodec case class Body(
-		batches: Long, 
-		deleted: Long, 
+		batches: long, 
+		deleted: long, 
 		failures: Array(BulkIndexByScrollFailure), 
-		noops: Long, 
+		noops: long, 
 		requests_per_second: float, 
 		retries: Retries, 
 		slice_id: integer, 
 		task: TaskId, 
-		throttled_millis: Long, 
-		throttled_until_millis: Long, 
+		throttled_millis: long, 
+		throttled_until_millis: long, 
 		timed_out: Boolean, 
-		took: Long, 
-		total: Long, 
-		version_conflicts: Long
+		took: long, 
+		total: long, 
+		version_conflicts: long
 	)
 }
 

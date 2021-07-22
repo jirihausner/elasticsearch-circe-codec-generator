@@ -18,7 +18,7 @@ object Request {
 		task_id: Id
 	)
 	@JsonCodec case class QueryParameters(
-		requests_per_second: Long
+		requests_per_second: long
 	)
 	@JsonCodec case class Body(
 	)

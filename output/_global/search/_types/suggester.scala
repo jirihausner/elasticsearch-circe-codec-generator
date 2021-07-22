@@ -59,7 +59,7 @@ type SuggestOption[TDocument]  = CompletionSuggestOption(TDocument) | PhraseSugg
 
 @JsonCodec case class TermSuggestOption(
 	text: String, 
-	freq: Long, 
+	freq: long, 
 	score: double
 )
 

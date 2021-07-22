@@ -20,18 +20,18 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 
 
 @JsonCodec case class FileDetails(
-	length: Long, 
+	length: long, 
 	name: String, 
-	recovered: Long
+	recovered: long
 )
 
 
 @JsonCodec case class RecoveryFiles(
 	details: Array(FileDetails), 
 	percent: Percentage, 
-	recovered: Long, 
-	reused: Long, 
-	total: Long
+	recovered: long, 
+	reused: long, 
+	total: long
 )
 
 
@@ -65,7 +65,7 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 
 
 @JsonCodec case class RecoveryStartStatus(
-	check_index_time: Long, 
+	check_index_time: long, 
 	total_time_in_millis: String
 )
 
@@ -77,9 +77,9 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 
 @JsonCodec case class TranslogStatus(
 	percent: Percentage, 
-	recovered: Long, 
-	total: Long, 
-	total_on_start: Long, 
+	recovered: long, 
+	total: long, 
+	total_on_start: long, 
 	total_time: String, 
 	total_time_in_millis: EpochMillis
 )
@@ -94,7 +94,7 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 
 
 @JsonCodec case class ShardRecovery(
-	id: Long, 
+	id: long, 
 	index: RecoveryIndexStatus, 
 	primary: Boolean, 
 	source: RecoveryOrigin, 

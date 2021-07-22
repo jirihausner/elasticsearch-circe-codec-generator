@@ -62,10 +62,10 @@ implicit val datafeedStateEncoder: Encoder[DatafeedState.Value] = Decoder.encode
 
 
 @JsonCodec case class DatafeedTimingStats(
-	bucket_count: Long, 
+	bucket_count: long, 
 	exponential_average_search_time_per_hour_ms: double, 
 	job_id: Id, 
-	search_count: Long, 
+	search_count: long, 
 	total_search_time_ms: double, 
 	average_search_time_per_bucket_ms: Numeric
 )

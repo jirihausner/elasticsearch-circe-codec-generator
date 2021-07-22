@@ -47,16 +47,16 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	job_id: Id, 
 	job_type: String, 
 	model_snapshot_id: Id, 
-	model_snapshot_retention_days: Long, 
-	renormalization_window_days: Long, 
+	model_snapshot_retention_days: long, 
+	renormalization_window_days: long, 
 	results_index_name: IndexName, 
-	results_retention_days: Long, 
+	results_retention_days: long, 
 	groups: Array(String), 
 	model_plot_config: ModelPlotConfig, 
 	custom_settings: CustomSettings, 
 	job_version: VersionString, 
 	deleting: Boolean, 
-	daily_model_snapshot_retention_after_days: Long
+	daily_model_snapshot_retention_after_days: long
 )
 
 
@@ -76,7 +76,7 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 
 @JsonCodec case class JobTimingStats(
 	average_bucket_processing_time_ms: double, 
-	bucket_count: Long, 
+	bucket_count: long, 
 	exponential_average_bucket_processing_time_ms: double, 
 	exponential_average_bucket_processing_time_per_hour_ms: double, 
 	job_id: Id, 
@@ -90,31 +90,31 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	memory_bytes: JobStatistics, 
 	processing_time_ms: JobStatistics, 
 	records: JobStatistics, 
-	status: Dictionary(String, Long), 
-	total: Long, 
+	status: Dictionary(String, long), 
+	total: long, 
 	forecasted_jobs: integer
 )
 
 
 @JsonCodec case class DataCounts(
-	bucket_count: Long, 
-	earliest_record_timestamp: Long, 
-	empty_bucket_count: Long, 
-	input_bytes: Long, 
-	input_field_count: Long, 
-	input_record_count: Long, 
-	invalid_date_count: Long, 
+	bucket_count: long, 
+	earliest_record_timestamp: long, 
+	empty_bucket_count: long, 
+	input_bytes: long, 
+	input_field_count: long, 
+	input_record_count: long, 
+	invalid_date_count: long, 
 	job_id: Id, 
-	last_data_time: Long, 
-	latest_empty_bucket_timestamp: Long, 
-	latest_record_timestamp: Long, 
-	latest_sparse_bucket_timestamp: Long, 
-	latest_bucket_timestamp: Long, 
-	missing_field_count: Long, 
-	out_of_order_timestamp_count: Long, 
-	processed_field_count: Long, 
-	processed_record_count: Long, 
-	sparse_bucket_count: Long
+	last_data_time: long, 
+	latest_empty_bucket_timestamp: long, 
+	latest_record_timestamp: long, 
+	latest_sparse_bucket_timestamp: long, 
+	latest_bucket_timestamp: long, 
+	missing_field_count: long, 
+	out_of_order_timestamp_count: long, 
+	processed_field_count: long, 
+	processed_record_count: long, 
+	sparse_bucket_count: long
 )
 
 

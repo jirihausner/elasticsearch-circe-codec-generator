@@ -25,14 +25,14 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis, Time }
 @JsonCodec case class Statistics(
 	retention_deletion_time: DateString, 
 	retention_deletion_time_millis: EpochMillis, 
-	retention_failed: Long, 
-	retention_runs: Long, 
-	retention_timed_out: Long, 
+	retention_failed: long, 
+	retention_runs: long, 
+	retention_timed_out: long, 
 	policy: Id, 
-	total_snapshots_deleted: Long, 
-	total_snapshot_deletion_failures: Long, 
-	total_snapshots_failed: Long, 
-	total_snapshots_taken: Long
+	total_snapshots_deleted: long, 
+	total_snapshot_deletion_failures: long, 
+	total_snapshots_failed: long, 
+	total_snapshots_taken: long
 )
 
 

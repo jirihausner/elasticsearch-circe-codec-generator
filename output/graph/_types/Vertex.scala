@@ -7,7 +7,7 @@ import com.converted.elasticsearch._types.common.{ Field }
 import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 
 @JsonCodec case class Vertex(
-	depth: Long, 
+	depth: long, 
 	field: Field, 
 	term: String, 
 	weight: double
@@ -18,8 +18,8 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	exclude: Array(String), 
 	field: Field, 
 	include: Array(VertexInclude), 
-	min_doc_count: Long, 
-	shard_min_doc_count: Long, 
+	min_doc_count: long, 
+	shard_min_doc_count: long, 
 	size: integer
 )
 

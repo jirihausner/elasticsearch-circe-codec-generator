@@ -23,7 +23,7 @@ import com.converted.elasticsearch.watcher._types.{ TriggerContainer }
 	throttle_period: String, 
 	transform: TransformContainer, 
 	trigger: TriggerContainer, 
-	throttle_period_in_millis: Long
+	throttle_period_in_millis: long
 )
 
 

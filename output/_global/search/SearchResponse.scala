@@ -19,7 +19,7 @@ import com.converted.elasticsearch._global.search.{ Suggest }
 
 object Response {
 	@JsonCodec case class Body(
-		took: Long, 
+		took: long, 
 		timed_out: Boolean, 
 		_shards: ShardStatistics, 
 		hits: HitsMetadata(TDocument), 
@@ -28,7 +28,7 @@ object Response {
 		documents: Array(TDocument), 
 		fields: Dictionary(String, UserDefinedValue), 
 		max_score: double, 
-		num_reduce_phases: Long, 
+		num_reduce_phases: long, 
 		profile: Profile, 
 		pit_id: Id, 
 		_scroll_id: ScrollId, 

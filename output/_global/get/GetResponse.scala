@@ -18,7 +18,7 @@ object Response {
 		fields: Dictionary(String, UserDefinedValue), 
 		found: Boolean, 
 		_id: Id, 
-		_primary_term: Long, 
+		_primary_term: long, 
 		_routing: String, 
 		_seq_no: SequenceNumber, 
 		_source: TDocument, 

@@ -15,22 +15,22 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis, Time }
 
 object Response {
 	@JsonCodec case class Body(
-		batches: Long, 
-		created: Long, 
-		deleted: Long, 
+		batches: long, 
+		created: long, 
+		deleted: long, 
 		failures: Array(BulkIndexByScrollFailure), 
-		noops: Long, 
+		noops: long, 
 		retries: Retries, 
-		requests_per_second: Long, 
+		requests_per_second: long, 
 		slice_id: integer, 
 		task: TaskId, 
 		throttled_millis: EpochMillis, 
 		throttled_until_millis: EpochMillis, 
 		timed_out: Boolean, 
 		took: Time, 
-		total: Long, 
-		updated: Long, 
-		version_conflicts: Long
+		total: long, 
+		updated: long, 
+		version_conflicts: long
 	)
 }
 

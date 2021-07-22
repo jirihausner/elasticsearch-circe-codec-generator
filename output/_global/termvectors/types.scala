@@ -14,8 +14,8 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 
 @JsonCodec case class FieldStatistics(
 	doc_count: integer, 
-	sum_doc_freq: Long, 
-	sum_ttf: Long
+	sum_doc_freq: long, 
+	sum_ttf: long
 )
 
 

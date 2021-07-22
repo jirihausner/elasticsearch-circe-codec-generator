@@ -22,7 +22,7 @@ object Request {
 		expand_wildcards: ExpandWildcards, 
 		flush: Boolean, 
 		ignore_unavailable: Boolean, 
-		max_num_segments: Long, 
+		max_num_segments: long, 
 		only_expunge_deletes: Boolean
 	)
 	@JsonCodec case class Body(

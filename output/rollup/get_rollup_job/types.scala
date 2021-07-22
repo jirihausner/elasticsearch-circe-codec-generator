@@ -24,25 +24,25 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	id: Id, 
 	index_pattern: String, 
 	metrics: Array(FieldMetric), 
-	page_size: Long, 
+	page_size: long, 
 	rollup_index: IndexName, 
 	timeout: Time
 )
 
 
 @JsonCodec case class RollupJobStats(
-	documents_processed: Long, 
-	index_failures: Long, 
-	index_time_in_ms: Long, 
-	index_total: Long, 
-	pages_processed: Long, 
-	rollups_indexed: Long, 
-	search_failures: Long, 
-	search_time_in_ms: Long, 
-	search_total: Long, 
-	trigger_count: Long, 
-	processing_time_in_ms: Long, 
-	processing_total: Long
+	documents_processed: long, 
+	index_failures: long, 
+	index_time_in_ms: long, 
+	index_total: long, 
+	pages_processed: long, 
+	rollups_indexed: long, 
+	search_failures: long, 
+	search_time_in_ms: long, 
+	search_total: long, 
+	trigger_count: long, 
+	processing_time_in_ms: long, 
+	processing_total: long
 )
 
 

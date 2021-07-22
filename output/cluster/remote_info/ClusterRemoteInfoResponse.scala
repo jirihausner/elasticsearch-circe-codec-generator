@@ -14,7 +14,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	connected: Boolean, 
 	initial_connect_timeout: Time, 
 	max_connections_per_cluster: integer, 
-	num_nodes_connected: Long, 
+	num_nodes_connected: long, 
 	seeds: Array(String), 
 	skip_unavailable: Boolean
 )

@@ -32,7 +32,7 @@ import com.converted.elasticsearch._types.analysis.token_filters.{ TokenFilter }
 
 
 @JsonCodec case class AnalysisLimits(
-	categorization_examples_limit: Long, 
+	categorization_examples_limit: long, 
 	model_memory_limit: String
 )
 

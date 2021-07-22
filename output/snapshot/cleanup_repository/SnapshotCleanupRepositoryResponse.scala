@@ -17,7 +17,7 @@ object Response {
 
 
 @JsonCodec case class CleanupRepositoryResults(
-	deleted_blobs: Long, 
-	deleted_bytes: Long
+	deleted_blobs: long, 
+	deleted_bytes: long
 )
 

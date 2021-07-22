@@ -77,8 +77,8 @@ implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.en
 
 @JsonCodec case class DateHistogramAggregation(
 	calendar_interval: DateInterval | Time, 
-	extended_bounds: ExtendedBounds(DateMath | Long), 
-	hard_bounds: ExtendedBounds(DateMath | Long), 
+	extended_bounds: ExtendedBounds(DateMath | long), 
+	hard_bounds: ExtendedBounds(DateMath | long), 
 	field: Field, 
 	fixed_interval: DateInterval | Time, 
 	format: String, 
@@ -125,7 +125,7 @@ implicit val dateIntervalEncoder: Encoder[DateInterval.Value] = Decoder.encodeEn
 	to_as_string: String, 
 	key: String, 
 	to: DateMath | float, 
-	doc_count: Long
+	doc_count: long
 )
 
 
@@ -270,7 +270,7 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	exclude: String | Array(String), 
 	field: Field, 
 	include: String | Array(String) | TermsInclude, 
-	max_doc_count: Long, 
+	max_doc_count: long, 
 	missing: Missing, 
 	precision: double, 
 	value_type: String
@@ -320,11 +320,11 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	field: Field, 
 	gnd: GoogleNormalizedDistanceHeuristic, 
 	include: String | Array(String), 
-	min_doc_count: Long, 
+	min_doc_count: long, 
 	mutual_information: MutualInformationHeuristic, 
 	percentage: PercentageScoreHeuristic, 
 	script_heuristic: ScriptedHeuristic, 
-	shard_min_doc_count: Long, 
+	shard_min_doc_count: long, 
 	shard_size: integer, 
 	size: integer
 ) extends BucketAggregationBase
@@ -339,11 +339,11 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	filter_duplicate_text: Boolean, 
 	gnd: GoogleNormalizedDistanceHeuristic, 
 	include: String | Array(String), 
-	min_doc_count: Long, 
+	min_doc_count: long, 
 	mutual_information: MutualInformationHeuristic, 
 	percentage: PercentageScoreHeuristic, 
 	script_heuristic: ScriptedHeuristic, 
-	shard_min_doc_count: Long, 
+	shard_min_doc_count: long, 
 	shard_size: integer, 
 	size: integer, 
 	source_fields: Fields
@@ -394,8 +394,8 @@ implicit val termsAggregationExecutionHintEncoder: Encoder[TermsAggregationExecu
 
 
 @JsonCodec case class TermsInclude(
-	num_partitions: Long, 
-	partition: Long
+	num_partitions: long, 
+	partition: long
 )
 
 

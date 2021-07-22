@@ -18,8 +18,8 @@ object Request {
 	)
 	@JsonCodec case class QueryParameters(
 		allow_no_match: Boolean, 
-		from: Long, 
-		size: Long
+		from: long, 
+		size: long
 	)
 }
 

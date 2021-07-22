@@ -15,17 +15,17 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 
 
 @JsonCodec case class ReindexStatus(
-	batches: Long, 
-	created: Long, 
-	deleted: Long, 
-	noops: Long, 
+	batches: long, 
+	created: long, 
+	deleted: long, 
+	noops: long, 
 	requests_per_second: float, 
 	retries: Retries, 
-	throttled_millis: Long, 
-	throttled_until_millis: Long, 
-	total: Long, 
-	updated: Long, 
-	version_conflicts: Long
+	throttled_millis: long, 
+	throttled_until_millis: long, 
+	total: long, 
+	updated: long, 
+	version_conflicts: long
 )
 
 
@@ -33,10 +33,10 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 	action: String, 
 	cancellable: Boolean, 
 	description: String, 
-	id: Long, 
+	id: long, 
 	node: Name, 
-	running_time_in_nanos: Long, 
-	start_time_in_millis: Long, 
+	running_time_in_nanos: long, 
+	start_time_in_millis: long, 
 	status: ReindexStatus, 
 	`type`: String, 
 	headers: HttpHeaders

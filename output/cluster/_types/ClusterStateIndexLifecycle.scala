@@ -20,7 +20,7 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	policy: ClusterStateIndexLifecyclePolicy, 
 	headers: HttpHeaders, 
 	version: VersionNumber, 
-	modified_date: Long, 
+	modified_date: long, 
 	modified_date_string: DateString
 )
 

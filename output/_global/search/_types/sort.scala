@@ -72,7 +72,7 @@ implicit val numericTypeEncoder: Encoder[NumericType.Value] = Decoder.encodeEnum
 
 type SortCombinations = Field | SortContainer | SortOrder
 type Sort = SortCombinations | Array(SortCombinations)
-type SortResults = Array(Long | double | String | null)
+type SortResults = Array(long | double | String | null)
 
 object SortMode extends Enumeration {
 	type SortMode = Value

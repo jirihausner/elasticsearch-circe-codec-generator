@@ -16,7 +16,7 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 
 object Response {
 	@JsonCodec case class Body(
-		took: Long, 
+		took: long, 
 		timed_out: Boolean, 
 		terminated_early: Boolean, 
 		_shards: ShardStatistics, 

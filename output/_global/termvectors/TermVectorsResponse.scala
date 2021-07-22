@@ -18,7 +18,7 @@ object Response {
 		_id: Id, 
 		_index: IndexName, 
 		term_vectors: Dictionary(Field, TermVector), 
-		took: Long, 
+		took: long, 
 		_type: Type, 
 		_version: VersionNumber
 	)

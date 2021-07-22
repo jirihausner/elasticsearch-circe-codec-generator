@@ -8,8 +8,8 @@ import com.converted.elasticsearch.snapshot._types.{ FileCountSnapshotStats }
 
 @JsonCodec case class SnapshotStats(
 	incremental: FileCountSnapshotStats, 
-	start_time_in_millis: Long, 
-	time_in_millis: Long, 
+	start_time_in_millis: long, 
+	time_in_millis: long, 
 	total: FileCountSnapshotStats
 )
 

@@ -13,7 +13,7 @@ import com.converted.elasticsearch._global.msearch.{ SearchResult }
 
 object Response {
 	@JsonCodec case class Body(
-		took: Long, 
+		took: long, 
 		responses: Array(SearchResult(TDocument) | ErrorResponseBase)
 	)
 }

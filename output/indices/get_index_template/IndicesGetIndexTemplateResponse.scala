@@ -32,7 +32,7 @@ object Response {
 	composed_of: Array(Name), 
 	template: IndexTemplateSummary, 
 	version: VersionNumber, 
-	priority: Long, 
+	priority: long, 
 	_meta: Metadata, 
 	allow_auto_create: Boolean, 
 	data_stream: Dictionary(String, UserDefinedValue)

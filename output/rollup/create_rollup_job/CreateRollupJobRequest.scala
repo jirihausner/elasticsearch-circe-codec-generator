@@ -23,7 +23,7 @@ object Request {
 		groups: Groupings, 
 		index_pattern: String, 
 		metrics: Array(FieldMetric), 
-		page_size: Long, 
+		page_size: long, 
 		rollup_index: IndexName
 	)
 }

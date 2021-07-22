@@ -17,8 +17,8 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long, uint, ulong }
 
 
 @JsonCodec case class Counter(
-	active: Long, 
-	total: Long
+	active: long, 
+	total: long
 )
 
 
@@ -51,15 +51,15 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class AnalyticsStatistics(
-	boxplot_usage: Long, 
-	cumulative_cardinality_usage: Long, 
-	string_stats_usage: Long, 
-	top_metrics_usage: Long, 
-	t_test_usage: Long, 
-	moving_percentiles_usage: Long, 
-	normalize_usage: Long, 
-	rate_usage: Long, 
-	multi_terms_usage: Long
+	boxplot_usage: long, 
+	cumulative_cardinality_usage: long, 
+	string_stats_usage: long, 
+	top_metrics_usage: long, 
+	t_test_usage: long, 
+	moving_percentiles_usage: long, 
+	normalize_usage: long, 
+	rate_usage: long, 
+	multi_terms_usage: long
 )
 
 
@@ -69,27 +69,27 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class Datafeed(
-	count: Long
+	count: long
 )
 
 
 @JsonCodec case class DataStreams(
-	data_streams: Long, 
-	indices_count: Long
+	data_streams: long, 
+	indices_count: long
 ) extends Base
 
 
 @JsonCodec case class DataTierPhaseStatistics(
-	node_count: Long, 
-	index_count: Long, 
-	total_shard_count: Long, 
-	primary_shard_count: Long, 
-	doc_count: Long, 
-	total_size_bytes: Long, 
-	primary_size_bytes: Long, 
-	primary_shard_size_avg_bytes: Long, 
-	primary_shard_size_median_bytes: Long, 
-	primary_shard_size_mad_bytes: Long
+	node_count: long, 
+	index_count: long, 
+	total_shard_count: long, 
+	primary_shard_count: long, 
+	doc_count: long, 
+	total_size_bytes: long, 
+	primary_size_bytes: long, 
+	primary_shard_size_avg_bytes: long, 
+	primary_shard_size_median_bytes: long, 
+	primary_shard_size_mad_bytes: long
 )
 
 
@@ -139,18 +139,18 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class ExecutionAction(
-	total: Long, 
-	total_in_ms: Long
+	total: long, 
+	total_in_ms: long
 )
 
 
 @JsonCodec case class ForecastStatistics(
-	forecasted_jobs: Long, 
+	forecasted_jobs: long, 
 	memory_bytes: JobStatistics, 
 	processing_time_ms: JobStatistics, 
 	records: JobStatistics, 
-	status: Dictionary(String, Long), 
-	total: Long
+	status: Dictionary(String, long), 
+	total: long
 )
 
 
@@ -173,8 +173,8 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class MlJobForecasts(
-	total: Long, 
-	forecasted_jobs: Long
+	total: long, 
+	forecasted_jobs: long
 )
 
 
@@ -191,7 +191,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class MlDataFrameAnalyticsJobsCount(
-	count: Long
+	count: long
 )
 
 
@@ -218,23 +218,23 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class MlInferenceIngestProcessorCount(
-	max: Long, 
-	sum: Long, 
-	min: Long
+	max: long, 
+	sum: long, 
+	min: long
 )
 
 
 @JsonCodec case class MlInferenceTrainedModelsCount(
-	total: Long, 
-	prepackaged: Long, 
-	other: Long, 
-	regression: Long, 
-	classification: Long
+	total: long, 
+	prepackaged: long, 
+	other: long, 
+	regression: long, 
+	classification: long
 )
 
 
 @JsonCodec case class MlCounter(
-	count: Long
+	count: long
 )
 
 
@@ -247,7 +247,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class RealmCache(
-	size: Long
+	size: long
 )
 
 
@@ -263,20 +263,20 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class RuntimeFieldsType(
-	chars_max: Long, 
-	chars_total: Long, 
-	count: Long, 
-	doc_max: Long, 
-	doc_total: Long, 
-	index_count: Long, 
+	chars_max: long, 
+	chars_total: long, 
+	count: long, 
+	doc_max: long, 
+	doc_total: long, 
+	index_count: long, 
 	lang: Array(String), 
-	lines_max: Long, 
-	lines_total: Long, 
+	lines_max: long, 
+	lines_total: long, 
 	name: Field, 
-	scriptless_count: Long, 
-	shadowed_count: Long, 
-	source_max: Long, 
-	source_total: Long
+	scriptless_count: long, 
+	shadowed_count: long, 
+	source_max: long, 
+	source_total: long
 )
 
 
@@ -290,7 +290,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 @JsonCodec case class SecurityRolesNative(
 	dls: Boolean, 
 	fls: Boolean, 
-	size: Long
+	size: long
 )
 
 
@@ -309,7 +309,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 @JsonCodec case class SecurityRolesFile(
 	dls: Boolean, 
 	fls: Boolean, 
-	size: Long
+	size: long
 )
 
 
@@ -352,7 +352,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class FrozenIndices(
-	indices_count: Long
+	indices_count: long
 ) extends Base
 
 
@@ -367,7 +367,7 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class Monitoring(
 	collection_enabled: Boolean, 
-	enabled_exporters: Dictionary(String, Long)
+	enabled_exporters: Dictionary(String, long)
 ) extends Base
 
 
@@ -403,15 +403,15 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 
 @JsonCodec case class WatcherActionTotals(
-	total: Long, 
-	total_time_in_ms: Long
+	total: long, 
+	total_time_in_ms: long
 )
 
 
 @JsonCodec case class Realm(
 	name: Array(String), 
-	order: Array(Long), 
-	size: Array(Long), 
+	order: Array(long), 
+	size: Array(long), 
 	cache: Array(RealmCache), 
 	has_authorization_realms: Array(Boolean), 
 	has_default_username_pattern: Array(Boolean), 

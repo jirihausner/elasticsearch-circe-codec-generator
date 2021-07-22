@@ -15,26 +15,26 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	min_version: VersionString, 
 	model_size_stats: ModelSizeStats, 
 	retain: Boolean, 
-	snapshot_doc_count: Long, 
+	snapshot_doc_count: long, 
 	snapshot_id: Id, 
 	timestamp: integer
 )
 
 
 @JsonCodec case class ModelSizeStats(
-	bucket_allocation_failures_count: Long, 
+	bucket_allocation_failures_count: long, 
 	job_id: Id, 
 	log_time: Time, 
 	memory_status: MemoryStatus, 
-	model_bytes: Long, 
-	model_bytes_exceeded: Long, 
-	model_bytes_memory_limit: Long, 
-	peak_model_bytes: Long, 
+	model_bytes: long, 
+	model_bytes_exceeded: long, 
+	model_bytes_memory_limit: long, 
+	peak_model_bytes: long, 
 	assignment_memory_basis: String, 
 	result_type: String, 
-	total_by_field_count: Long, 
-	total_over_field_count: Long, 
-	total_partition_field_count: Long, 
+	total_by_field_count: long, 
+	total_over_field_count: long, 
+	total_partition_field_count: long, 
 	categorization_status: CategorizationStatus, 
 	categorized_doc_count: integer, 
 	dead_category_count: integer, 
@@ -42,7 +42,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	frequent_category_count: integer, 
 	rare_category_count: integer, 
 	total_category_count: integer, 
-	timestamp: Long
+	timestamp: long
 )
 
 

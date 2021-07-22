@@ -15,7 +15,7 @@ object Response {
 	@JsonCodec case class Body(
 		allocate_explanation: String, 
 		allocation_delay: String, 
-		allocation_delay_in_millis: Long, 
+		allocation_delay_in_millis: long, 
 		can_allocate: Decision, 
 		can_move_to_other_node: Decision, 
 		can_rebalance_cluster: Decision, 
@@ -25,7 +25,7 @@ object Response {
 		can_remain_on_current_node: Decision, 
 		cluster_info: ClusterInfo, 
 		configured_delay: String, 
-		configured_delay_in_millis: Long, 
+		configured_delay_in_millis: long, 
 		current_node: CurrentNode, 
 		current_state: String, 
 		index: IndexName, 
@@ -34,7 +34,7 @@ object Response {
 		primary: Boolean, 
 		rebalance_explanation: String, 
 		remaining_delay: String, 
-		remaining_delay_in_millis: Long, 
+		remaining_delay_in_millis: long, 
 		shard: integer, 
 		unassigned_info: UnassignedInformation
 	)

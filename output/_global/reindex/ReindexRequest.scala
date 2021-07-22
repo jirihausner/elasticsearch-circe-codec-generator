@@ -18,9 +18,9 @@ import com.converted.elasticsearch._global.reindex.{ Destination, Source }
 object Request {
 	@JsonCodec case class QueryParameters(
 		refresh: Boolean, 
-		requests_per_second: Long, 
+		requests_per_second: long, 
 		scroll: Time, 
-		slices: Long, 
+		slices: long, 
 		timeout: Time, 
 		wait_for_active_shards: WaitForActiveShards, 
 		wait_for_completion: Boolean, 
@@ -29,9 +29,9 @@ object Request {
 	@JsonCodec case class Body(
 		conflicts: Conflicts, 
 		dest: Destination, 
-		max_docs: Long, 
+		max_docs: long, 
 		script: Script, 
-		size: Long, 
+		size: long, 
 		source: Source
 	)
 }

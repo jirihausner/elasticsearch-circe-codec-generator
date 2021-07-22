@@ -21,10 +21,10 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 
 @JsonCodec case class AnalyzeToken(
-	end_offset: Long, 
-	position: Long, 
-	position_length: Long, 
-	start_offset: Long, 
+	end_offset: long, 
+	position: long, 
+	position_length: long, 
+	start_offset: long, 
 	token: String, 
 	`type`: String
 )
@@ -38,12 +38,12 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 
 @JsonCodec case class ExplainAnalyzeToken(
 	bytes: String, 
-	end_offset: Long, 
+	end_offset: long, 
 	keyword: Boolean, 
-	position: Long, 
-	positionLength: Long, 
-	start_offset: Long, 
-	termFrequency: Long, 
+	position: long, 
+	positionLength: long, 
+	start_offset: long, 
+	termFrequency: long, 
 	token: String, 
 	`type`: String
 )

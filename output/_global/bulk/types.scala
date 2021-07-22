@@ -16,7 +16,7 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	_index: String, 
 	status: integer, 
 	error: ErrorCause, 
-	_primary_term: Long, 
+	_primary_term: long, 
 	result: String, 
 	_seq_no: SequenceNumber, 
 	_shards: ShardStatistics, 

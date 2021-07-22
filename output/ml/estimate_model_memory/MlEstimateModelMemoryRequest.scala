@@ -16,8 +16,8 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 object Request {
 	@JsonCodec case class Body(
 		analysis_config: AnalysisConfig, 
-		max_bucket_cardinality: Dictionary(Field, Long), 
-		overall_cardinality: Dictionary(Field, Long)
+		max_bucket_cardinality: Dictionary(Field, long), 
+		overall_cardinality: Dictionary(Field, long)
 	)
 }
 

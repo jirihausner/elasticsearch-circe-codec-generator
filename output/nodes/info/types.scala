@@ -29,7 +29,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 	roles: NodeRoles, 
 	settings: NodeInfoSettings, 
 	thread_pool: Dictionary(String, NodeThreadPoolInfo), 
-	total_indexing_buffer: Long, 
+	total_indexing_buffer: long, 
 	total_indexing_buffer_in_bytes: ByteSize, 
 	transport: NodeInfoTransport, 
 	transport_address: TransportAddress, 
@@ -249,28 +249,28 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 @JsonCodec case class NodeInfoHttp(
 	bound_address: Array(String), 
 	max_content_length: ByteSize, 
-	max_content_length_in_bytes: Long, 
+	max_content_length_in_bytes: long, 
 	publish_address: String
 )
 
 
 @JsonCodec case class NodeInfoJvmMemory(
 	direct_max: ByteSize, 
-	direct_max_in_bytes: Long, 
+	direct_max_in_bytes: long, 
 	heap_init: ByteSize, 
-	heap_init_in_bytes: Long, 
+	heap_init_in_bytes: long, 
 	heap_max: ByteSize, 
-	heap_max_in_bytes: Long, 
+	heap_max_in_bytes: long, 
 	non_heap_init: ByteSize, 
-	non_heap_init_in_bytes: Long, 
+	non_heap_init_in_bytes: long, 
 	non_heap_max: ByteSize, 
-	non_heap_max_in_bytes: Long
+	non_heap_max_in_bytes: long
 )
 
 
 @JsonCodec case class NodeInfoMemory(
 	total: String, 
-	total_in_bytes: Long
+	total_in_bytes: long
 )
 
 
@@ -311,7 +311,7 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 	mem: NodeInfoJvmMemory, 
 	memory_pools: Array(String), 
 	pid: integer, 
-	start_time_in_millis: Long, 
+	start_time_in_millis: long, 
 	version: VersionString, 
 	vm_name: Name, 
 	vm_vendor: String, 
@@ -338,8 +338,8 @@ import com.converted.elasticsearch._types.Node.{ NodeRoles }
 
 
 @JsonCodec case class NodeProcessInfo(
-	id: Long, 
+	id: long, 
 	mlockall: Boolean, 
-	refresh_interval_in_millis: Long
+	refresh_interval_in_millis: long
 )
 

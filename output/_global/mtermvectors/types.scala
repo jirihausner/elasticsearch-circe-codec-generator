@@ -30,7 +30,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	id: Id, 
 	index: IndexName, 
 	term_vectors: Dictionary(Field, TermVector), 
-	took: Long, 
+	took: long, 
 	version: VersionNumber
 )
 

@@ -31,14 +31,14 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 	_routing: String, 
 	_source: TDocument, 
 	_seq_no: SequenceNumber, 
-	_primary_term: Long, 
+	_primary_term: long, 
 	_version: VersionNumber, 
 	sort: SortResults
 )
 
 
 @JsonCodec case class HitsMetadata[T](
-	total: TotalHits | Long, 
+	total: TotalHits | long, 
 	hits: Array(Hit(T)), 
 	max_score: double
 )
@@ -47,7 +47,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 @JsonCodec case class HitMetadata[TDocument](
 	_id: Id, 
 	_index: IndexName, 
-	_primary_term: Long, 
+	_primary_term: long, 
 	_routing: String, 
 	_seq_no: SequenceNumber, 
 	_source: TDocument, 
@@ -57,7 +57,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 
 
 @JsonCodec case class InnerHitsMetadata(
-	total: TotalHits | Long, 
+	total: TotalHits | long, 
 	hits: Array(Hit(Dictionary(String, UserDefinedValue))), 
 	max_score: double
 )
@@ -77,7 +77,7 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 
 @JsonCodec case class TotalHits(
 	relation: TotalHitsRelation, 
-	value: Long
+	value: long
 )
 
 

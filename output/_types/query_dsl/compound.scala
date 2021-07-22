@@ -65,7 +65,7 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoLocation }
 
 @JsonCodec case class RandomScoreFunction(
 	field: Field, 
-	seed: Long | String
+	seed: long | String
 ) extends ScoreFunctionBase
 
 

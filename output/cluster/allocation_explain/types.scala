@@ -33,7 +33,7 @@ implicit val allocationExplainDecisionEncoder: Encoder[AllocationExplainDecision
 	allocation_id: String, 
 	found: Boolean, 
 	in_sync: Boolean, 
-	matching_size_in_bytes: Long, 
+	matching_size_in_bytes: long, 
 	matching_sync_id: Boolean, 
 	store_exception: String
 )
@@ -41,7 +41,7 @@ implicit val allocationExplainDecisionEncoder: Encoder[AllocationExplainDecision
 
 @JsonCodec case class ClusterInfo(
 	nodes: Dictionary(String, NodeDiskUsage), 
-	shard_sizes: Dictionary(String, Long), 
+	shard_sizes: Dictionary(String, long), 
 	shard_data_set_sizes: Dictionary(String, String), 
 	shard_paths: Dictionary(String, String), 
 	reserved_sizes: Array(ReservedSize)
@@ -57,9 +57,9 @@ implicit val allocationExplainDecisionEncoder: Encoder[AllocationExplainDecision
 
 @JsonCodec case class DiskUsage(
 	path: String, 
-	total_bytes: Long, 
-	used_bytes: Long, 
-	free_bytes: Long, 
+	total_bytes: long, 
+	used_bytes: long, 
+	free_bytes: long, 
 	free_disk_percent: double, 
 	used_disk_percent: double
 )
@@ -68,7 +68,7 @@ implicit val allocationExplainDecisionEncoder: Encoder[AllocationExplainDecision
 @JsonCodec case class ReservedSize(
 	node_id: Id, 
 	path: String, 
-	total: Long, 
+	total: long, 
 	shards: Array(String)
 )
 

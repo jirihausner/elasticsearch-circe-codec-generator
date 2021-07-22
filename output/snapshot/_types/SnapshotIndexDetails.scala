@@ -9,7 +9,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 @JsonCodec case class IndexDetails(
 	shard_count: integer, 
 	size: ByteSize, 
-	size_in_bytes: Long, 
-	max_segments_per_shard: Long
+	size_in_bytes: long, 
+	max_segments_per_shard: long
 )
 

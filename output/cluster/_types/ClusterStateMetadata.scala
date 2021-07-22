@@ -35,7 +35,7 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 @JsonCodec case class Tombstone(
 	index: TombstoneIndex, 
 	delete_date: DateString, 
-	delete_date_in_millis: Long
+	delete_date_in_millis: long
 )
 
 

@@ -21,7 +21,7 @@ import com.converted.elasticsearch._types.{ integer, long }
 type DateString = String
 type Timestamp = String
 type TimeSpan = String
-type EpochMillis = String | Long
+type EpochMillis = String | long
 type DateMath = String
 type DateMathExpression = String
 type DateMathTime = String

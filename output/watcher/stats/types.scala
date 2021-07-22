@@ -25,7 +25,7 @@ implicit val watcherStateEncoder: Encoder[WatcherState.Value] = Decoder.encodeEn
 	current_watches: Array(WatchRecordStats), 
 	execution_thread_pool: ExecutionThreadPool, 
 	queued_watches: Array(WatchRecordQueuedStats), 
-	watch_count: Long, 
+	watch_count: long, 
 	watcher_state: WatcherState, 
 	node_id: Id
 )

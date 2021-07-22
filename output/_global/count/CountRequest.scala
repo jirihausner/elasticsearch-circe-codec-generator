@@ -33,7 +33,7 @@ object Request {
 		preference: String, 
 		query_on_query_string: String, 
 		routing: Routing, 
-		terminate_after: Long, 
+		terminate_after: long, 
 		q: String
 	)
 	@JsonCodec case class Body(
