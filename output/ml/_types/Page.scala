@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	from: integer, 
 	size: integer
 )
-

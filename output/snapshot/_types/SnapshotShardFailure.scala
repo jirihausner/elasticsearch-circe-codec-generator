@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.common.{ Id, IndexName }
 	shard_id: Id, 
 	status: String
 )
-

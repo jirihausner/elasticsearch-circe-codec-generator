@@ -14,4 +14,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	translog_operations: integer, 
 	translog_size: String
 )
-

@@ -11,7 +11,6 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	window_size: integer
 )
 
-
 @JsonCodec case class RescoreQuery(
 	rescore_query: QueryContainer, 
 	query_weight: double, 
@@ -19,17 +18,15 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	score_mode: ScoreMode
 )
 
-
 object ScoreMode extends Enumeration {
 	type ScoreMode = Value
 
-val avg = Value(0, "avg")
-val max = Value(1, "max")
-val min = Value(2, "min")
-val multiply = Value(3, "multiply")
-val total = Value(4, "total")
+	val avg = Value(0, "avg")
+	val max = Value(1, "max")
+	val min = Value(2, "min")
+	val multiply = Value(3, "multiply")
+	val total = Value(4, "total")
 }
 
 implicit val scoreModeDecoder: Decoder[ScoreMode.Value] = Decoder.decodeEnumeration(ScoreMode)
 implicit val scoreModeEncoder: Encoder[ScoreMode.Value] = Decoder.encodeEnumeration(ScoreMode)
-

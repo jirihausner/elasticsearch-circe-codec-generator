@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.recovery.{ RecoveryRecord }
 @JsonCodec case class Response(
 	body: Array(RecoveryRecord)
 )
-

@@ -10,4 +10,3 @@ import com.converted.elasticsearch.indices._types.{ FielddataLoading }
 	filter: FielddataFilter, 
 	loading: FielddataLoading
 )
-

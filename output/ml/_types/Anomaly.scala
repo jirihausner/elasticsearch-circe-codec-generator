@@ -32,7 +32,6 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis, Time }
 	typical: Array(double)
 )
 
-
 @JsonCodec case class AnomalyCause(
 	actual: Array(double), 
 	by_field_name: Name, 
@@ -50,9 +49,7 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis, Time }
 	typical: Array(double)
 )
 
-
 @JsonCodec case class Influence(
 	influencer_field_name: String, 
 	influencer_field_values: Array(String)
 )
-

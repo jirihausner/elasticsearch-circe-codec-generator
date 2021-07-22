@@ -20,4 +20,3 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis, Time }
 	total_shards: String, 
 	reason: String
 )
-

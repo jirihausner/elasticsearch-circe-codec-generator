@@ -11,4 +11,3 @@ import com.converted.elasticsearch._xpack.usage.types.{ UrlConfig }
 	created_by: String, 
 	job_tags: Dictionary(String, String)
 )
-

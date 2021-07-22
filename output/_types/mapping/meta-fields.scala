@@ -6,7 +6,6 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 @JsonCodec sealed trait FieldMapping
 
-
 @JsonCodec case class AllField(
 	analyzer: String, 
 	enabled: Boolean, 
@@ -20,26 +19,21 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	store_term_vectors: Boolean
 )
 
-
 @JsonCodec case class FieldNamesField(
 	enabled: Boolean
 )
-
 
 @JsonCodec case class IndexField(
 	enabled: Boolean
 )
 
-
 @JsonCodec case class RoutingField(
 	required: Boolean
 )
 
-
 @JsonCodec case class SizeField(
 	enabled: Boolean
 )
-
 
 @JsonCodec case class SourceField(
 	compress: Boolean, 
@@ -48,4 +42,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	excludes: Array(String), 
 	includes: Array(String)
 )
-

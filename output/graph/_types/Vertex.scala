@@ -13,7 +13,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	weight: double
 )
 
-
 @JsonCodec case class VertexDefinition(
 	exclude: Array(String), 
 	field: Field, 
@@ -23,9 +22,7 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	size: integer
 )
 
-
 @JsonCodec case class VertexInclude(
 	boost: double, 
 	term: String
 )
-

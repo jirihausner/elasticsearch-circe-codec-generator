@@ -7,4 +7,3 @@ import com.converted.elasticsearch._security._types.User.{ User }
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, User)
-

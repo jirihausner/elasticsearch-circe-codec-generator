@@ -11,4 +11,3 @@ import com.converted.elasticsearch._types.Numeric.{ double, long }
 	target: long, 
 	weight: double
 )
-

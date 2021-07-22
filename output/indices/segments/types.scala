@@ -11,7 +11,6 @@ import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 	shards: Dictionary(String, ShardsSegment | Array(ShardsSegment))
 )
 
-
 @JsonCodec case class Segment(
 	attributes: Dictionary(String, String), 
 	committed: Boolean, 
@@ -25,13 +24,11 @@ import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 	version: VersionString
 )
 
-
 @JsonCodec case class ShardSegmentRouting(
 	node: String, 
 	primary: Boolean, 
 	state: String
 )
-
 
 @JsonCodec case class ShardsSegment(
 	num_committed_segments: integer, 
@@ -39,4 +36,3 @@ import com.converted.elasticsearch._types.Numeric.{ long, integer, double }
 	num_search_segments: integer, 
 	segments: Dictionary(String, Segment)
 )
-

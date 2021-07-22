@@ -25,16 +25,13 @@ object Response {
 	data_stream: DataStreamName
 )
 
-
 @JsonCodec case class ResolveIndexAliasItem(
 	name: Name, 
 	indices: Indices
 )
-
 
 @JsonCodec case class ResolveIndexDataStreamsItem(
 	name: DataStreamName, 
 	timestamp_field: Field, 
 	backing_indices: Indices
 )
-

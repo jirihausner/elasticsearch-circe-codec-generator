@@ -13,4 +13,3 @@ import com.converted.elasticsearch.snapshot._types.{ SnapshotStats }
 	shards_stats: ShardsStats, 
 	stats: SnapshotStats
 )
-

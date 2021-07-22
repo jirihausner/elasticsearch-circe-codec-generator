@@ -15,40 +15,33 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long, uint, ulong }
 	enabled: Boolean
 )
 
-
 @JsonCodec case class Counter(
 	active: long, 
 	total: long
 )
 
-
 @JsonCodec case class FeatureToggle(
 	enabled: Boolean
 )
-
 
 @JsonCodec case class BaseUrlConfig(
 	url_name: String, 
 	url_value: String
 )
 
-
 @JsonCodec case class KibanaUrlConfig(
 	time_range: String
 ) extends BaseUrlConfig
-
 type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 
 @JsonCodec case class AlertingExecution(
 	actions: Dictionary(String, ExecutionAction)
 )
 
-
 @JsonCodec case class AlertingInput(
 	input: Dictionary(String, Counter), 
 	trigger: Dictionary(String, Counter)
 )
-
 
 @JsonCodec case class AnalyticsStatistics(
 	boxplot_usage: long, 
@@ -62,22 +55,18 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	multi_terms_usage: long
 )
 
-
 @JsonCodec case class Audit(
 	outputs: Array(String)
 ) extends FeatureToggle
-
 
 @JsonCodec case class Datafeed(
 	count: long
 )
 
-
 @JsonCodec case class DataStreams(
 	data_streams: long, 
 	indices_count: long
 ) extends Base
-
 
 @JsonCodec case class DataTierPhaseStatistics(
 	node_count: long, 
@@ -92,7 +81,6 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	primary_shard_size_mad_bytes: long
 )
 
-
 @JsonCodec case class EqlFeatures(
 	join: uint, 
 	joins: EqlFeaturesJoin, 
@@ -103,7 +91,6 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	sequences: EqlFeaturesSequences
 )
 
-
 @JsonCodec case class EqlFeaturesJoin(
 	join_queries_two: uint, 
 	join_queries_three: uint, 
@@ -111,7 +98,6 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	join_queries_five_or_more: uint, 
 	join_queries_four: uint
 )
-
 
 @JsonCodec case class EqlFeaturesKeys(
 	join_keys_two: uint, 
@@ -121,12 +107,10 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	join_keys_four: uint
 )
 
-
 @JsonCodec case class EqlFeaturesPipes(
 	pipe_tail: uint, 
 	pipe_head: uint
 )
-
 
 @JsonCodec case class EqlFeaturesSequences(
 	sequence_queries_three: uint, 
@@ -137,12 +121,10 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	sequence_maxspan: uint
 )
 
-
 @JsonCodec case class ExecutionAction(
 	total: long, 
 	total_in_ms: long
 )
-
 
 @JsonCodec case class ForecastStatistics(
 	forecasted_jobs: long, 
@@ -153,30 +135,25 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	total: long
 )
 
-
 @JsonCodec case class IlmPolicyStatistics(
 	indices_managed: integer, 
 	phases: Phases
 )
-
 
 @JsonCodec case class Ilm(
 	policy_count: integer, 
 	policy_stats: Array(IlmPolicyStatistics)
 )
 
-
 @JsonCodec case class IpFilter(
 	http: Boolean, 
 	transport: Boolean
 )
 
-
 @JsonCodec case class MlJobForecasts(
 	total: long, 
 	forecasted_jobs: long
 )
-
 
 @JsonCodec case class MlDataFrameAnalyticsJobs(
 	memory_usage: MlDataFrameAnalyticsJobsMemory, 
@@ -184,22 +161,18 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	analysis_counts: EmptyObject
 )
 
-
 @JsonCodec case class MlDataFrameAnalyticsJobsMemory(
 	peak_usage_bytes: JobStatistics
 )
-
 
 @JsonCodec case class MlDataFrameAnalyticsJobsCount(
 	count: long
 )
 
-
 @JsonCodec case class MlInference(
 	ingest_processors: Dictionary(String, MlInferenceIngestProcessor), 
 	trained_models: MlInferenceTrainedModels
 )
-
 
 @JsonCodec case class MlInferenceIngestProcessor(
 	num_docs_processed: MlInferenceIngestProcessorCount, 
@@ -208,7 +181,6 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	time_ms: MlInferenceIngestProcessorCount
 )
 
-
 @JsonCodec case class MlInferenceTrainedModels(
 	estimated_operations: JobStatistics, 
 	estimated_heap_memory_usage_bytes: JobStatistics, 
@@ -216,13 +188,11 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	_all: MlCounter
 )
 
-
 @JsonCodec case class MlInferenceIngestProcessorCount(
 	max: long, 
 	sum: long, 
 	min: long
 )
-
 
 @JsonCodec case class MlInferenceTrainedModelsCount(
 	total: long, 
@@ -232,11 +202,9 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	classification: long
 )
 
-
 @JsonCodec case class MlCounter(
 	count: long
 )
-
 
 @JsonCodec case class Query(
 	count: integer, 
@@ -245,22 +213,18 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	total: integer
 )
 
-
 @JsonCodec case class RealmCache(
 	size: long
 )
-
 
 @JsonCodec case class RoleMapping(
 	enabled: integer, 
 	size: integer
 )
 
-
 @JsonCodec case class RuntimeFieldTypes(
 	field_types: Array(RuntimeFieldsType)
 ) extends Base
-
 
 @JsonCodec case class RuntimeFieldsType(
 	chars_max: long, 
@@ -279,13 +243,11 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	source_total: long
 )
 
-
 @JsonCodec case class SecurityRoles(
 	native: SecurityRolesNative, 
 	dls: SecurityRolesDls, 
 	file: SecurityRolesFile
 )
-
 
 @JsonCodec case class SecurityRolesNative(
 	dls: Boolean, 
@@ -293,11 +255,9 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	size: long
 )
 
-
 @JsonCodec case class SecurityRolesDls(
 	bit_set_cache: SecurityRolesDlsBitSetCache
 )
-
 
 @JsonCodec case class SecurityRolesDlsBitSetCache(
 	count: integer, 
@@ -305,13 +265,11 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	memory_in_bytes: ulong
 )
 
-
 @JsonCodec case class SecurityRolesFile(
 	dls: Boolean, 
 	fls: Boolean, 
 	size: long
 )
-
 
 @JsonCodec case class Alerting(
 	count: Counter, 
@@ -319,17 +277,14 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	watch: AlertingInput
 ) extends Base
 
-
 @JsonCodec case class Analytics(
 	stats: AnalyticsStatistics
 ) extends Base
-
 
 @JsonCodec case class Ccr(
 	auto_follow_patterns_count: integer, 
 	follower_indices_count: integer
 ) extends Base
-
 
 @JsonCodec case class DataTiers(
 	data_warm: DataTierPhaseStatistics, 
@@ -339,22 +294,18 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	data_hot: DataTierPhaseStatistics
 ) extends Base
 
-
 @JsonCodec case class Eql(
 	features: EqlFeatures, 
 	queries: Dictionary(String, Query)
 ) extends Base
 
-
 @JsonCodec case class Flattened(
 	field_count: integer
 ) extends Base
 
-
 @JsonCodec case class FrozenIndices(
 	indices_count: long
 ) extends Base
-
 
 @JsonCodec case class MachineLearning(
 	datafeeds: Dictionary(String, Datafeed), 
@@ -364,29 +315,24 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	inference: MlInference
 ) extends Base
 
-
 @JsonCodec case class Monitoring(
 	collection_enabled: Boolean, 
 	enabled_exporters: Dictionary(String, long)
 ) extends Base
-
 
 @JsonCodec case class Sql(
 	features: Dictionary(String, integer), 
 	queries: Dictionary(String, Query)
 ) extends Base
 
-
 @JsonCodec case class Ssl(
 	http: FeatureToggle, 
 	transport: FeatureToggle
 )
 
-
 @JsonCodec case class WatcherActions(
 	actions: Dictionary(Name, WatcherActionTotals)
 )
-
 
 @JsonCodec case class WatcherWatch(
 	input: Dictionary(Name, Counter), 
@@ -395,18 +341,15 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	trigger: WatcherWatchTrigger
 )
 
-
 @JsonCodec case class WatcherWatchTrigger(
 	schedule: WatcherWatchTriggerSchedule, 
 	_all: Counter
 )
 
-
 @JsonCodec case class WatcherActionTotals(
 	total: long, 
 	total_time_in_ms: long
 )
-
 
 @JsonCodec case class Realm(
 	name: Array(String), 
@@ -419,13 +362,11 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	is_authentication_delegated: Array(Boolean)
 ) extends Base
 
-
 @JsonCodec case class SearchableSnapshots(
 	indices_count: integer, 
 	full_copy_indices_count: integer, 
 	shared_cache_indices_count: integer
 ) extends Base
-
 
 @JsonCodec case class Security(
 	api_key_service: FeatureToggle, 
@@ -442,12 +383,10 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	operator_privileges: Base
 ) extends Base
 
-
 @JsonCodec case class Slm(
 	policy_count: integer, 
 	policy_stats: Statistics
 ) extends Base
-
 
 @JsonCodec case class Vector(
 	dense_vector_dims_avg_count: integer, 
@@ -455,16 +394,13 @@ type UrlConfig = BaseUrlConfig | KibanaUrlConfig
 	sparse_vector_fields_count: integer
 ) extends Base
 
-
 @JsonCodec case class Watcher(
 	execution: WatcherActions, 
 	watch: WatcherWatch, 
 	count: Counter
 ) extends Base
 
-
 @JsonCodec case class WatcherWatchTriggerSchedule(
 	cron: Counter, 
 	_all: Counter
 ) extends Counter
-

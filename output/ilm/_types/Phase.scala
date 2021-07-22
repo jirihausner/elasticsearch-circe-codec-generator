@@ -11,7 +11,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	min_age: Time
 )
 
-
 @JsonCodec case class Phases(
 	cold: Phase, 
 	delete: Phase, 
@@ -19,6 +18,4 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	warm: Phase
 )
 
-
 @JsonCodec sealed trait Action
-

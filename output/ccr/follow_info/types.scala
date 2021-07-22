@@ -13,17 +13,15 @@ import com.converted.elasticsearch._types.common.{ IndexName, Name }
 	status: FollowerIndexStatus
 )
 
-
 object FollowerIndexStatus extends Enumeration {
 	type FollowerIndexStatus = Value
 
-val active = Value(0, "active")
-val paused = Value(1, "paused")
+	val active = Value(0, "active")
+	val paused = Value(1, "paused")
 }
 
 implicit val followerIndexStatusDecoder: Decoder[FollowerIndexStatus.Value] = Decoder.decodeEnumeration(FollowerIndexStatus)
 implicit val followerIndexStatusEncoder: Encoder[FollowerIndexStatus.Value] = Decoder.encodeEnumeration(FollowerIndexStatus)
-
 import com.converted.elasticsearch._types.Numeric.{ integer }
 import com.converted.elasticsearch._types.Time.{ Time }
 
@@ -39,4 +37,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	max_write_request_size: String, 
 	read_poll_timeout: Time
 )
-

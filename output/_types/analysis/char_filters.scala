@@ -10,21 +10,17 @@ import com.converted.elasticsearch._types.analysis.{ PatternReplaceTokenFilter }
 	`type`: String, 
 	version: VersionString
 )
-
 type CharFilter = HtmlStripCharFilter | MappingCharFilter | PatternReplaceTokenFilter
 
 @JsonCodec case class HtmlStripCharFilter extends CharFilterBase
-
 
 @JsonCodec case class MappingCharFilter(
 	mappings: Array(String), 
 	mappings_path: String
 ) extends CharFilterBase
 
-
 @JsonCodec case class PatternReplaceCharFilter(
 	flags: String, 
 	pattern: String, 
 	replacement: String
 ) extends CharFilterBase
-

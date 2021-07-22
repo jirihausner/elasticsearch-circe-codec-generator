@@ -10,16 +10,13 @@ import com.converted.elasticsearch._types.common.{ Id, VersionNumber }
 	pipeline: Array(ClusterStateIngestPipeline)
 )
 
-
 @JsonCodec case class ClusterStateIngestPipeline(
 	id: Id, 
 	config: ClusterStateIngestPipelineConfig
 )
-
 
 @JsonCodec case class ClusterStateIngestPipelineConfig(
 	description: String, 
 	version: VersionNumber, 
 	processors: Array(ProcessorContainer)
 )
-

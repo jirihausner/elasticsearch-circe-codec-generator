@@ -11,14 +11,13 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 object BoundaryScanner extends Enumeration {
 	type BoundaryScanner = Value
 
-val chars = Value(0, "chars")
-val sentence = Value(1, "sentence")
-val word = Value(2, "word")
+	val chars = Value(0, "chars")
+	val sentence = Value(1, "sentence")
+	val word = Value(2, "word")
 }
 
 implicit val boundaryScannerDecoder: Decoder[BoundaryScanner.Value] = Decoder.decodeEnumeration(BoundaryScanner)
 implicit val boundaryScannerEncoder: Encoder[BoundaryScanner.Value] = Decoder.encodeEnumeration(BoundaryScanner)
-
 
 @JsonCodec case class Highlight(
 	fields: Dictionary(Field, HighlightField), 
@@ -43,60 +42,54 @@ implicit val boundaryScannerEncoder: Encoder[BoundaryScanner.Value] = Decoder.en
 	max_analyzed_offset: String | integer
 )
 
-
 object HighlighterEncoder extends Enumeration {
 	type HighlighterEncoder = Value
 
-val default = Value(0, "default")
-val html = Value(1, "html")
+	val default = Value(0, "default")
+	val html = Value(1, "html")
 }
 
 implicit val highlighterEncoderDecoder: Decoder[HighlighterEncoder.Value] = Decoder.decodeEnumeration(HighlighterEncoder)
 implicit val highlighterEncoderEncoder: Encoder[HighlighterEncoder.Value] = Decoder.encodeEnumeration(HighlighterEncoder)
 
-
 object HighlighterFragmenter extends Enumeration {
 	type HighlighterFragmenter = Value
 
-val simple = Value(0, "simple")
-val span = Value(1, "span")
+	val simple = Value(0, "simple")
+	val span = Value(1, "span")
 }
 
 implicit val highlighterFragmenterDecoder: Decoder[HighlighterFragmenter.Value] = Decoder.decodeEnumeration(HighlighterFragmenter)
 implicit val highlighterFragmenterEncoder: Encoder[HighlighterFragmenter.Value] = Decoder.encodeEnumeration(HighlighterFragmenter)
 
-
 object HighlighterOrder extends Enumeration {
 	type HighlighterOrder = Value
 
-val score = Value(0, "score")
+	val score = Value(0, "score")
 }
 
 implicit val highlighterOrderDecoder: Decoder[HighlighterOrder.Value] = Decoder.decodeEnumeration(HighlighterOrder)
 implicit val highlighterOrderEncoder: Encoder[HighlighterOrder.Value] = Decoder.encodeEnumeration(HighlighterOrder)
 
-
 object HighlighterTagsSchema extends Enumeration {
 	type HighlighterTagsSchema = Value
 
-val styled = Value(0, "styled")
+	val styled = Value(0, "styled")
 }
 
 implicit val highlighterTagsSchemaDecoder: Decoder[HighlighterTagsSchema.Value] = Decoder.decodeEnumeration(HighlighterTagsSchema)
 implicit val highlighterTagsSchemaEncoder: Encoder[HighlighterTagsSchema.Value] = Decoder.encodeEnumeration(HighlighterTagsSchema)
 
-
 object HighlighterType extends Enumeration {
 	type HighlighterType = Value
 
-val plain = Value(0, "plain")
-val fvh = Value(1, "fvh")
-val unified = Value(2, "unified")
+	val plain = Value(0, "plain")
+	val fvh = Value(1, "fvh")
+	val unified = Value(2, "unified")
 }
 
 implicit val highlighterTypeDecoder: Decoder[HighlighterType.Value] = Decoder.decodeEnumeration(HighlighterType)
 implicit val highlighterTypeEncoder: Encoder[HighlighterType.Value] = Decoder.encodeEnumeration(HighlighterType)
-
 
 @JsonCodec case class HighlightField(
 	boundary_chars: String, 
@@ -121,4 +114,3 @@ implicit val highlighterTypeEncoder: Encoder[HighlighterType.Value] = Decoder.en
 	tags_schema: HighlighterTagsSchema, 
 	`type`: HighlighterType | String
 )
-

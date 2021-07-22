@@ -18,13 +18,11 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 	total_in_bytes: ByteSize
 )
 
-
 @JsonCodec case class FileDetails(
 	length: long, 
 	name: String, 
 	recovered: long
 )
-
 
 @JsonCodec case class RecoveryFiles(
 	details: Array(FileDetails), 
@@ -33,7 +31,6 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 	reused: long, 
 	total: long
 )
-
 
 @JsonCodec case class RecoveryIndexStatus(
 	bytes: RecoveryBytes, 
@@ -46,7 +43,6 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 	total_time_in_millis: EpochMillis, 
 	total_time: Time
 )
-
 
 @JsonCodec case class RecoveryOrigin(
 	hostname: String, 
@@ -63,17 +59,14 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 	index: IndexName
 )
 
-
 @JsonCodec case class RecoveryStartStatus(
 	check_index_time: long, 
 	total_time_in_millis: String
 )
 
-
 @JsonCodec case class RecoveryStatus(
 	shards: Array(ShardRecovery)
 )
-
 
 @JsonCodec case class TranslogStatus(
 	percent: Percentage, 
@@ -84,14 +77,12 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 	total_time_in_millis: EpochMillis
 )
 
-
 @JsonCodec case class VerifyIndex(
 	check_index_time: Time, 
 	check_index_time_in_millis: EpochMillis, 
 	total_time: Time, 
 	total_time_in_millis: EpochMillis
 )
-
 
 @JsonCodec case class ShardRecovery(
 	id: long, 
@@ -111,4 +102,3 @@ import com.converted.elasticsearch._types.Time.{ Time, EpochMillis, DateString }
 	`type`: Type, 
 	verify_index: VerifyIndex
 )
-

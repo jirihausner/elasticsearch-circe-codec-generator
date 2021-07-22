@@ -11,7 +11,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	rollup_jobs: Array(RollupJobSummary)
 )
 
-
 @JsonCodec case class RollupJobSummary(
 	fields: Dictionary(Field, Array(RollupJobSummaryField)), 
 	index_pattern: String, 
@@ -19,10 +18,8 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	rollup_index: IndexName
 )
 
-
 @JsonCodec case class RollupJobSummaryField(
 	agg: String, 
 	time_zone: String, 
 	calendar_interval: Time
 )
-

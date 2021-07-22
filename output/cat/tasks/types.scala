@@ -23,4 +23,3 @@ import com.converted.elasticsearch._types.common.{ Id, NodeId, Type, VersionStri
 	x_opaque_id: String, 
 	description: String
 )
-

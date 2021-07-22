@@ -24,4 +24,3 @@ object Response {
 	snapshots: Array(SnapshotInfo), 
 	error: ErrorCause
 )
-

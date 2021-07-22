@@ -13,7 +13,6 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis }
 	shards: Array(ShardStats)
 )
 
-
 @JsonCodec case class ShardStats(
 	bytes_read: long, 
 	failed_read_requests: long, 
@@ -46,10 +45,8 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis }
 	write_buffer_size_in_bytes: ByteSize
 )
 
-
 @JsonCodec case class ReadException(
 	exception: ErrorCause, 
 	from_seq_no: SequenceNumber, 
 	retries: integer
 )
-

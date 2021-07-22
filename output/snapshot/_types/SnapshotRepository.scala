@@ -12,7 +12,6 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	settings: RepositorySettings
 )
 
-
 @JsonCodec case class RepositorySettings(
 	chunk_size: String, 
 	compress: String | Boolean, 
@@ -20,4 +19,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	location: String, 
 	read_only: String | Boolean
 )
-

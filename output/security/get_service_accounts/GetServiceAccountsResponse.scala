@@ -7,4 +7,3 @@ import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch.security.get_service_accounts.{ RoleDescriptorWrapper }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, RoleDescriptorWrapper)
-

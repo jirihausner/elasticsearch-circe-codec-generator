@@ -5,4 +5,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 
 
 @JsonCodec sealed trait RoleMappingRuleBase
-

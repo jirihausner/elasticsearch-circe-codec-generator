@@ -14,7 +14,6 @@ import com.converted.elasticsearch._types.common.{ Metadata }
 	role_descriptor: RoleDescriptor
 )
 
-
 @JsonCodec case class RoleDescriptor(
 	cluster: Array(String), 
 	indices: Array(IndicesPrivileges), 
@@ -24,4 +23,3 @@ import com.converted.elasticsearch._types.common.{ Metadata }
 	run_as: Array(String), 
 	transient_metadata: Dictionary(String, UserDefinedValue)
 )
-

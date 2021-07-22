@@ -8,4 +8,3 @@ import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch.security.delete_privileges.{ FoundStatus }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, Dictionary(String, FoundStatus))
-

@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.segments.{ SegmentsRecord }
 @JsonCodec case class Response(
 	body: Array(SegmentsRecord)
 )
-

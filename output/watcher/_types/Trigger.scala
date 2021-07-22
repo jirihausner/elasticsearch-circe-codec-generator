@@ -10,18 +10,14 @@ import com.converted.elasticsearch.watcher._types.{ ScheduleContainer, ScheduleT
 	schedule: ScheduleContainer
 )
 
-
 @JsonCodec sealed trait TriggerEvent
-
 
 @JsonCodec case class TriggerEventContainer(
 	schedule: ScheduleTriggerEvent
 )
-
 
 @JsonCodec case class TriggerEventResult(
 	manual: TriggerEventContainer, 
 	triggered_time: DateString, 
 	`type`: String
 )
-

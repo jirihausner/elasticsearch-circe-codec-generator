@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.trained_models.{ TrainedModelsRecord }
 @JsonCodec case class Response(
 	body: Array(TrainedModelsRecord)
 )
-

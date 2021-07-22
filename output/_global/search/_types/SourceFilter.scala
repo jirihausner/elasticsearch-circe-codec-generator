@@ -12,9 +12,7 @@ import com.converted.elasticsearch._types.common.{ Field, Fields }
 	include: Fields
 )
 
-
 @JsonCodec case class DocValueField(
 	field: Field, 
 	format: String
 )
-

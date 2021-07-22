@@ -8,4 +8,3 @@ import com.converted.elasticsearch.security._types.{ ManageUserPrivileges }
 @JsonCodec case class ApplicationGlobalUserPrivileges(
 	manage: ManageUserPrivileges
 )
-

@@ -10,4 +10,3 @@ import com.converted.elasticsearch.indices._types.{ FielddataRegexFilter }
 	frequency: FielddataFrequencyFilter, 
 	regex: FielddataRegexFilter
 )
-

@@ -82,4 +82,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	`bulk.avg_time`: String, 
 	`bulk.avg_size_in_bytes`: String
 )
-

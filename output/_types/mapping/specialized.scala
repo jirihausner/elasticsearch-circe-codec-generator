@@ -21,7 +21,6 @@ import com.converted.elasticsearch._types.mapping.{ TermVectorOption }
 	`type`: "completion""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class SuggestContext(
 	name: Name, 
 	path: Field, 
@@ -29,18 +28,15 @@ import com.converted.elasticsearch._types.mapping.{ TermVectorOption }
 	precision: integer
 )
 
-
 @JsonCodec case class ConstantKeywordProperty(
 	value: UserDefinedValue, 
 	`type`: "constant_keyword""
 ) extends PropertyBase
 
-
 @JsonCodec case class FieldAliasProperty(
 	path: Field, 
 	`type`: "alias""
 ) extends PropertyBase
-
 
 @JsonCodec case class GenericProperty(
 	analyzer: String, 
@@ -57,12 +53,10 @@ import com.converted.elasticsearch._types.mapping.{ TermVectorOption }
 	`type`: String
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class HistogramProperty(
 	ignore_malformed: Boolean, 
 	`type`: "histogram""
 ) extends PropertyBase
-
 
 @JsonCodec case class IpProperty(
 	boost: double, 
@@ -71,26 +65,23 @@ import com.converted.elasticsearch._types.mapping.{ TermVectorOption }
 	`type`: "ip""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class Murmur3HashProperty(
 	`type`: "murmur3""
 ) extends DocValuesPropertyBase
 
-
 object ShapeOrientation extends Enumeration {
 	type ShapeOrientation = Value
 
-val right = Value(0, "right")
-val counterclockwise = Value(1, "counterclockwise")
-val ccw = Value(2, "ccw")
-val left = Value(3, "left")
-val clockwise = Value(4, "clockwise")
-val cw = Value(5, "cw")
+	val right = Value(0, "right")
+	val counterclockwise = Value(1, "counterclockwise")
+	val ccw = Value(2, "ccw")
+	val left = Value(3, "left")
+	val clockwise = Value(4, "clockwise")
+	val cw = Value(5, "cw")
 }
 
 implicit val shapeOrientationDecoder: Decoder[ShapeOrientation.Value] = Decoder.decodeEnumeration(ShapeOrientation)
 implicit val shapeOrientationEncoder: Encoder[ShapeOrientation.Value] = Decoder.encodeEnumeration(ShapeOrientation)
-
 
 @JsonCodec case class ShapeProperty(
 	coerce: Boolean, 
@@ -100,7 +91,6 @@ implicit val shapeOrientationEncoder: Encoder[ShapeOrientation.Value] = Decoder.
 	`type`: "shape""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class TokenCountProperty(
 	analyzer: String, 
 	boost: double, 
@@ -109,4 +99,3 @@ implicit val shapeOrientationEncoder: Encoder[ShapeOrientation.Value] = Decoder.
 	enable_position_increments: Boolean, 
 	`type`: "token_count""
 ) extends DocValuesPropertyBase
-

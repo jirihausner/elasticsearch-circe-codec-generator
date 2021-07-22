@@ -10,4 +10,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	ip: String, 
 	node: String
 )
-

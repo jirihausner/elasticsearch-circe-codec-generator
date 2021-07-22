@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.common.{ Id, Indices }
 	params: Dictionary(String, UserDefinedValue), 
 	source: String
 )
-

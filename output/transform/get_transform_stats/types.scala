@@ -17,7 +17,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	stats: TransformIndexerStats
 )
 
-
 @JsonCodec case class TransformProgress(
 	docs_indexed: long, 
 	docs_processed: long, 
@@ -25,7 +24,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	percent_complete: double, 
 	total_docs: long
 )
-
 
 @JsonCodec case class TransformIndexerStats(
 	documents_indexed: long, 
@@ -45,7 +43,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	trigger_count: long
 )
 
-
 @JsonCodec case class CheckpointStats(
 	checkpoint: long, 
 	checkpoint_progress: TransformProgress, 
@@ -55,7 +52,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	time_upper_bound_millis: EpochMillis
 )
 
-
 @JsonCodec case class Checkpointing(
 	changes_last_detected_at: long, 
 	changes_last_detected_at_date_time: DateString, 
@@ -63,4 +59,3 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	next: CheckpointStats, 
 	operations_behind: long
 )
-

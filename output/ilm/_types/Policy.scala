@@ -10,4 +10,3 @@ import com.converted.elasticsearch.ilm._types.{ Phases }
 	phases: Phases, 
 	name: Name
 )
-

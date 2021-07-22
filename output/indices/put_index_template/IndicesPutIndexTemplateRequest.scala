@@ -37,4 +37,3 @@ object Request {
 	mappings: TypeMapping, 
 	settings: IndexSettings
 )
-

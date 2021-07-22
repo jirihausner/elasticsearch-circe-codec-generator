@@ -12,36 +12,30 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 	little: SpanQuery
 ) extends QueryBase
 
-
 @JsonCodec case class SpanFieldMaskingQuery(
 	field: Field, 
 	query: SpanQuery
 ) extends QueryBase
-
 
 @JsonCodec case class SpanFirstQuery(
 	end: integer, 
 	`match`: SpanQuery
 ) extends QueryBase
 
-
 @JsonCodec case class SpanGapQuery(
 	field: Field, 
 	width: integer
 ) extends QueryBase
 
-
 @JsonCodec case class SpanMultiTermQuery(
 	`match`: QueryContainer
 ) extends QueryBase
-
 
 @JsonCodec case class SpanNearQuery(
 	clauses: Array(SpanQuery), 
 	in_order: Boolean, 
 	slop: integer
 ) extends QueryBase
-
 
 @JsonCodec case class SpanNotQuery(
 	dist: integer, 
@@ -51,22 +45,18 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 	pre: integer
 ) extends QueryBase
 
-
 @JsonCodec case class SpanOrQuery(
 	clauses: Array(SpanQuery)
 ) extends QueryBase
-
 
 @JsonCodec case class SpanTermQuery(
 	value: String
 ) extends QueryBase
 
-
 @JsonCodec case class SpanWithinQuery(
 	big: SpanQuery, 
 	little: SpanQuery
 ) extends QueryBase
-
 
 @JsonCodec case class SpanQuery(
 	span_containing: NamedQuery(SpanContainingQuery | String), 
@@ -81,6 +71,4 @@ import com.converted.elasticsearch._types.query_dsl.{ NamedQuery, QueryBase, Que
 	span_within: NamedQuery(SpanWithinQuery | String)
 ) extends QueryBase
 
-
 @JsonCodec case class SpanSubQuery extends QueryBase
-

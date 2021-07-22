@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.data_frame_analytics.{ DataFrameAnalytics
 @JsonCodec case class Response(
 	body: Array(DataFrameAnalyticsRecord)
 )
-

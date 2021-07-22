@@ -17,7 +17,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	status: RollupJobStatus
 )
 
-
 @JsonCodec case class RollupJobConfiguration(
 	cron: String, 
 	groups: Groupings, 
@@ -28,7 +27,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	rollup_index: IndexName, 
 	timeout: Time
 )
-
 
 @JsonCodec case class RollupJobStats(
 	documents_processed: long, 
@@ -45,24 +43,21 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	processing_total: long
 )
 
-
 @JsonCodec case class RollupJobStatus(
 	current_position: Dictionary(String, UserDefinedValue), 
 	job_state: IndexingJobState, 
 	upgraded_doc_id: Boolean
 )
 
-
 object IndexingJobState extends Enumeration {
 	type IndexingJobState = Value
 
-val started = Value(0, "started")
-val indexing = Value(1, "indexing")
-val stopping = Value(2, "stopping")
-val stopped = Value(3, "stopped")
-val aborting = Value(4, "aborting")
+	val started = Value(0, "started")
+	val indexing = Value(1, "indexing")
+	val stopping = Value(2, "stopping")
+	val stopped = Value(3, "stopped")
+	val aborting = Value(4, "aborting")
 }
 
 implicit val indexingJobStateDecoder: Decoder[IndexingJobState.Value] = Decoder.decodeEnumeration(IndexingJobState)
 implicit val indexingJobStateEncoder: Encoder[IndexingJobState.Value] = Decoder.encodeEnumeration(IndexingJobState)
-

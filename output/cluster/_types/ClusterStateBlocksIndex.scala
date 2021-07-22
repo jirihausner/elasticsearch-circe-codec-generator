@@ -30,4 +30,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	timestamp_range: Dictionary(String, UserDefinedValue), 
 	system: Boolean
 )
-

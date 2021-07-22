@@ -8,7 +8,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec sealed trait AdditionalProperties[TKey, TValue]
 
-
 @JsonCodec case class CommonQueryParameters(
 	error_trace: Boolean, 
 	filter_path: String | Array(String), 
@@ -16,7 +15,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	pretty: Boolean, 
 	source_query_string: String
 )
-
 
 @JsonCodec case class CommonCatQueryParameters(
 	format: String, 
@@ -27,4 +25,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	s: Array(String), 
 	v: Boolean
 )
-

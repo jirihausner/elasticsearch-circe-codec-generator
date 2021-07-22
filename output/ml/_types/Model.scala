@@ -20,7 +20,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	timestamp: integer
 )
 
-
 @JsonCodec case class ModelSizeStats(
 	bucket_allocation_failures_count: long, 
 	job_id: Id, 
@@ -45,26 +44,23 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	timestamp: long
 )
 
-
 object CategorizationStatus extends Enumeration {
 	type CategorizationStatus = Value
 
-val ok = Value(0, "ok")
-val warn = Value(1, "warn")
+	val ok = Value(0, "ok")
+	val warn = Value(1, "warn")
 }
 
 implicit val categorizationStatusDecoder: Decoder[CategorizationStatus.Value] = Decoder.decodeEnumeration(CategorizationStatus)
 implicit val categorizationStatusEncoder: Encoder[CategorizationStatus.Value] = Decoder.encodeEnumeration(CategorizationStatus)
 
-
 object MemoryStatus extends Enumeration {
 	type MemoryStatus = Value
 
-val ok = Value(0, "ok")
-val soft_limit = Value(1, "soft_limit")
-val hard_limit = Value(2, "hard_limit")
+	val ok = Value(0, "ok")
+	val soft_limit = Value(1, "soft_limit")
+	val hard_limit = Value(2, "hard_limit")
 }
 
 implicit val memoryStatusDecoder: Decoder[MemoryStatus.Value] = Decoder.decodeEnumeration(MemoryStatus)
 implicit val memoryStatusEncoder: Encoder[MemoryStatus.Value] = Decoder.encodeEnumeration(MemoryStatus)
-

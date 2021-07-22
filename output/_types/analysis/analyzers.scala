@@ -14,7 +14,6 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 	version: VersionString
 )
 
-
 @JsonCodec case class CustomAnalyzer(
 	char_filter: Array(String), 
 	filter: Array(String), 
@@ -22,7 +21,6 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 	position_offset_gap: integer, 
 	tokenizer: String
 ) extends AnalyzerBase
-
 
 @JsonCodec case class FingerprintAnalyzer(
 	max_output_size: integer, 
@@ -32,9 +30,7 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 	stopwords_path: String
 ) extends AnalyzerBase
 
-
 @JsonCodec case class KeywordAnalyzer extends AnalyzerBase
-
 
 @JsonCodec case class LanguageAnalyzer(
 	language: Language, 
@@ -44,13 +40,11 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 	`type`: String
 ) extends AnalyzerBase
 
-
 @JsonCodec case class NoriAnalyzer(
 	decompound_mode: NoriDecompoundMode, 
 	stoptags: Array(String), 
 	user_dictionary: String
 ) extends AnalyzerBase
-
 
 @JsonCodec case class PatternAnalyzer(
 	flags: String, 
@@ -59,27 +53,21 @@ import com.converted.elasticsearch._types.analysis.{ NoriDecompoundMode }
 	stopwords: StopWords
 ) extends AnalyzerBase
 
-
 @JsonCodec case class SimpleAnalyzer extends AnalyzerBase
-
 
 @JsonCodec case class SnowballAnalyzer(
 	language: SnowballLanguage, 
 	stopwords: StopWords
 ) extends AnalyzerBase
 
-
 @JsonCodec case class StandardAnalyzer(
 	max_token_length: integer, 
 	stopwords: StopWords
 ) extends AnalyzerBase
-
 
 @JsonCodec case class StopAnalyzer(
 	stopwords: StopWords, 
 	stopwords_path: String
 ) extends AnalyzerBase
 
-
 @JsonCodec case class WhitespaceAnalyzer extends AnalyzerBase
-

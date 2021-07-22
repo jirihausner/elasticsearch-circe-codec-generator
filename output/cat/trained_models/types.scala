@@ -25,4 +25,3 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	`data_frame.source_index`: String, 
 	`data_frame.analysis`: String
 )
-

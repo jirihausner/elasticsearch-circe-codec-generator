@@ -8,4 +8,3 @@ import com.converted.elasticsearch._types.common.{ IndexName }
 import com.converted.elasticsearch.rollup.get_rollup_index_capabilities.{ IndexCapabilities }
 
 @JsonCodec case class Response extends DictionaryResponseBase(IndexName, IndexCapabilities)
-

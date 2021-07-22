@@ -74,11 +74,9 @@ import com.converted.elasticsearch._types.query_dsl.{ ExistsQuery, FuzzyQuery, I
 	`type`: TypeQuery
 )
 
-
 @JsonCodec case class QueryTemplate(
 	source: String
 )
-
 
 @JsonCodec case class FieldLookup(
 	id: Id, 
@@ -87,17 +85,14 @@ import com.converted.elasticsearch._types.query_dsl.{ ExistsQuery, FuzzyQuery, I
 	routing: Routing
 )
 
-
 @JsonCodec case class FieldNameQuery(
 	field: Field
 )
-
 
 @JsonCodec case class QueryBase(
 	boost: float, 
 	_name: String
 )
-
 
 @JsonCodec case class NamedQuery[TQuery](
 	boost: float, 
@@ -105,10 +100,8 @@ import com.converted.elasticsearch._types.query_dsl.{ ExistsQuery, FuzzyQuery, I
 	ignore_unmapped: Boolean
 ) extends AdditionalProperties(String, TQuery)
 
-
 @JsonCodec case class CombinedFieldsQuery(
 	query: String, 
 	fields: Array(Field), 
 	operator: String
 )
-

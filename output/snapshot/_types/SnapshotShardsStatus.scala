@@ -11,7 +11,6 @@ import com.converted.elasticsearch.snapshot._types.{ ShardsStatsStage }
 	stats: ShardsStatsSummary
 )
 
-
 @JsonCodec case class ShardsStatsSummary(
 	incremental: ShardsStatsSummaryItem, 
 	total: ShardsStatsSummaryItem, 
@@ -19,9 +18,7 @@ import com.converted.elasticsearch.snapshot._types.{ ShardsStatsStage }
 	time_in_millis: long
 )
 
-
 @JsonCodec case class ShardsStatsSummaryItem(
 	file_count: long, 
 	size_in_bytes: long
 )
-

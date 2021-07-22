@@ -26,7 +26,6 @@ import com.converted.elasticsearch.watcher._types.{ TriggerContainer }
 	throttle_period_in_millis: long
 )
 
-
 @JsonCodec case class WatchStatus(
 	actions: Actions, 
 	last_checked: DateString, 
@@ -35,4 +34,3 @@ import com.converted.elasticsearch.watcher._types.{ TriggerContainer }
 	version: VersionNumber, 
 	execution_state: String
 )
-

@@ -20,9 +20,7 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	reduce_count: long
 )
 
-
 @JsonCodec sealed trait AggregationProfileDebug
-
 
 @JsonCodec case class AggregationProfile(
 	breakdown: AggregationBreakdown, 
@@ -33,7 +31,6 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	children: Array(AggregationProfileDebug)
 )
 
-
 @JsonCodec case class Collector(
 	name: String, 
 	reason: String, 
@@ -41,11 +38,9 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	children: Array(Collector)
 )
 
-
 @JsonCodec case class Profile(
 	shards: Array(ShardProfile)
 )
-
 
 @JsonCodec case class QueryBreakdown(
 	advance: long, 
@@ -68,7 +63,6 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	set_min_competitive_score_count: long
 )
 
-
 @JsonCodec case class QueryProfile(
 	breakdown: QueryBreakdown, 
 	description: String, 
@@ -77,17 +71,14 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	children: Array(QueryProfile)
 )
 
-
 @JsonCodec case class SearchProfile(
 	collector: Array(Collector), 
 	query: Array(QueryProfile), 
 	rewrite_time: long
 )
 
-
 @JsonCodec case class ShardProfile(
 	aggregations: Array(AggregationProfile), 
 	id: String, 
 	searches: Array(SearchProfile)
 )
-

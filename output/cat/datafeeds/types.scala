@@ -19,4 +19,3 @@ import com.converted.elasticsearch._ml._types.Datafeed.{ DatafeedState }
 	`node.ephemeral_id`: String, 
 	`node.address`: String
 )
-

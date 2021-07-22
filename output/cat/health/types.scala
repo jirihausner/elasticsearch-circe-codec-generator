@@ -21,4 +21,3 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	max_task_wait_time: String, 
 	active_shards_percent: String
 )
-

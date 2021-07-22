@@ -10,10 +10,8 @@ import com.converted.elasticsearch._types.common.{ Name }
 	reload_exception: NodeReloadExceptionCausedBy
 )
 
-
 @JsonCodec case class NodeReloadExceptionCausedBy(
 	`type`: String, 
 	reason: String, 
 	caused_by: NodeReloadExceptionCausedBy
 )
-

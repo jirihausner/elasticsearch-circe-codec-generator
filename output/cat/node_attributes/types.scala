@@ -14,4 +14,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	attr: String, 
 	value: String
 )
-

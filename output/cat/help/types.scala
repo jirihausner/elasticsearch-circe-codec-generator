@@ -7,4 +7,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 @JsonCodec case class HelpRecord(
 	endpoint: String
 )
-

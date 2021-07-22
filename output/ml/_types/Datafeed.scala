@@ -32,25 +32,22 @@ import com.converted.elasticsearch.ml._types.{ DiscoveryNode }
 	indices_options: DatafeedIndicesOptions
 )
 
-
 @JsonCodec case class DelayedDataCheckConfig(
 	check_window: Time, 
 	enabled: Boolean
 )
 
-
 object DatafeedState extends Enumeration {
 	type DatafeedState = Value
 
-val started = Value(0, "started")
-val stopped = Value(1, "stopped")
-val starting = Value(2, "starting")
-val stopping = Value(3, "stopping")
+	val started = Value(0, "started")
+	val stopped = Value(1, "stopped")
+	val starting = Value(2, "starting")
+	val stopping = Value(3, "stopping")
 }
 
 implicit val datafeedStateDecoder: Decoder[DatafeedState.Value] = Decoder.decodeEnumeration(DatafeedState)
 implicit val datafeedStateEncoder: Encoder[DatafeedState.Value] = Decoder.encodeEnumeration(DatafeedState)
-
 
 @JsonCodec case class DatafeedStats(
 	assignment_explanation: String, 
@@ -59,7 +56,6 @@ implicit val datafeedStateEncoder: Encoder[DatafeedState.Value] = Decoder.encode
 	state: DatafeedState, 
 	timing_stats: DatafeedTimingStats
 )
-
 
 @JsonCodec case class DatafeedTimingStats(
 	bucket_count: long, 
@@ -70,24 +66,21 @@ implicit val datafeedStateEncoder: Encoder[DatafeedState.Value] = Decoder.encode
 	average_search_time_per_bucket_ms: Numeric
 )
 
-
 object ChunkingMode extends Enumeration {
 	type ChunkingMode = Value
 
-val auto = Value(0, "auto")
-val manual = Value(1, "manual")
-val off = Value(2, "off")
+	val auto = Value(0, "auto")
+	val manual = Value(1, "manual")
+	val off = Value(2, "off")
 }
 
 implicit val chunkingModeDecoder: Decoder[ChunkingMode.Value] = Decoder.decodeEnumeration(ChunkingMode)
 implicit val chunkingModeEncoder: Encoder[ChunkingMode.Value] = Decoder.encodeEnumeration(ChunkingMode)
 
-
 @JsonCodec case class ChunkingConfig(
 	mode: ChunkingMode, 
 	time_span: Time
 )
-
 
 @JsonCodec case class DatafeedIndicesOptions(
 	allow_no_indices: Boolean, 
@@ -95,4 +88,3 @@ implicit val chunkingModeEncoder: Encoder[ChunkingMode.Value] = Decoder.encodeEn
 	ignore_unavailable: Boolean, 
 	ignore_throttled: Boolean
 )
-

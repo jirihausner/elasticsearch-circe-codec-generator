@@ -13,7 +13,6 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 	tasks: Dictionary(TaskId, ReindexTask)
 ) extends BaseNode
 
-
 @JsonCodec case class ReindexStatus(
 	batches: long, 
 	created: long, 
@@ -28,7 +27,6 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 	version_conflicts: long
 )
 
-
 @JsonCodec case class ReindexTask(
 	action: String, 
 	cancellable: Boolean, 
@@ -41,4 +39,3 @@ import com.converted.elasticsearch._types.Retries.{ Retries }
 	`type`: String, 
 	headers: HttpHeaders
 )
-

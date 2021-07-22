@@ -23,7 +23,6 @@ import com.converted.elasticsearch._types.mapping.{ Property, PropertyBase }
 	`type`: "flattened""
 ) extends PropertyBase
 
-
 @JsonCodec case class NestedProperty(
 	enabled: Boolean, 
 	include_in_parent: Boolean, 
@@ -31,9 +30,7 @@ import com.converted.elasticsearch._types.mapping.{ Property, PropertyBase }
 	`type`: "nested""
 ) extends CorePropertyBase
 
-
 @JsonCodec case class ObjectProperty(
 	enabled: Boolean, 
 	`type`: "object""
 ) extends CorePropertyBase
-

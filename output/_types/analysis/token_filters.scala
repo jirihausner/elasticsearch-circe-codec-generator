@@ -14,7 +14,6 @@ import com.converted.elasticsearch._types.analysis.{ StopWords }
 	version: VersionString
 )
 
-
 @JsonCodec case class CompoundWordTokenFilterBase(
 	hyphenation_patterns_path: String, 
 	max_subword_size: integer, 
@@ -25,48 +24,41 @@ import com.converted.elasticsearch._types.analysis.{ StopWords }
 	word_list_path: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class DictionaryDecompounderTokenFilter extends CompoundWordTokenFilterBase
 
-
 @JsonCodec case class HyphenationDecompounderTokenFilter extends CompoundWordTokenFilterBase
-
 
 object DelimitedPayloadEncoding extends Enumeration {
 	type DelimitedPayloadEncoding = Value
 
-val int = Value(0, "int")
-val float = Value(1, "float")
-val identity = Value(2, "identity")
+	val int = Value(0, "int")
+	val float = Value(1, "float")
+	val identity = Value(2, "identity")
 }
 
 implicit val delimitedPayloadEncodingDecoder: Decoder[DelimitedPayloadEncoding.Value] = Decoder.decodeEnumeration(DelimitedPayloadEncoding)
 implicit val delimitedPayloadEncodingEncoder: Encoder[DelimitedPayloadEncoding.Value] = Decoder.encodeEnumeration(DelimitedPayloadEncoding)
-
 
 @JsonCodec case class DelimitedPayloadTokenFilter(
 	delimiter: String, 
 	encoding: DelimitedPayloadEncoding
 ) extends TokenFilterBase
 
-
 object EdgeNGramSide extends Enumeration {
 	type EdgeNGramSide = Value
 
-val front = Value(0, "front")
-val back = Value(1, "back")
+	val front = Value(0, "front")
+	val back = Value(1, "back")
 }
 
 implicit val edgeNGramSideDecoder: Decoder[EdgeNGramSide.Value] = Decoder.decodeEnumeration(EdgeNGramSide)
 implicit val edgeNGramSideEncoder: Encoder[EdgeNGramSide.Value] = Decoder.encodeEnumeration(EdgeNGramSide)
-
 
 @JsonCodec case class EdgeNGramTokenFilter(
 	max_gram: integer, 
 	min_gram: integer, 
 	side: EdgeNGramSide
 ) extends TokenFilterBase
-
 
 @JsonCodec case class ShingleTokenFilter(
 	filler_token: String, 
@@ -77,7 +69,6 @@ implicit val edgeNGramSideEncoder: Encoder[EdgeNGramSide.Value] = Decoder.encode
 	token_separator: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class StopTokenFilter(
 	ignore_case: Boolean, 
 	remove_trailing: Boolean, 
@@ -85,17 +76,15 @@ implicit val edgeNGramSideEncoder: Encoder[EdgeNGramSide.Value] = Decoder.encode
 	stopwords_path: String
 ) extends TokenFilterBase
 
-
 object SynonymFormat extends Enumeration {
 	type SynonymFormat = Value
 
-val solr = Value(0, "solr")
-val wordnet = Value(1, "wordnet")
+	val solr = Value(0, "solr")
+	val wordnet = Value(1, "wordnet")
 }
 
 implicit val synonymFormatDecoder: Decoder[SynonymFormat.Value] = Decoder.decodeEnumeration(SynonymFormat)
 implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encodeEnumeration(SynonymFormat)
-
 
 @JsonCodec case class SynonymGraphTokenFilter(
 	expand: Boolean, 
@@ -107,7 +96,6 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	updateable: Boolean
 ) extends TokenFilterBase
 
-
 @JsonCodec case class SynonymTokenFilter(
 	expand: Boolean, 
 	format: SynonymFormat, 
@@ -117,7 +105,6 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	tokenizer: String, 
 	updateable: Boolean
 ) extends TokenFilterBase
-
 
 @JsonCodec case class WordDelimiterTokenFilter(
 	catenate_all: Boolean, 
@@ -134,7 +121,6 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	type_table: Array(String), 
 	type_table_path: String
 ) extends TokenFilterBase
-
 
 @JsonCodec case class WordDelimiterGraphTokenFilter(
 	adjust_offsets: Boolean, 
@@ -153,11 +139,9 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	type_table_path: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class AsciiFoldingTokenFilter(
 	preserve_original: Boolean
 ) extends TokenFilterBase
-
 
 @JsonCodec case class CommonGramsTokenFilter(
 	common_words: Array(String), 
@@ -166,24 +150,20 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	query_mode: Boolean
 ) extends TokenFilterBase
 
-
 @JsonCodec case class ConditionTokenFilter(
 	filter: Array(String), 
 	script: Script
 ) extends TokenFilterBase
-
 
 @JsonCodec case class ElisionTokenFilter(
 	articles: Array(String), 
 	articles_case: Boolean
 ) extends TokenFilterBase
 
-
 @JsonCodec case class FingerprintTokenFilter(
 	max_output_size: integer, 
 	separator: String
 ) extends TokenFilterBase
-
 
 @JsonCodec case class HunspellTokenFilter(
 	dedup: Boolean, 
@@ -192,30 +172,26 @@ implicit val synonymFormatEncoder: Encoder[SynonymFormat.Value] = Decoder.encode
 	longest_only: Boolean
 ) extends TokenFilterBase
 
-
 object KeepTypesMode extends Enumeration {
 	type KeepTypesMode = Value
 
-val include = Value(0, "include")
-val exclude = Value(1, "exclude")
+	val include = Value(0, "include")
+	val exclude = Value(1, "exclude")
 }
 
 implicit val keepTypesModeDecoder: Decoder[KeepTypesMode.Value] = Decoder.decodeEnumeration(KeepTypesMode)
 implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encodeEnumeration(KeepTypesMode)
-
 
 @JsonCodec case class KeepTypesTokenFilter(
 	mode: KeepTypesMode, 
 	types: Array(String)
 ) extends TokenFilterBase
 
-
 @JsonCodec case class KeepWordsTokenFilter(
 	keep_words: Array(String), 
 	keep_words_case: Boolean, 
 	keep_words_path: String
 ) extends TokenFilterBase
-
 
 @JsonCodec case class KeywordMarkerTokenFilter(
 	ignore_case: Boolean, 
@@ -224,49 +200,40 @@ implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encode
 	keywords_pattern: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class KStemTokenFilter extends TokenFilterBase
-
 
 @JsonCodec case class LengthTokenFilter(
 	max: integer, 
 	min: integer
 ) extends TokenFilterBase
 
-
 @JsonCodec case class LimitTokenCountTokenFilter(
 	consume_all_tokens: Boolean, 
 	max_token_count: integer
 ) extends TokenFilterBase
 
-
 @JsonCodec case class LowercaseTokenFilter(
 	language: String
 ) extends TokenFilterBase
-
 
 @JsonCodec case class MultiplexerTokenFilter(
 	filters: Array(String), 
 	preserve_original: Boolean
 ) extends TokenFilterBase
 
-
 @JsonCodec case class NGramTokenFilter(
 	max_gram: integer, 
 	min_gram: integer
 ) extends TokenFilterBase
 
-
 @JsonCodec case class NoriPartOfSpeechTokenFilter(
 	stoptags: Array(String)
 ) extends TokenFilterBase
-
 
 @JsonCodec case class PatternCaptureTokenFilter(
 	patterns: Array(String), 
 	preserve_original: Boolean
 ) extends TokenFilterBase
-
 
 @JsonCodec case class PatternReplaceTokenFilter(
 	flags: String, 
@@ -274,50 +241,38 @@ implicit val keepTypesModeEncoder: Encoder[KeepTypesMode.Value] = Decoder.encode
 	replacement: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class PorterStemTokenFilter extends TokenFilterBase
-
 
 @JsonCodec case class PredicateTokenFilter(
 	script: Script
 ) extends TokenFilterBase
 
-
 @JsonCodec case class RemoveDuplicatesTokenFilter extends TokenFilterBase
 
-
 @JsonCodec case class ReverseTokenFilter extends TokenFilterBase
-
 
 @JsonCodec case class SnowballTokenFilter(
 	language: SnowballLanguage
 ) extends TokenFilterBase
-
 
 @JsonCodec case class StemmerOverrideTokenFilter(
 	rules: Array(String), 
 	rules_path: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class StemmerTokenFilter(
 	language: String
 ) extends TokenFilterBase
 
-
 @JsonCodec case class TrimTokenFilter extends TokenFilterBase
-
 
 @JsonCodec case class TruncateTokenFilter(
 	length: integer
 ) extends TokenFilterBase
 
-
 @JsonCodec case class UniqueTokenFilter(
 	only_on_same_position: Boolean
 ) extends TokenFilterBase
 
-
 @JsonCodec case class UppercaseTokenFilter extends TokenFilterBase
-
 type TokenFilter = AsciiFoldingTokenFilter | CommonGramsTokenFilter | ConditionTokenFilter | DelimitedPayloadTokenFilter | EdgeNGramTokenFilter | ElisionTokenFilter | FingerprintTokenFilter | HunspellTokenFilter | HyphenationDecompounderTokenFilter | KeepTypesTokenFilter | KeepWordsTokenFilter | KeywordMarkerTokenFilter | KStemTokenFilter | LengthTokenFilter | LimitTokenCountTokenFilter | LowercaseTokenFilter | MultiplexerTokenFilter | NGramTokenFilter | NoriPartOfSpeechTokenFilter | PatternCaptureTokenFilter | PatternReplaceTokenFilter | PorterStemTokenFilter | PredicateTokenFilter | RemoveDuplicatesTokenFilter | ReverseTokenFilter | ShingleTokenFilter | SnowballTokenFilter | StemmerOverrideTokenFilter | StemmerTokenFilter | StopTokenFilter | SynonymGraphTokenFilter | SynonymTokenFilter | TrimTokenFilter | TruncateTokenFilter | UniqueTokenFilter | UppercaseTokenFilter | WordDelimiterGraphTokenFilter | WordDelimiterTokenFilter

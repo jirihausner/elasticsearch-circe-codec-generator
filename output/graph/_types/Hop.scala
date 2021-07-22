@@ -11,4 +11,3 @@ import com.converted.elasticsearch.graph._types.{ VertexDefinition }
 	query: QueryContainer, 
 	vertices: Array(VertexDefinition)
 )
-

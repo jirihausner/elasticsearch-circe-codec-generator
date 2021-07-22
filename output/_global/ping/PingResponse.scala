@@ -8,4 +8,3 @@ import com.converted.elasticsearch._spec_utils.VoidValue.{ Void }
 @JsonCodec case class Response(
 	body: Void
 )
-

@@ -76,9 +76,9 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
   def printEnumMember(x: TsEnumMember): Unit = {
     if (x.expr.isDefined)
-      printLn(s"""val ${toLowerCamelCase(x.name.value)} = Value(${format(x.expr.get)}, "${x.name.value}")""")
+      printLn(s"""val ${toLowerCamelCase(x.name.value)} = Value(${format(x.expr.get)}, "${x.name.value}")""", padding = true)
     else
-      printLn(s"""val ${toLowerCamelCase(x.name.value)} = Value("${x.name.value}")""")
+      printLn(s"""val ${toLowerCamelCase(x.name.value)} = Value("${x.name.value}")""", padding = true)
   }
 
   def printFunSig(x: TsFunSig, declared: Boolean = false): Unit = {
@@ -326,9 +326,8 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
       printLn("}")
       popPadding
       objectStack = List()
+      printLn
     }
-
-    printLn
 
     /*// print circe codec
     if (!isTrait) {
@@ -411,9 +410,8 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
       printLn("}")
       popPadding
       objectStack = List()
+      printLn
     }
-
-    printLn
 
     // print circe codec
     /*printLn
@@ -452,7 +450,6 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
       s"[${x.name.value}.Value] = Decoder.decodeEnumeration(${x.name.value})")
     printLn(s"implicit val ${toLowerCamelCase(x.name.value)}Encoder: Encoder" +
       s"[${x.name.value}.Value] = Decoder.encodeEnumeration(${x.name.value})")
-    printLn
   }
 
   def printVar(x: TsDeclVar): Unit = {

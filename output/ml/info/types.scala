@@ -12,12 +12,10 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	datafeeds: Datafeeds
 )
 
-
 @JsonCodec case class NativeCode(
 	build_hash: String, 
 	version: VersionString
 )
-
 
 @JsonCodec case class Limits(
 	max_model_memory_limit: String, 
@@ -25,11 +23,9 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	total_ml_memory: String
 )
 
-
 @JsonCodec case class Datafeeds(
 	scroll_size: integer
 )
-
 
 @JsonCodec case class AnomalyDetectors(
 	categorization_analyzer: CategorizationAnalyzer, 
@@ -38,4 +34,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	model_snapshot_retention_days: integer, 
 	daily_model_snapshot_retention_after_days: integer
 )
-

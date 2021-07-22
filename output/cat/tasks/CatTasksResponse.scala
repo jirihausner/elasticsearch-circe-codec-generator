@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.tasks.{ TasksRecord }
 @JsonCodec case class Response(
 	body: Array(TasksRecord)
 )
-

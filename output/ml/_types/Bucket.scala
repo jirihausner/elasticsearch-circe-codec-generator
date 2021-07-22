@@ -21,7 +21,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	timestamp: Time
 )
 
-
 @JsonCodec case class BucketInfluencer(
 	bucket_span: long, 
 	influencer_score: double, 
@@ -36,7 +35,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	foo: String
 )
 
-
 @JsonCodec case class OverallBucket(
 	bucket_span: long, 
 	is_interim: Boolean, 
@@ -46,12 +44,10 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	timestamp: Time
 )
 
-
 @JsonCodec case class OverallBucketJob(
 	job_id: Id, 
 	max_anomaly_score: double
 )
-
 
 @JsonCodec case class PartitionScore(
 	initial_record_score: double, 
@@ -60,4 +56,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	probability: double, 
 	record_score: double
 )
-

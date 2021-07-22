@@ -87,5 +87,4 @@ import com.converted.elasticsearch._types.aggregations.{ AverageBucketAggregatio
 	weighted_avg: WeightedAverageAggregation, 
 	variable_width_histogram: VariableWidthHistogramAggregation
 )
-
 type Missing = String | integer | double | Boolean

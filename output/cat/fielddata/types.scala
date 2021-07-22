@@ -12,4 +12,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	field: String, 
 	size: String
 )
-

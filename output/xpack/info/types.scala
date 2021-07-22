@@ -12,12 +12,10 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	hash: String
 )
 
-
 @JsonCodec case class NativeCodeInformation(
 	build_hash: String, 
 	version: VersionString
 )
-
 
 @JsonCodec case class MinimalLicenseInformation(
 	expiry_date_in_millis: EpochMillis, 
@@ -26,7 +24,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	`type`: LicenseType, 
 	uid: String
 )
-
 
 @JsonCodec case class Features(
 	aggregate_metric: Feature, 
@@ -58,11 +55,9 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	watcher: Feature
 )
 
-
 @JsonCodec case class Feature(
 	available: Boolean, 
 	description: String, 
 	enabled: Boolean, 
 	native_code_info: NativeCodeInformation
 )
-

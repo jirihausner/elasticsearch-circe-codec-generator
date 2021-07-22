@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.snapshots.{ SnapshotsRecord }
 @JsonCodec case class Response(
 	body: Array(SnapshotsRecord)
 )
-

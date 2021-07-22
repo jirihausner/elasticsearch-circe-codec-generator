@@ -20,7 +20,6 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 	version: VersionNumber, 
 	version_type: VersionType
 )
-
 type MultiGetId = String | integer
 
 @JsonCodec case class Hit[TDocument](
@@ -36,4 +35,3 @@ type MultiGetId = String | integer
 	_type: Type, 
 	_version: VersionNumber
 )
-

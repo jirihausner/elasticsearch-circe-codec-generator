@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.thread_pool.{ ThreadPoolRecord }
 @JsonCodec case class Response(
 	body: Array(ThreadPoolRecord)
 )
-

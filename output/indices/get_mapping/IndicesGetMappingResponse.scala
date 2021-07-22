@@ -9,9 +9,7 @@ import com.converted.elasticsearch._types.mapping.TypeMapping.{ TypeMapping }
 
 @JsonCodec case class Response extends DictionaryResponseBase(IndexName, IndexMappingRecord)
 
-
 @JsonCodec case class IndexMappingRecord(
 	item: TypeMapping, 
 	mappings: TypeMapping
 )
-

@@ -24,7 +24,6 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	version_type: VersionType
 )
 
-
 @JsonCodec case class TermVectorsResult(
 	found: Boolean, 
 	id: Id, 
@@ -33,4 +32,3 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	took: long, 
 	version: VersionNumber
 )
-

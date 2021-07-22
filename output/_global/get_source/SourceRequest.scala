@@ -6,4 +6,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._global.get_source.{ Request as GetRequest }
 
 @JsonCodec case class Request extends GetRequest
-

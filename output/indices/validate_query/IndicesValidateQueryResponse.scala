@@ -26,4 +26,3 @@ object Response {
 	index: IndexName, 
 	valid: Boolean
 )
-

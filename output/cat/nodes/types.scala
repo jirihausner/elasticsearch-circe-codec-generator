@@ -104,4 +104,3 @@ import com.converted.elasticsearch._types.Numeric.{ Percentage }
 	`bulk.avg_time`: String, 
 	`bulk.avg_size_in_bytes`: String
 )
-

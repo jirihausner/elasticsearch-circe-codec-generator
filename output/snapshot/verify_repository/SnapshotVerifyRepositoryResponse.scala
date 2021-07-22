@@ -20,4 +20,3 @@ object Response {
 @JsonCodec case class CompactNodeInfo(
 	name: Name
 )
-

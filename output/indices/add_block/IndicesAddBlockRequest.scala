@@ -33,12 +33,11 @@ object Request {
 object IndicesBlockOptions extends Enumeration {
 	type IndicesBlockOptions = Value
 
-val metadata = Value(0, "metadata")
-val read = Value(1, "read")
-val read_only = Value(2, "read_only")
-val write = Value(3, "write")
+	val metadata = Value(0, "metadata")
+	val read = Value(1, "read")
+	val read_only = Value(2, "read_only")
+	val write = Value(3, "write")
 }
 
 implicit val indicesBlockOptionsDecoder: Decoder[IndicesBlockOptions.Value] = Decoder.decodeEnumeration(IndicesBlockOptions)
 implicit val indicesBlockOptionsEncoder: Encoder[IndicesBlockOptions.Value] = Decoder.encodeEnumeration(IndicesBlockOptions)
-

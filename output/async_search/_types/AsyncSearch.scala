@@ -29,4 +29,3 @@ import com.converted.elasticsearch._types.Stats.{ ClusterStatistics, ShardStatis
 	timed_out: Boolean, 
 	took: long
 )
-

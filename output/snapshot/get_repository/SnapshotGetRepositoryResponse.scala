@@ -7,4 +7,3 @@ import com.converted.elasticsearch._snapshot._types.SnapshotRepository.{ Reposit
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, Repository)
-

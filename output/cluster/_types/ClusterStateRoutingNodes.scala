@@ -10,4 +10,3 @@ import com.converted.elasticsearch._types.Node.{ NodeShard }
 	unassigned: Array(NodeShard), 
 	nodes: Dictionary(String, Array(NodeShard))
 )
-

@@ -18,11 +18,9 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	query: String
 ) extends QueryBase
 
-
 @JsonCodec case class Intervals(
 	filter: IntervalsFilter
 )
-
 
 @JsonCodec case class IntervalsAllOf(
 	intervals: Array(IntervalsContainer), 
@@ -31,12 +29,10 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	filter: IntervalsFilter
 )
 
-
 @JsonCodec case class IntervalsAnyOf(
 	intervals: Array(IntervalsContainer), 
 	filter: IntervalsFilter
 )
-
 
 @JsonCodec case class IntervalsContainer(
 	all_of: IntervalsAllOf, 
@@ -46,7 +42,6 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	prefix: IntervalsPrefix, 
 	wildcard: IntervalsWildcard
 )
-
 
 @JsonCodec case class IntervalsFilter(
 	after: IntervalsContainer, 
@@ -60,7 +55,6 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	script: Script
 )
 
-
 @JsonCodec case class IntervalsFuzzy(
 	analyzer: String, 
 	fuzziness: Fuzziness, 
@@ -69,7 +63,6 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	transpositions: Boolean, 
 	use_field: Field
 )
-
 
 @JsonCodec case class IntervalsMatch(
 	analyzer: String, 
@@ -80,13 +73,11 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	filter: IntervalsFilter
 )
 
-
 @JsonCodec case class IntervalsPrefix(
 	analyzer: String, 
 	prefix: String, 
 	use_field: Field
 )
-
 
 @JsonCodec case class IntervalsQuery(
 	all_of: IntervalsAllOf, 
@@ -97,13 +88,11 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	wildcard: IntervalsWildcard
 ) extends QueryBase
 
-
 @JsonCodec case class IntervalsWildcard(
 	analyzer: String, 
 	pattern: String, 
 	use_field: Field
 )
-
 
 @JsonCodec case class MatchQuery(
 	analyzer: String, 
@@ -121,7 +110,6 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	zero_terms_query: ZeroTermsQuery
 ) extends QueryBase
 
-
 @JsonCodec case class MatchBoolPrefixQuery(
 	analyzer: String, 
 	fuzziness: Fuzziness, 
@@ -134,13 +122,11 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	query: String
 ) extends QueryBase
 
-
 @JsonCodec case class MatchPhraseQuery(
 	analyzer: String, 
 	query: String, 
 	slop: integer
 ) extends QueryBase
-
 
 @JsonCodec case class MatchPhrasePrefixQuery(
 	analyzer: String, 
@@ -149,7 +135,6 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	slop: integer, 
 	zero_terms_query: ZeroTermsQuery
 ) extends QueryBase
-
 
 @JsonCodec case class MultiMatchQuery(
 	analyzer: String, 
@@ -172,32 +157,29 @@ import com.converted.elasticsearch._types.query_dsl.{ Operator }
 	zero_terms_query: ZeroTermsQuery
 ) extends QueryBase
 
-
 object TextQueryType extends Enumeration {
 	type TextQueryType = Value
 
-val best_fields = Value(0, "best_fields")
-val most_fields = Value(1, "most_fields")
-val cross_fields = Value(2, "cross_fields")
-val phrase = Value(3, "phrase")
-val phrase_prefix = Value(4, "phrase_prefix")
-val bool_prefix = Value(5, "bool_prefix")
+	val best_fields = Value(0, "best_fields")
+	val most_fields = Value(1, "most_fields")
+	val cross_fields = Value(2, "cross_fields")
+	val phrase = Value(3, "phrase")
+	val phrase_prefix = Value(4, "phrase_prefix")
+	val bool_prefix = Value(5, "bool_prefix")
 }
 
 implicit val textQueryTypeDecoder: Decoder[TextQueryType.Value] = Decoder.decodeEnumeration(TextQueryType)
 implicit val textQueryTypeEncoder: Encoder[TextQueryType.Value] = Decoder.encodeEnumeration(TextQueryType)
 
-
 object ZeroTermsQuery extends Enumeration {
 	type ZeroTermsQuery = Value
 
-val all = Value(0, "all")
-val none = Value(1, "none")
+	val all = Value(0, "all")
+	val none = Value(1, "none")
 }
 
 implicit val zeroTermsQueryDecoder: Decoder[ZeroTermsQuery.Value] = Decoder.decodeEnumeration(ZeroTermsQuery)
 implicit val zeroTermsQueryEncoder: Encoder[ZeroTermsQuery.Value] = Decoder.encodeEnumeration(ZeroTermsQuery)
-
 
 @JsonCodec case class QueryStringQuery(
 	allow_leading_wildcard: Boolean, 
@@ -227,28 +209,26 @@ implicit val zeroTermsQueryEncoder: Encoder[ZeroTermsQuery.Value] = Decoder.enco
 	`type`: TextQueryType
 ) extends QueryBase
 
-
 object SimpleQueryStringFlags extends Enumeration {
 	type SimpleQueryStringFlags = Value
 
-val nONE = Value(1, "NONE")
-val aND = Value(2, "AND")
-val oR = Value(4, "OR")
-val nOT = Value(8, "NOT")
-val pREFIX = Value(16, "PREFIX")
-val pHRASE = Value(32, "PHRASE")
-val pRECEDENCE = Value(64, "PRECEDENCE")
-val eSCAPE = Value(128, "ESCAPE")
-val wHITESPACE = Value(256, "WHITESPACE")
-val fUZZY = Value(512, "FUZZY")
-val nEAR = Value(1024, "NEAR")
-val sLOP = Value(2048, "SLOP")
-val aLL = Value(4096, "ALL")
+	val nONE = Value(1, "NONE")
+	val aND = Value(2, "AND")
+	val oR = Value(4, "OR")
+	val nOT = Value(8, "NOT")
+	val pREFIX = Value(16, "PREFIX")
+	val pHRASE = Value(32, "PHRASE")
+	val pRECEDENCE = Value(64, "PRECEDENCE")
+	val eSCAPE = Value(128, "ESCAPE")
+	val wHITESPACE = Value(256, "WHITESPACE")
+	val fUZZY = Value(512, "FUZZY")
+	val nEAR = Value(1024, "NEAR")
+	val sLOP = Value(2048, "SLOP")
+	val aLL = Value(4096, "ALL")
 }
 
 implicit val simpleQueryStringFlagsDecoder: Decoder[SimpleQueryStringFlags.Value] = Decoder.decodeEnumeration(SimpleQueryStringFlags)
 implicit val simpleQueryStringFlagsEncoder: Encoder[SimpleQueryStringFlags.Value] = Decoder.encodeEnumeration(SimpleQueryStringFlags)
-
 
 @JsonCodec case class SimpleQueryStringQuery(
 	analyzer: String, 
@@ -265,4 +245,3 @@ implicit val simpleQueryStringFlagsEncoder: Encoder[SimpleQueryStringFlags.Value
 	query: String, 
 	quote_field_suffix: String
 ) extends QueryBase
-

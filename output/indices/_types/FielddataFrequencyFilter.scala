@@ -10,4 +10,3 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer }
 	min: double, 
 	min_segment_size: integer
 )
-

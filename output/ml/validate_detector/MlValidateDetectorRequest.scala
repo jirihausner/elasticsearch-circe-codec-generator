@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.Base.{ RequestBase }
 @JsonCodec case class Request(
 	body: Detector
 ) extends RequestBase
-

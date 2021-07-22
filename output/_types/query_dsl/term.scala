@@ -14,7 +14,6 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase }
 	field: Field
 ) extends QueryBase
 
-
 @JsonCodec case class FuzzyQuery(
 	max_expansions: integer, 
 	prefix_length: integer, 
@@ -24,17 +23,14 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase }
 	value: UserDefinedValue
 ) extends QueryBase
 
-
 @JsonCodec case class IdsQuery(
 	values: Array(Id) | Array(long)
 ) extends QueryBase
-
 
 @JsonCodec case class PrefixQuery(
 	rewrite: MultiTermQueryRewrite, 
 	value: String
 ) extends QueryBase
-
 
 @JsonCodec case class RangeQuery(
 	gt: double | DateMath, 
@@ -47,18 +43,16 @@ import com.converted.elasticsearch._types.query_dsl.{ QueryBase }
 	to: double | DateMath
 ) extends QueryBase
 
-
 object RangeRelation extends Enumeration {
 	type RangeRelation = Value
 
-val within = Value(0, "within")
-val contains = Value(1, "contains")
-val intersects = Value(2, "intersects")
+	val within = Value(0, "within")
+	val contains = Value(1, "contains")
+	val intersects = Value(2, "intersects")
 }
 
 implicit val rangeRelationDecoder: Decoder[RangeRelation.Value] = Decoder.decodeEnumeration(RangeRelation)
 implicit val rangeRelationEncoder: Encoder[RangeRelation.Value] = Decoder.encodeEnumeration(RangeRelation)
-
 
 @JsonCodec case class RegexpQuery(
 	flags: String, 
@@ -66,11 +60,9 @@ implicit val rangeRelationEncoder: Encoder[RangeRelation.Value] = Decoder.encode
 	value: String
 ) extends QueryBase
 
-
 @JsonCodec case class TermQuery(
 	value: String | float | Boolean
 ) extends QueryBase
-
 
 @JsonCodec case class TermsQuery(
 	terms: Array(String), 
@@ -80,21 +72,17 @@ implicit val rangeRelationEncoder: Encoder[RangeRelation.Value] = Decoder.encode
 	routing: Routing
 ) extends QueryBase
 
-
 @JsonCodec case class TermsSetQuery(
 	minimum_should_match_field: Field, 
 	minimum_should_match_script: Script, 
 	terms: Array(String)
 ) extends QueryBase
 
-
 @JsonCodec case class TypeQuery(
 	value: String
 ) extends QueryBase
-
 
 @JsonCodec case class WildcardQuery(
 	rewrite: MultiTermQueryRewrite, 
 	value: String
 ) extends QueryBase
-

@@ -11,10 +11,8 @@ import com.converted.elasticsearch._types.common.{ Field }
 	annotations_enabled: Boolean
 )
 
-
 @JsonCodec case class ModelPlotConfigEnabled(
 	enabled: Boolean, 
 	annotations_enabled: Boolean, 
 	terms: String
 )
-

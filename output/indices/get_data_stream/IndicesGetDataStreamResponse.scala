@@ -31,14 +31,11 @@ object Response {
 	_meta: Metadata
 )
 
-
 @JsonCodec case class IndicesGetDataStreamItemTimestampField(
 	name: Field
 )
-
 
 @JsonCodec case class IndicesGetDataStreamItemIndex(
 	index_name: IndexName, 
 	index_uuid: Uuid
 )
-

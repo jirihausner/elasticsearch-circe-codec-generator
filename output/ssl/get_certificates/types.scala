@@ -14,4 +14,3 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	serial_number: String, 
 	subject_dn: String
 )
-

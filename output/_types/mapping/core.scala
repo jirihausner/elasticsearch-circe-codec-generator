@@ -21,19 +21,16 @@ import com.converted.elasticsearch._types.mapping.{ TermVectorOption }
 	similarity: String, 
 	store: Boolean
 ) extends PropertyBase
-
 type CoreProperty = ObjectProperty | NestedProperty | SearchAsYouTypeProperty | TextProperty | DocValuesProperty
 
 @JsonCodec case class DocValuesPropertyBase(
 	doc_values: Boolean
 ) extends CorePropertyBase
-
 type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateNanosProperty | KeywordProperty | NumberProperty | RangeProperty | GeoPointProperty | GeoShapeProperty | CompletionProperty | GenericProperty | IpProperty | Murmur3HashProperty | ShapeProperty | TokenCountProperty | VersionProperty | WildcardProperty | PointProperty
 
 @JsonCodec case class BinaryProperty(
 	`type`: "binary""
 ) extends DocValuesPropertyBase
-
 
 @JsonCodec case class BooleanProperty(
 	boost: double, 
@@ -42,7 +39,6 @@ type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateN
 	null_value: Boolean, 
 	`type`: "boolean""
 ) extends DocValuesPropertyBase
-
 
 @JsonCodec case class DateProperty(
 	boost: double, 
@@ -55,7 +51,6 @@ type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateN
 	`type`: "date""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class DateNanosProperty(
 	boost: double, 
 	format: String, 
@@ -66,12 +61,10 @@ type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateN
 	`type`: "date_nanos""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class JoinProperty(
 	relations: Dictionary(RelationName, RelationName | Array(RelationName)), 
 	`type`: "join""
 ) extends PropertyBase
-
 
 @JsonCodec case class KeywordProperty(
 	boost: double, 
@@ -85,7 +78,6 @@ type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateN
 	`type`: "keyword""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class NumberProperty(
 	boost: double, 
 	coerce: Boolean, 
@@ -97,40 +89,35 @@ type DocValuesProperty = BinaryProperty | BooleanProperty | DateProperty | DateN
 	`type`: NumberType
 ) extends DocValuesPropertyBase
 
-
 object NumberType extends Enumeration {
 	type NumberType = Value
 
-val float = Value(0, "float")
-val half_float = Value(1, "half_float")
-val scaled_float = Value(2, "scaled_float")
-val double = Value(3, "double")
-val integer = Value(4, "integer")
-val long = Value(5, "long")
-val short = Value(6, "short")
-val byte = Value(7, "byte")
-val unsigned_long = Value(8, "unsigned_long")
+	val float = Value(0, "float")
+	val half_float = Value(1, "half_float")
+	val scaled_float = Value(2, "scaled_float")
+	val double = Value(3, "double")
+	val integer = Value(4, "integer")
+	val long = Value(5, "long")
+	val short = Value(6, "short")
+	val byte = Value(7, "byte")
+	val unsigned_long = Value(8, "unsigned_long")
 }
 
 implicit val numberTypeDecoder: Decoder[NumberType.Value] = Decoder.decodeEnumeration(NumberType)
 implicit val numberTypeEncoder: Encoder[NumberType.Value] = Decoder.encodeEnumeration(NumberType)
 
-
 @JsonCodec case class PercolatorProperty(
 	`type`: "percolator""
 ) extends PropertyBase
-
 
 @JsonCodec case class RankFeatureProperty(
 	positive_score_impact: Boolean, 
 	`type`: "rank_feature""
 ) extends PropertyBase
 
-
 @JsonCodec case class RankFeaturesProperty(
 	`type`: "rank_features""
 ) extends PropertyBase
-
 
 @JsonCodec case class SearchAsYouTypeProperty(
 	analyzer: String, 
@@ -144,25 +131,22 @@ implicit val numberTypeEncoder: Encoder[NumberType.Value] = Decoder.encodeEnumer
 	`type`: "search_as_you_type""
 ) extends CorePropertyBase
 
-
 object IndexOptions extends Enumeration {
 	type IndexOptions = Value
 
-val docs = Value(0, "docs")
-val freqs = Value(1, "freqs")
-val positions = Value(2, "positions")
-val offsets = Value(3, "offsets")
+	val docs = Value(0, "docs")
+	val freqs = Value(1, "freqs")
+	val positions = Value(2, "positions")
+	val offsets = Value(3, "offsets")
 }
 
 implicit val indexOptionsDecoder: Decoder[IndexOptions.Value] = Decoder.decodeEnumeration(IndexOptions)
 implicit val indexOptionsEncoder: Encoder[IndexOptions.Value] = Decoder.encodeEnumeration(IndexOptions)
 
-
 @JsonCodec case class TextIndexPrefixes(
 	max_chars: integer, 
 	min_chars: integer
 )
-
 
 @JsonCodec case class TextProperty(
 	analyzer: String, 
@@ -182,13 +166,10 @@ implicit val indexOptionsEncoder: Encoder[IndexOptions.Value] = Decoder.encodeEn
 	`type`: "text""
 ) extends CorePropertyBase
 
-
 @JsonCodec case class VersionProperty(
 	`type`: "version""
 ) extends DocValuesPropertyBase
 
-
 @JsonCodec case class WildcardProperty(
 	`type`: "wildcard""
 ) extends DocValuesPropertyBase
-

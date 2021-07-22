@@ -11,4 +11,3 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	indices: Indices, 
 	shards: ShardStatistics
 )
-

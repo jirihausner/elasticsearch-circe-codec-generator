@@ -69,4 +69,3 @@ import com.converted.elasticsearch._types.common.{ ByteSize, Id, NodeId }
 	`buckets.time.exp_avg`: String, 
 	`buckets.time.exp_avg_hour`: String
 )
-

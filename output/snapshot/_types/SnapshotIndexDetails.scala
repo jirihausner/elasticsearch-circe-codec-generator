@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 	size_in_bytes: long, 
 	max_segments_per_shard: long
 )
-

@@ -14,13 +14,11 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	total_in_bytes: long
 )
 
-
 @JsonCodec case class ClusterIndicesShardsIndex(
 	primaries: ClusterShardMetrics, 
 	replication: ClusterShardMetrics, 
 	shards: ClusterShardMetrics
 )
-
 
 @JsonCodec case class ClusterIndicesShards(
 	index: ClusterIndicesShardsIndex, 
@@ -28,7 +26,6 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	replication: double, 
 	total: double
 )
-
 
 @JsonCodec case class ClusterIndices(
 	completion: CompletionStats, 
@@ -44,12 +41,10 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	versions: Array(IndicesVersions)
 )
 
-
 @JsonCodec case class FieldTypesMappings(
 	field_types: Array(FieldTypes), 
 	runtime_field_types: Array(RuntimeFieldTypes)
 )
-
 
 @JsonCodec case class FieldTypes(
 	name: Name, 
@@ -57,7 +52,6 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	index_count: integer, 
 	script_count: integer
 )
-
 
 @JsonCodec case class RuntimeFieldTypes(
 	name: Name, 
@@ -76,7 +70,6 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	doc_total: integer
 )
 
-
 @JsonCodec case class CharFilterTypes(
 	char_filter_types: Array(FieldTypes), 
 	tokenizer_types: Array(FieldTypes), 
@@ -88,7 +81,6 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	built_in_analyzers: Array(FieldTypes)
 )
 
-
 @JsonCodec case class IndicesVersions(
 	index_count: integer, 
 	primary_shard_count: integer, 
@@ -96,12 +88,10 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	version: VersionString
 )
 
-
 @JsonCodec case class ClusterIngest(
 	number_of_pipelines: integer, 
 	processor_stats: Dictionary(String, ClusterProcessor)
 )
-
 
 @JsonCodec case class ClusterJvm(
 	max_uptime_in_millis: long, 
@@ -110,12 +100,10 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	versions: Array(ClusterJvmVersion)
 )
 
-
 @JsonCodec case class ClusterJvmMemory(
 	heap_max_in_bytes: long, 
 	heap_used_in_bytes: long
 )
-
 
 @JsonCodec case class ClusterJvmVersion(
 	bundled_jdk: Boolean, 
@@ -127,12 +115,10 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	vm_version: VersionString
 )
 
-
 @JsonCodec case class ClusterNetworkTypes(
 	http_types: Dictionary(String, integer), 
 	transport_types: Dictionary(String, integer)
 )
-
 
 @JsonCodec case class ClusterNodeCount(
 	coordinating_only: integer, 
@@ -151,7 +137,6 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	transform: integer
 )
 
-
 @JsonCodec case class ClusterNodes(
 	count: ClusterNodeCount, 
 	discovery_types: Dictionary(String, integer), 
@@ -166,12 +151,10 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	versions: Array(VersionString)
 )
 
-
 @JsonCodec case class ClusterOperatingSystemArchitecture(
 	count: integer, 
 	arch: String
 )
-
 
 @JsonCodec case class ClusterOperatingSystem(
 	allocated_processors: integer, 
@@ -182,30 +165,25 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	architectures: Array(ClusterOperatingSystemArchitecture)
 )
 
-
 @JsonCodec case class ClusterOperatingSystemName(
 	count: integer, 
 	name: Name
 )
-
 
 @JsonCodec case class ClusterProcess(
 	cpu: ClusterProcessCpu, 
 	open_file_descriptors: ClusterProcessOpenFileDescriptors
 )
 
-
 @JsonCodec case class ClusterProcessCpu(
 	percent: integer
 )
-
 
 @JsonCodec case class ClusterProcessOpenFileDescriptors(
 	avg: long, 
 	max: long, 
 	min: long
 )
-
 
 @JsonCodec case class ClusterProcessor(
 	count: long, 
@@ -214,20 +192,17 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	time_in_millis: long
 )
 
-
 @JsonCodec case class ClusterShardMetrics(
 	avg: double, 
 	max: double, 
 	min: double
 )
 
-
 @JsonCodec case class NodePackagingType(
 	count: integer, 
 	flavor: String, 
 	`type`: String
 )
-
 
 @JsonCodec case class OperatingSystemMemoryInfo(
 	free_in_bytes: long, 
@@ -236,4 +211,3 @@ import com.converted.elasticsearch._types.Stats.{ CompletionStats, DocStats, Fie
 	used_in_bytes: long, 
 	used_percent: integer
 )
-

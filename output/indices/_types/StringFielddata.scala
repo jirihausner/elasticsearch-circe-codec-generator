@@ -8,4 +8,3 @@ import com.converted.elasticsearch.indices._types.{ StringFielddataFormat }
 @JsonCodec case class StringFielddata(
 	format: StringFielddataFormat
 )
-

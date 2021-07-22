@@ -21,7 +21,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis, Time }
 	stats: Statistics
 )
 
-
 @JsonCodec case class Statistics(
 	retention_deletion_time: DateString, 
 	retention_deletion_time_millis: EpochMillis, 
@@ -35,7 +34,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis, Time }
 	total_snapshots_taken: long
 )
 
-
 @JsonCodec case class Policy(
 	config: Configuration, 
 	name: Name, 
@@ -44,20 +42,17 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis, Time }
 	schedule: CronExpression
 )
 
-
 @JsonCodec case class Retention(
 	expire_after: Time, 
 	max_count: integer, 
 	min_count: integer
 )
 
-
 @JsonCodec case class Configuration(
 	ignore_unavailable: Boolean, 
 	include_global_state: Boolean, 
 	indices: Indices
 )
-
 
 @JsonCodec case class InProgress(
 	name: Name, 
@@ -66,9 +61,7 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis, Time }
 	uuid: Uuid
 )
 
-
 @JsonCodec case class Invocation(
 	snapshot_name: Name, 
 	time: DateString
 )
-

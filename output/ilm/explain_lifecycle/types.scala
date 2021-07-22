@@ -28,21 +28,17 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis, Time }
 	phase_execution: LifecycleExplainPhaseExecution
 )
 
-
 @JsonCodec case class LifecycleExplainPhaseExecution(
 	policy: Name, 
 	version: VersionNumber, 
 	modified_date_in_millis: EpochMillis
 )
 
-
 @JsonCodec case class LifecycleExplainProject(
 	project: LifecycleExplainProjectSummary
 )
-
 
 @JsonCodec case class LifecycleExplainProjectSummary(
 	index: IndexName, 
 	managed: Boolean
 )
-

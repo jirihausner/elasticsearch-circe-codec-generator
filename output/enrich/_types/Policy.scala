@@ -9,12 +9,10 @@ import com.converted.elasticsearch._types.common.{ Field, Fields, Indices, Name 
 	config: Configuration
 )
 
-
 @JsonCodec case class Configuration(
 	geo_match: Policy, 
 	`match`: Policy
 )
-
 
 @JsonCodec case class Policy(
 	enrich_fields: Fields, 
@@ -23,4 +21,3 @@ import com.converted.elasticsearch._types.common.{ Field, Fields, Indices, Name 
 	query: String, 
 	name: Name
 )
-

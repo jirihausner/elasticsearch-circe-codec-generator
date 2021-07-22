@@ -10,16 +10,13 @@ import com.converted.elasticsearch._types.common.{ Name }
 	name: Name
 )
 
-
 @JsonCodec case class ContextMethod(
 	name: Name, 
 	return_type: String, 
 	params: Array(ContextMethodParam)
 )
 
-
 @JsonCodec case class ContextMethodParam(
 	name: Name, 
 	`type`: String
 )
-

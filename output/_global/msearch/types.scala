@@ -23,7 +23,6 @@ import com.converted.elasticsearch._global.search.SearchResponse.{ Response as S
 	search_type: SearchType
 )
 
-
 @JsonCodec case class Body(
 	aggregations: Dictionary(String, AggregationContainer), 
 	aggs: Dictionary(String, AggregationContainer), 
@@ -35,8 +34,6 @@ import com.converted.elasticsearch._global.search.SearchResponse.{ Response as S
 	suggest: SuggestContainer | Dictionary(String, SuggestContainer)
 )
 
-
 @JsonCodec case class SearchResult[TDocument](
 	status: integer
 ) extends SearchResponse(TDocument)
-

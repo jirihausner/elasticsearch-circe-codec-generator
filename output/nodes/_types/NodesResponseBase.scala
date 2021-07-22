@@ -8,4 +8,3 @@ import com.converted.elasticsearch.nodes._types.{ NodeStatistics }
 @JsonCodec case class NodesResponseBase(
 	_nodes: NodeStatistics
 )
-

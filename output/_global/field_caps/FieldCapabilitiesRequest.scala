@@ -36,11 +36,9 @@ object Request {
 	term: FieldCapabilitiesBodyIndexFilterTerm
 )
 
-
 @JsonCodec case class FieldCapabilitiesBodyIndexFilterRange(
 	timestamp: FieldCapabilitiesBodyIndexFilterRangeTimestamp
 )
-
 
 @JsonCodec case class FieldCapabilitiesBodyIndexFilterRangeTimestamp(
 	gte: integer, 
@@ -49,13 +47,10 @@ object Request {
 	lt: integer
 )
 
-
 @JsonCodec case class FieldCapabilitiesBodyIndexFilterTerm(
 	versionControl: FieldCapabilitiesBodyIndexFilterTermVersionControl
 )
 
-
 @JsonCodec case class FieldCapabilitiesBodyIndexFilterTermVersionControl(
 	value: String
 )
-

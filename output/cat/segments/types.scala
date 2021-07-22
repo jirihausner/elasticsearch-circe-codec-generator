@@ -22,4 +22,3 @@ import com.converted.elasticsearch._types.common.{ ByteSize, IndexName, NodeId, 
 	version: VersionString, 
 	compound: String
 )
-

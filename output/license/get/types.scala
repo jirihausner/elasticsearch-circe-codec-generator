@@ -22,4 +22,3 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	uid: Uuid, 
 	start_date_in_millis: EpochMillis
 )
-

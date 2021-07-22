@@ -10,4 +10,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	id: Id, 
 	keep_alive: Time
 )
-

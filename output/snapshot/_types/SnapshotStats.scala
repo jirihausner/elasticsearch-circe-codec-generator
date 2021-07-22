@@ -12,4 +12,3 @@ import com.converted.elasticsearch.snapshot._types.{ FileCountSnapshotStats }
 	time_in_millis: long, 
 	total: FileCountSnapshotStats
 )
-

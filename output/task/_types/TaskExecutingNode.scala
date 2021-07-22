@@ -11,4 +11,3 @@ import com.converted.elasticsearch.task._types.{ State }
 @JsonCodec case class TaskExecutingNode(
 	tasks: Dictionary(TaskId, State)
 ) extends BaseNode
-

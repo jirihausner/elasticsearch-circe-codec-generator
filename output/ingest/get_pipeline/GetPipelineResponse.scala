@@ -7,4 +7,3 @@ import com.converted.elasticsearch._ingest._types.Pipeline.{ Pipeline }
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, Pipeline)
-

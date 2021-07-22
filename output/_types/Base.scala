@@ -13,7 +13,6 @@ import com.converted.elasticsearch._types.{ DateString }
 
 @JsonCodec case class RequestBase extends CommonQueryParameters
 
-
 @JsonCodec case class WriteResponseBase(
 	_id: Id, 
 	_index: IndexName, 
@@ -27,17 +26,13 @@ import com.converted.elasticsearch._types.{ DateString }
 	error: ErrorCause
 )
 
-
 @JsonCodec case class AcknowledgedResponseBase(
 	acknowledged: Boolean
 )
 
-
 @JsonCodec sealed trait DictionaryResponseBase[TKey, TValue]
 
-
 @JsonCodec sealed trait DynamicResponseBase
-
 
 @JsonCodec case class ElasticsearchVersionInfo(
 	build_date: DateString, 
@@ -51,22 +46,17 @@ import com.converted.elasticsearch._types.{ DateString }
 	number: String
 )
 
-
 @JsonCodec case class ErrorResponseBase(
 	error: MainError | String, 
 	status: integer
 )
 
-
 @JsonCodec case class IndicesResponseBase(
 	_shards: ShardStatistics
 ) extends AcknowledgedResponseBase
-
 
 @JsonCodec case class ShardsOperationResponseBase(
 	_shards: ShardStatistics
 )
 
-
 @JsonCodec sealed trait CustomResponseBuilderBase
-

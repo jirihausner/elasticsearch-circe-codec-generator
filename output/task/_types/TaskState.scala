@@ -20,4 +20,3 @@ import com.converted.elasticsearch.task._types.{ Status }
 	status: Status, 
 	`type`: String
 )
-

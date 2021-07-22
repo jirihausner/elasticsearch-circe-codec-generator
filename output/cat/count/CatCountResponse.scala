@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.count.{ CountRecord }
 @JsonCodec case class Response(
 	body: Array(CountRecord)
 )
-

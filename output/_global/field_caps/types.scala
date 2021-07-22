@@ -15,4 +15,3 @@ import com.converted.elasticsearch._types.common.{ Indices }
 	searchable: Boolean, 
 	`type`: String
 )
-

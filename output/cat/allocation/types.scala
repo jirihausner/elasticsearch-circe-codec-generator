@@ -18,4 +18,3 @@ import com.converted.elasticsearch._types.Numeric.{ Percentage }
 	ip: Ip, 
 	node: String
 )
-

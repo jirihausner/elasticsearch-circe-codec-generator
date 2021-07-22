@@ -19,14 +19,12 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	allocate_empty_primary: CommandAllocatePrimaryAction
 )
 
-
 @JsonCodec case class CommandCancelAction(
 	index: IndexName, 
 	shard: integer, 
 	node: String, 
 	allow_primary: Boolean
 )
-
 
 @JsonCodec case class CommandAction(
 	index: IndexName, 
@@ -35,7 +33,6 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	allow_primary: Boolean
 )
 
-
 @JsonCodec case class CommandMoveAction(
 	index: IndexName, 
 	shard: integer, 
@@ -43,13 +40,11 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	to_node: String
 )
 
-
 @JsonCodec case class CommandAllocateReplicaAction(
 	index: IndexName, 
 	shard: integer, 
 	node: String
 )
-
 
 @JsonCodec case class CommandAllocatePrimaryAction(
 	index: IndexName, 
@@ -58,20 +53,17 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	accept_data_loss: Boolean
 )
 
-
 @JsonCodec case class RerouteDecision(
 	decider: String, 
 	decision: String, 
 	explanation: String
 )
 
-
 @JsonCodec case class RerouteExplanation(
 	command: String, 
 	decisions: Array(RerouteDecision), 
 	parameters: RerouteParameters
 )
-
 
 @JsonCodec case class RerouteParameters(
 	allow_primary: Boolean, 
@@ -81,7 +73,6 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	from_node: NodeName, 
 	to_node: NodeName
 )
-
 
 @JsonCodec case class RerouteState(
 	cluster_uuid: Uuid, 
@@ -97,4 +88,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	snapshot_deletions: ClusterStateDeletedSnapshots, 
 	metadata: ClusterStateMetadata
 )
-

@@ -26,4 +26,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	updated: long, 
 	version_conflicts: long
 )
-

@@ -8,7 +8,6 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 
 @JsonCodec sealed trait AlwaysCondition
 
-
 @JsonCodec case class ArrayCompareCondition(
 	array_path: String, 
 	comparison: String, 
@@ -16,7 +15,6 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 	quantifier: Quantifier, 
 	value: UserDefinedValue
 )
-
 
 @JsonCodec case class CompareCondition(
 	comparison: String, 
@@ -26,7 +24,6 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 	`ctx.payload.value`: CompareContextPayloadCondition
 )
 
-
 @JsonCodec case class CompareContextPayloadCondition(
 	eq: UserDefinedValue, 
 	lt: UserDefinedValue, 
@@ -35,9 +32,7 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 	gte: UserDefinedValue
 )
 
-
 @JsonCodec sealed trait Condition
-
 
 @JsonCodec case class ConditionContainer(
 	always: AlwaysCondition, 
@@ -47,38 +42,33 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 	script: ScriptCondition
 )
 
-
 object ConditionType extends Enumeration {
 	type ConditionType = Value
 
-val always = Value(0, "always")
-val never = Value(1, "never")
-val script = Value(2, "script")
-val compare = Value(3, "compare")
-val array_compare = Value(4, "array_compare")
+	val always = Value(0, "always")
+	val never = Value(1, "never")
+	val script = Value(2, "script")
+	val compare = Value(3, "compare")
+	val array_compare = Value(4, "array_compare")
 }
 
 implicit val conditionTypeDecoder: Decoder[ConditionType.Value] = Decoder.decodeEnumeration(ConditionType)
 implicit val conditionTypeEncoder: Encoder[ConditionType.Value] = Decoder.encodeEnumeration(ConditionType)
 
-
 @JsonCodec sealed trait NeverCondition
-
 
 object Quantifier extends Enumeration {
 	type Quantifier = Value
 
-val some = Value(0, "some")
-val all = Value(1, "all")
+	val some = Value(0, "some")
+	val all = Value(1, "all")
 }
 
 implicit val quantifierDecoder: Decoder[Quantifier.Value] = Decoder.decodeEnumeration(Quantifier)
 implicit val quantifierEncoder: Encoder[Quantifier.Value] = Decoder.encodeEnumeration(Quantifier)
-
 
 @JsonCodec case class ScriptCondition(
 	lang: String, 
 	params: Dictionary(String, UserDefinedValue), 
 	source: String
 )
-

@@ -11,11 +11,9 @@ import com.converted.elasticsearch._types.common.{ Field }
 	rollup_jobs: Array(RollupCapabilitySummary)
 )
 
-
 @JsonCodec case class RollupCapabilitySummary(
 	fields: Dictionary(Field, Dictionary(String, UserDefinedValue)), 
 	index_pattern: String, 
 	job_id: String, 
 	rollup_index: String
 )
-

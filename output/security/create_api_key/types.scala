@@ -12,9 +12,7 @@ import com.converted.elasticsearch._types.common.{ Indices }
 	applications: Array(ApplicationPrivileges)
 )
 
-
 @JsonCodec case class IndexPrivileges(
 	names: Indices, 
 	privileges: Array(String)
 )
-

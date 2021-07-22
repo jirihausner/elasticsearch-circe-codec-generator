@@ -24,27 +24,22 @@ import com.converted.elasticsearch._types.analysis.token_filters.{ TokenFilter }
 	categorization_analyzer: CategorizationAnalyzer | String
 )
 
-
 @JsonCodec case class PerPartitionCategorization(
 	enabled: Boolean, 
 	stop_on_warn: Boolean
 )
-
 
 @JsonCodec case class AnalysisLimits(
 	categorization_examples_limit: long, 
 	model_memory_limit: String
 )
 
-
 @JsonCodec case class AnalysisMemoryLimit(
 	model_memory_limit: String
 )
-
 
 @JsonCodec case class CategorizationAnalyzer(
 	filter: Array(String | TokenFilter), 
 	tokenizer: String | Tokenizer, 
 	char_filter: Array(String | CharFilter)
 )
-

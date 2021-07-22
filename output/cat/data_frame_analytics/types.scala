@@ -23,4 +23,3 @@ import com.converted.elasticsearch._types.common.{ Id, IndexName, Name, Type, Ve
 	`node.ephemeral_id`: Id, 
 	`node.address`: String
 )
-

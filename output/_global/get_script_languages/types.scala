@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.Scripting.{ ScriptLanguage }
 	contexts: Array(String), 
 	language: ScriptLanguage
 )
-

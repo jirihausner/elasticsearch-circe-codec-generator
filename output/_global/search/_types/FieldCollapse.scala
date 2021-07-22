@@ -12,4 +12,3 @@ import com.converted.elasticsearch._global.search._types.{ InnerHits }
 	inner_hits: InnerHits | Array(InnerHits), 
 	max_concurrent_group_searches: integer
 )
-

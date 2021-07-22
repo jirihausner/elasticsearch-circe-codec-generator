@@ -11,7 +11,6 @@ import com.converted.elasticsearch._types.mapping.{ DocValuesPropertyBase }
 	coerce: Boolean, 
 	index: Boolean
 ) extends DocValuesPropertyBase
-
 type RangeProperty = LongRangeProperty | IpRangeProperty | IntegerRangeProperty | FloatRangeProperty | DoubleRangeProperty | DateRangeProperty
 
 @JsonCodec case class DateRangeProperty(
@@ -19,28 +18,22 @@ type RangeProperty = LongRangeProperty | IpRangeProperty | IntegerRangeProperty 
 	`type`: "date_range""
 ) extends RangePropertyBase
 
-
 @JsonCodec case class DoubleRangeProperty(
 	`type`: "double_range""
 ) extends RangePropertyBase
-
 
 @JsonCodec case class FloatRangeProperty(
 	`type`: "float_range""
 ) extends RangePropertyBase
 
-
 @JsonCodec case class IntegerRangeProperty(
 	`type`: "integer_range""
 ) extends RangePropertyBase
-
 
 @JsonCodec case class IpRangeProperty(
 	`type`: "ip_range""
 ) extends RangePropertyBase
 
-
 @JsonCodec case class LongRangeProperty(
 	`type`: "long_range""
 ) extends RangePropertyBase
-

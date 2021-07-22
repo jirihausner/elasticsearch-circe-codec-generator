@@ -17,48 +17,40 @@ import com.converted.elasticsearch._types.common.{ Metadata }
 	role_templates: Array(RoleTemplate)
 )
 
-
 @JsonCodec case class TransientMetadata(
 	enabled: Boolean
 )
 
-
 object TemplateFormat extends Enumeration {
 	type TemplateFormat = Value
 
-val string = Value(0, "string")
-val json = Value(1, "json")
+	val string = Value(0, "string")
+	val json = Value(1, "json")
 }
 
 implicit val templateFormatDecoder: Decoder[TemplateFormat.Value] = Decoder.decodeEnumeration(TemplateFormat)
 implicit val templateFormatEncoder: Encoder[TemplateFormat.Value] = Decoder.encodeEnumeration(TemplateFormat)
-
 
 @JsonCodec case class InlineRoleTemplate(
 	template: InlineRoleTemplateSource, 
 	format: TemplateFormat
 )
 
-
 @JsonCodec case class InlineRoleTemplateSource(
 	source: String
 )
-
 
 @JsonCodec case class StoredRoleTemplate(
 	template: StoredRoleTemplateId, 
 	format: TemplateFormat
 )
 
-
 @JsonCodec case class StoredRoleTemplateId(
 	id: String
 )
-
 
 @JsonCodec case class InvalidRoleTemplate(
 	template: String, 
 	format: TemplateFormat
 )
-
 type RoleTemplate = InlineRoleTemplate | StoredRoleTemplate | InvalidRoleTemplate

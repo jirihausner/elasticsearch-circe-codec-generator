@@ -8,4 +8,3 @@ import com.converted.elasticsearch.ssl.get_certificates.{ CertificateInformation
 @JsonCodec case class Response(
 	body: Array(CertificateInformation)
 )
-

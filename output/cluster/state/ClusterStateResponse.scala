@@ -37,4 +37,3 @@ object Response {
 @JsonCodec case class ClusterStateBlocks(
 	indices: Dictionary(IndexName, Dictionary(String, ClusterStateBlockIndex))
 )
-

@@ -27,4 +27,3 @@ import com.converted.elasticsearch._types.common.{ NodeId }
 	size: String, 
 	keep_alive: String
 )
-

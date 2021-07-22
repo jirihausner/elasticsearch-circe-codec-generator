@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 	file_count: integer, 
 	size_in_bytes: long
 )
-

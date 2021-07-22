@@ -12,7 +12,6 @@ import com.converted.elasticsearch._types.Networking.{ TransportAddress }
 	shards: Dictionary(String, ShardStoreWrapper)
 )
 
-
 @JsonCodec case class ShardStore(
 	allocation: ShardStoreAllocation, 
 	allocation_id: Id, 
@@ -24,26 +23,22 @@ import com.converted.elasticsearch._types.Networking.{ TransportAddress }
 	transport_address: TransportAddress
 )
 
-
 object ShardStoreAllocation extends Enumeration {
 	type ShardStoreAllocation = Value
 
-val primary = Value(0, "primary")
-val replica = Value(1, "replica")
-val unused = Value(2, "unused")
+	val primary = Value(0, "primary")
+	val replica = Value(1, "replica")
+	val unused = Value(2, "unused")
 }
 
 implicit val shardStoreAllocationDecoder: Decoder[ShardStoreAllocation.Value] = Decoder.decodeEnumeration(ShardStoreAllocation)
 implicit val shardStoreAllocationEncoder: Encoder[ShardStoreAllocation.Value] = Decoder.encodeEnumeration(ShardStoreAllocation)
-
 
 @JsonCodec case class ShardStoreException(
 	reason: String, 
 	`type`: String
 )
 
-
 @JsonCodec case class ShardStoreWrapper(
 	stores: Array(ShardStore)
 )
-

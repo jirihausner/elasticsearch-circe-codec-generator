@@ -12,4 +12,3 @@ import com.converted.elasticsearch.security._types.{ RoleMappingRuleBase }
 	roles: Array(String), 
 	rules: RoleMappingRuleBase
 )
-

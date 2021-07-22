@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.common.{ IndexName, Name }
 	name: Name, 
 	index_patterns: Array(IndexName)
 )
-

@@ -8,4 +8,3 @@ import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch._types.common.{ IndexName }
 
 @JsonCodec case class Response extends DictionaryResponseBase(IndexName, IndexState)
-

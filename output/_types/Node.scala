@@ -18,7 +18,6 @@ import com.converted.elasticsearch._types.{ TransportAddress }
 	failed: integer
 )
 
-
 @JsonCodec case class NodeAttributes(
 	attributes: Dictionary(String, String), 
 	ephemeral_id: Id, 
@@ -27,7 +26,6 @@ import com.converted.elasticsearch._types.{ TransportAddress }
 	transport_address: TransportAddress, 
 	roles: NodeRoles
 )
-
 
 @JsonCodec case class NodeShard(
 	state: ShardRoutingState, 
@@ -40,27 +38,25 @@ import com.converted.elasticsearch._types.{ TransportAddress }
 	unassigned_info: UnassignedInformation
 )
 
-
 object NodeRole extends Enumeration {
 	type NodeRole = Value
 
-val master = Value(0, "master")
-val data = Value(1, "data")
-val data_cold = Value(2, "data_cold")
-val data_content = Value(3, "data_content")
-val data_frozen = Value(4, "data_frozen")
-val data_hot = Value(5, "data_hot")
-val data_warm = Value(6, "data_warm")
-val client = Value(7, "client")
-val ingest = Value(8, "ingest")
-val ml = Value(9, "ml")
-val voting_only = Value(10, "voting_only")
-val transform = Value(11, "transform")
-val remote_cluster_client = Value(12, "remote_cluster_client")
-val coordinating_only = Value(13, "coordinating_only")
+	val master = Value(0, "master")
+	val data = Value(1, "data")
+	val data_cold = Value(2, "data_cold")
+	val data_content = Value(3, "data_content")
+	val data_frozen = Value(4, "data_frozen")
+	val data_hot = Value(5, "data_hot")
+	val data_warm = Value(6, "data_warm")
+	val client = Value(7, "client")
+	val ingest = Value(8, "ingest")
+	val ml = Value(9, "ml")
+	val voting_only = Value(10, "voting_only")
+	val transform = Value(11, "transform")
+	val remote_cluster_client = Value(12, "remote_cluster_client")
+	val coordinating_only = Value(13, "coordinating_only")
 }
 
 implicit val nodeRoleDecoder: Decoder[NodeRole.Value] = Decoder.decodeEnumeration(NodeRole)
 implicit val nodeRoleEncoder: Encoder[NodeRole.Value] = Decoder.encodeEnumeration(NodeRole)
-
 type NodeRoles = Array(NodeRole)

@@ -8,4 +8,3 @@ import com.converted.elasticsearch._types.common.{ Name }
 @JsonCodec case class ClusterNode(
 	name: Name
 )
-

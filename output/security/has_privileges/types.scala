@@ -12,12 +12,10 @@ import com.converted.elasticsearch._types.common.{ Name }
 	resources: Array(String)
 )
 
-
 @JsonCodec case class IndexPrivilegesCheck(
 	names: Array(String), 
 	privileges: Array(String)
 )
-
 type ApplicationsPrivileges = Dictionary(Name, ResourcePrivileges)
 type ResourcePrivileges = Dictionary(Name, Privileges)
 type Privileges = Dictionary(String, Boolean)

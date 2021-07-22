@@ -26,11 +26,9 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 	index_lifecycle: ClusterStateIndexLifecycle
 )
 
-
 @JsonCodec case class ClusterStateMetadataIndexGraveyard(
 	tombstones: Array(Tombstone)
 )
-
 
 @JsonCodec case class Tombstone(
 	index: TombstoneIndex, 
@@ -38,15 +36,12 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 	delete_date_in_millis: long
 )
 
-
 @JsonCodec case class TombstoneIndex(
 	index_name: Name, 
 	index_uuid: Uuid
 )
 
-
 @JsonCodec sealed trait ClusterStateMetadataTemplate
-
 
 @JsonCodec case class ClusterStateMetadataClusterCoordination(
 	term: integer, 
@@ -55,9 +50,7 @@ import com.converted.elasticsearch.cluster._types.{ ClusterStateIngest }
 	voting_config_exclusions: Array(VotingConfigExclusionsItem)
 )
 
-
 @JsonCodec case class VotingConfigExclusionsItem(
 	node_id: Id, 
 	node_name: Name
 )
-

@@ -15,27 +15,24 @@ import com.converted.elasticsearch._types.mapping.{ PropertyBase }
 	unmatch: String
 )
 
-
 object MatchType extends Enumeration {
 	type MatchType = Value
 
-val simple = Value(0, "simple")
-val regex = Value(1, "regex")
+	val simple = Value(0, "simple")
+	val regex = Value(1, "regex")
 }
 
 implicit val matchTypeDecoder: Decoder[MatchType.Value] = Decoder.decodeEnumeration(MatchType)
 implicit val matchTypeEncoder: Encoder[MatchType.Value] = Decoder.encodeEnumeration(MatchType)
 
-
 object DynamicMapping extends Enumeration {
 	type DynamicMapping = Value
 
-val strict = Value(0, "strict")
-val runtime = Value(1, "runtime")
-val true = Value(2, "true")
-val false = Value(3, "false")
+	val strict = Value(0, "strict")
+	val runtime = Value(1, "runtime")
+	val true = Value(2, "true")
+	val false = Value(3, "false")
 }
 
 implicit val dynamicMappingDecoder: Decoder[DynamicMapping.Value] = Decoder.decodeEnumeration(DynamicMapping)
 implicit val dynamicMappingEncoder: Encoder[DynamicMapping.Value] = Decoder.encodeEnumeration(DynamicMapping)
-

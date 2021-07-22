@@ -19,7 +19,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	version_type: VersionType
 )
 
-
 @JsonCodec case class Source(
 	index: Indices, 
 	query: QueryContainer, 
@@ -30,7 +29,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	_source: Fields
 )
 
-
 @JsonCodec case class RemoteSource(
 	connect_timeout: Time, 
 	host: Host, 
@@ -38,4 +36,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	password: Password, 
 	socket_timeout: Time
 )
-

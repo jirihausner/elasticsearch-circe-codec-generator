@@ -15,7 +15,6 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	operation_mode: LifecycleOperationMode
 )
 
-
 @JsonCodec case class ClusterStateIndexLifecycleSummary(
 	policy: ClusterStateIndexLifecyclePolicy, 
 	headers: HttpHeaders, 
@@ -24,8 +23,6 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	modified_date_string: DateString
 )
 
-
 @JsonCodec case class ClusterStateIndexLifecyclePolicy(
 	phases: Phases
 )
-

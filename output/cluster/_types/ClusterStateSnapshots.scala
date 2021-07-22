@@ -9,8 +9,6 @@ import com.converted.elasticsearch._snapshot._types.SnapshotStatus.{ Status }
 	snapshots: Array(Status)
 )
 
-
 @JsonCodec case class ClusterStateDeletedSnapshots(
 	snapshot_deletions: Array(String)
 )
-

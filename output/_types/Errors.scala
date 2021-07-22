@@ -39,12 +39,10 @@ import com.converted.elasticsearch._types.{ integer, long }
 	position: PainlessExecutionPosition
 )
 
-
 @JsonCodec case class MainError(
 	headers: Dictionary(String, String), 
 	root_cause: Array(ErrorCause)
 ) extends ErrorCause
-
 
 @JsonCodec case class ShardFailure(
 	index: IndexName, 
@@ -54,7 +52,6 @@ import com.converted.elasticsearch._types.{ integer, long }
 	status: String
 )
 
-
 @JsonCodec case class BulkIndexByScrollFailure(
 	cause: MainError, 
 	id: Id, 
@@ -62,4 +59,3 @@ import com.converted.elasticsearch._types.{ integer, long }
 	status: integer, 
 	`type`: String
 )
-

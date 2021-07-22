@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	max_size: String, 
 	max_primary_shard_size: ByteSize
 )
-

@@ -32,12 +32,10 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	attributes: Dictionary(Field, String)
 )
 
-
 @JsonCodec case class Ingest(
 	pipelines: Dictionary(String, IngestTotal), 
 	total: IngestTotal
 )
-
 
 @JsonCodec case class IngestTotal(
 	count: long, 
@@ -47,12 +45,10 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	time_in_millis: long
 )
 
-
 @JsonCodec case class KeyedProcessor(
 	statistics: Process, 
 	`type`: String
 )
-
 
 @JsonCodec case class AdaptiveSelection(
 	avg_queue_size: long, 
@@ -64,7 +60,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	rank: String
 )
 
-
 @JsonCodec case class Breaker(
 	estimated_size: String, 
 	estimated_size_in_bytes: long, 
@@ -73,7 +68,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	overhead: float, 
 	tripped: float
 )
-
 
 @JsonCodec case class Cpu(
 	percent: integer, 
@@ -85,7 +79,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	user_in_millis: long, 
 	load_average: Dictionary(String, double)
 )
-
 
 @JsonCodec case class DataPathStats(
 	available: String, 
@@ -106,7 +99,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	`type`: String
 )
 
-
 @JsonCodec case class MemoryStats(
 	resident: String, 
 	resident_in_bytes: long, 
@@ -119,7 +111,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	used_in_bytes: long
 )
 
-
 @JsonCodec case class ExtendedMemoryStats(
 	free_percent: integer, 
 	used_percent: integer, 
@@ -128,19 +119,16 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	used_in_bytes: integer
 ) extends MemoryStats
 
-
 @JsonCodec case class Http(
 	current_open: integer, 
 	total_opened: long
 )
-
 
 @JsonCodec case class FileSystem(
 	data: Array(DataPathStats), 
 	timestamp: long, 
 	total: FileSystemTotal
 )
-
 
 @JsonCodec case class FileSystemTotal(
 	available: String, 
@@ -151,7 +139,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	total_in_bytes: long
 )
 
-
 @JsonCodec case class NodeBufferPool(
 	count: long, 
 	total_capacity: String, 
@@ -159,7 +146,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	used: String, 
 	used_in_bytes: long
 )
-
 
 @JsonCodec case class Jvm(
 	buffer_pools: Dictionary(String, NodeBufferPool), 
@@ -172,12 +158,10 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	uptime_in_millis: long
 )
 
-
 @JsonCodec case class JvmThreads(
 	count: long, 
 	peak_count: long
 )
-
 
 @JsonCodec case class JvmClasses(
 	current_loaded_count: long, 
@@ -185,18 +169,15 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	total_unloaded_count: long
 )
 
-
 @JsonCodec case class GarbageCollector(
 	collectors: Dictionary(String, GarbageCollectorTotal)
 )
-
 
 @JsonCodec case class GarbageCollectorTotal(
 	collection_count: long, 
 	collection_time: String, 
 	collection_time_in_millis: long
 )
-
 
 @JsonCodec case class OperatingSystem(
 	cpu: Cpu, 
@@ -205,7 +186,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	timestamp: long
 )
 
-
 @JsonCodec case class Process(
 	cpu: Cpu, 
 	mem: MemoryStats, 
@@ -213,12 +193,10 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	timestamp: long
 )
 
-
 @JsonCodec case class Scripting(
 	cache_evictions: long, 
 	compilations: long
 )
-
 
 @JsonCodec case class ThreadCount(
 	active: long, 
@@ -229,7 +207,6 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	threads: long
 )
 
-
 @JsonCodec case class Transport(
 	rx_count: long, 
 	rx_size: String, 
@@ -239,4 +216,3 @@ import com.converted.elasticsearch._types.Numeric.{ double, float, integer, long
 	tx_size: String, 
 	tx_size_in_bytes: long
 )
-

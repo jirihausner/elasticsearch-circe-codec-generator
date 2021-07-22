@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.Networking.{ Host }
 	node_name: Name, 
 	threads: Array(String)
 )
-

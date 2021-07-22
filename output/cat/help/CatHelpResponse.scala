@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.help.{ HelpRecord }
 @JsonCodec case class Response(
 	body: Array(HelpRecord)
 )
-

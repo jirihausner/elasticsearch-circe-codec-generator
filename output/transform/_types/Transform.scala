@@ -17,19 +17,16 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	pipeline: String
 )
 
-
 @JsonCodec case class Latest(
 	sort: Field, 
 	unique_key: Array(Field)
 )
-
 
 @JsonCodec case class Pivot(
 	aggregations: Dictionary(String, AggregationContainer), 
 	group_by: Dictionary(String, PivotGroupByContainer), 
 	max_page_search_size: integer
 )
-
 
 @JsonCodec case class PivotGroupByContainer(
 	date_histogram: DateHistogramAggregation, 
@@ -38,17 +35,14 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	terms: TermsAggregation
 )
 
-
 @JsonCodec case class RetentionPolicyContainer(
 	time: RetentionPolicy
 )
-
 
 @JsonCodec case class RetentionPolicy(
 	field: Field, 
 	max_age: Time
 )
-
 
 @JsonCodec case class Settings(
 	dates_as_epoch_millis: Boolean, 
@@ -56,24 +50,19 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	max_page_search_size: integer
 )
 
-
 @JsonCodec case class Source(
 	index: Indices, 
 	query: QueryContainer, 
 	runtime_mappings: RuntimeFields
 )
 
-
 @JsonCodec sealed trait Sync
-
 
 @JsonCodec case class SyncContainer(
 	time: TimeSync
 )
 
-
 @JsonCodec case class TimeSync(
 	delay: Time, 
 	field: Field
 )
-

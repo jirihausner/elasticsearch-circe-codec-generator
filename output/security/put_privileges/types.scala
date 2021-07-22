@@ -11,4 +11,3 @@ import com.converted.elasticsearch._types.common.{ Metadata, Name }
 	name: Name, 
 	metadata: Metadata
 )
-

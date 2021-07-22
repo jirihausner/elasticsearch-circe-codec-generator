@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis }
 	end_time: EpochMillis, 
 	start_time: EpochMillis
 )
-

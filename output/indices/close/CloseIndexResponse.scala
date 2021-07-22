@@ -25,8 +25,6 @@ object Response {
 	shards: Dictionary(String, CloseShardResult)
 )
 
-
 @JsonCodec case class CloseShardResult(
 	failures: Array(ShardFailure)
 )
-

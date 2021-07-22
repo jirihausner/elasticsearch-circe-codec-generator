@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.indices.{ IndicesRecord }
 @JsonCodec case class Response(
 	body: Array(IndicesRecord)
 )
-

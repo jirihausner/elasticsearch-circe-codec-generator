@@ -20,7 +20,6 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	runtime_mappings: RuntimeFields
 )
 
-
 @JsonCodec case class DataframeAnalyticsFieldSelection(
 	is_included: Boolean, 
 	is_required: Boolean, 
@@ -30,25 +29,21 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	reason: String
 )
 
-
 @JsonCodec case class DataframeAnalyticsMemoryEstimation(
 	expected_memory_with_disk: String, 
 	expected_memory_without_disk: String
 )
-
 
 @JsonCodec case class DataframeAnalyticsDestination(
 	index: IndexName, 
 	results_field: Field
 )
 
-
 @JsonCodec case class DataframeAnalysisContainer(
 	outlier_detection: DataframeAnalysisOutlierDetection, 
 	regression: DataframeAnalysisRegression, 
 	classification: DataframeAnalysisClassification
 )
-
 
 @JsonCodec case class DataframeAnalysisOutlierDetection(
 	n_neighbors: integer, 
@@ -58,7 +53,6 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	outlier_fraction: double, 
 	standardization_enabled: Boolean
 )
-
 
 @JsonCodec case class DataframeAnalysis(
 	dependent_variable: String, 
@@ -81,25 +75,21 @@ import com.converted.elasticsearch.ml._types.{ DataframeState }
 	training_percent: Percentage
 )
 
-
 @JsonCodec case class DataframeAnalysisRegression(
 	loss_function: String, 
 	loss_function_parameter: double
 ) extends DataframeAnalysis
 
-
 @JsonCodec case class DataframeAnalysisClassification(
 	class_assignment_objective: String, 
 	num_top_classes: integer
 ) extends DataframeAnalysis
-
 type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzedFieldsIncludeExclude
 
 @JsonCodec case class DataframeAnalysisAnalyzedFieldsIncludeExclude(
 	includes: Array(String), 
 	excludes: Array(String)
 )
-
 
 @JsonCodec case class DataframeAnalysisFeatureProcessor(
 	frequency_encoding: DataframeAnalysisFeatureProcessorFrequencyEncoding, 
@@ -109,18 +99,15 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	target_mean_encoding: DataframeAnalysisFeatureProcessorTargetMeanEncoding
 )
 
-
 @JsonCodec case class DataframeAnalysisFeatureProcessorFrequencyEncoding(
 	feature_name: Name, 
 	field: Field, 
 	frequency_map: Dictionary(String, double)
 )
 
-
 @JsonCodec case class DataframeAnalysisFeatureProcessorMultiEncoding(
 	processors: Array(integer)
 )
-
 
 @JsonCodec case class DataframeAnalysisFeatureProcessorNGramEncoding(
 	feature_prefix: String, 
@@ -131,12 +118,10 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	custom: Boolean
 )
 
-
 @JsonCodec case class DataframeAnalysisFeatureProcessorOneHotEncoding(
 	field: Field, 
 	hot_map: String
 )
-
 
 @JsonCodec case class DataframeAnalysisFeatureProcessorTargetMeanEncoding(
 	default_value: integer, 
@@ -144,7 +129,6 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	field: Field, 
 	target_map: Dictionary(String, UserDefinedValue)
 )
-
 
 @JsonCodec case class DataframeAnalyticsSummary(
 	id: Id, 
@@ -160,7 +144,6 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	version: VersionString
 )
 
-
 @JsonCodec case class DataframeAnalytics(
 	analysis_stats: DataframeAnalyticsStatsContainer, 
 	assignment_explanation: String, 
@@ -172,12 +155,10 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	state: DataframeState
 )
 
-
 @JsonCodec case class DataframeAnalyticsStatsProgress(
 	phase: String, 
 	progress_percent: integer
 )
-
 
 @JsonCodec case class DataframeAnalyticsStatsMemoryUsage(
 	memory_reestimate_bytes: long, 
@@ -186,20 +167,17 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	timestamp: DateString
 )
 
-
 @JsonCodec case class DataframeAnalyticsStatsDataCounts(
 	skipped_docs_count: integer, 
 	test_docs_count: integer, 
 	training_docs_count: integer
 )
 
-
 @JsonCodec case class DataframeAnalyticsStatsContainer(
 	classification_stats: DataframeAnalyticsStatsHyperparameters, 
 	outlier_detection_stats: DataframeAnalyticsStatsOutlierDetection, 
 	regression_stats: DataframeAnalyticsStatsHyperparameters
 )
-
 
 @JsonCodec case class DataframeAnalyticsStatsHyperparameters(
 	hyperparameters: Hyperparameters, 
@@ -209,13 +187,11 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	validation_loss: ValidationLoss
 )
 
-
 @JsonCodec case class DataframeAnalyticsStatsOutlierDetection(
 	parameters: OutlierDetectionParameters, 
 	timestamp: DateString, 
 	timing_stats: TimingStats
 )
-
 
 @JsonCodec case class Hyperparameters(
 	alpha: double, 
@@ -234,7 +210,6 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	soft_tree_depth_tolerance: double
 )
 
-
 @JsonCodec case class OutlierDetectionParameters(
 	compute_feature_influence: Boolean, 
 	feature_influence_threshold: double, 
@@ -244,15 +219,12 @@ type DataframeAnalysisAnalyzedFields = Array(String) | DataframeAnalysisAnalyzed
 	standardization_enabled: Boolean
 )
 
-
 @JsonCodec case class TimingStats(
 	elapsed_time: integer, 
 	iteration_time: integer
 )
 
-
 @JsonCodec case class ValidationLoss(
 	fold_values: Array(String), 
 	loss_type: String
 )
-

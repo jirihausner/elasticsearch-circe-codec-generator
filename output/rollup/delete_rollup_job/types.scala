@@ -12,9 +12,7 @@ import com.converted.elasticsearch._types.common.{ Id, TaskId }
 	reason: TaskFailureReason
 )
 
-
 @JsonCodec case class TaskFailureReason(
 	`type`: String, 
 	reason: String
 )
-

@@ -16,4 +16,3 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	username: Username, 
 	metadata: Metadata
 )
-

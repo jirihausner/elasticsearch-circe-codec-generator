@@ -18,4 +18,3 @@ import com.converted.elasticsearch.indices._types.{ Alias }
 	settings: Dictionary(String, UserDefinedValue), 
 	version: VersionNumber
 )
-

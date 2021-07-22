@@ -10,4 +10,3 @@ import com.converted.elasticsearch._types.common.{ Id }
 	description: String, 
 	job_ids: Array(Id)
 )
-

@@ -14,9 +14,7 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	use_significance: Boolean
 )
 
-
 @JsonCodec case class SampleDiversity(
 	field: Field, 
 	max_docs_per_value: integer
 )
-

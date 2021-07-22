@@ -16,4 +16,3 @@ import com.converted.elasticsearch._spec_utils.{ Dictionary }
 	roles: NodeRoles, 
 	transport_address: TransportAddress
 )
-

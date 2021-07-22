@@ -25,4 +25,3 @@ object Response {
 	aliases: Array(Name), 
 	filter: QueryContainer
 )
-

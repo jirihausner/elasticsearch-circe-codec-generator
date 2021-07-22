@@ -11,7 +11,6 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	pattern: AutoFollowPatternSummary
 )
 
-
 @JsonCodec case class AutoFollowPatternSummary(
 	active: Boolean, 
 	remote_cluster: String, 
@@ -19,4 +18,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	leader_index_patterns: IndexPatterns, 
 	max_outstanding_read_requests: integer
 )
-

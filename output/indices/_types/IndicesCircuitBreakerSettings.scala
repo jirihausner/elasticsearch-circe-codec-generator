@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.Numeric.{ float }
 	request_overhead: float, 
 	total_limit: String
 )
-

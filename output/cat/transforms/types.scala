@@ -41,29 +41,26 @@ import com.converted.elasticsearch._types.common.{ Id, VersionString }
 	processed_documents_exp_avg: String
 )
 
-
 object TransformState extends Enumeration {
 	type TransformState = Value
 
-val sTARTED = Value(0, "STARTED")
-val iNDEXING = Value(1, "INDEXING")
-val aBORTING = Value(2, "ABORTING")
-val sTOPPING = Value(3, "STOPPING")
-val sTOPPED = Value(4, "STOPPED")
-val fAILED = Value(5, "FAILED")
+	val sTARTED = Value(0, "STARTED")
+	val iNDEXING = Value(1, "INDEXING")
+	val aBORTING = Value(2, "ABORTING")
+	val sTOPPING = Value(3, "STOPPING")
+	val sTOPPED = Value(4, "STOPPED")
+	val fAILED = Value(5, "FAILED")
 }
 
 implicit val transformStateDecoder: Decoder[TransformState.Value] = Decoder.decodeEnumeration(TransformState)
 implicit val transformStateEncoder: Encoder[TransformState.Value] = Decoder.encodeEnumeration(TransformState)
 
-
 object TransformType extends Enumeration {
 	type TransformType = Value
 
-val batch = Value(0, "batch")
-val continuous = Value(1, "continuous")
+	val batch = Value(0, "batch")
+	val continuous = Value(1, "continuous")
 }
 
 implicit val transformTypeDecoder: Decoder[TransformType.Value] = Decoder.decodeEnumeration(TransformType)
 implicit val transformTypeEncoder: Encoder[TransformType.Value] = Decoder.encodeEnumeration(TransformType)
-

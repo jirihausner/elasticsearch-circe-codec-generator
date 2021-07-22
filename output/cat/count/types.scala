@@ -10,4 +10,3 @@ import com.converted.elasticsearch._types.Time.{ DateString, EpochMillis }
 	timestamp: DateString, 
 	count: String
 )
-

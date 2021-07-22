@@ -14,14 +14,12 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	role_descriptors: Array(Dictionary(String, UserDefinedValue))
 )
 
-
 object ApiKeyGrantType extends Enumeration {
 	type ApiKeyGrantType = Value
 
-val access_token = Value(0, "access_token")
-val password = Value(1, "password")
+	val access_token = Value(0, "access_token")
+	val password = Value(1, "password")
 }
 
 implicit val apiKeyGrantTypeDecoder: Decoder[ApiKeyGrantType.Value] = Decoder.decodeEnumeration(ApiKeyGrantType)
 implicit val apiKeyGrantTypeEncoder: Encoder[ApiKeyGrantType.Value] = Decoder.encodeEnumeration(ApiKeyGrantType)
-

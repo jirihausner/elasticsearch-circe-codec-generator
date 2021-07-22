@@ -11,4 +11,3 @@ import com.converted.elasticsearch._types.common.{ TaskId }
 @JsonCodec case class UpdateByQueryRethrottleNode(
 	tasks: Dictionary(TaskId, Info)
 ) extends BaseNode
-

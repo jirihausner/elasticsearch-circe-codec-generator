@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	max_num_threads: integer, 
 	analyzed_fields: DataframeAnalysisAnalyzedFields
 )
-

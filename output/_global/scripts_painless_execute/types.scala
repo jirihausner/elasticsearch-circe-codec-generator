@@ -14,10 +14,8 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	query: QueryContainer
 )
 
-
 @JsonCodec case class PainlessExecutionPosition(
 	offset: integer, 
 	start: integer, 
 	end: integer
 )
-

@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.common.{ Name }
 	name: Name, 
 	value: String
 )
-

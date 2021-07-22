@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	routing: String, 
 	search_routing: String
 )
-

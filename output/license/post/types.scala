@@ -8,4 +8,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	license: Array(String), 
 	message: String
 )
-

@@ -8,4 +8,3 @@ import com.converted.elasticsearch._types.common.{ IndexName }
 import com.converted.elasticsearch.indices.get_field_mapping.{ TypeFieldMappings }
 
 @JsonCodec case class Response extends DictionaryResponseBase(IndexName, TypeFieldMappings)
-

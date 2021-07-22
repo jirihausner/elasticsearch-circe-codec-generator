@@ -9,4 +9,3 @@ import com.converted.elasticsearch._types.common.{ Indices }
 	feature_name: String, 
 	indices: Indices
 )
-

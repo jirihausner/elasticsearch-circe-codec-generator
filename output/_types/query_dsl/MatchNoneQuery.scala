@@ -6,4 +6,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 import com.converted.elasticsearch._types.query_dsl.{ QueryBase }
 
 @JsonCodec case class MatchNoneQuery extends QueryBase
-

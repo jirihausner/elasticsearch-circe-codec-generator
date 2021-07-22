@@ -9,7 +9,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, ClusterRemoteInfo)
 
-
 @JsonCodec case class ClusterRemoteInfo(
 	connected: Boolean, 
 	initial_connect_timeout: Time, 
@@ -18,4 +17,3 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	seeds: Array(String), 
 	skip_unavailable: Boolean
 )
-

@@ -30,4 +30,3 @@ object Response {
 	store_size_bytes: integer, 
 	maximum_timestamp: integer
 )
-

@@ -26,7 +26,6 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	get: InlineGet(Dictionary(String, UserDefinedValue))
 )
 
-
 @JsonCodec case class ResponseItemContainer(
 	index: IndexResponseItem, 
 	create: CreateResponseItem, 
@@ -34,18 +33,13 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	delete: DeleteResponseItem
 )
 
-
 @JsonCodec case class IndexResponseItem extends ResponseItemBase
-
 
 @JsonCodec case class CreateResponseItem extends ResponseItemBase
 
-
 @JsonCodec case class UpdateResponseItem extends ResponseItemBase
 
-
 @JsonCodec case class DeleteResponseItem extends ResponseItemBase
-
 
 @JsonCodec case class Operation(
 	_id: Id, 
@@ -56,7 +50,6 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	version_type: VersionType
 )
 
-
 @JsonCodec case class OperationContainer(
 	index: IndexOperation, 
 	create: CreateOperation, 
@@ -64,15 +57,10 @@ import com.converted.elasticsearch._types.Stats.{ ShardStatistics }
 	delete: DeleteOperation
 )
 
-
 @JsonCodec case class IndexOperation extends Operation
-
 
 @JsonCodec case class CreateOperation extends Operation
 
-
 @JsonCodec case class UpdateOperation extends Operation
 
-
 @JsonCodec case class DeleteOperation extends Operation
-

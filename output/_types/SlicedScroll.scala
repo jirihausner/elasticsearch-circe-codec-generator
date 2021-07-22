@@ -11,4 +11,3 @@ import com.converted.elasticsearch._types.{ integer }
 	id: integer, 
 	max: integer
 )
-

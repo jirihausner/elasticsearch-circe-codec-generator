@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.shards.{ ShardsRecord }
 @JsonCodec case class Response(
 	body: Array(ShardsRecord)
 )
-

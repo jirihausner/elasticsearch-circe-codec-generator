@@ -14,7 +14,6 @@ import com.converted.elasticsearch._types.common.{ Field, Id, IndexName }
 	sequences: Array(HitsSequence(TEvent))
 )
 
-
 @JsonCodec case class HitsEvent[TEvent](
 	_index: IndexName, 
 	_id: Id, 
@@ -22,9 +21,7 @@ import com.converted.elasticsearch._types.common.{ Field, Id, IndexName }
 	fields: Dictionary(Field, Array(UserDefinedValue))
 )
 
-
 @JsonCodec case class HitsSequence[TEvent](
 	events: Array(HitsEvent(TEvent)), 
 	join_keys: Array(UserDefinedValue)
 )
-

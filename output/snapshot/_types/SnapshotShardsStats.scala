@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	started: long, 
 	total: long
 )
-

@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.common.{ Metadata, Name, Username }
 	username: Username, 
 	enabled: Boolean
 )
-

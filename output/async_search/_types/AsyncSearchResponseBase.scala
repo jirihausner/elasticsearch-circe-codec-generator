@@ -15,8 +15,6 @@ import com.converted.elasticsearch.async_search._types.{ AsyncSearch }
 	start_time_in_millis: EpochMillis
 )
 
-
 @JsonCodec case class AsyncSearchDocumentResponseBase[TDocument](
 	response: AsyncSearch(TDocument)
 ) extends AsyncSearchResponseBase
-

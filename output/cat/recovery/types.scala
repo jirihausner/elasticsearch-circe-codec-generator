@@ -34,4 +34,3 @@ import com.converted.elasticsearch._types.Numeric.{ Percentage }
 	translog_ops_recovered: String, 
 	translog_ops_percent: Percentage
 )
-

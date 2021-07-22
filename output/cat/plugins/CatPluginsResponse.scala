@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.plugins.{ PluginsRecord }
 @JsonCodec case class Response(
 	body: Array(PluginsRecord)
 )
-

@@ -14,13 +14,11 @@ import com.converted.elasticsearch._types.mapping.TypeMapping.{ TypeMapping }
 	component_template: ComponentTemplateNode
 )
 
-
 @JsonCodec case class ComponentTemplateNode(
 	template: ComponentTemplateSummary, 
 	version: VersionNumber, 
 	_meta: Metadata
 )
-
 
 @JsonCodec case class ComponentTemplateSummary(
 	_meta: Metadata, 
@@ -29,4 +27,3 @@ import com.converted.elasticsearch._types.mapping.TypeMapping.{ TypeMapping }
 	mappings: TypeMapping, 
 	aliases: Dictionary(String, AliasDefinition)
 )
-

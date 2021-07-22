@@ -20,7 +20,6 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoCoordinate, GeoShape }
 	field: Field
 ) extends QueryBase
 
-
 @JsonCodec case class MoreLikeThisQuery(
 	analyzer: String, 
 	boost_terms: double, 
@@ -42,7 +41,6 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoCoordinate, GeoShape }
 	version_type: VersionType
 ) extends QueryBase
 
-
 @JsonCodec case class LikeDocument(
 	doc: UserDefinedValue, 
 	fields: Fields, 
@@ -52,7 +50,6 @@ import com.converted.elasticsearch._types.query_dsl.{ GeoCoordinate, GeoShape }
 	per_field_analyzer: Dictionary(Field, String), 
 	routing: Routing
 )
-
 type Like = String | LikeDocument
 
 @JsonCodec case class PercolateQuery(
@@ -66,31 +63,25 @@ type Like = String | LikeDocument
 	version: VersionNumber
 ) extends QueryBase
 
-
 @JsonCodec case class PinnedQuery(
 	ids: Array(Id) | Array(long), 
 	organic: QueryContainer
 ) extends QueryBase
 
-
 @JsonCodec sealed trait RankFeatureFunction
-
 
 @JsonCodec case class RankFeatureQuery(
 	function: RankFeatureFunction
 ) extends QueryBase
 
-
 @JsonCodec case class ScriptQuery(
 	script: Script
 ) extends QueryBase
-
 
 @JsonCodec case class ScriptScoreQuery(
 	query: QueryContainer, 
 	script: Script
 ) extends QueryBase
-
 
 @JsonCodec case class ShapeQuery(
 	ignore_unmapped: Boolean, 
@@ -98,4 +89,3 @@ type Like = String | LikeDocument
 	relation: ShapeRelation, 
 	shape: GeoShape
 ) extends QueryBase
-

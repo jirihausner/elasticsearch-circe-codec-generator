@@ -18,9 +18,7 @@ import com.converted.elasticsearch._types.Numeric.{ integer, long }
 	latest: String
 )
 
-
 @JsonCodec case class TopHit(
 	count: long, 
 	value: UserDefinedValue
 )
-

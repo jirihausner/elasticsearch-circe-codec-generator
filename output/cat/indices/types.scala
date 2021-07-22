@@ -147,4 +147,3 @@ import io.circe.generic.JsonCodec, io.circe.syntax._
 	`bulk.avg_size_in_bytes`: String, 
 	`pri.bulk.avg_size_in_bytes`: String
 )
-

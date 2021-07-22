@@ -13,4 +13,3 @@ import com.converted.elasticsearch.indices._types.{ IndicesRecoverySettings }
 	qeueries_cache_size: String, 
 	recovery_settings: IndicesRecoverySettings
 )
-

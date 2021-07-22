@@ -19,4 +19,3 @@ import com.converted.elasticsearch.snapshot._types.{ SnapshotStats }
 	stats: SnapshotStats, 
 	uuid: Uuid
 )
-

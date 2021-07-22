@@ -13,12 +13,10 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	tokenizer: TokenDetail
 )
 
-
 @JsonCodec case class AnalyzerDetail(
 	name: String, 
 	tokens: Array(ExplainAnalyzeToken)
 )
-
 
 @JsonCodec case class AnalyzeToken(
 	end_offset: long, 
@@ -29,12 +27,10 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	`type`: String
 )
 
-
 @JsonCodec case class CharFilterDetail(
 	filtered_text: Array(String), 
 	name: String
 )
-
 
 @JsonCodec case class ExplainAnalyzeToken(
 	bytes: String, 
@@ -47,11 +43,9 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	token: String, 
 	`type`: String
 )
-
 type TextToAnalyze = String | Array(String)
 
 @JsonCodec case class TokenDetail(
 	name: String, 
 	tokens: Array(ExplainAnalyzeToken)
 )
-

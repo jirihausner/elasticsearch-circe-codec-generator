@@ -7,4 +7,3 @@ import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 import com.converted.elasticsearch.ilm.get_lifecycle.{ Lifecycle }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, Lifecycle)
-

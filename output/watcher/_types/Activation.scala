@@ -12,10 +12,8 @@ import com.converted.elasticsearch.watcher._types.{ Actions }
 	timestamp: Timestamp
 )
 
-
 @JsonCodec case class ActivationStatus(
 	actions: Actions, 
 	state: ActivationState, 
 	version: VersionNumber
 )
-

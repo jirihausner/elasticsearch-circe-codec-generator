@@ -16,17 +16,15 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	inputs: Array(InputContainer)
 )
 
-
 object ConnectionScheme extends Enumeration {
 	type ConnectionScheme = Value
 
-val http = Value(0, "http")
-val https = Value(1, "https")
+	val http = Value(0, "http")
+	val https = Value(1, "https")
 }
 
 implicit val connectionSchemeDecoder: Decoder[ConnectionScheme.Value] = Decoder.decodeEnumeration(ConnectionScheme)
 implicit val connectionSchemeEncoder: Encoder[ConnectionScheme.Value] = Decoder.encodeEnumeration(ConnectionScheme)
-
 
 @JsonCodec case class HttpInput(
 	http: HttpInput, 
@@ -35,37 +33,32 @@ implicit val connectionSchemeEncoder: Encoder[ConnectionScheme.Value] = Decoder.
 	response_content_type: ResponseContentType
 )
 
-
 @JsonCodec case class HttpInputAuthentication(
 	basic: HttpInputBasicAuthentication
 )
-
 
 @JsonCodec case class HttpInputBasicAuthentication(
 	password: Password, 
 	username: Username
 )
 
-
 object HttpInputMethod extends Enumeration {
 	type HttpInputMethod = Value
 
-val head = Value(0, "head")
-val get = Value(1, "get")
-val post = Value(2, "post")
-val put = Value(3, "put")
-val delete = Value(4, "delete")
+	val head = Value(0, "head")
+	val get = Value(1, "get")
+	val post = Value(2, "post")
+	val put = Value(3, "put")
+	val delete = Value(4, "delete")
 }
 
 implicit val httpInputMethodDecoder: Decoder[HttpInputMethod.Value] = Decoder.decodeEnumeration(HttpInputMethod)
 implicit val httpInputMethodEncoder: Encoder[HttpInputMethod.Value] = Decoder.encodeEnumeration(HttpInputMethod)
 
-
 @JsonCodec case class HttpInputProxy(
 	host: Host, 
 	port: uint
 )
-
 
 @JsonCodec case class HttpInputRequestDefinition(
 	auth: HttpInputAuthentication, 
@@ -83,7 +76,6 @@ implicit val httpInputMethodEncoder: Encoder[HttpInputMethod.Value] = Decoder.en
 	url: String
 )
 
-
 @JsonCodec case class IndicesOptions(
 	allow_no_indices: Boolean, 
 	expand_wildcards: ExpandWildcards, 
@@ -91,9 +83,7 @@ implicit val httpInputMethodEncoder: Encoder[HttpInputMethod.Value] = Decoder.en
 	ignore_throttled: Boolean
 )
 
-
 @JsonCodec sealed trait Input
-
 
 @JsonCodec case class InputContainer(
 	chain: ChainInput, 
@@ -102,37 +92,33 @@ implicit val httpInputMethodEncoder: Encoder[HttpInputMethod.Value] = Decoder.en
 	simple: Dictionary(String, UserDefinedValue)
 )
 
-
 object InputType extends Enumeration {
 	type InputType = Value
 
-val http = Value(0, "http")
-val search = Value(1, "search")
-val simple = Value(2, "simple")
+	val http = Value(0, "http")
+	val search = Value(1, "search")
+	val simple = Value(2, "simple")
 }
 
 implicit val inputTypeDecoder: Decoder[InputType.Value] = Decoder.decodeEnumeration(InputType)
 implicit val inputTypeEncoder: Encoder[InputType.Value] = Decoder.encodeEnumeration(InputType)
 
-
 object ResponseContentType extends Enumeration {
 	type ResponseContentType = Value
 
-val json = Value(0, "json")
-val yaml = Value(1, "yaml")
-val text = Value(2, "text")
+	val json = Value(0, "json")
+	val yaml = Value(1, "yaml")
+	val text = Value(2, "text")
 }
 
 implicit val responseContentTypeDecoder: Decoder[ResponseContentType.Value] = Decoder.decodeEnumeration(ResponseContentType)
 implicit val responseContentTypeEncoder: Encoder[ResponseContentType.Value] = Decoder.encodeEnumeration(ResponseContentType)
-
 
 @JsonCodec case class SearchInput(
 	extract: Array(String), 
 	request: SearchInputRequestDefinition, 
 	timeout: Time
 )
-
 
 @JsonCodec case class SearchInputRequestDefinition(
 	body: SearchInputRequestBody, 
@@ -143,13 +129,10 @@ implicit val responseContentTypeEncoder: Encoder[ResponseContentType.Value] = De
 	rest_total_hits_as_int: Boolean
 )
 
-
 @JsonCodec case class SearchInputRequestBody(
 	query: QueryContainer
 )
 
-
 @JsonCodec case class SimpleInput(
 	payload: Dictionary(String, UserDefinedValue)
 )
-

@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	time_in_queue: String, 
 	time_in_queue_millis: integer
 )
-

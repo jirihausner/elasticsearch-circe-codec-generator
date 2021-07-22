@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.jobs.{ JobsRecord }
 @JsonCodec case class Response(
 	body: Array(JobsRecord)
 )
-

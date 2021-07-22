@@ -10,14 +10,12 @@ import com.converted.elasticsearch._types.common.{ Field }
 	format: String
 )
 
-
 object ResultPosition extends Enumeration {
 	type ResultPosition = Value
 
-val tail = Value(0, "tail")
-val head = Value(1, "head")
+	val tail = Value(0, "tail")
+	val head = Value(1, "head")
 }
 
 implicit val resultPositionDecoder: Decoder[ResultPosition.Value] = Decoder.decodeEnumeration(ResultPosition)
 implicit val resultPositionEncoder: Encoder[ResultPosition.Value] = Decoder.encodeEnumeration(ResultPosition)
-

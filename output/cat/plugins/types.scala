@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.common.{ Name, NodeId, Type, VersionSt
 	description: String, 
 	`type`: Type
 )
-

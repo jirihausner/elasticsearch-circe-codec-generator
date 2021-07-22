@@ -33,4 +33,3 @@ object Request {
 @JsonCodec case class IndexSettingsBody(
 	settings: IndexSettings
 ) extends IndexSettings
-

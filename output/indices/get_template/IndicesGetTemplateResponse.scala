@@ -7,4 +7,3 @@ import com.converted.elasticsearch._indices._types.TemplateMapping.{ TemplateMap
 import com.converted.elasticsearch._types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase(String, TemplateMapping)
-

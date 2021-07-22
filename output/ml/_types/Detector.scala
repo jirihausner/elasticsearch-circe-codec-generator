@@ -20,16 +20,14 @@ import com.converted.elasticsearch.ml._types.{ DetectionRule }
 	partition_field_name: Field
 )
 
-
 object ExcludeFrequent extends Enumeration {
 	type ExcludeFrequent = Value
 
-val all = Value(0, "all")
-val none = Value(1, "none")
-val by = Value(2, "by")
-val over = Value(3, "over")
+	val all = Value(0, "all")
+	val none = Value(1, "none")
+	val by = Value(2, "by")
+	val over = Value(3, "over")
 }
 
 implicit val excludeFrequentDecoder: Decoder[ExcludeFrequent.Value] = Decoder.decodeEnumeration(ExcludeFrequent)
 implicit val excludeFrequentEncoder: Encoder[ExcludeFrequent.Value] = Decoder.encodeEnumeration(ExcludeFrequent)
-

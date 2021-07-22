@@ -10,4 +10,3 @@ import com.converted.elasticsearch._spec_utils.UserDefinedValue.{ UserDefinedVal
 	meta: Dictionary(String, UserDefinedValue), 
 	name: String
 )
-

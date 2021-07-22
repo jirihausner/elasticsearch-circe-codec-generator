@@ -14,4 +14,3 @@ import com.converted.elasticsearch._types.Time.{ EpochMillis }
 	timestamp: EpochMillis, 
 	aggregations: Dictionary(String, UserDefinedValue)
 )
-

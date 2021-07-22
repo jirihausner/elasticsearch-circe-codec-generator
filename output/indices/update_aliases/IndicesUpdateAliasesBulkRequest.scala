@@ -23,4 +23,3 @@ object Request {
 
 
 @JsonCodec sealed trait IndicesUpdateAliasBulk
-

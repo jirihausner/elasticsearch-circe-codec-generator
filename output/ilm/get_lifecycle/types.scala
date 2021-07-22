@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.Time.{ DateString }
 	policy: Policy, 
 	version: VersionNumber
 )
-

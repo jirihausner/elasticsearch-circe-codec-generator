@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.master.{ MasterRecord }
 @JsonCodec case class Response(
 	body: Array(MasterRecord)
 )
-

@@ -13,4 +13,3 @@ import com.converted.elasticsearch._types.common.{ IndexName }
 	`routing.search`: String, 
 	is_write_index: String
 )
-

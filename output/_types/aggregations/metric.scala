@@ -23,46 +23,37 @@ import com.converted.elasticsearch._types.aggregations.{ DateInterval }
 	script: Script
 )
 
-
 @JsonCodec case class FormatMetricAggregationBase(
 	format: String
 ) extends MetricAggregationBase
-
 
 @JsonCodec case class FormattableMetricAggregation(
 	format: String
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class AverageAggregation extends FormatMetricAggregationBase
-
 
 @JsonCodec case class BoxplotAggregation(
 	compression: double
 ) extends MetricAggregationBase
-
 
 @JsonCodec case class CardinalityAggregation(
 	precision_threshold: integer, 
 	rehash: Boolean
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class ExtendedStatsAggregation(
 	sigma: double
 ) extends FormatMetricAggregationBase
-
 
 @JsonCodec case class GeoBoundsAggregation(
 	wrap_longitude: Boolean
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class GeoCentroidAggregation(
 	count: long, 
 	location: GeoLocation
 ) extends MetricAggregationBase
-
 
 @JsonCodec case class GeoLineAggregation(
 	point: GeoLinePoint, 
@@ -72,27 +63,21 @@ import com.converted.elasticsearch._types.aggregations.{ DateInterval }
 	size: integer
 )
 
-
 @JsonCodec case class GeoLineSort(
 	field: Field
 )
-
 
 @JsonCodec case class GeoLinePoint(
 	field: Field
 )
 
-
 @JsonCodec case class MaxAggregation extends FormatMetricAggregationBase
-
 
 @JsonCodec case class MedianAbsoluteDeviationAggregation(
 	compression: double
 ) extends FormatMetricAggregationBase
 
-
 @JsonCodec case class MinAggregation extends FormatMetricAggregationBase
-
 
 @JsonCodec case class PercentileRanksAggregation(
 	keyed: Boolean, 
@@ -101,7 +86,6 @@ import com.converted.elasticsearch._types.aggregations.{ DateInterval }
 	tdigest: TDigest
 ) extends FormatMetricAggregationBase
 
-
 @JsonCodec case class PercentilesAggregation(
 	keyed: Boolean, 
 	percents: Array(double), 
@@ -109,33 +93,28 @@ import com.converted.elasticsearch._types.aggregations.{ DateInterval }
 	tdigest: TDigest
 ) extends FormatMetricAggregationBase
 
-
 @JsonCodec case class HdrMethod(
 	number_of_significant_value_digits: integer
 )
 
-
 @JsonCodec case class TDigest(
 	compression: integer
 )
-
 
 @JsonCodec case class RateAggregation(
 	unit: DateInterval, 
 	mode: RateMode
 ) extends FormatMetricAggregationBase
 
-
 object RateMode extends Enumeration {
 	type RateMode = Value
 
-val sum = Value("sum")
-val value_count = Value("value_count")
+	val sum = Value("sum")
+	val value_count = Value("value_count")
 }
 
 implicit val rateModeDecoder: Decoder[RateMode.Value] = Decoder.decodeEnumeration(RateMode)
 implicit val rateModeEncoder: Encoder[RateMode.Value] = Decoder.encodeEnumeration(RateMode)
-
 
 @JsonCodec case class ScriptedMetricAggregation(
 	combine_script: Script, 
@@ -145,17 +124,13 @@ implicit val rateModeEncoder: Encoder[RateMode.Value] = Decoder.encodeEnumeratio
 	reduce_script: Script
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class StatsAggregation extends FormatMetricAggregationBase
-
 
 @JsonCodec case class StringStatsAggregation(
 	show_distribution: Boolean
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class SumAggregation extends FormatMetricAggregationBase
-
 
 @JsonCodec case class TTestAggregation(
 	a: TestPopulation, 
@@ -163,25 +138,22 @@ implicit val rateModeEncoder: Encoder[RateMode.Value] = Decoder.encodeEnumeratio
 	`type`: TTestType
 ) extends Aggregation
 
-
 @JsonCodec case class TestPopulation(
 	field: Field, 
 	script: Script, 
 	filter: QueryContainer
 )
 
-
 object TTestType extends Enumeration {
 	type TTestType = Value
 
-val paired = Value("paired")
-val homoscedastic = Value("homoscedastic")
-val heteroscedastic = Value("heteroscedastic")
+	val paired = Value("paired")
+	val homoscedastic = Value("homoscedastic")
+	val heteroscedastic = Value("heteroscedastic")
 }
 
 implicit val tTestTypeDecoder: Decoder[TTestType.Value] = Decoder.decodeEnumeration(TTestType)
 implicit val tTestTypeEncoder: Encoder[TTestType.Value] = Decoder.encodeEnumeration(TTestType)
-
 
 @JsonCodec case class TopHitsAggregation(
 	docvalue_fields: Fields, 
@@ -198,40 +170,35 @@ implicit val tTestTypeEncoder: Encoder[TTestType.Value] = Decoder.encodeEnumerat
 	seq_no_primary_term: Boolean
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class TopMetricsAggregation(
 	metrics: TopMetricsValue | Array(TopMetricsValue), 
 	size: integer, 
 	sort: Sort
 ) extends MetricAggregationBase
 
-
 @JsonCodec case class TopMetricsValue(
 	field: Field
 )
 
-
 @JsonCodec case class ValueCountAggregation extends FormattableMetricAggregation
-
 
 object ValueType extends Enumeration {
 	type ValueType = Value
 
-val string = Value(0, "string")
-val long = Value(1, "long")
-val double = Value(2, "double")
-val number = Value(3, "number")
-val date = Value(4, "date")
-val date_nanos = Value(5, "date_nanos")
-val ip = Value(6, "ip")
-val numeric = Value(7, "numeric")
-val geo_point = Value(8, "geo_point")
-val boolean = Value(9, "boolean")
+	val string = Value(0, "string")
+	val long = Value(1, "long")
+	val double = Value(2, "double")
+	val number = Value(3, "number")
+	val date = Value(4, "date")
+	val date_nanos = Value(5, "date_nanos")
+	val ip = Value(6, "ip")
+	val numeric = Value(7, "numeric")
+	val geo_point = Value(8, "geo_point")
+	val boolean = Value(9, "boolean")
 }
 
 implicit val valueTypeDecoder: Decoder[ValueType.Value] = Decoder.decodeEnumeration(ValueType)
 implicit val valueTypeEncoder: Encoder[ValueType.Value] = Decoder.encodeEnumeration(ValueType)
-
 
 @JsonCodec case class WeightedAverageAggregation(
 	format: String, 
@@ -240,10 +207,8 @@ implicit val valueTypeEncoder: Encoder[ValueType.Value] = Decoder.encodeEnumerat
 	weight: WeightedAverageValue
 ) extends Aggregation
 
-
 @JsonCodec case class WeightedAverageValue(
 	field: Field, 
 	missing: double, 
 	script: Script
 )
-

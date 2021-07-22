@@ -22,4 +22,3 @@ import com.converted.elasticsearch._types.Numeric.{ long, ulong }
 	result_type: String, 
 	mlcategory: String
 )
-

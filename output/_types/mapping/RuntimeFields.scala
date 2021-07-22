@@ -14,19 +14,17 @@ type RuntimeFields = Dictionary(Field, RuntimeField)
 	`type`: RuntimeFieldType
 )
 
-
 object RuntimeFieldType extends Enumeration {
 	type RuntimeFieldType = Value
 
-val boolean = Value(0, "boolean")
-val date = Value(1, "date")
-val double = Value(2, "double")
-val geo_point = Value(3, "geo_point")
-val ip = Value(4, "ip")
-val keyword = Value(5, "keyword")
-val long = Value(6, "long")
+	val boolean = Value(0, "boolean")
+	val date = Value(1, "date")
+	val double = Value(2, "double")
+	val geo_point = Value(3, "geo_point")
+	val ip = Value(4, "ip")
+	val keyword = Value(5, "keyword")
+	val long = Value(6, "long")
 }
 
 implicit val runtimeFieldTypeDecoder: Decoder[RuntimeFieldType.Value] = Decoder.decodeEnumeration(RuntimeFieldType)
 implicit val runtimeFieldTypeEncoder: Encoder[RuntimeFieldType.Value] = Decoder.encodeEnumeration(RuntimeFieldType)
-

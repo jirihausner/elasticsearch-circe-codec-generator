@@ -15,7 +15,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	total: integer
 )
 
-
 @JsonCodec case class ShardStatistics(
 	failed: uint, 
 	successful: uint, 
@@ -23,7 +22,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	failures: Array(ShardFailure), 
 	skipped: uint
 )
-
 
 @JsonCodec case class BulkStats(
 	total_operations: long, 
@@ -37,25 +35,21 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	avg_size_in_bytes: long
 )
 
-
 @JsonCodec case class CompletionStats(
 	size_in_bytes: long, 
 	size: ByteSize, 
 	fields: Dictionary(Field, FieldSizeUsage)
 )
 
-
 @JsonCodec case class FieldSizeUsage(
 	size: ByteSize, 
 	size_in_bytes: long
 )
 
-
 @JsonCodec case class DocStats(
 	count: long, 
 	deleted: long
 )
-
 
 @JsonCodec case class FielddataStats(
 	evictions: long, 
@@ -64,12 +58,10 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	fields: Dictionary(Field, FieldMemoryUsage)
 )
 
-
 @JsonCodec case class FieldMemoryUsage(
 	memory_size: ByteSize, 
 	memory_size_in_bytes: long
 )
-
 
 @JsonCodec case class FlushStats(
 	periodic: long, 
@@ -77,7 +69,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	total_time: String, 
 	total_time_in_millis: long
 )
-
 
 @JsonCodec case class GetStats(
 	current: long, 
@@ -91,7 +82,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	time_in_millis: long, 
 	total: long
 )
-
 
 @JsonCodec case class IndexingStats(
 	index_current: long, 
@@ -109,7 +99,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	index_failed: long, 
 	types: Dictionary(String, IndexingStats)
 )
-
 
 @JsonCodec case class MergesStats(
 	current: long, 
@@ -130,7 +119,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	total_time_in_millis: long
 )
 
-
 @JsonCodec case class PluginStats(
 	classname: String, 
 	description: String, 
@@ -144,7 +132,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	`type`: String
 )
 
-
 @JsonCodec case class QueryCacheStats(
 	cache_count: integer, 
 	cache_size: integer, 
@@ -156,14 +143,12 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	total_count: integer
 )
 
-
 @JsonCodec case class RecoveryStats(
 	current_as_source: long, 
 	current_as_target: long, 
 	throttle_time: String, 
 	throttle_time_in_millis: long
 )
-
 
 @JsonCodec case class RefreshStats(
 	external_total: long, 
@@ -174,7 +159,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	total_time_in_millis: long
 )
 
-
 @JsonCodec case class RequestCacheStats(
 	evictions: long, 
 	hit_count: long, 
@@ -182,7 +166,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	memory_size_in_bytes: long, 
 	miss_count: long
 )
-
 
 @JsonCodec case class SearchStats(
 	fetch_current: long, 
@@ -200,7 +183,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	suggest_total: long, 
 	groups: Dictionary(String, SearchStats)
 )
-
 
 @JsonCodec case class SegmentsStats(
 	count: integer, 
@@ -229,7 +211,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	version_map_memory_in_bytes: integer
 )
 
-
 @JsonCodec case class StoreStats(
 	size: ByteSize, 
 	size_in_bytes: integer, 
@@ -238,7 +219,6 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	total_data_set_size: ByteSize, 
 	total_data_set_size_in_bytes: integer
 )
-
 
 @JsonCodec case class TranslogStats(
 	earliest_last_modified_age: long, 
@@ -250,11 +230,9 @@ import com.converted.elasticsearch._types.{ integer, long, uint }
 	uncommitted_size_in_bytes: long
 )
 
-
 @JsonCodec case class WarmerStats(
 	current: long, 
 	total: long, 
 	total_time: String, 
 	total_time_in_millis: long
 )
-

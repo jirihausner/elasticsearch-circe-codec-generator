@@ -55,7 +55,6 @@ import com.converted.elasticsearch._types.Time.{ DateString, Time }
 	analysis: IndexSettingsAnalysis
 )
 
-
 @JsonCodec case class IndexSettingBlocks(
 	read_only: Boolean, 
 	read_only_allow_delete: Boolean, 
@@ -64,30 +63,25 @@ import com.converted.elasticsearch._types.Time.{ DateString, Time }
 	metadata: Boolean
 )
 
-
 object IndexCheckOnStartup extends Enumeration {
 	type IndexCheckOnStartup = Value
 
-val false = Value(0, "false")
-val checksum = Value(1, "checksum")
-val true = Value(2, "true")
+	val false = Value(0, "false")
+	val checksum = Value(1, "checksum")
+	val true = Value(2, "true")
 }
 
 implicit val indexCheckOnStartupDecoder: Decoder[IndexCheckOnStartup.Value] = Decoder.decodeEnumeration(IndexCheckOnStartup)
 implicit val indexCheckOnStartupEncoder: Encoder[IndexCheckOnStartup.Value] = Decoder.encodeEnumeration(IndexCheckOnStartup)
 
-
 @JsonCodec case class IndexVersioning(
 	created: VersionString
 )
-
 
 @JsonCodec case class IndexSettingsLifecycle(
 	name: Name
 )
 
-
 @JsonCodec case class IndexSettingsAnalysis(
 	char_filter: Dictionary(String, CharFilter)
 )
-

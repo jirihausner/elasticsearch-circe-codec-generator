@@ -10,4 +10,3 @@ import com.converted.elasticsearch._types.mapping.meta-fields.{ FieldMapping }
 @JsonCodec case class TypeFieldMappings(
 	mappings: Dictionary(Field, FieldMapping)
 )
-

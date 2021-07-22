@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.pending_tasks.{ PendingTasksRecord }
 @JsonCodec case class Response(
 	body: Array(PendingTasksRecord)
 )
-

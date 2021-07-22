@@ -13,32 +13,25 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	k: integer
 )
 
-
 @JsonCodec case class RankEvalMetricRatingTreshold(
 	relevant_rating_threshold: integer
 ) extends RankEvalMetricBase
-
 
 @JsonCodec case class RankEvalMetricPrecision(
 	ignore_unlabeled: Boolean
 ) extends RankEvalMetricRatingTreshold
 
-
 @JsonCodec case class RankEvalMetricRecall extends RankEvalMetricRatingTreshold
 
-
 @JsonCodec case class RankEvalMetricMeanReciprocalRank extends RankEvalMetricRatingTreshold
-
 
 @JsonCodec case class RankEvalMetricDiscountedCumulativeGain(
 	normalize: Boolean
 ) extends RankEvalMetricBase
 
-
 @JsonCodec case class RankEvalMetricExpectedReciprocalRank(
 	maximum_relevance: integer
 ) extends RankEvalMetricBase
-
 
 @JsonCodec case class RankEvalMetric(
 	precision: RankEvalMetricPrecision, 
@@ -48,7 +41,6 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	expected_reciprocal_rank: RankEvalMetricExpectedReciprocalRank
 )
 
-
 @JsonCodec case class RankEvalRequestItem(
 	id: Id, 
 	request: RankEvalQuery, 
@@ -57,19 +49,16 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	params: Dictionary(String, UserDefinedValue)
 )
 
-
 @JsonCodec case class RankEvalQuery(
 	query: QueryContainer, 
 	size: integer
 )
-
 
 @JsonCodec case class DocumentRating(
 	_id: Id, 
 	_index: IndexName, 
 	rating: integer
 )
-
 
 @JsonCodec case class RankEvalMetricDetail(
 	metric_score: double, 
@@ -78,12 +67,10 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	metric_details: Dictionary(String, Dictionary(String, UserDefinedValue))
 )
 
-
 @JsonCodec case class RankEvalHitItem(
 	hit: RankEvalHit, 
 	rating: double
 )
-
 
 @JsonCodec case class RankEvalHit(
 	_id: Id, 
@@ -92,9 +79,7 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	_score: double
 )
 
-
 @JsonCodec case class UnratedDocument(
 	_id: Id, 
 	_index: IndexName
 )
-

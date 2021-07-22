@@ -15,4 +15,3 @@ import com.converted.elasticsearch.eql._types.{ EqlHits }
 	timed_out: Boolean, 
 	hits: EqlHits(TEvent)
 )
-

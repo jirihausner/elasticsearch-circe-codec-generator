@@ -36,13 +36,11 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 	sort: SortResults
 )
 
-
 @JsonCodec case class HitsMetadata[T](
 	total: TotalHits | long, 
 	hits: Array(Hit(T)), 
 	max_score: double
 )
-
 
 @JsonCodec case class HitMetadata[TDocument](
 	_id: Id, 
@@ -55,18 +53,15 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 	_version: VersionNumber
 )
 
-
 @JsonCodec case class InnerHitsMetadata(
 	total: TotalHits | long, 
 	hits: Array(Hit(Dictionary(String, UserDefinedValue))), 
 	max_score: double
 )
 
-
 @JsonCodec case class InnerHitsResult(
 	hits: InnerHitsMetadata
 )
-
 
 @JsonCodec case class NestedIdentity(
 	field: Field, 
@@ -74,23 +69,20 @@ import com.converted.elasticsearch._global.search._types.{ SourceFilter }
 	_nested: NestedIdentity
 )
 
-
 @JsonCodec case class TotalHits(
 	relation: TotalHitsRelation, 
 	value: long
 )
 
-
 object TotalHitsRelation extends Enumeration {
 	type TotalHitsRelation = Value
 
-val eq = Value(0, "eq")
-val gte = Value(1, "gte")
+	val eq = Value(0, "eq")
+	val gte = Value(1, "gte")
 }
 
 implicit val totalHitsRelationDecoder: Decoder[TotalHitsRelation.Value] = Decoder.decodeEnumeration(TotalHitsRelation)
 implicit val totalHitsRelationEncoder: Encoder[TotalHitsRelation.Value] = Decoder.encodeEnumeration(TotalHitsRelation)
-
 
 @JsonCodec case class InnerHits(
 	name: Name, 
@@ -108,4 +100,3 @@ implicit val totalHitsRelationEncoder: Encoder[TotalHitsRelation.Value] = Decode
 	_source: Boolean | SourceFilter, 
 	version: Boolean
 )
-

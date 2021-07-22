@@ -33,4 +33,3 @@ import com.converted.elasticsearch.snapshot._types.{ SnapshotShardFailure }
 	version_id: VersionNumber, 
 	feature_states: Array(InfoFeatureState)
 )
-

@@ -22,4 +22,3 @@ object Response {
 	snapshot: String, 
 	shards: ShardStatistics
 )
-

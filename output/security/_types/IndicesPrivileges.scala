@@ -14,4 +14,3 @@ import com.converted.elasticsearch._types.query_dsl.abstractions.{ QueryContaine
 	query: String | QueryContainer, 
 	allow_restricted_indices: Boolean
 )
-

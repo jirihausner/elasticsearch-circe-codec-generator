@@ -11,10 +11,8 @@ import com.converted.elasticsearch._types.Numeric.{ float }
 	value: float
 )
 
-
 @JsonCodec case class ExplanationDetail(
 	description: String, 
 	details: Array(ExplanationDetail), 
 	value: float
 )
-

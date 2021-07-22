@@ -13,7 +13,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	terms: TermsGrouping
 )
 
-
 @JsonCodec case class DateHistogramGrouping(
 	delay: Time, 
 	field: Field, 
@@ -24,14 +23,11 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	time_zone: String
 )
 
-
 @JsonCodec case class TermsGrouping(
 	fields: Fields
 )
-
 
 @JsonCodec case class HistogramGrouping(
 	fields: Fields, 
 	interval: long
 )
-

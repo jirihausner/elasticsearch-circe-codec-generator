@@ -17,7 +17,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	ingest: Dictionary(String, UserDefinedValue)
 )
 
-
 @JsonCodec case class TrainedModelInferenceStats(
 	failure_count: long, 
 	inference_count: long, 
@@ -25,7 +24,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	missing_all_fields_count: long, 
 	timestamp: Time
 )
-
 
 @JsonCodec case class TrainedModelConfig(
 	model_id: Id, 
@@ -44,11 +42,9 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	metadata: TrainedModelConfigMetadata
 )
 
-
 @JsonCodec case class TrainedModelConfigInput(
 	field_names: Array(Field)
 )
-
 
 @JsonCodec case class TrainedModelConfigMetadata(
 	model_aliases: Array(String), 
@@ -56,7 +52,6 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	hyperparameters: Array(Hyperparameter), 
 	total_feature_importance: Array(TotalFeatureImportance)
 )
-
 
 @JsonCodec case class Hyperparameter(
 	absolute_importance: double, 
@@ -66,23 +61,19 @@ import com.converted.elasticsearch._types.Time.{ Time }
 	value: double
 )
 
-
 @JsonCodec case class TotalFeatureImportance(
 	feature_name: Name, 
 	importance: Array(TotalFeatureImportanceStatistics), 
 	classes: Array(TotalFeatureImportanceClass)
 )
 
-
 @JsonCodec case class TotalFeatureImportanceClass(
 	class_name: Name, 
 	importance: Array(TotalFeatureImportanceStatistics)
 )
-
 
 @JsonCodec case class TotalFeatureImportanceStatistics(
 	mean_magnitude: double, 
 	max: integer, 
 	min: integer
 )
-

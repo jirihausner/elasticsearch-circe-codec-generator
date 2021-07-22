@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.node_attributes.{ NodeAttributesRecord }
 @JsonCodec case class Response(
 	body: Array(NodeAttributesRecord)
 )
-

@@ -21,4 +21,3 @@ import com.converted.elasticsearch._types.Numeric.{ long }
 	`type`: String, 
 	parent_task_id: Id
 )
-

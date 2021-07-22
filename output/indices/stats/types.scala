@@ -28,14 +28,12 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	bulk: BulkStats
 )
 
-
 @JsonCodec case class IndicesStats(
 	primaries: IndexStats, 
 	shards: Dictionary(String, Array(ShardStats)), 
 	total: IndexStats, 
 	uuid: Uuid
 )
-
 
 @JsonCodec case class ShardCommit(
 	generation: integer, 
@@ -44,12 +42,10 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	user_data: Dictionary(String, String)
 )
 
-
 @JsonCodec case class ShardFielddata(
 	evictions: long, 
 	memory_size_in_bytes: long
 )
-
 
 @JsonCodec case class ShardFileSizeInfo(
 	description: String, 
@@ -60,7 +56,6 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	count: long
 )
 
-
 @JsonCodec case class ShardLease(
 	id: Id, 
 	retaining_seq_no: SequenceNumber, 
@@ -68,13 +63,11 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	source: String
 )
 
-
 @JsonCodec case class ShardPath(
 	data_path: String, 
 	is_custom_data_path: Boolean, 
 	state_path: String
 )
-
 
 @JsonCodec case class ShardQueryCache(
 	cache_count: long, 
@@ -86,13 +79,11 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	total_count: long
 )
 
-
 @JsonCodec case class ShardRetentionLeases(
 	primary_term: long, 
 	version: VersionNumber, 
 	leases: Array(ShardLease)
 )
-
 
 @JsonCodec case class ShardRouting(
 	node: String, 
@@ -101,26 +92,23 @@ import com.converted.elasticsearch._types.Stats.{ BulkStats, CompletionStats, Do
 	state: ShardRoutingState
 )
 
-
 object ShardRoutingState extends Enumeration {
 	type ShardRoutingState = Value
 
-val uNASSIGNED = Value(0, "UNASSIGNED")
-val iNITIALIZING = Value(1, "INITIALIZING")
-val sTARTED = Value(2, "STARTED")
-val rELOCATING = Value(3, "RELOCATING")
+	val uNASSIGNED = Value(0, "UNASSIGNED")
+	val iNITIALIZING = Value(1, "INITIALIZING")
+	val sTARTED = Value(2, "STARTED")
+	val rELOCATING = Value(3, "RELOCATING")
 }
 
 implicit val shardRoutingStateDecoder: Decoder[ShardRoutingState.Value] = Decoder.decodeEnumeration(ShardRoutingState)
 implicit val shardRoutingStateEncoder: Encoder[ShardRoutingState.Value] = Decoder.encodeEnumeration(ShardRoutingState)
-
 
 @JsonCodec case class ShardSequenceNumber(
 	global_checkpoint: long, 
 	local_checkpoint: long, 
 	max_seq_no: SequenceNumber
 )
-
 
 @JsonCodec case class ShardStats(
 	commit: ShardCommit, 
@@ -146,4 +134,3 @@ implicit val shardRoutingStateEncoder: Encoder[ShardRoutingState.Value] = Decode
 	warmer: WarmerStats, 
 	bulk: BulkStats
 )
-

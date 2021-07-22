@@ -48,7 +48,6 @@ import com.converted.elasticsearch._types.Scripting.{ Script }
 	inference: InferenceProcessor
 )
 
-
 @JsonCodec case class ProcessorBase(
 	`if`: String, 
 	ignore_failure: Boolean, 
@@ -56,32 +55,29 @@ import com.converted.elasticsearch._types.Scripting.{ Script }
 	tag: String
 )
 
-
 object UserAgentProperty extends Enumeration {
 	type UserAgentProperty = Value
 
-val nAME = Value(0, "NAME")
-val mAJOR = Value(1, "MAJOR")
-val mINOR = Value(2, "MINOR")
-val pATCH = Value(3, "PATCH")
-val oS = Value(4, "OS")
-val oS_NAME = Value(5, "OS_NAME")
-val oS_MAJOR = Value(6, "OS_MAJOR")
-val oS_MINOR = Value(7, "OS_MINOR")
-val dEVICE = Value(8, "DEVICE")
-val bUILD = Value(9, "BUILD")
+	val nAME = Value(0, "NAME")
+	val mAJOR = Value(1, "MAJOR")
+	val mINOR = Value(2, "MINOR")
+	val pATCH = Value(3, "PATCH")
+	val oS = Value(4, "OS")
+	val oS_NAME = Value(5, "OS_NAME")
+	val oS_MAJOR = Value(6, "OS_MAJOR")
+	val oS_MINOR = Value(7, "OS_MINOR")
+	val dEVICE = Value(8, "DEVICE")
+	val bUILD = Value(9, "BUILD")
 }
 
 implicit val userAgentPropertyDecoder: Decoder[UserAgentProperty.Value] = Decoder.decodeEnumeration(UserAgentProperty)
 implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decoder.encodeEnumeration(UserAgentProperty)
-
 
 @JsonCodec case class AppendProcessor(
 	field: Field, 
 	value: Array(UserDefinedValue), 
 	allow_duplicates: Boolean
 ) extends ProcessorBase
-
 
 @JsonCodec case class AttachmentProcessor(
 	field: Field, 
@@ -93,7 +89,6 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 	resource_name: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class GeoIpProcessor(
 	database_file: String, 
 	field: Field, 
@@ -103,7 +98,6 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class UserAgentProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
@@ -112,13 +106,11 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class BytesProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
 	target_field: Field
 ) extends ProcessorBase
-
 
 @JsonCodec case class CircleProcessor(
 	error_distance: double, 
@@ -128,22 +120,20 @@ implicit val userAgentPropertyEncoder: Encoder[UserAgentProperty.Value] = Decode
 	target_field: Field
 ) extends ProcessorBase
 
-
 object ConvertType extends Enumeration {
 	type ConvertType = Value
 
-val integer = Value(0, "integer")
-val long = Value(1, "long")
-val float = Value(2, "float")
-val double = Value(3, "double")
-val string = Value(4, "string")
-val boolean = Value(5, "boolean")
-val auto = Value(6, "auto")
+	val integer = Value(0, "integer")
+	val long = Value(1, "long")
+	val float = Value(2, "float")
+	val double = Value(3, "double")
+	val string = Value(4, "string")
+	val boolean = Value(5, "boolean")
+	val auto = Value(6, "auto")
 }
 
 implicit val convertTypeDecoder: Decoder[ConvertType.Value] = Decoder.decodeEnumeration(ConvertType)
 implicit val convertTypeEncoder: Encoder[ConvertType.Value] = Decoder.encodeEnumeration(ConvertType)
-
 
 @JsonCodec case class ConvertProcessor(
 	field: Field, 
@@ -151,7 +141,6 @@ implicit val convertTypeEncoder: Encoder[ConvertType.Value] = Decoder.encodeEnum
 	target_field: Field, 
 	`type`: ConvertType
 ) extends ProcessorBase
-
 
 @JsonCodec case class CsvProcessor(
 	empty_value: UserDefinedValue, 
@@ -164,22 +153,20 @@ implicit val convertTypeEncoder: Encoder[ConvertType.Value] = Decoder.encodeEnum
 	trim: Boolean
 ) extends ProcessorBase
 
-
 object DateRounding extends Enumeration {
 	type DateRounding = Value
 
-val s = Value(0, "s")
-val m = Value(1, "m")
-val h = Value(2, "h")
-val d = Value(3, "d")
-val w = Value(4, "w")
-val m = Value(5, "M")
-val y = Value(6, "y")
+	val s = Value(0, "s")
+	val m = Value(1, "m")
+	val h = Value(2, "h")
+	val d = Value(3, "d")
+	val w = Value(4, "w")
+	val m = Value(5, "M")
+	val y = Value(6, "y")
 }
 
 implicit val dateRoundingDecoder: Decoder[DateRounding.Value] = Decoder.decodeEnumeration(DateRounding)
 implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEnumeration(DateRounding)
-
 
 @JsonCodec case class DateIndexNameProcessor(
 	date_formats: Array(String), 
@@ -191,7 +178,6 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	timezone: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class DateProcessor(
 	field: Field, 
 	formats: Array(String), 
@@ -200,7 +186,6 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	timezone: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class DissectProcessor(
 	append_separator: String, 
 	field: Field, 
@@ -208,15 +193,12 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	pattern: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class DotExpanderProcessor(
 	field: Field, 
 	path: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class DropProcessor extends ProcessorBase
-
 
 @JsonCodec case class EnrichProcessor(
 	field: Field, 
@@ -228,18 +210,15 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class FailProcessor(
 	message: String
 ) extends ProcessorBase
-
 
 @JsonCodec case class ForeachProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
 	processor: ProcessorContainer
 ) extends ProcessorBase
-
 
 @JsonCodec case class GrokProcessor(
 	field: Field, 
@@ -249,7 +228,6 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	trace_match: Boolean
 ) extends ProcessorBase
 
-
 @JsonCodec case class GsubProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
@@ -258,7 +236,6 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class InferenceProcessor(
 	model_id: Id, 
 	target_field: Field, 
@@ -266,16 +243,13 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	inference_config: InferenceConfig
 ) extends ProcessorBase
 
-
 @JsonCodec case class InferenceConfig(
 	regression: InferenceConfigRegression
 )
 
-
 @JsonCodec case class InferenceConfigRegression(
 	results_field: String
 )
-
 
 @JsonCodec case class JoinProcessor(
 	field: Field, 
@@ -283,13 +257,11 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class JsonProcessor(
 	add_to_root: Boolean, 
 	field: Field, 
 	target_field: Field
 ) extends ProcessorBase
-
 
 @JsonCodec case class KeyValueProcessor(
 	exclude_keys: Array(String), 
@@ -305,31 +277,26 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	value_split: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class LowercaseProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class PipelineProcessor(
 	name: Name
 ) extends ProcessorBase
-
 
 @JsonCodec case class RemoveProcessor(
 	field: Fields, 
 	ignore_missing: Boolean
 ) extends ProcessorBase
 
-
 @JsonCodec case class RenameProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
 	target_field: Field
 ) extends ProcessorBase
-
 
 @JsonCodec case class ScriptProcessor(
 	id: Id, 
@@ -338,37 +305,32 @@ implicit val dateRoundingEncoder: Encoder[DateRounding.Value] = Decoder.encodeEn
 	source: String
 ) extends ProcessorBase
 
-
 @JsonCodec case class SetProcessor(
 	field: Field, 
 	`override`: Boolean, 
 	value: UserDefinedValue
 ) extends ProcessorBase
 
-
 @JsonCodec case class SetSecurityUserProcessor(
 	field: Field, 
 	properties: Array(String)
 ) extends ProcessorBase
 
-
 object ShapeType extends Enumeration {
 	type ShapeType = Value
 
-val geo_shape = Value(0, "geo_shape")
-val shape = Value(1, "shape")
+	val geo_shape = Value(0, "geo_shape")
+	val shape = Value(1, "shape")
 }
 
 implicit val shapeTypeDecoder: Decoder[ShapeType.Value] = Decoder.decodeEnumeration(ShapeType)
 implicit val shapeTypeEncoder: Encoder[ShapeType.Value] = Decoder.encodeEnumeration(ShapeType)
-
 
 @JsonCodec case class SortProcessor(
 	field: Field, 
 	order: SortOrder, 
 	target_field: Field
 ) extends ProcessorBase
-
 
 @JsonCodec case class SplitProcessor(
 	field: Field, 
@@ -378,13 +340,11 @@ implicit val shapeTypeEncoder: Encoder[ShapeType.Value] = Decoder.encodeEnumerat
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class TrimProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
 	target_field: Field
 ) extends ProcessorBase
-
 
 @JsonCodec case class UppercaseProcessor(
 	field: Field, 
@@ -392,10 +352,8 @@ implicit val shapeTypeEncoder: Encoder[ShapeType.Value] = Decoder.encodeEnumerat
 	target_field: Field
 ) extends ProcessorBase
 
-
 @JsonCodec case class UrlDecodeProcessor(
 	field: Field, 
 	ignore_missing: Boolean, 
 	target_field: Field
 ) extends ProcessorBase
-

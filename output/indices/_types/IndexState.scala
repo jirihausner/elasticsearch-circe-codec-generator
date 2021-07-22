@@ -15,8 +15,6 @@ import com.converted.elasticsearch.indices._types.{ IndexSettings }
 	settings: IndexSettings | IndexStatePrefixedSettings
 )
 
-
 @JsonCodec case class IndexStatePrefixedSettings(
 	index: IndexSettings
 )
-

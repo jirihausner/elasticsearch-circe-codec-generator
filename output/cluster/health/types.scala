@@ -19,7 +19,6 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	unassigned_shards: integer
 )
 
-
 @JsonCodec case class ShardHealthStats(
 	active_shards: integer, 
 	initializing_shards: integer, 
@@ -28,4 +27,3 @@ import com.converted.elasticsearch._types.Numeric.{ integer }
 	status: Health, 
 	unassigned_shards: integer
 )
-

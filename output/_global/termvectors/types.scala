@@ -11,13 +11,11 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	terms: Dictionary(String, Term)
 )
 
-
 @JsonCodec case class FieldStatistics(
 	doc_count: integer, 
 	sum_doc_freq: long, 
 	sum_ttf: long
 )
-
 
 @JsonCodec case class Term(
 	doc_freq: integer, 
@@ -27,14 +25,12 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	ttf: integer
 )
 
-
 @JsonCodec case class Token(
 	end_offset: integer, 
 	payload: String, 
 	position: integer, 
 	start_offset: integer
 )
-
 
 @JsonCodec case class Filter(
 	max_doc_freq: integer, 
@@ -45,4 +41,3 @@ import com.converted.elasticsearch._types.Numeric.{ double, integer, long }
 	min_term_freq: integer, 
 	min_word_length: integer
 )
-

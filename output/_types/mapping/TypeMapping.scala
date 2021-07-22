@@ -26,4 +26,3 @@ import com.converted.elasticsearch._types.mapping.{ RuntimeField }
 	_source: SourceField, 
 	runtime: Dictionary(String, RuntimeField)
 )
-

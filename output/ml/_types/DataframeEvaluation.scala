@@ -14,7 +14,6 @@ import com.converted.elasticsearch._types.Numeric.{ double }
 	regression: DataframeEvaluationRegression
 )
 
-
 @JsonCodec case class DataframeEvaluationClassification(
 	actual_field: Field, 
 	predicted_field: Field, 
@@ -22,13 +21,11 @@ import com.converted.elasticsearch._types.Numeric.{ double }
 	metrics: DataframeEvaluationClassificationMetrics
 )
 
-
 @JsonCodec case class DataframeEvaluationOutlierDetection(
 	actual_field: Field, 
 	predicted_probability_field: Field, 
 	metrics: DataframeEvaluationOutlierDetectionMetrics
 )
-
 
 @JsonCodec case class DataframeEvaluationRegression(
 	actual_field: Field, 
@@ -36,30 +33,25 @@ import com.converted.elasticsearch._types.Numeric.{ double }
 	metrics: DataframeEvaluationRegressionMetrics
 )
 
-
 @JsonCodec case class DataframeEvaluationMetrics(
 	auc_roc: DataframeEvaluationClassificationMetricsAucRoc, 
 	precision: Dictionary(String, UserDefinedValue), 
 	recall: Dictionary(String, UserDefinedValue)
 )
 
-
 @JsonCodec case class DataframeEvaluationClassificationMetrics(
 	accuracy: Dictionary(String, UserDefinedValue), 
 	multiclass_confusion_matrix: Dictionary(String, UserDefinedValue)
 ) extends DataframeEvaluationMetrics
 
-
 @JsonCodec case class DataframeEvaluationOutlierDetectionMetrics(
 	confusion_matrix: Dictionary(String, UserDefinedValue)
 ) extends DataframeEvaluationMetrics
-
 
 @JsonCodec case class DataframeEvaluationClassificationMetricsAucRoc(
 	class_name: Name, 
 	include_curve: Boolean
 )
-
 
 @JsonCodec case class DataframeEvaluationRegressionMetrics(
 	mse: Dictionary(String, UserDefinedValue), 
@@ -68,13 +60,10 @@ import com.converted.elasticsearch._types.Numeric.{ double }
 	r_squared: Dictionary(String, UserDefinedValue)
 )
 
-
 @JsonCodec case class DataframeEvaluationRegressionMetricsMsle(
 	offset: double
 )
 
-
 @JsonCodec case class DataframeEvaluationRegressionMetricsHuber(
 	delta: double
 )
-

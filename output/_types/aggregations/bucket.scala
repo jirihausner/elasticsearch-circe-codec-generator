@@ -21,11 +21,9 @@ import com.converted.elasticsearch._types.aggregations.{ AggregationContainer, M
 	aggregations: Dictionary(String, AggregationContainer)
 ) extends Aggregation
 
-
 @JsonCodec case class AdjacencyMatrixAggregation(
 	filters: Dictionary(String, QueryContainer)
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class AutoDateHistogramAggregation(
 	buckets: integer, 
@@ -39,26 +37,23 @@ import com.converted.elasticsearch._types.aggregations.{ AggregationContainer, M
 	time_zone: String
 ) extends BucketAggregationBase
 
-
 object MinimumInterval extends Enumeration {
 	type MinimumInterval = Value
 
-val second = Value(0, "second")
-val minute = Value(1, "minute")
-val hour = Value(2, "hour")
-val day = Value(3, "day")
-val month = Value(4, "month")
-val year = Value(5, "year")
+	val second = Value(0, "second")
+	val minute = Value(1, "minute")
+	val hour = Value(2, "hour")
+	val day = Value(3, "day")
+	val month = Value(4, "month")
+	val year = Value(5, "year")
 }
 
 implicit val minimumIntervalDecoder: Decoder[MinimumInterval.Value] = Decoder.decodeEnumeration(MinimumInterval)
 implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.encodeEnumeration(MinimumInterval)
 
-
 @JsonCodec case class ChildrenAggregation(
 	`type`: RelationName
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class CompositeAggregation(
 	after: Dictionary(String, String | float | null), 
@@ -66,14 +61,12 @@ implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.en
 	sources: Array(Dictionary(String, CompositeAggregationSource))
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class CompositeAggregationSource(
 	terms: TermsAggregation, 
 	histogram: HistogramAggregation, 
 	date_histogram: DateHistogramAggregation, 
 	geotile_grid: GeoTileGridAggregation
 )
-
 
 @JsonCodec case class DateHistogramAggregation(
 	calendar_interval: DateInterval | Time, 
@@ -92,23 +85,21 @@ implicit val minimumIntervalEncoder: Encoder[MinimumInterval.Value] = Decoder.en
 	time_zone: String
 ) extends BucketAggregationBase
 
-
 object DateInterval extends Enumeration {
 	type DateInterval = Value
 
-val second = Value(0, "second")
-val minute = Value(1, "minute")
-val hour = Value(2, "hour")
-val day = Value(3, "day")
-val week = Value(4, "week")
-val month = Value(5, "month")
-val quarter = Value(6, "quarter")
-val year = Value(7, "year")
+	val second = Value(0, "second")
+	val minute = Value(1, "minute")
+	val hour = Value(2, "hour")
+	val day = Value(3, "day")
+	val week = Value(4, "week")
+	val month = Value(5, "month")
+	val quarter = Value(6, "quarter")
+	val year = Value(7, "year")
 }
 
 implicit val dateIntervalDecoder: Decoder[DateInterval.Value] = Decoder.decodeEnumeration(DateInterval)
 implicit val dateIntervalEncoder: Encoder[DateInterval.Value] = Decoder.encodeEnumeration(DateInterval)
-
 
 @JsonCodec case class DateRangeAggregation(
 	field: Field, 
@@ -117,7 +108,6 @@ implicit val dateIntervalEncoder: Encoder[DateInterval.Value] = Decoder.encodeEn
 	ranges: Array(DateRangeExpression), 
 	time_zone: String
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class DateRangeExpression(
 	from: DateMath | float, 
@@ -128,7 +118,6 @@ implicit val dateIntervalEncoder: Encoder[DateInterval.Value] = Decoder.encodeEn
 	doc_count: long
 )
 
-
 @JsonCodec case class DiversifiedSamplerAggregation(
 	execution_hint: SamplerAggregationExecutionHint, 
 	max_docs_per_value: integer, 
@@ -137,25 +126,22 @@ implicit val dateIntervalEncoder: Encoder[DateInterval.Value] = Decoder.encodeEn
 	field: Field
 ) extends BucketAggregationBase
 
-
 object SamplerAggregationExecutionHint extends Enumeration {
 	type SamplerAggregationExecutionHint = Value
 
-val map = Value(0, "map")
-val global_ordinals = Value(1, "global_ordinals")
-val bytes_hash = Value(2, "bytes_hash")
+	val map = Value(0, "map")
+	val global_ordinals = Value(1, "global_ordinals")
+	val bytes_hash = Value(2, "bytes_hash")
 }
 
 implicit val samplerAggregationExecutionHintDecoder: Decoder[SamplerAggregationExecutionHint.Value] = Decoder.decodeEnumeration(SamplerAggregationExecutionHint)
 implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationExecutionHint.Value] = Decoder.encodeEnumeration(SamplerAggregationExecutionHint)
-
 
 @JsonCodec case class FiltersAggregation(
 	filters: Dictionary(String, QueryContainer) | Array(QueryContainer), 
 	other_bucket: Boolean, 
 	other_bucket_key: String
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class GeoDistanceAggregation(
 	distance_type: GeoDistanceType, 
@@ -165,7 +151,6 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	unit: DistanceUnit
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class GeoHashGridAggregation(
 	bounds: BoundingBox, 
 	field: Field, 
@@ -173,7 +158,6 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	shard_size: integer, 
 	size: integer
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class GeoTileGridAggregation(
 	field: Field, 
@@ -183,15 +167,12 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	bounds: GeoBounds
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class GlobalAggregation extends BucketAggregationBase
-
 
 @JsonCodec case class ExtendedBounds[T](
 	max: T, 
 	min: T
 )
-
 
 @JsonCodec case class HistogramAggregation(
 	extended_bounds: ExtendedBounds(double), 
@@ -206,18 +187,15 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	format: String
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class HistogramOrder(
 	_count: SortOrder, 
 	_key: SortOrder
 )
 
-
 @JsonCodec case class IpRangeAggregation(
 	field: Field, 
 	ranges: Array(IpRangeAggregationRange)
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class IpRangeAggregationRange(
 	from: String, 
@@ -225,32 +203,26 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	to: String
 )
 
-
 @JsonCodec case class MissingAggregation(
 	field: Field, 
 	missing: Missing
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class MultiTermsAggregation(
 	terms: Array(MultiTermLookup)
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class MultiTermLookup(
 	field: Field
 )
 
-
 @JsonCodec case class NestedAggregation(
 	path: Field
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class ParentAggregation(
 	`type`: RelationName
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class RangeAggregation(
 	field: Field, 
@@ -258,13 +230,11 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	script: Script
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class AggregationRange(
 	from: double | String, 
 	key: String, 
 	to: double | String
 )
-
 
 @JsonCodec case class RareTermsAggregation(
 	exclude: String | Array(String), 
@@ -276,41 +246,33 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	value_type: String
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class ReverseNestedAggregation(
 	path: Field
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class SamplerAggregation(
 	shard_size: integer
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class ChiSquareHeuristic(
 	background_is_superset: Boolean, 
 	include_negatives: Boolean
 )
 
-
 @JsonCodec case class GoogleNormalizedDistanceHeuristic(
 	background_is_superset: Boolean
 )
-
 
 @JsonCodec case class MutualInformationHeuristic(
 	background_is_superset: Boolean, 
 	include_negatives: Boolean
 )
 
-
 @JsonCodec sealed trait PercentageScoreHeuristic
-
 
 @JsonCodec case class ScriptedHeuristic(
 	script: Script
 )
-
 
 @JsonCodec case class SignificantTermsAggregation(
 	background_filter: QueryContainer, 
@@ -328,7 +290,6 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	shard_size: integer, 
 	size: integer
 ) extends BucketAggregationBase
-
 
 @JsonCodec case class SignificantTextAggregation(
 	background_filter: QueryContainer, 
@@ -349,7 +310,6 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	source_fields: Fields
 ) extends BucketAggregationBase
 
-
 @JsonCodec case class TermsAggregation(
 	collect_mode: TermsAggregationCollectMode, 
 	exclude: String | Array(String), 
@@ -366,38 +326,34 @@ implicit val samplerAggregationExecutionHintEncoder: Encoder[SamplerAggregationE
 	show_term_doc_count_error: Boolean, 
 	size: integer
 ) extends BucketAggregationBase
-
 type TermsAggregationOrder = SortOrder | Dictionary(String, SortOrder) | Array(Dictionary(String, SortOrder))
 
 object TermsAggregationCollectMode extends Enumeration {
 	type TermsAggregationCollectMode = Value
 
-val depth_first = Value(0, "depth_first")
-val breadth_first = Value(1, "breadth_first")
+	val depth_first = Value(0, "depth_first")
+	val breadth_first = Value(1, "breadth_first")
 }
 
 implicit val termsAggregationCollectModeDecoder: Decoder[TermsAggregationCollectMode.Value] = Decoder.decodeEnumeration(TermsAggregationCollectMode)
 implicit val termsAggregationCollectModeEncoder: Encoder[TermsAggregationCollectMode.Value] = Decoder.encodeEnumeration(TermsAggregationCollectMode)
 
-
 object TermsAggregationExecutionHint extends Enumeration {
 	type TermsAggregationExecutionHint = Value
 
-val map = Value(0, "map")
-val global_ordinals = Value(1, "global_ordinals")
-val global_ordinals_hash = Value(2, "global_ordinals_hash")
-val global_ordinals_low_cardinality = Value(3, "global_ordinals_low_cardinality")
+	val map = Value(0, "map")
+	val global_ordinals = Value(1, "global_ordinals")
+	val global_ordinals_hash = Value(2, "global_ordinals_hash")
+	val global_ordinals_low_cardinality = Value(3, "global_ordinals_low_cardinality")
 }
 
 implicit val termsAggregationExecutionHintDecoder: Decoder[TermsAggregationExecutionHint.Value] = Decoder.decodeEnumeration(TermsAggregationExecutionHint)
 implicit val termsAggregationExecutionHintEncoder: Encoder[TermsAggregationExecutionHint.Value] = Decoder.encodeEnumeration(TermsAggregationExecutionHint)
 
-
 @JsonCodec case class TermsInclude(
 	num_partitions: long, 
 	partition: long
 )
-
 
 @JsonCodec case class VariableWidthHistogramAggregation(
 	field: Field, 
@@ -405,4 +361,3 @@ implicit val termsAggregationExecutionHintEncoder: Encoder[TermsAggregationExecu
 	shard_size: integer, 
 	initial_buffer: integer
 )
-

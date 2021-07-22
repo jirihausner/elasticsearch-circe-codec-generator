@@ -12,4 +12,3 @@ import com.converted.elasticsearch._types.common.{ Name, VersionString }
 	version: VersionString, 
 	composed_of: String
 )
-

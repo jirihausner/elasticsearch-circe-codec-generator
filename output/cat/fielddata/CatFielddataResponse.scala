@@ -8,4 +8,3 @@ import com.converted.elasticsearch.cat.fielddata.{ FielddataRecord }
 @JsonCodec case class Response(
 	body: Array(FielddataRecord)
 )
-

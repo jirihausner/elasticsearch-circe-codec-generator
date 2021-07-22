@@ -16,16 +16,15 @@ import com.converted.elasticsearch.ml._types.{ ModelSizeStats }
 object JobState extends Enumeration {
 	type JobState = Value
 
-val closing = Value(0, "closing")
-val closed = Value(1, "closed")
-val opened = Value(2, "opened")
-val failed = Value(3, "failed")
-val opening = Value(4, "opening")
+	val closing = Value(0, "closing")
+	val closed = Value(1, "closed")
+	val opened = Value(2, "opened")
+	val failed = Value(3, "failed")
+	val opening = Value(4, "opening")
 }
 
 implicit val jobStateDecoder: Decoder[JobState.Value] = Decoder.decodeEnumeration(JobState)
 implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeration(JobState)
-
 
 @JsonCodec case class JobStatistics(
 	avg: double, 
@@ -33,7 +32,6 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	min: double, 
 	total: double
 )
-
 
 @JsonCodec case class Job(
 	allow_lazy_open: Boolean, 
@@ -59,7 +57,6 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	daily_model_snapshot_retention_after_days: long
 )
 
-
 @JsonCodec case class JobStats(
 	assignment_explanation: String, 
 	data_counts: DataCounts, 
@@ -73,7 +70,6 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	deleting: Boolean
 )
 
-
 @JsonCodec case class JobTimingStats(
 	average_bucket_processing_time_ms: double, 
 	bucket_count: long, 
@@ -85,7 +81,6 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	minimum_bucket_processing_time_ms: double
 )
 
-
 @JsonCodec case class JobForecastStatistics(
 	memory_bytes: JobStatistics, 
 	processing_time_ms: JobStatistics, 
@@ -94,7 +89,6 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	total: long, 
 	forecasted_jobs: integer
 )
-
 
 @JsonCodec case class DataCounts(
 	bucket_count: long, 
@@ -117,11 +111,9 @@ implicit val jobStateEncoder: Encoder[JobState.Value] = Decoder.encodeEnumeratio
 	sparse_bucket_count: long
 )
 
-
 @JsonCodec case class DataDescription(
 	format: String, 
 	time_field: Field, 
 	time_format: String, 
 	field_delimiter: String
 )
-

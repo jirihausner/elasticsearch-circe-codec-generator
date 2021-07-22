@@ -14,4 +14,3 @@ import com.converted.elasticsearch._types.Networking.{ TransportAddress }
 	name: Name, 
 	transport_address: TransportAddress
 )
-
