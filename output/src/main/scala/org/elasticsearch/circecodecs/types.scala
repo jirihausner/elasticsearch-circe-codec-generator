@@ -1129,7 +1129,7 @@ object SearchRequest {
 )
 
 @JsonCodec sealed trait SearchAggregationProfileDebug
-type SearchBoundaryScanner = "chars"" | "sentence"" | "word""
+type SearchBoundaryScanner = String
 
 @JsonCodec case class SearchCollector(
 	name: String, 
@@ -1250,11 +1250,11 @@ type SearchGeoDistanceSort = SearchGeoDistanceSortKeys | @JsonCodec case class U
 	tags_schema: SearchHighlighterTagsSchema, 
 	`type`: SearchHighlighterType | String
 )
-type SearchHighlighterEncoder = "default"" | "html""
-type SearchHighlighterFragmenter = "simple"" | "span""
-type SearchHighlighterOrder = "score""
-type SearchHighlighterTagsSchema = "styled""
-type SearchHighlighterType = "plain"" | "fvh"" | "unified""
+type SearchHighlighterEncoder = String
+type SearchHighlighterFragmenter = String
+type SearchHighlighterOrder = String
+type SearchHighlighterTagsSchema = String
+type SearchHighlighterType = String
 
 @JsonCodec case class SearchHit[TDocument = None](
 	_index: IndexName, 
@@ -1420,7 +1420,7 @@ type SearchHighlighterType = "plain"" | "fvh"" | "unified""
 	rescore_query_weight: double, 
 	score_mode: SearchScoreMode
 )
-type SearchScoreMode = "avg"" | "max"" | "min"" | "multiply"" | "total""
+type SearchScoreMode = String
 
 @JsonCodec case class SearchScoreSort(
 	mode: SearchSortMode, 
@@ -1463,8 +1463,8 @@ type SearchSortContainer = SearchSortContainerKeys | @JsonCodec case class Undef
 [[MemberIndex: TsMemberIndex(NoComments,false,Default,Dict(TsIdentSimple(property),TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(string))),IArray())),Some(TsTypeUnion(IArray(TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(SearchFieldSort))),IArray()), TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(SearchSortOrder))),IArray())))))]]
 )
 
-type SearchSortMode = "min"" | "max"" | "sum"" | "avg"" | "median""
-type SearchSortOrder = "asc"" | "desc"" | "_doc""
+type SearchSortMode = String
+type SearchSortOrder = String
 type SearchSortResults = Seq[long | double | String | null]
 
 @JsonCodec case class SearchSourceFilter(
@@ -1473,7 +1473,7 @@ type SearchSortResults = Seq[long | double | String | null]
 	exclude: Fields, 
 	include: Fields
 )
-type SearchStringDistance = "internal"" | "damerau_levenshtein"" | "levenshtein"" | "jaro_winkler"" | "ngram""
+type SearchStringDistance = String
 
 @JsonCodec case class SearchStupidBackoffSmoothingModel(
 	discount: double
@@ -1511,7 +1511,7 @@ type SearchStringDistance = "internal"" | "damerau_levenshtein"" | "levenshtein"
 	unicode_aware: Boolean
 )
 type SearchSuggestOption[TDocument = None]  = SearchCompletionSuggestOption[TDocument] | SearchPhraseSuggestOption | SearchTermSuggestOption
-type SearchSuggestSort = "score"" | "frequency""
+type SearchSuggestSort = String
 
 @JsonCodec case class SearchSuggesterBase(
 	field: Field, 
@@ -1544,7 +1544,7 @@ type SearchSuggestSort = "score"" | "frequency""
 	relation: SearchTotalHitsRelation, 
 	value: long
 )
-type SearchTotalHitsRelation = "eq"" | "gte""
+type SearchTotalHitsRelation = String
 
 @JsonCodec case class SearchShardsRequest(
 	index: Indices, 
@@ -1851,7 +1851,7 @@ type AggregateName = String
 	avg_size_in_bytes: long
 )
 type ByteSize = long | String
-type Bytes = "b"" | "k"" | "kb"" | "m"" | "mb"" | "g"" | "gb"" | "t"" | "tb"" | "p"" | "pb""
+type Bytes = String
 type CategoryId = String
 
 @JsonCodec case class ChainTransform(
@@ -1869,7 +1869,7 @@ type CategoryId = String
 	size: ByteSize, 
 	fields: Record[Field, FieldSizeUsage]
 )
-type Conflicts = "abort"" | "proceed""
+type Conflicts = String
 type DataStreamName = String
 
 @JsonCodec case class DateField(
@@ -1880,13 +1880,13 @@ type DataStreamName = String
 type DateMath = String
 type DateMathTime = String
 type DateString = String
-type DefaultOperator = "AND"" | "OR""
+type DefaultOperator = String
 
 @JsonCodec case class DictionaryResponseBase[TKey = None, TValue = None](
 [[MemberIndex: TsMemberIndex(NoComments,false,Default,Dict(TsIdentSimple(key),TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(string))),IArray())),Some(TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(TValue))),IArray())))]]
 )
 type Distance = String
-type DistanceUnit = "in"" | "ft"" | "yd"" | "mi"" | "nmi"" | "km"" | "m"" | "cm"" | "mm""
+type DistanceUnit = String
 
 @JsonCodec case class DocStats(
 	count: long, 
@@ -1945,7 +1945,7 @@ type EpochMillis = String | long
 	error: MainError | String, 
 	status: integer
 )
-type ExpandWildcardOptions = "all"" | "open"" | "closed"" | "hidden"" | "none""
+type ExpandWildcardOptions = String
 type ExpandWildcards = ExpandWildcardOptions | Seq[ExpandWildcardOptions] | String
 type Field = String
 
@@ -1974,9 +1974,9 @@ type Fields = Field | Seq[Field]
 	total_time_in_millis: long
 )
 type Fuzziness = String | integer
-type GeoDistanceType = "arc"" | "plane""
+type GeoDistanceType = String
 type GeoHashPrecision = Double
-type GeoShapeRelation = "intersects"" | "disjoint"" | "within"" | "contains""
+type GeoShapeRelation = String
 type GeoTilePrecision = Double
 
 @JsonCodec case class GetStats(
@@ -1991,8 +1991,8 @@ type GeoTilePrecision = Double
 	time_in_millis: long, 
 	total: long
 )
-type GroupBy = "nodes"" | "parents"" | "none""
-type Health = "green"" | "yellow"" | "red""
+type GroupBy = String
+type Health = String
 type Host = String
 type HttpHeaders = Record[String, String | Seq[String]]
 type Id = String
@@ -2046,8 +2046,8 @@ type Ip = String
 	lat: double, 
 	lon: double
 )
-type Level = "cluster"" | "indices"" | "shards""
-type LifecycleOperationMode = "RUNNING"" | "STOPPING"" | "STOPPED""
+type Level = String
+type LifecycleOperationMode = String
 
 @JsonCodec case class MainError(
 	headers: Record[String, String], 
@@ -2091,7 +2091,7 @@ type Namespace = String
 type NodeId = String
 type NodeIds = String
 type NodeName = String
-type NodeRole = "master"" | "data"" | "data_cold"" | "data_content"" | "data_frozen"" | "data_hot"" | "data_warm"" | "client"" | "ingest"" | "ml"" | "voting_only"" | "transform"" | "remote_cluster_client"" | "coordinating_only""
+type NodeRole = String
 type NodeRoles = Seq[NodeRole]
 
 @JsonCodec case class NodeShard(
@@ -2111,7 +2111,7 @@ type NodeRoles = Seq[NodeRole]
 	successful: integer, 
 	failed: integer
 )
-type OpType = "index"" | "create""
+type OpType = String
 type Password = String
 type Percentage = String | float
 type PipelineName = String
@@ -2148,7 +2148,7 @@ type PropertyName = String
 	throttle_time_in_millis: long
 )
 type Refresh = Boolean | RefreshOptions
-type RefreshOptions = "wait_for""
+type RefreshOptions = String
 
 @JsonCodec case class RefreshStats(
 	external_total: long, 
@@ -2169,7 +2169,7 @@ type RelationName = String
 	memory_size_in_bytes: long, 
 	miss_count: long
 )
-type Result = "Error"" | "created"" | "updated"" | "deleted"" | "not_found"" | "noop""
+type Result = String
 
 @JsonCodec case class Retries(
 	bulk: long, 
@@ -2186,7 +2186,7 @@ type Script = InlineScript | IndexedScript | String
 @JsonCodec case class ScriptField(
 	script: Script
 )
-type ScriptLanguage = "painless"" | "expression"" | "mustache"" | "java""
+type ScriptLanguage = String
 
 @JsonCodec case class ScriptTransform(
 	lang: String, 
@@ -2215,7 +2215,7 @@ type ScrollId = String
 	request: WatcherSearchInputRequestDefinition, 
 	timeout: Time
 )
-type SearchType = "query_then_fetch"" | "dfs_query_then_fetch""
+type SearchType = String
 
 @JsonCodec case class SegmentsStats(
 	count: integer, 
@@ -2245,7 +2245,7 @@ type SearchType = "query_then_fetch"" | "dfs_query_then_fetch""
 )
 type SequenceNumber = integer
 type Service = String
-type ShapeRelation = "intersects"" | "disjoint"" | "within""
+type ShapeRelation = String
 
 @JsonCodec case class ShardFailure(
 	index: IndexName, 
@@ -2266,7 +2266,7 @@ type ShapeRelation = "intersects"" | "disjoint"" | "within""
 @JsonCodec case class ShardsOperationResponseBase(
 	_shards: ShardStatistics
 )
-type Size = "Raw"" | "k"" | "m"" | "g"" | "t"" | "p""
+type Size = String
 
 @JsonCodec case class SlicedScroll(
 	field: Field, 
@@ -2287,10 +2287,10 @@ type Size = "Raw"" | "k"" | "m"" | "g"" | "t"" | "p""
 	lang: ScriptLanguage, 
 	source: String
 )
-type SuggestMode = "missing"" | "popular"" | "always""
+type SuggestMode = String
 type SuggestionName = String
 type TaskId = String | integer
-type ThreadType = "cpu"" | "wait"" | "block""
+type ThreadType = String
 type Time = String | integer
 type TimeSpan = String
 type Timestamp = String
@@ -2319,11 +2319,11 @@ type Username = String
 type Uuid = String
 type VersionNumber = long
 type VersionString = String
-type VersionType = "internal"" | "external"" | "external_gte"" | "force""
-type WaitForActiveShardOptions = "all""
+type VersionType = String
+type WaitForActiveShardOptions = String
 type WaitForActiveShards = integer | WaitForActiveShardOptions
-type WaitForEvents = "immediate"" | "urgent"" | "high"" | "normal"" | "low"" | "languid""
-type WaitForStatus = "green"" | "yellow"" | "red""
+type WaitForEvents = String
+type WaitForStatus = String
 
 @JsonCodec case class WarmerStats(
 	current: long, 
@@ -2581,7 +2581,7 @@ type AggregationsDateHistogramBucket = AggregationsDateHistogramBucketKeys | @Js
 [[MemberIndex: TsMemberIndex(NoComments,false,Default,Dict(TsIdentSimple(property),TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(string))),IArray())),Some(TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(AggregationsAggregate))),IArray())))]]
 )
 
-type AggregationsDateInterval = "second"" | "minute"" | "hour"" | "day"" | "week"" | "month"" | "quarter"" | "year""
+type AggregationsDateInterval = String
 
 @JsonCodec case class AggregationsDateRangeAggregation(
 	field: Field, 
@@ -2663,7 +2663,7 @@ type AggregationsFiltersBucketItem = AggregationsFiltersBucketItemKeys | @JsonCo
 @JsonCodec case class AggregationsFormattableMetricAggregation(
 	format: String
 ) extends AggregationsMetricAggregationBase
-type AggregationsGapPolicy = "skip"" | "insert_zeros""
+type AggregationsGapPolicy = String
 
 @JsonCodec case class AggregationsGeoBounds(
 	bottom_right: LatLon, 
@@ -2789,7 +2789,7 @@ type AggregationsGapPolicy = "skip"" | "insert_zeros""
 	period: integer, 
 	`type`: AggregationsHoltWintersType
 )
-type AggregationsHoltWintersType = "add"" | "mult""
+type AggregationsHoltWintersType = String
 
 @JsonCodec case class AggregationsInferenceAggregation(
 	model_id: Name, 
@@ -2855,7 +2855,7 @@ type AggregationsKeyedBucket[TKey = None]  = AggregationsKeyedBucketKeys[TKey] |
 @JsonCodec case class AggregationsMatrixStatsAggregation(
 	mode: AggregationsMatrixStatsMode
 ) extends AggregationsMatrixAggregation
-type AggregationsMatrixStatsMode = "avg"" | "min"" | "max"" | "sum"" | "median""
+type AggregationsMatrixStatsMode = String
 
 @JsonCodec case class AggregationsMaxAggregation extends AggregationsFormatMetricAggregationBase
 
@@ -2875,7 +2875,7 @@ type AggregationsMetricAggregate = AggregationsValueAggregate | AggregationsBoxP
 @JsonCodec case class AggregationsMinAggregation extends AggregationsFormatMetricAggregationBase
 
 @JsonCodec case class AggregationsMinBucketAggregation extends AggregationsPipelineAggregationBase
-type AggregationsMinimumInterval = "second"" | "minute"" | "hour"" | "day"" | "month"" | "year""
+type AggregationsMinimumInterval = String
 type AggregationsMissing = String | integer | double | Boolean
 
 @JsonCodec case class AggregationsMissingAggregation(
@@ -2890,7 +2890,7 @@ type AggregationsMissing = String | integer | double | Boolean
 	predict: integer, 
 	window: integer
 ) extends AggregationsPipelineAggregationBase
-type AggregationsMovingAverageModel = "linear"" | "simple"" | "ewma"" | "holt"" | "holt_winters""
+type AggregationsMovingAverageModel = String
 type AggregationsMovingAverageSettings = AggregationsEwmaModelSettings | AggregationsHoltLinearModelSettings | AggregationsHoltWintersModelSettings
 
 @JsonCodec case class AggregationsMovingFunctionAggregation(
@@ -2928,7 +2928,7 @@ type AggregationsMovingAverageSettings = AggregationsEwmaModelSettings | Aggrega
 @JsonCodec case class AggregationsNormalizeAggregation(
 	method: AggregationsNormalizeMethod
 ) extends AggregationsPipelineAggregationBase
-type AggregationsNormalizeMethod = "rescale_0_1"" | "rescale_0_100"" | "percent_of_sum"" | "mean"" | "zscore"" | "softmax""
+type AggregationsNormalizeMethod = String
 
 @JsonCodec case class AggregationsParentAggregation(
 	`type`: RelationName
@@ -3001,7 +3001,7 @@ type AggregationsRareTermsBucket[TKey = None]  = AggregationsRareTermsBucketKeys
 	unit: AggregationsDateInterval, 
 	mode: AggregationsRateMode
 ) extends AggregationsFormatMetricAggregationBase
-type AggregationsRateMode = "sum"" | "value_count""
+type AggregationsRateMode = String
 
 @JsonCodec case class AggregationsRegressionInferenceOptions(
 	results_field: Field, 
@@ -3015,7 +3015,7 @@ type AggregationsRateMode = "sum"" | "value_count""
 @JsonCodec case class AggregationsSamplerAggregation(
 	shard_size: integer
 ) extends AggregationsBucketAggregationBase
-type AggregationsSamplerAggregationExecutionHint = "map"" | "global_ordinals"" | "bytes_hash""
+type AggregationsSamplerAggregationExecutionHint = String
 
 @JsonCodec case class AggregationsScriptedHeuristic(
 	script: Script
@@ -3143,7 +3143,7 @@ type AggregationsSingleBucketAggregate = AggregationsSingleBucketAggregateKeys |
 	b: AggregationsTestPopulation, 
 	`type`: AggregationsTTestType
 ) extends AggregationsAggregation
-type AggregationsTTestType = "paired"" | "homoscedastic"" | "heteroscedastic""
+type AggregationsTTestType = String
 
 @JsonCodec case class AggregationsTermsAggregate[TKey = None](
 	doc_count_error_upper_bound: long, 
@@ -3166,8 +3166,8 @@ type AggregationsTTestType = "paired"" | "homoscedastic"" | "heteroscedastic""
 	show_term_doc_count_error: Boolean, 
 	size: integer
 ) extends AggregationsBucketAggregationBase
-type AggregationsTermsAggregationCollectMode = "depth_first"" | "breadth_first""
-type AggregationsTermsAggregationExecutionHint = "map"" | "global_ordinals"" | "global_ordinals_hash"" | "global_ordinals_low_cardinality""
+type AggregationsTermsAggregationCollectMode = String
+type AggregationsTermsAggregationExecutionHint = String
 type AggregationsTermsAggregationOrder = SearchSortOrder | Record[String, SearchSortOrder] | Seq[Record[String, SearchSortOrder]]
 
 @JsonCodec case class AggregationsTermsInclude(
@@ -3225,7 +3225,7 @@ type AggregationsTermsAggregationOrder = SearchSortOrder | Record[String, Search
 ) extends AggregationsAggregateBase
 
 @JsonCodec case class AggregationsValueCountAggregation extends AggregationsFormattableMetricAggregation
-type AggregationsValueType = "string"" | "long"" | "double"" | "number"" | "date"" | "date_nanos"" | "ip"" | "numeric"" | "geo_point"" | "boolean""
+type AggregationsValueType = String
 
 @JsonCodec case class AggregationsVariableWidthHistogramAggregation(
 	field: Field, 
@@ -3282,13 +3282,13 @@ type AnalysisCharFilter = AnalysisHtmlStripCharFilter | AnalysisMappingCharFilte
 	filter: Seq[String], 
 	script: Script
 ) extends AnalysisTokenFilterBase
-type AnalysisDelimitedPayloadEncoding = "int"" | "float"" | "identity""
+type AnalysisDelimitedPayloadEncoding = String
 
 @JsonCodec case class AnalysisDelimitedPayloadTokenFilter(
 	delimiter: String, 
 	encoding: AnalysisDelimitedPayloadEncoding
 ) extends AnalysisTokenFilterBase
-type AnalysisEdgeNGramSide = "front"" | "back""
+type AnalysisEdgeNGramSide = String
 
 @JsonCodec case class AnalysisEdgeNGramTokenFilter(
 	max_gram: integer, 
@@ -3325,7 +3325,7 @@ type AnalysisEdgeNGramSide = "front"" | "back""
 @JsonCodec case class AnalysisHyphenationDecompounderTokenFilter extends AnalysisCompoundWordTokenFilterBase
 
 @JsonCodec case class AnalysisKStemTokenFilter extends AnalysisTokenFilterBase
-type AnalysisKeepTypesMode = "include"" | "exclude""
+type AnalysisKeepTypesMode = String
 
 @JsonCodec case class AnalysisKeepTypesTokenFilter(
 	mode: AnalysisKeepTypesMode, 
@@ -3388,7 +3388,7 @@ type AnalysisKeepTypesMode = "include"" | "exclude""
 	min_gram: integer, 
 	token_chars: Seq[AnalysisTokenChar]
 ) extends AnalysisTokenizerBase
-type AnalysisNoriDecompoundMode = "discard"" | "none"" | "mixed""
+type AnalysisNoriDecompoundMode = String
 
 @JsonCodec case class AnalysisNoriPartOfSpeechTokenFilter(
 	stoptags: Seq[String]
@@ -3438,7 +3438,7 @@ type AnalysisNoriDecompoundMode = "discard"" | "none"" | "mixed""
 	output_unigrams_if_no_shingles: Boolean, 
 	token_separator: String
 ) extends AnalysisTokenFilterBase
-type AnalysisSnowballLanguage = "Armenian"" | "Basque"" | "Catalan"" | "Danish"" | "Dutch"" | "English"" | "Finnish"" | "French"" | "German"" | "German2"" | "Hungarian"" | "Italian"" | "Kp"" | "Lovins"" | "Norwegian"" | "Porter"" | "Portuguese"" | "Romanian"" | "Russian"" | "Spanish"" | "Swedish"" | "Turkish""
+type AnalysisSnowballLanguage = String
 
 @JsonCodec case class AnalysisSnowballTokenFilter(
 	language: AnalysisSnowballLanguage
@@ -3464,7 +3464,7 @@ type AnalysisSnowballLanguage = "Armenian"" | "Basque"" | "Catalan"" | "Danish""
 	stopwords_path: String
 ) extends AnalysisTokenFilterBase
 type AnalysisStopWords = String | Seq[String]
-type AnalysisSynonymFormat = "solr"" | "wordnet""
+type AnalysisSynonymFormat = String
 
 @JsonCodec case class AnalysisSynonymGraphTokenFilter(
 	expand: Boolean, 
@@ -3485,7 +3485,7 @@ type AnalysisSynonymFormat = "solr"" | "wordnet""
 	tokenizer: String, 
 	updateable: Boolean
 ) extends AnalysisTokenFilterBase
-type AnalysisTokenChar = "letter"" | "digit"" | "whitespace"" | "punctuation"" | "symbol"" | "custom""
+type AnalysisTokenChar = String
 type AnalysisTokenFilter = AnalysisAsciiFoldingTokenFilter | AnalysisCommonGramsTokenFilter | AnalysisConditionTokenFilter | AnalysisDelimitedPayloadTokenFilter | AnalysisEdgeNGramTokenFilter | AnalysisElisionTokenFilter | AnalysisFingerprintTokenFilter | AnalysisHunspellTokenFilter | AnalysisHyphenationDecompounderTokenFilter | AnalysisKeepTypesTokenFilter | AnalysisKeepWordsTokenFilter | AnalysisKeywordMarkerTokenFilter | AnalysisKStemTokenFilter | AnalysisLengthTokenFilter | AnalysisLimitTokenCountTokenFilter | AnalysisLowercaseTokenFilter | AnalysisMultiplexerTokenFilter | AnalysisNGramTokenFilter | AnalysisNoriPartOfSpeechTokenFilter | AnalysisPatternCaptureTokenFilter | AnalysisPatternReplaceTokenFilter | AnalysisPorterStemTokenFilter | AnalysisPredicateTokenFilter | AnalysisRemoveDuplicatesTokenFilter | AnalysisReverseTokenFilter | AnalysisShingleTokenFilter | AnalysisSnowballTokenFilter | AnalysisStemmerOverrideTokenFilter | AnalysisStemmerTokenFilter | AnalysisStopTokenFilter | AnalysisSynonymGraphTokenFilter | AnalysisSynonymTokenFilter | AnalysisTrimTokenFilter | AnalysisTruncateTokenFilter | AnalysisUniqueTokenFilter | AnalysisUppercaseTokenFilter | AnalysisWordDelimiterGraphTokenFilter | AnalysisWordDelimiterTokenFilter
 
 @JsonCodec case class AnalysisTokenFilterBase(
@@ -3633,7 +3633,7 @@ type MappingDocValuesProperty = MappingBinaryProperty | MappingBooleanProperty |
 @JsonCodec case class MappingDoubleRangeProperty(
 	`type`: "double_range""
 ) extends MappingRangePropertyBase
-type MappingDynamicMapping = "strict"" | "runtime"" | "true"" | "false""
+type MappingDynamicMapping = String
 
 @JsonCodec case class MappingDynamicTemplate(
 	mapping: MappingPropertyBase, 
@@ -3655,7 +3655,7 @@ type MappingDynamicMapping = "strict"" | "runtime"" | "true"" | "false""
 @JsonCodec case class MappingFieldNamesField(
 	enabled: Boolean
 )
-type MappingFieldType = "none"" | "geo_point"" | "geo_shape"" | "ip"" | "binary"" | "keyword"" | "text"" | "search_as_you_type"" | "date"" | "date_nanos"" | "boolean"" | "completion"" | "nested"" | "object"" | "murmur3"" | "token_count"" | "percolator"" | "integer"" | "long"" | "short"" | "byte"" | "float"" | "half_float"" | "scaled_float"" | "double"" | "integer_range"" | "float_range"" | "long_range"" | "double_range"" | "date_range"" | "ip_range"" | "alias"" | "join"" | "rank_feature"" | "rank_features"" | "flattened"" | "shape"" | "histogram"" | "constant_keyword""
+type MappingFieldType = String
 
 @JsonCodec case class MappingFlattenedProperty(
 	boost: double, 
@@ -3688,7 +3688,7 @@ type MappingFieldType = "none"" | "geo_point"" | "geo_shape"" | "ip"" | "binary"
 	term_vector: MappingTermVectorOption, 
 	`type`: String
 ) extends MappingDocValuesPropertyBase
-type MappingGeoOrientation = "right"" | "RIGHT"" | "counterclockwise"" | "COUNTERCLOCKWISE"" | "ccw"" | "CCW"" | "left"" | "LEFT"" | "clockwise"" | "CLOCKWISE"" | "cw"" | "CW""
+type MappingGeoOrientation = String
 
 @JsonCodec case class MappingGeoPointProperty(
 	ignore_malformed: Boolean, 
@@ -3705,7 +3705,7 @@ type MappingGeoOrientation = "right"" | "RIGHT"" | "counterclockwise"" | "COUNTE
 	strategy: MappingGeoStrategy, 
 	`type`: "geo_shape""
 ) extends MappingDocValuesPropertyBase
-type MappingGeoStrategy = "recursive"" | "term""
+type MappingGeoStrategy = String
 
 @JsonCodec case class MappingHistogramProperty(
 	ignore_malformed: Boolean, 
@@ -3715,7 +3715,7 @@ type MappingGeoStrategy = "recursive"" | "term""
 @JsonCodec case class MappingIndexField(
 	enabled: Boolean
 )
-type MappingIndexOptions = "docs"" | "freqs"" | "positions"" | "offsets""
+type MappingIndexOptions = String
 
 @JsonCodec case class MappingIntegerRangeProperty(
 	`type`: "integer_range""
@@ -3752,7 +3752,7 @@ type MappingIndexOptions = "docs"" | "freqs"" | "positions"" | "offsets""
 @JsonCodec case class MappingLongRangeProperty(
 	`type`: "long_range""
 ) extends MappingRangePropertyBase
-type MappingMatchType = "simple"" | "regex""
+type MappingMatchType = String
 
 @JsonCodec case class MappingMurmur3HashProperty(
 	`type`: "murmur3""
@@ -3775,7 +3775,7 @@ type MappingMatchType = "simple"" | "regex""
 	scaling_factor: double, 
 	`type`: MappingNumberType
 ) extends MappingDocValuesPropertyBase
-type MappingNumberType = "float"" | "half_float"" | "scaled_float"" | "double"" | "integer"" | "long"" | "short"" | "byte"" | "unsigned_long""
+type MappingNumberType = String
 
 @JsonCodec case class MappingObjectProperty(
 	enabled: Boolean, 
@@ -3829,7 +3829,7 @@ type MappingRangeProperty = MappingLongRangeProperty | MappingIpRangeProperty | 
 	script: Script, 
 	`type`: MappingRuntimeFieldType
 )
-type MappingRuntimeFieldType = "boolean"" | "date"" | "double"" | "geo_point"" | "ip"" | "keyword"" | "long""
+type MappingRuntimeFieldType = String
 type MappingRuntimeFields = Record[Field, MappingRuntimeField]
 
 @JsonCodec case class MappingSearchAsYouTypeProperty(
@@ -3843,7 +3843,7 @@ type MappingRuntimeFields = Record[Field, MappingRuntimeField]
 	term_vector: MappingTermVectorOption, 
 	`type`: "search_as_you_type""
 ) extends MappingCorePropertyBase
-type MappingShapeOrientation = "right"" | "counterclockwise"" | "ccw"" | "left"" | "clockwise"" | "cw""
+type MappingShapeOrientation = String
 
 @JsonCodec case class MappingShapeProperty(
 	coerce: Boolean, 
@@ -3871,7 +3871,7 @@ type MappingShapeOrientation = "right"" | "counterclockwise"" | "ccw"" | "left""
 	`type`: String, 
 	precision: integer
 )
-type MappingTermVectorOption = "no"" | "yes"" | "with_offsets"" | "with_positions"" | "with_positions_offsets"" | "with_positions_offsets_payloads""
+type MappingTermVectorOption = String
 
 @JsonCodec case class MappingTextIndexPrefixes(
 	max_chars: integer, 
@@ -3949,7 +3949,7 @@ type MappingTermVectorOption = "no"" | "yes"" | "with_offsets"" | "with_position
 	top_left: QueryDslGeoLocation, 
 	wkt: String
 )
-type QueryDslChildScoreMode = "none"" | "avg"" | "sum"" | "max"" | "min""
+type QueryDslChildScoreMode = String
 
 @JsonCodec case class QueryDslCombinedFieldsQuery(
 	query: String, 
@@ -4009,7 +4009,7 @@ type QueryDslDecayFunction = QueryDslDateDecayFunction | QueryDslNumericDecayFun
 	path: Field, 
 	routing: Routing
 )
-type QueryDslFieldValueFactorModifier = "none"" | "log"" | "log1p"" | "log2p"" | "ln"" | "ln1p"" | "ln2p"" | "square"" | "sqrt"" | "reciprocal""
+type QueryDslFieldValueFactorModifier = String
 
 @JsonCodec case class QueryDslFieldValueFactorScoreFunction(
 	field: Field, 
@@ -4017,7 +4017,7 @@ type QueryDslFieldValueFactorModifier = "none"" | "log"" | "log1p"" | "log2p"" |
 	missing: double, 
 	modifier: QueryDslFieldValueFactorModifier
 ) extends QueryDslScoreFunctionBase
-type QueryDslFunctionBoostMode = "multiply"" | "replace"" | "sum"" | "avg"" | "max"" | "min""
+type QueryDslFunctionBoostMode = String
 
 @JsonCodec case class QueryDslFunctionScoreContainer(
 	exp: QueryDslDecayFunction, 
@@ -4029,7 +4029,7 @@ type QueryDslFunctionBoostMode = "multiply"" | "replace"" | "sum"" | "avg"" | "m
 	filter: QueryDslQueryContainer, 
 	weight: double
 )
-type QueryDslFunctionScoreMode = "multiply"" | "sum"" | "avg"" | "first"" | "max"" | "min""
+type QueryDslFunctionScoreMode = String
 
 @JsonCodec case class QueryDslFunctionScoreQuery(
 	boost_mode: QueryDslFunctionBoostMode, 
@@ -4073,7 +4073,7 @@ type QueryDslGeoDistanceQuery = QueryDslGeoDistanceQueryKeys | @JsonCodec case c
 [[MemberIndex: TsMemberIndex(NoComments,false,Default,Dict(TsIdentSimple(property),TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(string))),IArray())),Some(TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(QueryDslGeoLocation))),IArray())))]]
 )
 
-type QueryDslGeoExecution = "memory"" | "indexed""
+type QueryDslGeoExecution = String
 type QueryDslGeoLocation = String | Seq[double] | QueryDslTwoDimensionalPoint
 
 @JsonCodec case class QueryDslGeoPolygonQuery(
@@ -4091,7 +4091,7 @@ type QueryDslGeoLocation = String | Seq[double] | QueryDslTwoDimensionalPoint
 	relation: GeoShapeRelation, 
 	shape: QueryDslGeoShape
 ) extends QueryDslQueryBase
-type QueryDslGeoValidationMethod = "coerce"" | "ignore_malformed"" | "strict""
+type QueryDslGeoValidationMethod = String
 
 @JsonCodec case class QueryDslHasChildQuery(
 	ignore_unmapped: Boolean, 
@@ -4287,7 +4287,7 @@ type QueryDslLike = String | QueryDslLikeDocument
 	use_dis_max: Boolean, 
 	zero_terms_query: QueryDslZeroTermsQuery
 ) extends QueryDslQueryBase
-type QueryDslMultiValueMode = "min"" | "max"" | "avg"" | "sum""
+type QueryDslMultiValueMode = String
 
 @JsonCodec case class QueryDslNamedQueryKeys[TQuery = None](
 	boost: float, 
@@ -4306,14 +4306,14 @@ type QueryDslNamedQuery[TQuery = None]  = QueryDslNamedQueryKeys[TQuery] | @Json
 	query: QueryDslQueryContainer, 
 	score_mode: QueryDslNestedScoreMode
 ) extends QueryDslQueryBase
-type QueryDslNestedScoreMode = "avg"" | "sum"" | "min"" | "max"" | "none""
+type QueryDslNestedScoreMode = String
 
 @JsonCodec case class QueryDslNumericDecayFunctionKeys extends QueryDslDecayFunctionBase
 type QueryDslNumericDecayFunction = QueryDslNumericDecayFunctionKeys | @JsonCodec case class Undefined(
 [[MemberIndex: TsMemberIndex(NoComments,false,Default,Dict(TsIdentSimple(property),TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(string))),IArray())),Some(TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(QueryDslDecayPlacement))),IArray(TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(double))),IArray()), TsTypeRef(NoComments,TsQIdent(IArray(TsIdentSimple(double))),IArray())))))]]
 )
 
-type QueryDslOperator = "and"" | "or"" | "AND"" | "OR""
+type QueryDslOperator = String
 
 @JsonCodec case class QueryDslParentIdQuery(
 	id: Id, 
@@ -4451,7 +4451,7 @@ type QueryDslOperator = "and"" | "or"" | "AND"" | "OR""
 	from: double | DateMath, 
 	to: double | DateMath
 ) extends QueryDslQueryBase
-type QueryDslRangeRelation = "within"" | "contains"" | "intersects""
+type QueryDslRangeRelation = String
 
 @JsonCodec sealed trait QueryDslRankFeatureFunction
 
@@ -4489,7 +4489,7 @@ type QueryDslRangeRelation = "within"" | "contains"" | "intersects""
 	relation: ShapeRelation, 
 	shape: QueryDslGeoShape
 ) extends QueryDslQueryBase
-type QueryDslSimpleQueryStringFlags = "NONE"" | "AND"" | "OR"" | "NOT"" | "PREFIX"" | "PHRASE"" | "PRECEDENCE"" | "ESCAPE"" | "WHITESPACE"" | "FUZZY"" | "NEAR"" | "SLOP"" | "ALL""
+type QueryDslSimpleQueryStringFlags = String
 
 @JsonCodec case class QueryDslSimpleQueryStringQuery(
 	analyzer: String, 
@@ -4588,7 +4588,7 @@ type QueryDslSimpleQueryStringFlags = "NONE"" | "AND"" | "OR"" | "NOT"" | "PREFI
 	minimum_should_match_script: Script, 
 	terms: Seq[String]
 ) extends QueryDslQueryBase
-type QueryDslTextQueryType = "best_fields"" | "most_fields"" | "cross_fields"" | "phrase"" | "phrase_prefix"" | "bool_prefix""
+type QueryDslTextQueryType = String
 
 @JsonCodec case class QueryDslThreeDimensionalPoint(
 	lat: double, 
@@ -4609,7 +4609,7 @@ type QueryDslTextQueryType = "best_fields"" | "most_fields"" | "cross_fields"" |
 	rewrite: MultiTermQueryRewrite, 
 	value: String
 ) extends QueryDslQueryBase
-type QueryDslZeroTermsQuery = "all"" | "none""
+type QueryDslZeroTermsQuery = String
 
 @JsonCodec case class AsyncSearchAsyncSearch[TDocument = None](
 	aggregations: Record[String, AggregationsAggregate], 
@@ -6613,7 +6613,7 @@ object CcrCreateFollowIndexRequest {
 	max_write_request_size: String, 
 	read_poll_timeout: Time
 )
-type CcrFollowInfoFollowerIndexStatus = "active"" | "paused""
+type CcrFollowInfoFollowerIndexStatus = String
 
 @JsonCodec case class CcrFollowInfoRequest(
 	index: Indices
@@ -6853,7 +6853,7 @@ object CcrResumeFollowIndexRequest {
 @JsonCodec case class ClusterClusterStateSnapshots(
 	snapshots: Seq[SnapshotStatus]
 )
-type ClusterClusterStatus = "green"" | "yellow"" | "red""
+type ClusterClusterStatus = String
 
 @JsonCodec case class ClusterComponentTemplate(
 	name: Name, 
@@ -6895,7 +6895,7 @@ type ClusterClusterStatus = "green"" | "yellow"" | "red""
 	decision: ClusterAllocationExplainAllocationExplainDecision, 
 	explanation: String
 )
-type ClusterAllocationExplainAllocationExplainDecision = "NO"" | "YES"" | "THROTTLE"" | "ALWAYS""
+type ClusterAllocationExplainAllocationExplainDecision = String
 
 @JsonCodec case class ClusterAllocationExplainAllocationStore(
 	allocation_id: String, 
@@ -6921,7 +6921,7 @@ type ClusterAllocationExplainAllocationExplainDecision = "NO"" | "YES"" | "THROT
 	transport_address: TransportAddress, 
 	weight_ranking: integer
 )
-type ClusterAllocationExplainDecision = "yes"" | "no"" | "worse_balance"" | "throttled"" | "awaiting_info"" | "allocation_delayed"" | "no_valid_shard_copy"" | "no_attempt""
+type ClusterAllocationExplainDecision = String
 
 @JsonCodec case class ClusterAllocationExplainDiskUsage(
 	path: String, 
@@ -7008,7 +7008,7 @@ object ClusterAllocationExplainRequest {
 	delayed: Boolean, 
 	allocation_status: String
 )
-type ClusterAllocationExplainUnassignedInformationReason = "INDEX_CREATED"" | "CLUSTER_RECOVERED"" | "INDEX_REOPENED"" | "DANGLING_INDEX_IMPORTED"" | "NEW_INDEX_RESTORED"" | "EXISTING_INDEX_RESTORED"" | "REPLICA_ADDED"" | "ALLOCATION_FAILED"" | "NODE_LEFT"" | "REROUTE_CANCELLED"" | "REINITIALIZED"" | "REALLOCATED_REPLICA"" | "PRIMARY_FAILED"" | "FORCED_EMPTY_PRIMARY"" | "MANUAL_ALLOCATION""
+type ClusterAllocationExplainUnassignedInformationReason = String
 
 @JsonCodec case class ClusterDeleteComponentTemplateRequest(
 	name: Name, 
@@ -7639,7 +7639,7 @@ object DanglingIndicesIndicesListRequest {
 ) extends RequestBase
 
 @JsonCodec case class EnrichDeletePolicyResponse extends AcknowledgedResponseBase
-type EnrichExecutePolicyEnrichPolicyPhase = "SCHEDULED"" | "RUNNING"" | "COMPLETE"" | "FAILED""
+type EnrichExecutePolicyEnrichPolicyPhase = String
 
 @JsonCodec case class EnrichExecutePolicyExecuteEnrichPolicyStatus(
 	phase: EnrichExecutePolicyEnrichPolicyPhase
@@ -7783,7 +7783,7 @@ object EqlSearchRequest {
 
 
 @JsonCodec case class EqlSearchResponse[TEvent = None] extends EqlEqlSearchResponseBase[TEvent]
-type EqlSearchResultPosition = "tail"" | "head""
+type EqlSearchResultPosition = String
 
 @JsonCodec case class EqlSearchSearchFieldFormatted(
 	field: Field, 
@@ -8078,14 +8078,14 @@ object IlmStopRequest {
 	routing: String, 
 	search_routing: String
 )
-type IndicesDataStreamHealthStatus = "GREEN"" | "green"" | "YELLOW"" | "yellow"" | "RED"" | "red""
+type IndicesDataStreamHealthStatus = String
 
 @JsonCodec case class IndicesFielddataFrequencyFilter(
 	max: double, 
 	min: double, 
 	min_segment_size: integer
 )
-type IndicesIndexCheckOnStartup = "false"" | "checksum"" | "true""
+type IndicesIndexCheckOnStartup = String
 
 @JsonCodec case class IndicesIndexRouting(
 	allocation: IndicesIndexRoutingAllocation, 
@@ -8111,12 +8111,12 @@ type IndicesIndexCheckOnStartup = "false"" | "checksum"" | "true""
 @JsonCodec case class IndicesIndexRoutingAllocationInitialRecovery(
 	_id: Id
 )
-type IndicesIndexRoutingAllocationOptions = "all"" | "primaries"" | "new_primaries"" | "none""
+type IndicesIndexRoutingAllocationOptions = String
 
 @JsonCodec case class IndicesIndexRoutingRebalance(
 	enable: IndicesIndexRoutingRebalanceOptions
 )
-type IndicesIndexRoutingRebalanceOptions = "all"" | "primaries"" | "replicas"" | "none""
+type IndicesIndexRoutingRebalanceOptions = String
 
 @JsonCodec case class IndicesIndexSettingBlocks(
 	read_only: Boolean, 
@@ -8241,7 +8241,7 @@ type IndicesIndexRoutingRebalanceOptions = "all"" | "primaries"" | "replicas"" |
 @JsonCodec case class IndicesNumericFielddata(
 	format: IndicesNumericFielddataFormat
 )
-type IndicesNumericFielddataFormat = "array"" | "disabled""
+type IndicesNumericFielddataFormat = String
 
 @JsonCodec case class IndicesOverlappingIndexTemplate(
 	name: Name, 
@@ -8251,7 +8251,7 @@ type IndicesNumericFielddataFormat = "array"" | "disabled""
 @JsonCodec case class IndicesStringFielddata(
 	format: IndicesStringFielddataFormat
 )
-type IndicesStringFielddataFormat = "paged_bytes"" | "disabled""
+type IndicesStringFielddataFormat = String
 
 @JsonCodec case class IndicesTemplateMapping(
 	aliases: Record[IndexName, IndicesAlias], 
@@ -8261,7 +8261,7 @@ type IndicesStringFielddataFormat = "paged_bytes"" | "disabled""
 	settings: Record[String, Any], 
 	version: VersionNumber
 )
-type IndicesAddBlockIndicesBlockOptions = "metadata"" | "read"" | "read_only"" | "write""
+type IndicesAddBlockIndicesBlockOptions = String
 
 @JsonCodec case class IndicesAddBlockIndicesBlockStatus(
 	name: IndexName, 
@@ -9184,7 +9184,7 @@ object IndicesRolloverRequest {
 	store_exception: IndicesShardStoresShardStoreException, 
 	transport_address: TransportAddress
 )
-type IndicesShardStoresShardStoreAllocation = "primary"" | "replica"" | "unused""
+type IndicesShardStoresShardStoreAllocation = String
 
 @JsonCodec case class IndicesShardStoresShardStoreException(
 	reason: String, 
@@ -9366,7 +9366,7 @@ object IndicesSplitRequest {
 	relocating_node: String, 
 	state: IndicesStatsShardRoutingState
 )
-type IndicesStatsShardRoutingState = "UNASSIGNED"" | "INITIALIZING"" | "STARTED"" | "RELOCATING""
+type IndicesStatsShardRoutingState = String
 
 @JsonCodec case class IndicesStatsShardSequenceNumber(
 	global_checkpoint: long, 
@@ -9523,7 +9523,7 @@ object IndicesValidateQueryRequest {
 	target_field: Field, 
 	`type`: IngestConvertType
 ) extends IngestProcessorBase
-type IngestConvertType = "integer"" | "long"" | "float"" | "double"" | "string"" | "boolean"" | "auto""
+type IngestConvertType = String
 
 @JsonCodec case class IngestCsvProcessor(
 	empty_value: Any, 
@@ -9553,7 +9553,7 @@ type IngestConvertType = "integer"" | "long"" | "float"" | "double"" | "string""
 	target_field: Field, 
 	timezone: String
 ) extends IngestProcessorBase
-type IngestDateRounding = "s"" | "m"" | "h"" | "d"" | "w"" | "M"" | "y""
+type IngestDateRounding = String
 
 @JsonCodec case class IngestDissectProcessor(
 	append_separator: String, 
@@ -9743,7 +9743,7 @@ type IngestDateRounding = "s"" | "m"" | "h"" | "d"" | "w"" | "M"" | "y""
 	field: Field, 
 	properties: Seq[String]
 ) extends IngestProcessorBase
-type IngestShapeType = "geo_shape"" | "shape""
+type IngestShapeType = String
 
 @JsonCodec case class IngestSortProcessor(
 	field: Field, 
@@ -9784,7 +9784,7 @@ type IngestShapeType = "geo_shape"" | "shape""
 	regex_file: String, 
 	target_field: Field
 ) extends IngestProcessorBase
-type IngestUserAgentProperty = "NAME"" | "MAJOR"" | "MINOR"" | "PATCH"" | "OS"" | "OS_NAME"" | "OS_MAJOR"" | "OS_MINOR"" | "DEVICE"" | "BUILD""
+type IngestUserAgentProperty = String
 
 @JsonCodec case class IngestDeletePipelineRequest(
 	id: Id, 
@@ -9910,8 +9910,8 @@ object IngestSimulatePipelineRequest {
 	`type`: LicenseLicenseType, 
 	uid: String
 )
-type LicenseLicenseStatus = "active"" | "valid"" | "invalid"" | "expired""
-type LicenseLicenseType = "missing"" | "trial"" | "basic"" | "standard"" | "dev"" | "silver"" | "gold"" | "platinum"" | "enterprise""
+type LicenseLicenseStatus = String
+type LicenseLicenseType = String
 
 @JsonCodec case class LicenseDeleteRequest extends RequestBase
 
@@ -10056,7 +10056,7 @@ object LogstashPipelinePutRequest {
 	message: String, 
 	url: String
 )
-type MigrationDeprecationInfoDeprecationLevel = "none"" | "info"" | "warning"" | "critical""
+type MigrationDeprecationInfoDeprecationLevel = String
 
 @JsonCodec case class MigrationDeprecationInfoRequest(
 	index: IndexName
@@ -10132,7 +10132,7 @@ type MigrationDeprecationInfoDeprecationLevel = "none"" | "info"" | "warning"" |
 	probability: double, 
 	typical: Seq[double]
 )
-type MlAppliesTo = "actual"" | "typical"" | "diff_from_typical"" | "time""
+type MlAppliesTo = String
 
 @JsonCodec case class MlBucketInfluencer(
 	bucket_span: long, 
@@ -10175,7 +10175,7 @@ type MlAppliesTo = "actual"" | "typical"" | "diff_from_typical"" | "time""
 	tokenizer: String | AnalysisTokenizer, 
 	char_filter: Seq[String | AnalysisCharFilter]
 )
-type MlCategorizationStatus = "ok"" | "warn""
+type MlCategorizationStatus = String
 
 @JsonCodec case class MlCategory(
 	category_id: ulong, 
@@ -10198,8 +10198,8 @@ type MlCategorizationStatus = "ok"" | "warn""
 	mode: MlChunkingMode, 
 	time_span: Time
 )
-type MlChunkingMode = "auto"" | "manual"" | "off""
-type MlConditionOperator = "gt"" | "gte"" | "lt"" | "lte""
+type MlChunkingMode = String
+type MlConditionOperator = String
 
 @JsonCodec case class MlCustomSettings(
 	custom_urls: Seq[XpackUsageUrlConfig], 
@@ -10260,7 +10260,7 @@ type MlConditionOperator = "gt"" | "gte"" | "lt"" | "lte""
 	ignore_unavailable: Boolean, 
 	ignore_throttled: Boolean
 )
-type MlDatafeedState = "started"" | "stopped"" | "starting"" | "stopping""
+type MlDatafeedState = String
 
 @JsonCodec case class MlDatafeedStats(
 	assignment_explanation: String, 
@@ -10519,7 +10519,7 @@ type MlDataframeAnalysisAnalyzedFields = Seq[String] | MlDataframeAnalysisAnalyz
 @JsonCodec case class MlDataframeEvaluationRegressionMetricsMsle(
 	offset: double
 )
-type MlDataframeState = "started"" | "stopped"" | "starting"" | "stopping"" | "failed""
+type MlDataframeState = String
 
 @JsonCodec case class MlDelayedDataCheckConfig(
 	check_window: Time, 
@@ -10552,7 +10552,7 @@ type MlDataframeState = "started"" | "stopped"" | "starting"" | "stopping"" | "f
 	name: Name, 
 	transport_address: TransportAddress
 )
-type MlExcludeFrequent = "all"" | "none"" | "by"" | "over""
+type MlExcludeFrequent = String
 
 @JsonCodec case class MlFilter(
 	description: String, 
@@ -10564,7 +10564,7 @@ type MlExcludeFrequent = "all"" | "none"" | "by"" | "over""
 	filter_id: Id, 
 	filter_type: MlFilterType
 )
-type MlFilterType = "include"" | "exclude""
+type MlFilterType = String
 
 @JsonCodec case class MlHyperparameter(
 	absolute_importance: double, 
@@ -10628,7 +10628,7 @@ type MlFilterType = "include"" | "exclude""
 	total: long, 
 	forecasted_jobs: integer
 )
-type MlJobState = "closing"" | "closed"" | "opened"" | "failed"" | "opening""
+type MlJobState = String
 
 @JsonCodec case class MlJobStatistics(
 	avg: double, 
@@ -10660,7 +10660,7 @@ type MlJobState = "closing"" | "closed"" | "opened"" | "failed"" | "opening""
 	maximum_bucket_processing_time_ms: double, 
 	minimum_bucket_processing_time_ms: double
 )
-type MlMemoryStatus = "ok"" | "soft_limit"" | "hard_limit""
+type MlMemoryStatus = String
 
 @JsonCodec case class MlModelPlotConfig(
 	terms: Field, 
@@ -10745,7 +10745,7 @@ type MlMemoryStatus = "ok"" | "soft_limit"" | "hard_limit""
 	enabled: Boolean, 
 	stop_on_warn: Boolean
 )
-type MlRuleAction = "skip_result"" | "skip_model_update""
+type MlRuleAction = String
 
 @JsonCodec case class MlRuleCondition(
 	applies_to: MlAppliesTo, 
@@ -12631,7 +12631,7 @@ object NodesReloadSecureSettingsRequest {
 	fields: Fields, 
 	interval: long
 )
-type RollupMetric = "min"" | "max"" | "sum"" | "avg"" | "value_count""
+type RollupMetric = String
 
 @JsonCodec case class RollupTermsGrouping(
 	fields: Fields
@@ -12715,7 +12715,7 @@ object RollupCreateRollupJobRequest {
 	time_zone: String, 
 	calendar_interval: Time
 )
-type RollupGetRollupJobIndexingJobState = "started"" | "indexing"" | "stopping"" | "stopped"" | "aborting""
+type RollupGetRollupJobIndexingJobState = String
 
 @JsonCodec case class RollupGetRollupJobRequest(
 	id: Id
@@ -13238,7 +13238,7 @@ type SecurityGetRoleRoleTemplate = SecurityGetRoleInlineRoleTemplate | SecurityG
 @JsonCodec case class SecurityGetRoleStoredRoleTemplateId(
 	id: String
 )
-type SecurityGetRoleTemplateFormat = "string"" | "json""
+type SecurityGetRoleTemplateFormat = String
 
 @JsonCodec case class SecurityGetRoleTransientMetadata(
 	enabled: Boolean
@@ -13283,7 +13283,7 @@ type SecurityGetRoleTemplateFormat = "string"" | "json""
 	tokens: Record[String, EmptyObject], 
 	file_tokens: Record[String, EmptyObject]
 )
-type SecurityGetTokenAccessTokenGrantType = "password"" | "client_credentials"" | "_kerberos"" | "refresh_token""
+type SecurityGetTokenAccessTokenGrantType = String
 
 @JsonCodec case class SecurityGetTokenAuthenticatedUser(
 	authentication_realm: SecurityGetTokenUserRealm, 
@@ -13352,7 +13352,7 @@ object SecurityGetTokenRequest {
 	expiration: Time, 
 	role_descriptors: Seq[Record[String, Any]]
 )
-type SecurityGrantApiKeyApiKeyGrantType = "access_token"" | "password""
+type SecurityGrantApiKeyApiKeyGrantType = String
 
 @JsonCodec case class SecurityGrantApiKeyRequest(
 	body: Body
@@ -13757,7 +13757,7 @@ object SlmPutLifecycleRequest {
 	started: long, 
 	total: long
 )
-type SnapshotShardsStatsStage = "DONE"" | "FAILURE"" | "FINALIZE"" | "INIT"" | "STARTED""
+type SnapshotShardsStatsStage = String
 
 @JsonCodec case class SnapshotShardsStatsSummary(
 	incremental: SnapshotShardsStatsSummaryItem, 
@@ -14441,7 +14441,7 @@ object TransformPreviewTransformRequest {
 	state: WatcherAcknowledgementOptions, 
 	timestamp: DateString
 )
-type WatcherAcknowledgementOptions = "awaits_successful_execution"" | "ackable"" | "acked""
+type WatcherAcknowledgementOptions = String
 
 @JsonCodec case class WatcherAction(
 	action_type: WatcherActionType, 
@@ -14455,7 +14455,7 @@ type WatcherAcknowledgementOptions = "awaits_successful_execution"" | "ackable""
 	index: WatcherIndex, 
 	logging: WatcherLogging
 )
-type WatcherActionExecutionMode = "simulate"" | "force_simulate"" | "execute"" | "force_execute"" | "skip""
+type WatcherActionExecutionMode = String
 
 @JsonCodec case class WatcherActionStatus(
 	ack: WatcherAcknowledgeState, 
@@ -14463,8 +14463,8 @@ type WatcherActionExecutionMode = "simulate"" | "force_simulate"" | "execute"" |
 	last_successful_execution: WatcherExecutionState, 
 	last_throttle: WatcherThrottleState
 )
-type WatcherActionStatusOptions = "success"" | "failure"" | "simulated"" | "throttled""
-type WatcherActionType = "email"" | "webhook"" | "index"" | "logging"" | "slack"" | "pagerduty""
+type WatcherActionStatusOptions = String
+type WatcherActionType = String
 type WatcherActions = Record[IndexName, WatcherActionStatus]
 
 @JsonCodec case class WatcherActivationState(
@@ -14515,22 +14515,22 @@ type WatcherActions = Record[IndexName, WatcherActionStatus]
 	never: WatcherNeverCondition, 
 	script: WatcherScriptCondition
 )
-type WatcherConditionType = "always"" | "never"" | "script"" | "compare"" | "array_compare""
-type WatcherConnectionScheme = "http"" | "https""
+type WatcherConditionType = String
+type WatcherConnectionScheme = String
 
 @JsonCodec case class WatcherCronExpression extends WatcherScheduleBase
 
 @JsonCodec case class WatcherDailySchedule(
 	at: Seq[String] | WatcherTimeOfDay
 )
-type WatcherDay = "sunday"" | "monday"" | "tuesday"" | "wednesday"" | "thursday"" | "friday"" | "saturday""
+type WatcherDay = String
 
 @JsonCodec case class WatcherEmailResult(
 	account: String, 
 	message: WatcherEmailResult, 
 	reason: String
 )
-type WatcherExecutionPhase = "awaits_execution"" | "started"" | "input"" | "condition"" | "actions"" | "watch_transform"" | "aborted"" | "finished""
+type WatcherExecutionPhase = String
 
 @JsonCodec case class WatcherExecutionResult(
 	actions: Seq[WatcherExecutionResultAction], 
@@ -14569,7 +14569,7 @@ type WatcherExecutionPhase = "awaits_execution"" | "started"" | "input"" | "cond
 	successful: Boolean, 
 	timestamp: DateString
 )
-type WatcherExecutionStatus = "awaits_execution"" | "checking"" | "execution_not_needed"" | "throttled"" | "executed"" | "failed"" | "deleted_while_queued"" | "not_executed_already_queued""
+type WatcherExecutionStatus = String
 
 @JsonCodec case class WatcherExecutionThreadPool(
 	max_size: long, 
@@ -14595,7 +14595,7 @@ type WatcherExecutionStatus = "awaits_execution"" | "checking"" | "execution_not
 	password: Password, 
 	username: Username
 )
-type WatcherHttpInputMethod = "head"" | "get"" | "post"" | "put"" | "delete""
+type WatcherHttpInputMethod = String
 
 @JsonCodec case class WatcherHttpInputProxy(
 	host: Host, 
@@ -14657,7 +14657,7 @@ type WatcherHttpInputMethod = "head"" | "get"" | "post"" | "put"" | "delete""
 	search: WatcherSearchInput, 
 	simple: Record[String, Any]
 )
-type WatcherInputType = "http"" | "search"" | "simple""
+type WatcherInputType = String
 
 @JsonCodec case class WatcherLogging(
 	level: String, 
@@ -14667,7 +14667,7 @@ type WatcherInputType = "http"" | "search"" | "simple""
 @JsonCodec case class WatcherLoggingResult(
 	logged_text: String
 )
-type WatcherMonth = "january"" | "february"" | "march"" | "april"" | "may"" | "june"" | "july"" | "august"" | "september"" | "october"" | "november"" | "december""
+type WatcherMonth = String
 
 @JsonCodec sealed trait WatcherNeverCondition
 
@@ -14683,7 +14683,7 @@ type WatcherMonth = "january"" | "february"" | "march"" | "april"" | "may"" | "j
 	src: String, 
 	`type`: WatcherPagerDutyContextType
 )
-type WatcherPagerDutyContextType = "link"" | "image""
+type WatcherPagerDutyContextType = String
 
 @JsonCodec case class WatcherPagerDutyEvent(
 	account: String, 
@@ -14695,13 +14695,13 @@ type WatcherPagerDutyContextType = "link"" | "image""
 	event_type: WatcherPagerDutyEventType, 
 	incident_key: String
 )
-type WatcherPagerDutyEventType = "trigger"" | "resolve"" | "acknowledge""
+type WatcherPagerDutyEventType = String
 
 @JsonCodec case class WatcherPagerDutyResult(
 	sent_event: WatcherPagerDutyActionEventResult
 )
-type WatcherQuantifier = "some"" | "all""
-type WatcherResponseContentType = "json"" | "yaml"" | "text""
+type WatcherQuantifier = String
+type WatcherResponseContentType = String
 
 @JsonCodec sealed trait WatcherScheduleBase
 
@@ -15020,7 +15020,7 @@ object WatcherQueryWatchesRequest {
 	watch_id: Id, 
 	watch_record_id: Id
 ) extends WatcherStatsWatchRecordQueuedStats
-type WatcherStatsWatcherMetric = "_all"" | "queued_watches"" | "current_watches"" | "pending_watches""
+type WatcherStatsWatcherMetric = String
 
 @JsonCodec case class WatcherStatsWatcherNodeStats(
 	current_watches: Seq[WatcherStatsWatchRecordStats], 
@@ -15030,7 +15030,7 @@ type WatcherStatsWatcherMetric = "_all"" | "queued_watches"" | "current_watches"
 	watcher_state: WatcherStatsWatcherState, 
 	node_id: Id
 )
-type WatcherStatsWatcherState = "stopped"" | "starting"" | "started"" | "stopping""
+type WatcherStatsWatcherState = String
 
 @JsonCodec case class WatcherStopRequest extends RequestBase
 

@@ -520,9 +520,28 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
       print("] ")
     }
 
-    // print alias
+    // print alias workaround
+    // TODO fix?
     print(s" = ")
-    printType(x.alias)
+    //printType(x.alias)
+    x.alias match {
+      case TsTypeLiteral(literal) =>
+        //print(literal.literal.replace("\"", ""))
+        print("String")
+      case TsTypeUnion(types) =>
+        if (types.count(t => t.isInstanceOf[TsTypeLiteral])> 0) {
+          val ts = types.filter(t => !t.isInstanceOf[TsTypeLiteral])
+          print("String")
+          if (ts.nonEmpty) {
+            types.foreach(t => {
+              print(" | ")
+              printType(t)
+            })
+          }
+        }
+        else printType(x.alias)
+      case _ => printType(x.alias)
+    }
     printLn
   }
 
