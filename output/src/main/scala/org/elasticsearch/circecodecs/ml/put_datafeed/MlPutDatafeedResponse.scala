@@ -21,15 +21,15 @@ package org.elasticsearch.circecodecs.ml.put_datafeed
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Datafeed.{ ChunkingConfig, DatafeedIndicesOptions, DelayedDataCheckConfig }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.aggregations.AggregationContainer.{ AggregationContainer }
-import org.elasticsearch.circecodecs._types.common.{ Id, Indices }
-import org.elasticsearch.circecodecs._types.mapping.RuntimeFields.{ RuntimeFields }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
-import org.elasticsearch.circecodecs._types.Scripting.{ ScriptField }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.ml.types.Datafeed.{ ChunkingConfig, DatafeedIndicesOptions, DelayedDataCheckConfig }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.aggregations.AggregationContainer.{ AggregationContainer }
+import org.elasticsearch.circecodecs.types.common.{ Id, Indices }
+import org.elasticsearch.circecodecs.types.mapping.RuntimeFields.{ RuntimeFields }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.types.Scripting.{ ScriptField }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Response(
 	body: Body
@@ -53,4 +53,3 @@ object Response {
 		scroll_size: integer
 	)
 }
-

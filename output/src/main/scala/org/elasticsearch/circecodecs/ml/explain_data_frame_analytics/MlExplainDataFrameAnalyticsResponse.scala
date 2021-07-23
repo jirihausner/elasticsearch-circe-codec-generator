@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ml.explain_data_frame_analytics
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.DataframeAnalytics.{ DataframeAnalyticsFieldSelection, DataframeAnalyticsMemoryEstimation }
+import org.elasticsearch.circecodecs.ml.types.DataframeAnalytics.{ DataframeAnalyticsFieldSelection, DataframeAnalyticsMemoryEstimation }
 
 @JsonCodec case class Response(
 	body: Body
@@ -33,4 +33,3 @@ object Response {
 		memory_estimation: DataframeAnalyticsMemoryEstimation
 	)
 }
-

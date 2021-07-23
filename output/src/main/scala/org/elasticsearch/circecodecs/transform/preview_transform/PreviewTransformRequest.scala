@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.transform.preview_transform
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._global.reindex.types.{ Destination, Source }
-import org.elasticsearch.circecodecs._transform._types.Transform.{ Latest, Pivot, RetentionPolicyContainer, Settings, SyncContainer }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.global.reindex.types.{ Destination, Source }
+import org.elasticsearch.circecodecs.transform.types.Transform.{ Latest, Pivot, RetentionPolicyContainer, Settings, SyncContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	body: Body
@@ -43,4 +43,3 @@ object Request {
 		latest: Latest
 	)
 }
-

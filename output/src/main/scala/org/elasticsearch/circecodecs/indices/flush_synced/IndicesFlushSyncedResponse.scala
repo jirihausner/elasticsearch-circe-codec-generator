@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.indices.flush_synced
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		_shards: ShardStatistics
 	)
 }
-

@@ -20,8 +20,8 @@ package org.elasticsearch.circecodecs.transform.put_transform
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._transform.preview_transform.PreviewTransformRequest.{ Request as PreviewTransformRequest }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.transform.preview_transform.PreviewTransformRequest.{ Request as PreviewTransformRequest }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -36,4 +36,3 @@ object Request {
 		defer_validation: Boolean
 	)
 }
-

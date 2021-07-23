@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.slm.get_status
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Lifecycle.{ LifecycleOperationMode }
+import org.elasticsearch.circecodecs.types.Lifecycle.{ LifecycleOperationMode }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		operation_mode: LifecycleOperationMode
 	)
 }
-

@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.ml.get_anomaly_records
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Page.{ Page }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Field, Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ double, integer }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.ml.types.Page.{ Page }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Field, Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ double, integer }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -54,4 +54,3 @@ object Request {
 		end: DateString
 	)
 }
-

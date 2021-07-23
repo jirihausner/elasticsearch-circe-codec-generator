@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.indices.get_data_stream
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.DataStreamStatus.{ DataStreamHealthStatus }
-import org.elasticsearch.circecodecs._types.common.{ DataStreamName, Field, IndexName, Metadata, Name, Uuid }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.indices.types.DataStreamStatus.{ DataStreamHealthStatus }
+import org.elasticsearch.circecodecs.types.common.{ DataStreamName, Field, IndexName, Metadata, Name, Uuid }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,7 +34,6 @@ object Response {
 		data_streams: Seq[IndicesGetDataStreamItem]
 	)
 }
-
 
 @JsonCodec case class IndicesGetDataStreamItem(
 	name: DataStreamName, 

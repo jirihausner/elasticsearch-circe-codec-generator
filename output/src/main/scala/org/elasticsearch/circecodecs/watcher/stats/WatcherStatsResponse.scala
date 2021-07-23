@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.watcher.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Node.{ NodeStatistics }
-import org.elasticsearch.circecodecs._types.common.{ Name }
+import org.elasticsearch.circecodecs.types.Node.{ NodeStatistics }
+import org.elasticsearch.circecodecs.types.common.{ Name }
 import org.elasticsearch.circecodecs.watcher.stats.{ WatcherNodeStats }
 
 @JsonCodec case class Response(
@@ -37,4 +37,3 @@ object Response {
 		stats: Seq[WatcherNodeStats]
 	)
 }
-

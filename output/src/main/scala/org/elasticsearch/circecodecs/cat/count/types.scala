@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.count
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Time.{ DateString, EpochMillis }
+import org.elasticsearch.circecodecs.types.Time.{ DateString, EpochMillis }
 
 @JsonCodec case class CountRecord(
 	epoch: EpochMillis, 

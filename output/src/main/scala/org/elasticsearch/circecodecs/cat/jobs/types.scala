@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.cat.jobs
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Job.{ JobState }
-import org.elasticsearch.circecodecs._ml._types.Model.{ CategorizationStatus, MemoryStatus }
-import org.elasticsearch.circecodecs._types.common.{ ByteSize, Id, NodeId }
+import org.elasticsearch.circecodecs.ml.types.Job.{ JobState }
+import org.elasticsearch.circecodecs.ml.types.Model.{ CategorizationStatus, MemoryStatus }
+import org.elasticsearch.circecodecs.types.common.{ ByteSize, Id, NodeId }
 
 @JsonCodec case class JobsRecord(
 	id: Id, 

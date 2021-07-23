@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.rollup.delete_rollup_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, TaskId }
+import org.elasticsearch.circecodecs.types.common.{ Id, TaskId }
 
 @JsonCodec case class TaskFailure(
 	task_id: TaskId, 

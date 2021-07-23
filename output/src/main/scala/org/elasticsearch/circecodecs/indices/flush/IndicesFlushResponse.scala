@@ -21,6 +21,6 @@ package org.elasticsearch.circecodecs.indices.flush
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ ShardsOperationResponseBase }
+import org.elasticsearch.circecodecs.types.Base.{ ShardsOperationResponseBase }
 
 @JsonCodec case class Response extends ShardsOperationResponseBase

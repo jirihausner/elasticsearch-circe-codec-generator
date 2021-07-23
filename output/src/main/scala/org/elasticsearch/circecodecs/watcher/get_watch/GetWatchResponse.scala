@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.watcher.get_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._watcher._types.Watch.{ Watch, WatchStatus }
-import org.elasticsearch.circecodecs._types.common.{ Id, SequenceNumber, VersionNumber }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.watcher.types.Watch.{ Watch, WatchStatus }
+import org.elasticsearch.circecodecs.types.common.{ Id, SequenceNumber, VersionNumber }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Response(
 	body: Body
@@ -40,4 +40,3 @@ object Response {
 		_version: VersionNumber
 	)
 }
-

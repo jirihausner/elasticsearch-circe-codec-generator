@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.create_api_key
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.ApplicationPrivileges.{ ApplicationPrivileges }
-import org.elasticsearch.circecodecs._types.common.{ Indices }
+import org.elasticsearch.circecodecs.security.types.ApplicationPrivileges.{ ApplicationPrivileges }
+import org.elasticsearch.circecodecs.types.common.{ Indices }
 
 @JsonCodec case class RoleDescriptor(
 	cluster: Seq[String], 

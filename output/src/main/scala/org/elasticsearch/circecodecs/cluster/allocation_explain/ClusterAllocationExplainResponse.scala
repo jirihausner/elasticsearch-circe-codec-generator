@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.cluster.allocation_explain
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
 import org.elasticsearch.circecodecs.cluster.allocation_explain.{ Decision, AllocationDecision, ClusterInfo, CurrentNode, NodeAllocationExplanation, UnassignedInformation }
 
 @JsonCodec case class Response(
@@ -57,4 +57,3 @@ object Response {
 		unassigned_info: UnassignedInformation
 	)
 }
-

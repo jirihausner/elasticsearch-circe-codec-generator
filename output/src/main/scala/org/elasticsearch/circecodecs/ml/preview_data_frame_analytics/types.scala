@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ml.preview_data_frame_analytics
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.DataframeAnalytics.{ DataframeAnalysisAnalyzedFields, DataframeAnalysisContainer, DataframeAnalyticsSource }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.ml.types.DataframeAnalytics.{ DataframeAnalysisAnalyzedFields, DataframeAnalysisContainer, DataframeAnalyticsSource }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class DataframePreviewConfig(
 	source: DataframeAnalyticsSource, 

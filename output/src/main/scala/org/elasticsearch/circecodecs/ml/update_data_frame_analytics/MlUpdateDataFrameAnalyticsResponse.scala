@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ml.update_data_frame_analytics
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.DataframeAnalytics.{ DataframeAnalysisAnalyzedFields, DataframeAnalysisContainer, DataframeAnalyticsDestination, DataframeAnalyticsSource }
-import org.elasticsearch.circecodecs._types.common.{ Id, VersionString }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.ml.types.DataframeAnalytics.{ DataframeAnalysisAnalyzedFields, DataframeAnalysisContainer, DataframeAnalyticsDestination, DataframeAnalyticsSource }
+import org.elasticsearch.circecodecs.types.common.{ Id, VersionString }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -44,4 +44,3 @@ object Response {
 		analyzed_fields: DataframeAnalysisAnalyzedFields
 	)
 }
-

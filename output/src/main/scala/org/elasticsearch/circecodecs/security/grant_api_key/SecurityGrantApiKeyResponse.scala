@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.grant_api_key
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, Name }
-import org.elasticsearch.circecodecs._types.Time.{ EpochMillis }
+import org.elasticsearch.circecodecs.types.common.{ Id, Name }
+import org.elasticsearch.circecodecs.types.Time.{ EpochMillis }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,4 +36,3 @@ object Response {
 		expiration: EpochMillis
 	)
 }
-

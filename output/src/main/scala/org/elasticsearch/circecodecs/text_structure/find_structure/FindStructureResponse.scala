@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.text_structure.find_structure
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ingest._types.Pipeline.{ PipelineConfig }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Field }
-import org.elasticsearch.circecodecs._types.mapping.TypeMapping.{ TypeMapping }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.ingest.types.Pipeline.{ PipelineConfig }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Field }
+import org.elasticsearch.circecodecs.types.mapping.TypeMapping.{ TypeMapping }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 import org.elasticsearch.circecodecs.text_structure.find_structure.{ FieldStat }
 
 @JsonCodec case class Response(
@@ -58,4 +58,3 @@ object Response {
 		ingest_pipeline: PipelineConfig
 	)
 }
-

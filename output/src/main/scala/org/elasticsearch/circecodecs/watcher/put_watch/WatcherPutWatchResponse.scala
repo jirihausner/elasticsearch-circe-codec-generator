@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.watcher.put_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, SequenceNumber, VersionNumber }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.common.{ Id, SequenceNumber, VersionNumber }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -37,4 +37,3 @@ object Response {
 		_version: VersionNumber
 	)
 }
-

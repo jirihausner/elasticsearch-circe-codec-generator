@@ -21,12 +21,12 @@ package org.elasticsearch.circecodecs.indices.get_index_template
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.Alias.{ Alias }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.common.{ IndexName, Metadata, Name, VersionNumber }
-import org.elasticsearch.circecodecs._types.mapping.TypeMapping.{ TypeMapping }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.indices.types.Alias.{ Alias }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.common.{ IndexName, Metadata, Name, VersionNumber }
+import org.elasticsearch.circecodecs.types.mapping.TypeMapping.{ TypeMapping }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -37,7 +37,6 @@ object Response {
 		index_templates: Seq[IndexTemplateItem]
 	)
 }
-
 
 @JsonCodec case class IndexTemplateItem(
 	name: Name, 

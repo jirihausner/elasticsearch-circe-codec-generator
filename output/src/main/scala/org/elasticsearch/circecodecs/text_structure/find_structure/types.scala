@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.text_structure.find_structure
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
 
 @JsonCodec case class FieldStat(
 	count: integer, 

@@ -21,12 +21,12 @@ package org.elasticsearch.circecodecs.xpack.usage
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ilm._types.Phase.{ Phases }
-import org.elasticsearch.circecodecs._slm._types.SnapshotLifecycle.{ Statistics }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ ByteSize, EmptyObject, Field, Name }
-import org.elasticsearch.circecodecs._ml._types.Job.{ Job, JobStatistics }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long, uint, ulong }
+import org.elasticsearch.circecodecs.ilm.types.Phase.{ Phases }
+import org.elasticsearch.circecodecs.slm.types.SnapshotLifecycle.{ Statistics }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ ByteSize, EmptyObject, Field, Name }
+import org.elasticsearch.circecodecs.ml.types.Job.{ Job, JobStatistics }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long, uint, ulong }
 
 @JsonCodec case class Base(
 	available: Boolean, 

@@ -21,6 +21,6 @@ package org.elasticsearch.circecodecs.eql.search
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._eql._types.EqlSearchResponseBase.{ EqlSearchResponseBase }
+import org.elasticsearch.circecodecs.eql.types.EqlSearchResponseBase.{ EqlSearchResponseBase }
 
 @JsonCodec case class Response[TEvent] extends EqlSearchResponseBase[TEvent]

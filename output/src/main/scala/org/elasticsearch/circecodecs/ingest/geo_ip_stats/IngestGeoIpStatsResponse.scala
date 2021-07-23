@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ingest.geo_ip_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 import org.elasticsearch.circecodecs.ingest.geo_ip_stats.{ GeoIpDownloadStatistics, GeoIpNodeDatabases }
 
 @JsonCodec case class Response(
@@ -35,4 +35,3 @@ object Response {
 		nodes: Dictionary[Id, GeoIpNodeDatabases]
 	)
 }
-

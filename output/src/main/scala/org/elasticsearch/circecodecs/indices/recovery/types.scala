@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.indices.recovery
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ ByteSize, Id, IndexName, Name, Type, Uuid, VersionString }
-import org.elasticsearch.circecodecs._types.Networking.{ Host, TransportAddress, Ip }
-import org.elasticsearch.circecodecs._types.Numeric.{ long, Percentage }
-import org.elasticsearch.circecodecs._types.Time.{ Time, EpochMillis, DateString }
+import org.elasticsearch.circecodecs.types.common.{ ByteSize, Id, IndexName, Name, Type, Uuid, VersionString }
+import org.elasticsearch.circecodecs.types.Networking.{ Host, TransportAddress, Ip }
+import org.elasticsearch.circecodecs.types.Numeric.{ long, Percentage }
+import org.elasticsearch.circecodecs.types.Time.{ Time, EpochMillis, DateString }
 
 @JsonCodec case class RecoveryBytes(
 	percent: Percentage, 

@@ -33,4 +33,3 @@ object Response {
 		tokens: Seq[AnalyzeToken]
 	)
 }
-

@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.snapshot.get_repository
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._snapshot._types.SnapshotRepository.{ Repository }
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.snapshot.types.SnapshotRepository.{ Repository }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, Repository]

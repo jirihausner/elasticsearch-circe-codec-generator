@@ -21,22 +21,22 @@ package org.elasticsearch.circecodecs.async_search.submit
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._global.search._types.FieldCollapse.{ FieldCollapse }
-import org.elasticsearch.circecodecs._global.search._types.highlighting.{ Highlight }
-import org.elasticsearch.circecodecs._global.search._types.PointInTimeReference.{ PointInTimeReference }
-import org.elasticsearch.circecodecs._global.search._types.rescoring.{ Rescore }
-import org.elasticsearch.circecodecs._global.search._types.sort.{ Sort }
-import org.elasticsearch.circecodecs._global.search._types.SourceFilter.{ SourceFilter }
-import org.elasticsearch.circecodecs._global.search._types.suggester.{ SuggestContainer }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.aggregations.AggregationContainer.{ AggregationContainer }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ DefaultOperator, ExpandWildcards, Field, Fields, IndexName, Indices, Routing, SearchType, SuggestMode }
-import org.elasticsearch.circecodecs._types.Numeric.{ double, integer, long }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
-import org.elasticsearch.circecodecs._types.Scripting.{ ScriptField }
-import org.elasticsearch.circecodecs._types.Time.{ DateField, Time }
+import org.elasticsearch.circecodecs.global.search.types.FieldCollapse.{ FieldCollapse }
+import org.elasticsearch.circecodecs.global.search.types.highlighting.{ Highlight }
+import org.elasticsearch.circecodecs.global.search.types.PointInTimeReference.{ PointInTimeReference }
+import org.elasticsearch.circecodecs.global.search.types.rescoring.{ Rescore }
+import org.elasticsearch.circecodecs.global.search.types.sort.{ Sort }
+import org.elasticsearch.circecodecs.global.search.types.SourceFilter.{ SourceFilter }
+import org.elasticsearch.circecodecs.global.search.types.suggester.{ SuggestContainer }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.aggregations.AggregationContainer.{ AggregationContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ DefaultOperator, ExpandWildcards, Field, Fields, IndexName, Indices, Routing, SearchType, SuggestMode }
+import org.elasticsearch.circecodecs.types.Numeric.{ double, integer, long }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.types.Scripting.{ ScriptField }
+import org.elasticsearch.circecodecs.types.Time.{ DateField, Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -110,4 +110,3 @@ object Request {
 		fields: Seq[Field | DateField]
 	)
 }
-

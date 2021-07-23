@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.security.put_role
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.CreatedStatus.{ CreatedStatus }
+import org.elasticsearch.circecodecs.security.types.CreatedStatus.{ CreatedStatus }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		role: CreatedStatus
 	)
 }
-

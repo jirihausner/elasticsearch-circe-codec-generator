@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.indices.validate_query
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ DefaultOperator, ExpandWildcards, Indices, Types }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ DefaultOperator, ExpandWildcards, Indices, Types }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -55,4 +55,3 @@ object Request {
 		query: QueryContainer
 	)
 }
-

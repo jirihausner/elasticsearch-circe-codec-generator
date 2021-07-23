@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.watcher.execute_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._watcher._types.Conditions.{ ConditionContainer }
-import org.elasticsearch.circecodecs._watcher._types.Execution.{ ExecutionResult, ExecutionStatus }
-import org.elasticsearch.circecodecs._watcher._types.Input.{ InputContainer }
-import org.elasticsearch.circecodecs._watcher._types.Trigger.{ TriggerEventResult }
-import org.elasticsearch.circecodecs._types.common.{ Id, Metadata, Username }
+import org.elasticsearch.circecodecs.watcher.types.Conditions.{ ConditionContainer }
+import org.elasticsearch.circecodecs.watcher.types.Execution.{ ExecutionResult, ExecutionStatus }
+import org.elasticsearch.circecodecs.watcher.types.Input.{ InputContainer }
+import org.elasticsearch.circecodecs.watcher.types.Trigger.{ TriggerEventResult }
+import org.elasticsearch.circecodecs.types.common.{ Id, Metadata, Username }
 
 @JsonCodec case class WatchRecord(
 	condition: ConditionContainer, 

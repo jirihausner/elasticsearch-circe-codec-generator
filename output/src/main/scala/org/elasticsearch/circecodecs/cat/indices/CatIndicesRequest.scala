@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.cat.indices
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._cat._types.CatBase.{ CatRequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Bytes, ExpandWildcards, Health, Indices }
+import org.elasticsearch.circecodecs.cat.types.CatBase.{ CatRequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Bytes, ExpandWildcards, Health, Indices }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -44,4 +44,3 @@ object Request {
 	@JsonCodec case class Body(
 	)
 }
-

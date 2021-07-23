@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ml.start_datafeed
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ NodeIds }
+import org.elasticsearch.circecodecs.types.common.{ NodeIds }
 
 @JsonCodec case class Response(
 	body: Body
@@ -33,4 +33,3 @@ object Response {
 		started: Boolean
 	)
 }
-

@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.rollup.rollup
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -41,4 +41,3 @@ object Request {
 		stub: integer
 	)
 }
-

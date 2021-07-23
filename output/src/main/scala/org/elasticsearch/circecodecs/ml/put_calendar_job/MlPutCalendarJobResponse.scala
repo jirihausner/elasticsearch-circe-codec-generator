@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ml.put_calendar_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, Ids }
+import org.elasticsearch.circecodecs.types.common.{ Id, Ids }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		job_ids: Ids
 	)
 }
-

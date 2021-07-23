@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.security.get_service_accounts
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
 import org.elasticsearch.circecodecs.security.get_service_accounts.{ RoleDescriptorWrapper }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, RoleDescriptorWrapper]

@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.indices.rollover
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
 
 @JsonCodec case class Response(
 	body: Body
@@ -38,4 +38,3 @@ object Response {
 		shards_acknowledged: Boolean
 	)
 }
-

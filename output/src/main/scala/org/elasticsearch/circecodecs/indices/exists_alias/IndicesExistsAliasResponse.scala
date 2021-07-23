@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.indices.exists_alias
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.VoidValue.{ Void }
+import org.elasticsearch.circecodecs.spec_utils.VoidValue.{ Void }
 
 @JsonCodec case class Response(
 	body: Void

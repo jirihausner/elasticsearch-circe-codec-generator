@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.ml.get_overall_buckets
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ double, integer }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ double, integer }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -49,4 +49,3 @@ object Request {
 		allow_no_jobs: Boolean
 	)
 }
-

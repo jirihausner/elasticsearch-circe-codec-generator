@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.rollup.create_rollup_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._rollup._types.Groupings.{ Groupings }
-import org.elasticsearch.circecodecs._rollup._types.Metric.{ FieldMetric }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id, IndexName }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.rollup.types.Groupings.{ Groupings }
+import org.elasticsearch.circecodecs.rollup.types.Metric.{ FieldMetric }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id, IndexName }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -45,4 +45,3 @@ object Request {
 		rollup_index: IndexName
 	)
 }
-

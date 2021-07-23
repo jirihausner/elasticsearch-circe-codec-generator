@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.snapshot.status
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._snapshot._types.SnapshotStatus.{ Status }
+import org.elasticsearch.circecodecs.snapshot.types.SnapshotStatus.{ Status }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		snapshots: Seq[Status]
 	)
 }
-

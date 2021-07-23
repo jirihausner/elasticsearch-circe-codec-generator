@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.sql.translate
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._global.search._types.sort.{ Sort }
-import org.elasticsearch.circecodecs._global.search._types.SourceFilter.{ SourceFilter }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Field, Fields }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.global.search.types.sort.{ Sort }
+import org.elasticsearch.circecodecs.global.search.types.SourceFilter.{ SourceFilter }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Field, Fields }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -39,4 +39,3 @@ object Response {
 		sort: Sort
 	)
 }
-

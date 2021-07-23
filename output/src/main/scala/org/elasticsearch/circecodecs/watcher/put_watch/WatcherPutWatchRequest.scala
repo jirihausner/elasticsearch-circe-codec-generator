@@ -21,15 +21,15 @@ package org.elasticsearch.circecodecs.watcher.put_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._watcher._types.Action.{ Action }
-import org.elasticsearch.circecodecs._watcher._types.Conditions.{ ConditionContainer }
-import org.elasticsearch.circecodecs._watcher._types.Input.{ InputContainer }
-import org.elasticsearch.circecodecs._watcher._types.Trigger.{ TriggerContainer }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id, Metadata, VersionNumber }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Transform.{ TransformContainer }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.watcher.types.Action.{ Action }
+import org.elasticsearch.circecodecs.watcher.types.Conditions.{ ConditionContainer }
+import org.elasticsearch.circecodecs.watcher.types.Input.{ InputContainer }
+import org.elasticsearch.circecodecs.watcher.types.Trigger.{ TriggerContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id, Metadata, VersionNumber }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Transform.{ TransformContainer }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -57,4 +57,3 @@ object Request {
 		trigger: TriggerContainer
 	)
 }
-

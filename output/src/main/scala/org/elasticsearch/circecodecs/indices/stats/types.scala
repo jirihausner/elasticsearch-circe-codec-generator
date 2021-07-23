@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.indices.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Uuid, Id, SequenceNumber, VersionNumber }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
-import org.elasticsearch.circecodecs._types.Stats.{ BulkStats, CompletionStats, DocStats, FielddataStats, FlushStats, GetStats, IndexingStats, MergesStats, QueryCacheStats, RecoveryStats, RefreshStats, RequestCacheStats, SearchStats, SegmentsStats, StoreStats, TranslogStats, WarmerStats }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Uuid, Id, SequenceNumber, VersionNumber }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.types.Stats.{ BulkStats, CompletionStats, DocStats, FielddataStats, FlushStats, GetStats, IndexingStats, MergesStats, QueryCacheStats, RecoveryStats, RefreshStats, RequestCacheStats, SearchStats, SegmentsStats, StoreStats, TranslogStats, WarmerStats }
 
 @JsonCodec case class IndexStats(
 	completion: CompletionStats, 

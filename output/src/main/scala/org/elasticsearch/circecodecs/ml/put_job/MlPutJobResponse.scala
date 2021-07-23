@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.ml.put_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Analysis.{ AnalysisConfig, AnalysisLimits }
-import org.elasticsearch.circecodecs._ml._types.Job.{ DataDescription }
-import org.elasticsearch.circecodecs._ml._types.ModelPlot.{ ModelPlotConfig }
-import org.elasticsearch.circecodecs._ml._types.Settings.{ CustomSettings }
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Time.{ DateString, Time }
+import org.elasticsearch.circecodecs.ml.types.Analysis.{ AnalysisConfig, AnalysisLimits }
+import org.elasticsearch.circecodecs.ml.types.Job.{ DataDescription }
+import org.elasticsearch.circecodecs.ml.types.ModelPlot.{ ModelPlotConfig }
+import org.elasticsearch.circecodecs.ml.types.Settings.{ CustomSettings }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Time.{ DateString, Time }
 
 @JsonCodec case class Response(
 	body: Body
@@ -55,4 +55,3 @@ object Response {
 		results_retention_days: long
 	)
 }
-

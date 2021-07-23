@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.cluster.reroute
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._cluster._types.ClusterStateMetadata.{ ClusterStateMetadata }
-import org.elasticsearch.circecodecs._cluster._types.ClusterStateRoutingNodes.{ ClusterStateRoutingNodes }
-import org.elasticsearch.circecodecs._cluster._types.ClusterStateSnapshots.{ ClusterStateSnapshots, ClusterStateDeletedSnapshots }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ EmptyObject, IndexName, NodeName, Uuid, VersionNumber }
-import org.elasticsearch.circecodecs._types.Node.{ NodeAttributes }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.cluster.types.ClusterStateMetadata.{ ClusterStateMetadata }
+import org.elasticsearch.circecodecs.cluster.types.ClusterStateRoutingNodes.{ ClusterStateRoutingNodes }
+import org.elasticsearch.circecodecs.cluster.types.ClusterStateSnapshots.{ ClusterStateSnapshots, ClusterStateDeletedSnapshots }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ EmptyObject, IndexName, NodeName, Uuid, VersionNumber }
+import org.elasticsearch.circecodecs.types.Node.{ NodeAttributes }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Command(
 	cancel: CommandCancelAction, 

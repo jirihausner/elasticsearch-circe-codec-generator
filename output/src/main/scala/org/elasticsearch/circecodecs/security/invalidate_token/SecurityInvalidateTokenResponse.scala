@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.invalidate_token
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Errors.{ ErrorCause }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Errors.{ ErrorCause }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,4 +36,3 @@ object Response {
 		previously_invalidated_tokens: long
 	)
 }
-

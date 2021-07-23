@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.clear_cached_service_tokens
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Names, Namespace, Service }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Names, Namespace, Service }
 
 @JsonCodec case class Request(
 	path_parts: PathParts
@@ -35,4 +35,3 @@ object Request {
 		name: Names
 	)
 }
-

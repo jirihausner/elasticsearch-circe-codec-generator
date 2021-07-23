@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.xpack.info
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._license._types.License.{ LicenseStatus, LicenseType }
-import org.elasticsearch.circecodecs._types.common.{ VersionString }
-import org.elasticsearch.circecodecs._types.Time.{ DateString, EpochMillis }
+import org.elasticsearch.circecodecs.license.types.License.{ LicenseStatus, LicenseType }
+import org.elasticsearch.circecodecs.types.common.{ VersionString }
+import org.elasticsearch.circecodecs.types.Time.{ DateString, EpochMillis }
 
 @JsonCodec case class BuildInformation(
 	date: DateString, 

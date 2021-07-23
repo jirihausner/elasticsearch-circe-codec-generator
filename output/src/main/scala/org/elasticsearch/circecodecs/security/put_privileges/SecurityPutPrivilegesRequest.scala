@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.security.put_privileges
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Refresh }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Refresh }
 import org.elasticsearch.circecodecs.security.put_privileges.{ Actions }
 
 @JsonCodec case class Request(
@@ -36,4 +36,3 @@ object Request {
 		refresh: Refresh
 	)
 }
-

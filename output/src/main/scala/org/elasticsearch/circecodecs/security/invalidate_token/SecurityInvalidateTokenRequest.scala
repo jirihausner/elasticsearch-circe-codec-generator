@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.invalidate_token
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name, Username }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name, Username }
 
 @JsonCodec case class Request(
 	body: Body
@@ -36,4 +36,3 @@ object Request {
 		username: Username
 	)
 }
-

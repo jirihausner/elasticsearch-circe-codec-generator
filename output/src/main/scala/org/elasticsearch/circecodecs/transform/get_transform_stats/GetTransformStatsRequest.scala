@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.transform.get_transform_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -40,4 +40,3 @@ object Request {
 		size: long
 	)
 }
-

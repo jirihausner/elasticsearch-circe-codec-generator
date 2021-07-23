@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ml.update_filter
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -39,4 +39,3 @@ object Request {
 		remove_items: Seq[String]
 	)
 }
-

@@ -33,4 +33,3 @@ object Response {
 		index_following_started: Boolean
 	)
 }
-

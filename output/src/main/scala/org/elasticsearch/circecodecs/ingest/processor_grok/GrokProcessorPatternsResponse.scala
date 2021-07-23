@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ingest.processor_grok
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		patterns: Dictionary[String, String]
 	)
 }
-

@@ -32,4 +32,3 @@ object Response {
 		jobs: Seq[RollupJob]
 	)
 }
-

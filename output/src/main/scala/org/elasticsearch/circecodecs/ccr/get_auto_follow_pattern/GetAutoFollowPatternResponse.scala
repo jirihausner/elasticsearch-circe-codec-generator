@@ -32,4 +32,3 @@ object Response {
 		patterns: Seq[AutoFollowPattern]
 	)
 }
-

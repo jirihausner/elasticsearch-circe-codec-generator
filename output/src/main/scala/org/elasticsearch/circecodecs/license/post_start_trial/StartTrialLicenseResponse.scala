@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.license.post_start_trial
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._license._types.License.{ LicenseType }
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.license.types.License.{ LicenseType }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,4 +36,3 @@ object Response {
 		`type`: LicenseType
 	)
 }
-

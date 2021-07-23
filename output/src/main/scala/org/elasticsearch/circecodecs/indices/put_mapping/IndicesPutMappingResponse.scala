@@ -21,6 +21,6 @@ package org.elasticsearch.circecodecs.indices.put_mapping
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ IndicesResponseBase }
+import org.elasticsearch.circecodecs.types.Base.{ IndicesResponseBase }
 
 @JsonCodec case class Response extends IndicesResponseBase

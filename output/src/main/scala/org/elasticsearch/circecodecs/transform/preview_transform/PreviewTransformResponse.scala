@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.transform.preview_transform
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.IndexState.{ IndexState }
+import org.elasticsearch.circecodecs.indices.types.IndexState.{ IndexState }
 
 @JsonCodec case class Response[TTransform](
 	body: Body
@@ -33,4 +33,3 @@ object Response {
 		preview: Seq[TTransform]
 	)
 }
-

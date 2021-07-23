@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ml.validate_detector
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Detector.{ Detector }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.ml.types.Detector.{ Detector }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
 
 @JsonCodec case class Request(
 	body: Detector

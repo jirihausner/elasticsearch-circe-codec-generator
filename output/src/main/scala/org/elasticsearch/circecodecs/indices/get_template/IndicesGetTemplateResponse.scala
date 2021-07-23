@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.indices.get_template
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.TemplateMapping.{ TemplateMapping }
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.indices.types.TemplateMapping.{ TemplateMapping }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, TemplateMapping]

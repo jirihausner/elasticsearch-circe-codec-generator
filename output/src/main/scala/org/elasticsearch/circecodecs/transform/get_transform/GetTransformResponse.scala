@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.transform.get_transform
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Transform.{ Transform }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Transform.{ Transform }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		transforms: Seq[Transform]
 	)
 }
-

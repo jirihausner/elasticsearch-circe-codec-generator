@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ml.info
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Analysis.{ CategorizationAnalyzer }
-import org.elasticsearch.circecodecs._types.common.{ VersionString }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.ml.types.Analysis.{ CategorizationAnalyzer }
+import org.elasticsearch.circecodecs.types.common.{ VersionString }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Defaults(
 	anomaly_detectors: AnomalyDetectors, 

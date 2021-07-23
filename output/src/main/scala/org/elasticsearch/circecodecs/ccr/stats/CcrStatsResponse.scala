@@ -33,4 +33,3 @@ object Response {
 		follow_stats: FollowStats
 	)
 }
-

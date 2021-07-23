@@ -32,4 +32,3 @@ object Response {
 		events: Seq[CalendarEvent]
 	)
 }
-

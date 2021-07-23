@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.indices.data_streams_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ ByteSize, Name }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.types.common.{ ByteSize, Name }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 
 @JsonCodec case class Response(
 	body: Body
@@ -39,7 +39,6 @@ object Response {
 		data_streams: Seq[DataStreamsStatsItem]
 	)
 }
-
 
 @JsonCodec case class DataStreamsStatsItem(
 	backing_indices: integer, 

@@ -21,12 +21,12 @@ package org.elasticsearch.circecodecs.security.get_service_accounts
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.ApplicationPrivileges.{ ApplicationPrivileges }
-import org.elasticsearch.circecodecs._security._types.GlobalPrivileges.{ GlobalPrivileges }
-import org.elasticsearch.circecodecs._security._types.IndicesPrivileges.{ IndicesPrivileges }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.common.{ Metadata }
+import org.elasticsearch.circecodecs.security.types.ApplicationPrivileges.{ ApplicationPrivileges }
+import org.elasticsearch.circecodecs.security.types.GlobalPrivileges.{ GlobalPrivileges }
+import org.elasticsearch.circecodecs.security.types.IndicesPrivileges.{ IndicesPrivileges }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.common.{ Metadata }
 
 @JsonCodec case class RoleDescriptorWrapper(
 	role_descriptor: RoleDescriptor

@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.migration.deprecation_info
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
 import org.elasticsearch.circecodecs.migration.deprecation_info.{ Deprecation }
 
 @JsonCodec case class Response(
@@ -36,4 +36,3 @@ object Response {
 		ml_settings: Seq[Deprecation]
 	)
 }
-

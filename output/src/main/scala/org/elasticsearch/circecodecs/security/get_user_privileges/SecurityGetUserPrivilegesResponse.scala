@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.security.get_user_privileges
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.ApplicationPrivileges.{ ApplicationPrivileges }
-import org.elasticsearch.circecodecs._security._types.GlobalPrivileges.{ GlobalPrivileges }
-import org.elasticsearch.circecodecs._security._types.IndicesPrivileges.{ IndicesPrivileges }
+import org.elasticsearch.circecodecs.security.types.ApplicationPrivileges.{ ApplicationPrivileges }
+import org.elasticsearch.circecodecs.security.types.GlobalPrivileges.{ GlobalPrivileges }
+import org.elasticsearch.circecodecs.security.types.IndicesPrivileges.{ IndicesPrivileges }
 
 @JsonCodec case class Response(
 	body: Body
@@ -38,4 +38,3 @@ object Response {
 		run_as: Seq[String]
 	)
 }
-

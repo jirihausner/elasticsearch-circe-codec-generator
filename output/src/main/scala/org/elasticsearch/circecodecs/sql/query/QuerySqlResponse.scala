@@ -34,4 +34,3 @@ object Response {
 		rows: Seq[Row]
 	)
 }
-

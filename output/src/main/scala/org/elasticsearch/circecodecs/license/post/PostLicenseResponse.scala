@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.license.post
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._license._types.License.{ LicenseStatus }
+import org.elasticsearch.circecodecs.license.types.License.{ LicenseStatus }
 import org.elasticsearch.circecodecs.license.post.{ Acknowledgement }
 
 @JsonCodec case class Response(
@@ -35,4 +35,3 @@ object Response {
 		license_status: LicenseStatus
 	)
 }
-

@@ -35,4 +35,3 @@ object Response {
 		native_code: NativeCode
 	)
 }
-

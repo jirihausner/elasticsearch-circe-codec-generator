@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.indices.simulate_index_template
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.OverlappingIndexTemplate.{ OverlappingIndexTemplate }
-import org.elasticsearch.circecodecs._indices._types.TemplateMapping.{ TemplateMapping }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName, Name }
+import org.elasticsearch.circecodecs.indices.types.OverlappingIndexTemplate.{ OverlappingIndexTemplate }
+import org.elasticsearch.circecodecs.indices.types.TemplateMapping.{ TemplateMapping }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName, Name }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -42,4 +42,3 @@ object Request {
 		template: TemplateMapping
 	)
 }
-

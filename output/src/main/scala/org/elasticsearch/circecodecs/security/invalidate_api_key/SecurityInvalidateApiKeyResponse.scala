@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.invalidate_api_key
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Errors.{ ErrorCause }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Errors.{ ErrorCause }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,4 +36,3 @@ object Response {
 		previously_invalidated_api_keys: Seq[String]
 	)
 }
-

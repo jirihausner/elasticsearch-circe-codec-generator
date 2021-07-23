@@ -31,4 +31,3 @@ object Response {
 		model_memory_estimate: String
 	)
 }
-

@@ -1,6 +1,7 @@
 package cz.jirihausner.es_codec_generator
 
 import generator.Generator
+import generator.Utils.normalizeStart
 
 import java.io.PrintWriter
 import better.files.File
@@ -26,7 +27,18 @@ object Main {
     val files: List[File] = inputDir.listRecursively.filter(_.extension.contains(".ts")).toList
 
     // parse files into definitions then convert and print them as equivalent scala code
-    files.par.map(parse).foreach(res => res.fold(failed => println(failed), parsed => generate(parsed._1, parsed._2)))
+    if (!outputSingleFile)
+      files.par.map(parse).foreach(res =>
+        res.fold(failed => println(failed), parsed => generate(parsed._1, parsed._2)))
+    else {
+      // create output file
+      val outputFile: File = outputDir / singleFileName
+      outputFile.createIfNotExists(createParents = true)
+
+      // parse and generate into single output file
+      files.map(parse).foreach(res =>
+        res.fold(failed => println(failed), parsed => generateSingle(parsed._1, parsed._2)))
+    }
   }
 
   def parse(file: File): Either[String, (File, TsParsedFile)] =
@@ -41,18 +53,19 @@ object Main {
     println(s"Successfully parsed '\\${File.currentWorkingDirectory.path.relativize(file)}'")
 
     // create output file
-    val relativePath = inputDir.path.relativize(file)
-    val outputFile: File = outputDir / relativePath.toString.replace(".ts", ".scala")
+    val relativePath = inputDir.path.relativize(file).toString
+    val normalizedPath = relativePath.split(separatorChar).map(normalizeStart).mkString(separatorChar.toString)
+    val outputFile: File = outputDir / normalizedPath.replace(".ts", ".scala")
     outputFile.createIfNotExists(createParents = true)
     val output: PrintWriter = outputFile.newPrintWriter()
 
     // prepare file package name
-    val hasSubDirectory: Boolean = relativePath.toString.contains(separatorChar)
+    val hasSubDirectory: Boolean = normalizedPath.contains(separatorChar)
     val filePackageName: String = {
       if (!hasSubDirectory) ""
-      else relativePath.toString
+      else normalizedPath
         .replace(separatorChar, '.')
-        .substring(0, relativePath.toString.lastIndexOf(separatorChar))
+        .substring(0, normalizedPath.lastIndexOf(separatorChar))
     }
 
     // generate equivalent scala code from typescript AST and print it
@@ -64,5 +77,32 @@ object Main {
 
     // print message
     println(s"Successfully generated '\\${File.currentWorkingDirectory.relativize(outputFile)}'")
+  }
+
+  def generateSingle(file: File, parsedFile: TsParsedFile): Unit = {
+    // print message
+    println(s"Successfully parsed '\\${File.currentWorkingDirectory.path.relativize(file)}'")
+
+    // create output file
+    val outputFile: File = outputDir / singleFileName
+    val output: PrintWriter = outputFile.newPrintWriter()(openOptions = OpenOptions.append)
+
+    // generate equivalent scala code from typescript AST and print it
+    val generator = new Generator(output, packageName = "", packageName, skipImports = true)
+
+    // generate file header if file is empty
+    if (outputFile.isEmpty)
+      generator.printFileHeader(parsedFile)
+
+    // generate content of parsed file
+    generator.printLn(s"\n/** contents of '\\${File.currentWorkingDirectory.path.relativize(file)}' */")
+    generator.printFileMembers(parsedFile)
+
+    // close output stream
+    output.close()
+
+    // print message
+    println(s"Successfully generated code of '\\${File.currentWorkingDirectory.path.relativize(file)}'" +
+      s" into '\\${File.currentWorkingDirectory.relativize(outputFile)}'")
   }
 }

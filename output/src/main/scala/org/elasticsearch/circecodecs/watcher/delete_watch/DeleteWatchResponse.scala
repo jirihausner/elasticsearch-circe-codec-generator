@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.watcher.delete_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, VersionNumber }
+import org.elasticsearch.circecodecs.types.common.{ Id, VersionNumber }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		_version: VersionNumber
 	)
 }
-

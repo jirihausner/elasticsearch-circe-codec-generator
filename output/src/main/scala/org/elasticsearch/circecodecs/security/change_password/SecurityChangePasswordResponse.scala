@@ -30,4 +30,3 @@ object Response {
 	@JsonCodec case class Body(
 	)
 }
-

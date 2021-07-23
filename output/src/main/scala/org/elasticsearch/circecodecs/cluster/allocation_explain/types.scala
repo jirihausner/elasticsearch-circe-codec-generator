@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.cluster.allocation_explain
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Name, Id }
-import org.elasticsearch.circecodecs._types.Networking.{ TransportAddress }
-import org.elasticsearch.circecodecs._types.Numeric.{ long, double, integer }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Name, Id }
+import org.elasticsearch.circecodecs.types.Networking.{ TransportAddress }
+import org.elasticsearch.circecodecs.types.Numeric.{ long, double, integer }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class AllocationDecision(
 	decider: String, 

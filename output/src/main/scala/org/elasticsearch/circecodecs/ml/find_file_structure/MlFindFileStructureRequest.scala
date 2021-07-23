@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ml.find_file_structure
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
 
 @JsonCodec case class Request(
 	path_parts: PathParts
@@ -32,4 +32,3 @@ object Request {
 		stub: String
 	)
 }
-

@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.nodes.hot_threads
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, Name }
-import org.elasticsearch.circecodecs._types.Networking.{ Host }
+import org.elasticsearch.circecodecs.types.common.{ Id, Name }
+import org.elasticsearch.circecodecs.types.Networking.{ Host }
 
 @JsonCodec case class HotThread(
 	hosts: Seq[Host], 

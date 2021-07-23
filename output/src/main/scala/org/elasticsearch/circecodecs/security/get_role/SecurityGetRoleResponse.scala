@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.security.get_role
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
 import org.elasticsearch.circecodecs.security.get_role.{ Role }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, Role]

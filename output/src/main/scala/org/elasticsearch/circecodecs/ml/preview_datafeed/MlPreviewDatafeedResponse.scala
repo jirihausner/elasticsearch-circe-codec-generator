@@ -31,4 +31,3 @@ object Response {
 		data: Seq[TDocument]
 	)
 }
-

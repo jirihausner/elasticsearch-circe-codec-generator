@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.cluster.health
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Health }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Health }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class IndexHealthStats(
 	active_primary_shards: integer, 

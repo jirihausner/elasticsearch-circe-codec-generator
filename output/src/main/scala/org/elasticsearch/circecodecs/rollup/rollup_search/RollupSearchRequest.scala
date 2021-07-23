@@ -21,12 +21,12 @@ package org.elasticsearch.circecodecs.rollup.rollup_search
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.aggregations.AggregationContainer.{ AggregationContainer }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Indices, Type }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.aggregations.AggregationContainer.{ AggregationContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Indices, Type }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -49,4 +49,3 @@ object Request {
 		size: integer
 	)
 }
-

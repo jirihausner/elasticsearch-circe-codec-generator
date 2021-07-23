@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.data_frame_analytics
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, IndexName, Name, Type, VersionString }
+import org.elasticsearch.circecodecs.types.common.{ Id, IndexName, Name, Type, VersionString }
 
 @JsonCodec case class DataFrameAnalyticsRecord(
 	id: Id, 

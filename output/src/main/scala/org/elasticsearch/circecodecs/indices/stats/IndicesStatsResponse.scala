@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.indices.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 import org.elasticsearch.circecodecs.indices.stats.{ IndicesStats }
 
 @JsonCodec case class Response(
@@ -36,4 +36,3 @@ object Response {
 		_all: IndicesStats
 	)
 }
-

@@ -21,12 +21,12 @@ package org.elasticsearch.circecodecs.rollup.rollup_search
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._global.search._types.hits.{ HitsMetadata }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.aggregations.Aggregate.{ Aggregate }
-import org.elasticsearch.circecodecs._types.common.{ AggregateName }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.global.search.types.hits.{ HitsMetadata }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.aggregations.Aggregate.{ Aggregate }
+import org.elasticsearch.circecodecs.types.common.{ AggregateName }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 
 @JsonCodec case class Response[TDocument](
 	body: Body
@@ -42,4 +42,3 @@ object Response {
 		aggregations: Dictionary[AggregateName, Aggregate]
 	)
 }
-

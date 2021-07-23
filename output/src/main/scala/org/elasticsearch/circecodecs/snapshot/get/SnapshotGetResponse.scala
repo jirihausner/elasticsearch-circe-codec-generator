@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.snapshot.get
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._snapshot._types.SnapshotInfo.{ SnapshotInfo }
-import org.elasticsearch.circecodecs._types.common.{ Name }
-import org.elasticsearch.circecodecs._types.Errors.{ ErrorCause }
+import org.elasticsearch.circecodecs.snapshot.types.SnapshotInfo.{ SnapshotInfo }
+import org.elasticsearch.circecodecs.types.common.{ Name }
+import org.elasticsearch.circecodecs.types.Errors.{ ErrorCause }
 
 @JsonCodec case class Response(
 	body: Body
@@ -35,7 +35,6 @@ object Response {
 		snapshots: Seq[SnapshotInfo]
 	)
 }
-
 
 @JsonCodec case class SnapshotResponseItem(
 	repository: Name, 

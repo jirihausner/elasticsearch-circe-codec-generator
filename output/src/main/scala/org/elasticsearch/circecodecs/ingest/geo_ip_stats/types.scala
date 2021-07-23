@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ingest.geo_ip_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Name }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.common.{ Name }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class GeoIpDownloadStatistics(
 	successful_downloads: integer, 

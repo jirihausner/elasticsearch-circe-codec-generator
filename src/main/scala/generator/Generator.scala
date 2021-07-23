@@ -9,7 +9,7 @@ import org.scalablytyped.converter.internal.ts._
 import org.scalablytyped.converter.internal.ts.Indexing.{Dict, Single}
 import org.scalablytyped.converter.internal.ts.TsExpr.format
 
-class Generator(val output: PrintWriter, packageName: String, basePackageName: String) {
+class Generator(val output: PrintWriter, packageName: String, basePackageName: String, skipImports: Boolean = false) {
 
   /** stack of objects */
   var objectStack: List[(String, TsTypeObject)] = List[(String, TsTypeObject)]()
@@ -26,7 +26,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     printLn*/
 
     // print file members
-    file.members.foreach(printContainerOrDecl)
+    printFileMembers(file)
   }
 
   def printFileHeader(file: TsParsedFile): Unit = {
@@ -41,6 +41,11 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
     printLn("import io.circe._, io.circe.generic.semiauto._")
     //printLn("import io.circe.{Decoder, Encoder, KeyDecoder, KeyEncoder}")
     printLn("import io.circe.generic.JsonCodec, io.circe.syntax._")
+  }
+
+  def printFileMembers(file: TsParsedFile): Unit = {
+    // print file members
+    file.members.foreach(printContainerOrDecl)
   }
 
   /** --- TREE */
@@ -217,7 +222,9 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
   /** --- CONTAINER OR DECLARATION */
 
-  def printNamespace(x: TsDeclNamespace): Unit = {}
+  def printNamespace(x: TsDeclNamespace): Unit = {
+    // TODO
+  }
 
   def printModule(x: TsDeclModule): Unit = {
     // print module name
@@ -237,8 +244,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
   def printAugmentedModule(x: TsAugmentedModule): Unit = {
     // print module name
     print("object ", padding = true)
-    print(x.asString) // TODO: workaround
-    //printIdentModule(x.name.scopeOpt, x.name.fragments)
+    printIdentModule(x.name.scopeOpt, x.name.fragments)
     printLn(" {")
 
     // print each member
@@ -332,7 +338,6 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
       printLn("}")
       popPadding
       objectStack = List()
-      printLn
     }
 
     /*// print circe codec
@@ -416,7 +421,6 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
       printLn("}")
       popPadding
       objectStack = List()
-      printLn
     }
 
     // print circe codec
@@ -546,6 +550,9 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
   }
 
   def printImport(x: TsImport): Unit = {
+    // prevent printing import
+    if (skipImports) return
+
     // exclude standard libraries
     // TODO
 
@@ -560,6 +567,8 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
     // print imported (what we are importing from said package)
     x.imported.foreach(printImported)
+
+    // end line
     printLn
   }
 
@@ -575,9 +584,8 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
   def printIdentModule(scopedOpt: Option[String], fragments: List[String]): Unit = {
     // print scoped module (refers to root folder)
     if (scopedOpt.isDefined) {
-      if (scopedOpt.get.charAt(0) != '_') print("_")
-      print(scopedOpt.get + ".")
-      print(fragments.mkString("."))
+      print(normalizeStart(scopedOpt.get) + ".")
+      print(fragments.map(normalizeStart).mkString("."))
     }
     else {
       val backs = fragments.count(_ == "..")
@@ -587,7 +595,7 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
         print(packageName.substring(0, index))
       else
         print(packageName)
-      print(skipped.mkString("."))
+      print(skipped.map(normalizeStart).mkString("."))
     }
   }
 
@@ -787,25 +795,31 @@ class Generator(val output: PrintWriter, packageName: String, basePackageName: S
 
   /** --- COMMENT */
 
-  def printComment(x: Comment): Unit = x match {
-    case marker: Marker => marker match {
-      case Marker.CouldBeScalaJsDefined =>
-      case Marker.IsTrivial =>
-      case Marker.ExpandedCallables =>
-      case Marker.ExpandedClass =>
-      case Marker.EnumObject =>
-      case Marker.HasClassParent =>
-      case Marker.NameHint(value) =>
-      case Marker.ModuleAliases(aliases) =>
-      case Marker.WasLiteral(lit) =>
-      case Marker.WasUnion(related) =>
-      case Marker.MinimizationKeep(related) =>
-      case Marker.MinimizationRelated(related) =>
-      case Marker.WasDefaulted(among) =>
-      case Marker.ManglerLeaveAlone =>
-      case Marker.ManglerWasJsNative =>
+  def printComment(x: Comment): Unit = {
+    // skip comments
+    if (Configuration.skipComments) return;
+
+    // match comment printing
+    x match {
+      case marker: Marker => marker match {
+        case Marker.CouldBeScalaJsDefined =>
+        case Marker.IsTrivial =>
+        case Marker.ExpandedCallables =>
+        case Marker.ExpandedClass =>
+        case Marker.EnumObject =>
+        case Marker.HasClassParent =>
+        case Marker.NameHint(value) =>
+        case Marker.ModuleAliases(aliases) =>
+        case Marker.WasLiteral(lit) =>
+        case Marker.WasUnion(related) =>
+        case Marker.MinimizationKeep(related) =>
+        case Marker.MinimizationRelated(related) =>
+        case Marker.WasDefaulted(among) =>
+        case Marker.ManglerLeaveAlone =>
+        case Marker.ManglerWasJsNative =>
+      }
+      case Comment.Raw(raw) => print(raw)
     }
-    case Comment.Raw(raw) => print(raw)
   }
 
   /** object stack */

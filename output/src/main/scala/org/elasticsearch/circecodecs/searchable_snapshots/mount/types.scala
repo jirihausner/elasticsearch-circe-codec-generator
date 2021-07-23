@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.searchable_snapshots.mount
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Indices, Name }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.types.common.{ Indices, Name }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 
 @JsonCodec case class MountedSnapshot(
 	snapshot: Name, 

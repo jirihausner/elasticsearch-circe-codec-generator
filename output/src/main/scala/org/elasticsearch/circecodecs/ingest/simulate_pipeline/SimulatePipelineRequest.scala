@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ingest.simulate_pipeline
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ingest._types.Pipeline.{ Pipeline }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.ingest.types.Pipeline.{ Pipeline }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 import org.elasticsearch.circecodecs.ingest.simulate_pipeline.{ Document }
 
 @JsonCodec case class Request(
@@ -44,4 +44,3 @@ object Request {
 		pipeline: Pipeline
 	)
 }
-

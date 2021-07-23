@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ml.put_calendar
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -37,4 +37,3 @@ object Request {
 		description: String
 	)
 }
-

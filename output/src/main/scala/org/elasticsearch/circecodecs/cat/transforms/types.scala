@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.transforms
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, VersionString }
+import org.elasticsearch.circecodecs.types.common.{ Id, VersionString }
 
 @JsonCodec case class TransformsRecord(
 	id: Id, 

@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.ccr.resume_follow_index
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -48,4 +48,3 @@ object Request {
 		read_poll_timeout: Time
 	)
 }
-

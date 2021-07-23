@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.security.put_privileges
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Metadata, Name }
+import org.elasticsearch.circecodecs.types.common.{ Metadata, Name }
 
 @JsonCodec case class Actions(
 	actions: Seq[String], 

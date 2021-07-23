@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.transform.update_transform
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._global.reindex.types.{ Destination, Source }
-import org.elasticsearch.circecodecs._transform._types.Transform.{ Pivot, Settings, SyncContainer }
-import org.elasticsearch.circecodecs._types.common.{ Id, VersionString }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.global.reindex.types.{ Destination, Source }
+import org.elasticsearch.circecodecs.transform.types.Transform.{ Pivot, Settings, SyncContainer }
+import org.elasticsearch.circecodecs.types.common.{ Id, VersionString }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Response(
 	body: Body
@@ -45,4 +45,3 @@ object Response {
 		version: VersionString
 	)
 }
-

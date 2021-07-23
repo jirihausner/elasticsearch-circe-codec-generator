@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.indices.get_field_mapping
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Field }
-import org.elasticsearch.circecodecs._types.mapping.meta-fields.{ FieldMapping }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Field }
+import org.elasticsearch.circecodecs.types.mapping.meta-fields.{ FieldMapping }
 
 @JsonCodec case class TypeFieldMappings(
 	mappings: Dictionary[Field, FieldMapping]

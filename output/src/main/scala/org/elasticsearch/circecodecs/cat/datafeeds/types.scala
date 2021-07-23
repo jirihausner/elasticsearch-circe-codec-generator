@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.datafeeds
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Datafeed.{ DatafeedState }
+import org.elasticsearch.circecodecs.ml.types.Datafeed.{ DatafeedState }
 
 @JsonCodec case class DatafeedsRecord(
 	id: String, 

@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.watcher.ack_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._watcher._types.Watch.{ WatchStatus }
+import org.elasticsearch.circecodecs.watcher.types.Watch.{ WatchStatus }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		status: WatchStatus
 	)
 }
-

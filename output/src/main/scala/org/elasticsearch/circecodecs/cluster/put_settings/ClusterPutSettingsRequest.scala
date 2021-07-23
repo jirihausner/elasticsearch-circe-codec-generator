@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.cluster.put_settings
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	query_parameters: QueryParameters, 
@@ -42,4 +42,3 @@ object Request {
 		transient: Dictionary[String, UserDefinedValue]
 	)
 }
-

@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.get_user
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Username }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Username }
 
 @JsonCodec case class Request(
 	path_parts: PathParts
@@ -33,4 +33,3 @@ object Request {
 		username: Username | Seq[Username]
 	)
 }
-

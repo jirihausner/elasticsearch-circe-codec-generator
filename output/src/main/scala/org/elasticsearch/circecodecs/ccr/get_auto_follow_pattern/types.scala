@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ccr.get_auto_follow_pattern
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ IndexPattern, IndexPatterns, Name }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.common.{ IndexPattern, IndexPatterns, Name }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class AutoFollowPattern(
 	name: Name, 

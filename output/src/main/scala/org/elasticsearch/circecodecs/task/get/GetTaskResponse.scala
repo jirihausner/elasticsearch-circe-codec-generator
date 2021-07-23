@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.task.get
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._task._types.TaskStatus.{ Status }
-import org.elasticsearch.circecodecs._types.Errors.{ ErrorCause }
+import org.elasticsearch.circecodecs.task.types.TaskStatus.{ Status }
+import org.elasticsearch.circecodecs.types.Errors.{ ErrorCause }
 import org.elasticsearch.circecodecs.task.get.{ Info }
 
 @JsonCodec case class Response(
@@ -37,4 +37,3 @@ object Response {
 		error: ErrorCause
 	)
 }
-

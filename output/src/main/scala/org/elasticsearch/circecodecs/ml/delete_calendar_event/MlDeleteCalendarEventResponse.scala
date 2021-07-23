@@ -21,6 +21,6 @@ package org.elasticsearch.circecodecs.ml.delete_calendar_event
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
 
 @JsonCodec case class Response extends AcknowledgedResponseBase

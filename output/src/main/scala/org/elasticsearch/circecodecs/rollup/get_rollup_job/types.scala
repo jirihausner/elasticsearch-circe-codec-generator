@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.rollup.get_rollup_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._rollup._types.Groupings.{ Groupings }
-import org.elasticsearch.circecodecs._rollup._types.Metric.{ FieldMetric }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.common.{ Id, IndexName }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.rollup.types.Groupings.{ Groupings }
+import org.elasticsearch.circecodecs.rollup.types.Metric.{ FieldMetric }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.common.{ Id, IndexName }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class RollupJob(
 	config: RollupJobConfiguration, 

@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.ingest.simulate_pipeline
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._watcher._types.Action.{ ActionStatusOptions }
-import org.elasticsearch.circecodecs._types.common.{ Id, IndexName, Name, Type }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.watcher.types.Action.{ ActionStatusOptions }
+import org.elasticsearch.circecodecs.types.common.{ Id, IndexName, Name, Type }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class Ingest(
 	timestamp: DateString, 

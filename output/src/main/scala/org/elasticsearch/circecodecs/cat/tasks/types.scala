@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.tasks
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, NodeId, Type, VersionString }
+import org.elasticsearch.circecodecs.types.common.{ Id, NodeId, Type, VersionString }
 
 @JsonCodec case class TasksRecord(
 	id: Id, 

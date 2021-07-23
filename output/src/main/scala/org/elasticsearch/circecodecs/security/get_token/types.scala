@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.get_token
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.User.{ User }
-import org.elasticsearch.circecodecs._types.common.{ Name }
+import org.elasticsearch.circecodecs.security.types.User.{ User }
+import org.elasticsearch.circecodecs.types.common.{ Name }
 
 object AccessTokenGrantType extends Enumeration {
 	type AccessTokenGrantType = Value

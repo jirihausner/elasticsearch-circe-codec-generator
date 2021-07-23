@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.delete_privileges
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
 import org.elasticsearch.circecodecs.security.delete_privileges.{ FoundStatus }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, Dictionary[String, FoundStatus]]

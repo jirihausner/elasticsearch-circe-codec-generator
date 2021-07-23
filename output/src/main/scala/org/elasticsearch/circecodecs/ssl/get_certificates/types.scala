@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ssl.get_certificates
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class CertificateInformation(
 	alias: String, 

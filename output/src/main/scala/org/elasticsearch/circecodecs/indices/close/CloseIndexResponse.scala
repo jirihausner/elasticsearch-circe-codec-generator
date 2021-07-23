@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.indices.close
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
-import org.elasticsearch.circecodecs._types.Errors.{ ShardFailure }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Errors.{ ShardFailure }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,7 +36,6 @@ object Response {
 		shards_acknowledged: Boolean
 	)
 }
-
 
 @JsonCodec case class CloseIndexResult(
 	closed: Boolean, 

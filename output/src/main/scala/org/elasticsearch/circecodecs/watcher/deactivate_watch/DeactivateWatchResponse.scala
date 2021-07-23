@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.watcher.deactivate_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._watcher._types.Activation.{ ActivationStatus }
+import org.elasticsearch.circecodecs.watcher.types.Activation.{ ActivationStatus }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		status: ActivationStatus
 	)
 }
-

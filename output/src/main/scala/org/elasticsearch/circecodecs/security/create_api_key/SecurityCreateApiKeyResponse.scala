@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.create_api_key
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id, Name }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.common.{ Id, Name }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,4 +36,3 @@ object Response {
 		name: Name
 	)
 }
-

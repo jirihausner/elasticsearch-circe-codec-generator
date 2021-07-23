@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ml.update_model_snapshot
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Model.{ ModelSnapshot }
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.ml.types.Model.{ ModelSnapshot }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
 
 @JsonCodec case class Response(
 	body: Body
@@ -33,4 +33,3 @@ object Response {
 		model: ModelSnapshot
 	)
 }
-

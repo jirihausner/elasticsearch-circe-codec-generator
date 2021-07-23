@@ -34,4 +34,3 @@ object Response {
 		regression: DataframeRegressionSummary
 	)
 }
-

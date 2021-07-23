@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.watcher.execute_watch
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._watcher._types.Action.{ ActionExecutionMode, SimulatedActions }
-import org.elasticsearch.circecodecs._watcher._types.Schedule.{ ScheduleTriggerEvent }
-import org.elasticsearch.circecodecs._watcher._types.Watch.{ Watch }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.watcher.types.Action.{ ActionExecutionMode, SimulatedActions }
+import org.elasticsearch.circecodecs.watcher.types.Schedule.{ ScheduleTriggerEvent }
+import org.elasticsearch.circecodecs.watcher.types.Watch.{ Watch }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -52,4 +52,3 @@ object Request {
 		watch: Watch
 	)
 }
-

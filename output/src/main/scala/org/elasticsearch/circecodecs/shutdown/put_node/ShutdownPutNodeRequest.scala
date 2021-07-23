@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.shutdown.put_node
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
 
 @JsonCodec case class Request(
 	body: Body
@@ -32,4 +32,3 @@ object Request {
 		stub: String
 	)
 }
-

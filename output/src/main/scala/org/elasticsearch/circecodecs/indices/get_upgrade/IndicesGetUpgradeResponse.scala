@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.indices.get_upgrade
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.OverlappingIndexTemplate.{ OverlappingIndexTemplate }
-import org.elasticsearch.circecodecs._indices._types.TemplateMapping.{ TemplateMapping }
+import org.elasticsearch.circecodecs.indices.types.OverlappingIndexTemplate.{ OverlappingIndexTemplate }
+import org.elasticsearch.circecodecs.indices.types.TemplateMapping.{ TemplateMapping }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		template: TemplateMapping
 	)
 }
-

@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.ml.evaluate_data_frame
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.DataframeEvaluation.{ DataframeEvaluationContainer }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.ml.types.DataframeEvaluation.{ DataframeEvaluationContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
 
 @JsonCodec case class Request(
 	body: Body
@@ -37,4 +37,3 @@ object Request {
 		query: QueryContainer
 	)
 }
-

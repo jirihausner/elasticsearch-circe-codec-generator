@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.put_user
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Metadata, Password, Refresh, Username }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Metadata, Password, Refresh, Username }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -48,4 +48,3 @@ object Request {
 		enabled: Boolean
 	)
 }
-

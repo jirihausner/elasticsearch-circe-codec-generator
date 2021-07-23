@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.authenticate
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.RealmInfo.{ RealmInfo }
-import org.elasticsearch.circecodecs._types.common.{ Metadata, Name, Username }
+import org.elasticsearch.circecodecs.security.types.RealmInfo.{ RealmInfo }
+import org.elasticsearch.circecodecs.types.common.{ Metadata, Name, Username }
 import org.elasticsearch.circecodecs.security.authenticate.{ Token }
 
 @JsonCodec case class Response(
@@ -43,4 +43,3 @@ object Response {
 		token: Token
 	)
 }
-

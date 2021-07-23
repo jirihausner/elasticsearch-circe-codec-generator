@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.slm.get_lifecycle
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._slm._types.SnapshotLifecycle.{ SnapshotLifecycle }
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.slm.types.SnapshotLifecycle.{ SnapshotLifecycle }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 
 @JsonCodec case class Response extends DictionaryResponseBase[Id, SnapshotLifecycle]

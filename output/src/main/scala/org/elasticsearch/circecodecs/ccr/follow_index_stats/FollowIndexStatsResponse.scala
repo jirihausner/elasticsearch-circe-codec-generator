@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ccr.follow_index_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ccr._types.FollowIndexStats.{ FollowIndexStats }
+import org.elasticsearch.circecodecs.ccr.types.FollowIndexStats.{ FollowIndexStats }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		indices: Seq[FollowIndexStats]
 	)
 }
-

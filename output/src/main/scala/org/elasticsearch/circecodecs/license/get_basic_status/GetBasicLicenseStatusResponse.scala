@@ -31,4 +31,3 @@ object Response {
 		eligible_to_start_basic: Boolean
 	)
 }
-

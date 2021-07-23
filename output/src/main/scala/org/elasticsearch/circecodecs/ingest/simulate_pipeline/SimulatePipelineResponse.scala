@@ -32,4 +32,3 @@ object Response {
 		docs: Seq[PipelineSimulation]
 	)
 }
-

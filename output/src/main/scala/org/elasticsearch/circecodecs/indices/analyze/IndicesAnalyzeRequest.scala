@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.indices.analyze
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.analysis.char_filters.{ CharFilter }
-import org.elasticsearch.circecodecs._types.analysis.tokenizers.{ Tokenizer }
-import org.elasticsearch.circecodecs._types.analysis.token_filters.{ TokenFilter }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Field, IndexName }
+import org.elasticsearch.circecodecs.types.analysis.char_filters.{ CharFilter }
+import org.elasticsearch.circecodecs.types.analysis.tokenizers.{ Tokenizer }
+import org.elasticsearch.circecodecs.types.analysis.token_filters.{ TokenFilter }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Field, IndexName }
 import org.elasticsearch.circecodecs.indices.analyze.{ TextToAnalyze }
 
 @JsonCodec case class Request(
@@ -52,4 +52,3 @@ object Request {
 		tokenizer: String | Tokenizer
 	)
 }
-

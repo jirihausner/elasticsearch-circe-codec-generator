@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.ml.get_model_snapshots
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Field, Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Field, Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -50,4 +50,3 @@ object Request {
 		end: Time
 	)
 }
-

@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.get_service_accounts
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Namespace, Service }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Namespace, Service }
 
 @JsonCodec case class Request(
 	path_parts: PathParts
@@ -34,4 +34,3 @@ object Request {
 		service: Service
 	)
 }
-

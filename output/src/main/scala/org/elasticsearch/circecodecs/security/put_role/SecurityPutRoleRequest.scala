@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.security.put_role
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security.get_role.types.{ TransientMetadata }
-import org.elasticsearch.circecodecs._security._types.ApplicationPrivileges.{ ApplicationPrivileges }
-import org.elasticsearch.circecodecs._security._types.IndicesPrivileges.{ IndicesPrivileges }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Metadata, Name, Refresh }
+import org.elasticsearch.circecodecs.security.get_role.types.{ TransientMetadata }
+import org.elasticsearch.circecodecs.security.types.ApplicationPrivileges.{ ApplicationPrivileges }
+import org.elasticsearch.circecodecs.security.types.IndicesPrivileges.{ IndicesPrivileges }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Metadata, Name, Refresh }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -52,4 +52,3 @@ object Request {
 		transient_metadata: TransientMetadata
 	)
 }
-

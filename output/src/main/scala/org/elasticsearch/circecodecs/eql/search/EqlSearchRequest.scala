@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.eql.search
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ ExpandWildcards, Field, IndexName }
-import org.elasticsearch.circecodecs._types.Numeric.{ float, uint }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ ExpandWildcards, Field, IndexName }
+import org.elasticsearch.circecodecs.types.Numeric.{ float, uint }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 import org.elasticsearch.circecodecs.eql.search.{ ResultPosition, SearchFieldFormatted }
 
 @JsonCodec case class Request(
@@ -62,4 +62,3 @@ object Request {
 		result_position: ResultPosition
 	)
 }
-

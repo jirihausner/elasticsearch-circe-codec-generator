@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.task.cancel
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._task._types.TaskExecutingNode.{ TaskExecutingNode }
-import org.elasticsearch.circecodecs._types.Errors.{ ErrorCause }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.task.types.TaskExecutingNode.{ TaskExecutingNode }
+import org.elasticsearch.circecodecs.types.Errors.{ ErrorCause }
 
 @JsonCodec case class Response(
 	body: Body
@@ -35,4 +35,3 @@ object Response {
 		nodes: Dictionary[String, TaskExecutingNode]
 	)
 }
-

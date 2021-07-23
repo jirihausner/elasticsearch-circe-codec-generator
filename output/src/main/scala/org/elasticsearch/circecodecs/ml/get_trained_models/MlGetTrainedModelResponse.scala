@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ml.get_trained_models
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.TrainedModel.{ TrainedModelConfig }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.ml.types.TrainedModel.{ TrainedModelConfig }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		trained_model_configs: Seq[TrainedModelConfig]
 	)
 }
-

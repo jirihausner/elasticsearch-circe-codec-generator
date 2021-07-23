@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.snapshot.cleanup_repository
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,7 +32,6 @@ object Response {
 		results: CleanupRepositoryResults
 	)
 }
-
 
 @JsonCodec case class CleanupRepositoryResults(
 	deleted_blobs: long, 

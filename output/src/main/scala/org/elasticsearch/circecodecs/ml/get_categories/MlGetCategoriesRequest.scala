@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.ml.get_categories
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Page.{ Page }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ CategoryId, Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.ml.types.Page.{ Page }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ CategoryId, Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -46,4 +46,3 @@ object Request {
 		page: Page
 	)
 }
-

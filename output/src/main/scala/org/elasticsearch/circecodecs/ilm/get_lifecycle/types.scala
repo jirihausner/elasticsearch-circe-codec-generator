@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ilm.get_lifecycle
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ilm._types.Policy.{ Policy }
-import org.elasticsearch.circecodecs._types.common.{ VersionNumber }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.ilm.types.Policy.{ Policy }
+import org.elasticsearch.circecodecs.types.common.{ VersionNumber }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class Lifecycle(
 	modified_date: DateString, 

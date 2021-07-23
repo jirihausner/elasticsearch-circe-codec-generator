@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.enrich.execute_policy
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ TaskId }
+import org.elasticsearch.circecodecs.types.common.{ TaskId }
 import org.elasticsearch.circecodecs.enrich.execute_policy.{ ExecuteEnrichPolicyStatus }
 
 @JsonCodec case class Response(
@@ -34,4 +34,3 @@ object Response {
 		task_id: TaskId
 	)
 }
-

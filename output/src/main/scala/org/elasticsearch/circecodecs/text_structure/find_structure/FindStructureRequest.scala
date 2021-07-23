@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.text_structure.find_structure
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Field }
-import org.elasticsearch.circecodecs._types.Numeric.{ uint }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.common.{ Field }
+import org.elasticsearch.circecodecs.types.Numeric.{ uint }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request[TJsonDocument](
 	query_parameters: QueryParameters, 
@@ -48,4 +48,3 @@ object Request {
 		timestamp_format: String
 	)
 }
-

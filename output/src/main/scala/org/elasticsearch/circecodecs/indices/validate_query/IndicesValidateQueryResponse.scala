@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.indices.validate_query
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 
 @JsonCodec case class Response(
 	body: Body
@@ -36,7 +36,6 @@ object Response {
 		error: String
 	)
 }
-
 
 @JsonCodec case class IndicesValidationExplanation(
 	error: String, 

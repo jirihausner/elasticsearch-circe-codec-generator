@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.indices.put_index_template
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.Alias.{ Alias }
-import org.elasticsearch.circecodecs._indices._types.IndexSettings.{ IndexSettings }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ EmptyObject, IndexName, Indices, Metadata, Name, VersionNumber }
-import org.elasticsearch.circecodecs._types.mapping.TypeMapping.{ TypeMapping }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.indices.types.Alias.{ Alias }
+import org.elasticsearch.circecodecs.indices.types.IndexSettings.{ IndexSettings }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ EmptyObject, IndexName, Indices, Metadata, Name, VersionNumber }
+import org.elasticsearch.circecodecs.types.mapping.TypeMapping.{ TypeMapping }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -48,7 +48,6 @@ object Request {
 		_meta: Metadata
 	)
 }
-
 
 @JsonCodec case class IndexTemplateMapping(
 	aliases: Dictionary[IndexName, Alias], 

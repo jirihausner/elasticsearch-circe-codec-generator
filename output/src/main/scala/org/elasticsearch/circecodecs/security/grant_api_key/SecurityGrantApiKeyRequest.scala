@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.grant_api_key
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Password, Username }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Password, Username }
 import org.elasticsearch.circecodecs.security.grant_api_key.{ ApiKey, ApiKeyGrantType }
 
 @JsonCodec case class Request(
@@ -38,4 +38,3 @@ object Request {
 		password: Password
 	)
 }
-

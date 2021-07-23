@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.indices.simulate_template
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices.get_index_template.IndicesGetIndexTemplateResponse.{ IndexTemplate }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.indices.get_index_template.IndicesGetIndexTemplateResponse.{ IndexTemplate }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -41,4 +41,3 @@ object Request {
 		master_timeout: Time
 	)
 }
-

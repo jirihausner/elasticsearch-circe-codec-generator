@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ml.get_data_frame_analytics_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.DataframeAnalytics.{ DataframeAnalytics }
-import org.elasticsearch.circecodecs._ml._types.Dataframe.{ DataframeState }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.ml.types.DataframeAnalytics.{ DataframeAnalytics }
+import org.elasticsearch.circecodecs.ml.types.Dataframe.{ DataframeState }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class Response(
 	body: Body
@@ -35,4 +35,3 @@ object Response {
 		data_frame_analytics: Seq[DataframeAnalytics]
 	)
 }
-

@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.slm.put_lifecycle
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._slm._types.SnapshotLifecycle.{ Configuration, Retention }
-import org.elasticsearch.circecodecs._watcher._types.Schedule.{ CronExpression }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name }
+import org.elasticsearch.circecodecs.slm.types.SnapshotLifecycle.{ Configuration, Retention }
+import org.elasticsearch.circecodecs.watcher.types.Schedule.{ CronExpression }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -43,4 +43,3 @@ object Request {
 		schedule: CronExpression
 	)
 }
-

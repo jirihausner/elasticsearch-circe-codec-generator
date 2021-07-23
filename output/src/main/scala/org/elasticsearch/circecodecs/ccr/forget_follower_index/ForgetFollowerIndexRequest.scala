@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ccr.forget_follower_index
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName, Uuid }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName, Uuid }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -40,4 +40,3 @@ object Request {
 		leader_remote_cluster: String
 	)
 }
-

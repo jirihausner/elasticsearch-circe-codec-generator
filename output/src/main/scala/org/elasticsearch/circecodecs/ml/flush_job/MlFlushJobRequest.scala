@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ml.flush_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -45,4 +45,3 @@ object Request {
 		start: DateString
 	)
 }
-

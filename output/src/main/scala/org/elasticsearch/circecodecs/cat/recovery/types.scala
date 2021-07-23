@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.cat.recovery
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ IndexName, Type }
-import org.elasticsearch.circecodecs._types.Numeric.{ Percentage }
+import org.elasticsearch.circecodecs.types.common.{ IndexName, Type }
+import org.elasticsearch.circecodecs.types.Numeric.{ Percentage }
 
 @JsonCodec case class RecoveryRecord(
 	index: IndexName, 

@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.enrich.get_policy
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._enrich._types.Policy.{ Summary }
+import org.elasticsearch.circecodecs.enrich.types.Policy.{ Summary }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		policies: Seq[Summary]
 	)
 }
-

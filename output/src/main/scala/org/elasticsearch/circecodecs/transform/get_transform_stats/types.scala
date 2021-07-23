@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.transform.get_transform_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Node.{ NodeAttributes }
-import org.elasticsearch.circecodecs._types.Numeric.{ double, long }
-import org.elasticsearch.circecodecs._types.Time.{ DateString, EpochMillis }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Node.{ NodeAttributes }
+import org.elasticsearch.circecodecs.types.Numeric.{ double, long }
+import org.elasticsearch.circecodecs.types.Time.{ DateString, EpochMillis }
 
 @JsonCodec case class TransformStats(
 	checkpointing: Checkpointing, 

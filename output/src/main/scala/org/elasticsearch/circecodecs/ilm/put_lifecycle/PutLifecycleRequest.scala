@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.ilm.put_lifecycle
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ilm._types.Policy.{ Policy }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id, Name }
+import org.elasticsearch.circecodecs.ilm.types.Policy.{ Policy }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id, Name }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -39,4 +39,3 @@ object Request {
 		policy: Policy
 	)
 }
-

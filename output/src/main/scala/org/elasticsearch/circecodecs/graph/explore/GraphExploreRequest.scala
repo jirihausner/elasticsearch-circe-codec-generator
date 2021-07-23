@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.graph.explore
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Indices, Routing, Types }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Indices, Routing, Types }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 import org.elasticsearch.circecodecs.graph.explore.{ ExploreControls }
 import org.elasticsearch.circecodecs.graph.explore.{ Hop }
-import org.elasticsearch.circecodecs._graph._types.Vertex.{ VertexDefinition }
+import org.elasticsearch.circecodecs.graph.types.Vertex.{ VertexDefinition }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -51,4 +51,3 @@ object Request {
 		vertices: Seq[VertexDefinition]
 	)
 }
-

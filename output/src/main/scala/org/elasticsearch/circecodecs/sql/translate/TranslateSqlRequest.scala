@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.sql.translate
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.query_dsl.abstractions.{ QueryContainer }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.query_dsl.abstractions.{ QueryContainer }
 
 @JsonCodec case class Request(
 	query_parameters: QueryParameters, 
@@ -40,4 +40,3 @@ object Request {
 		time_zone: String
 	)
 }
-

@@ -21,14 +21,14 @@ package org.elasticsearch.circecodecs.nodes.info
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.IndexRouting.{ IndexRouting }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.common.{ ByteSize, Name, VersionString }
-import org.elasticsearch.circecodecs._types.Networking.{ Host, Ip, TransportAddress }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
-import org.elasticsearch.circecodecs._types.Stats.{ PluginStats }
-import org.elasticsearch.circecodecs._types.Node.{ NodeRoles }
+import org.elasticsearch.circecodecs.indices.types.IndexRouting.{ IndexRouting }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.common.{ ByteSize, Name, VersionString }
+import org.elasticsearch.circecodecs.types.Networking.{ Host, Ip, TransportAddress }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.types.Stats.{ PluginStats }
+import org.elasticsearch.circecodecs.types.Node.{ NodeRoles }
 
 @JsonCodec case class NodeInfo(
 	attributes: Dictionary[String, String], 

@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ccr.follow_index_stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Indices }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Indices }
 
 @JsonCodec case class Request(
 	path_parts: PathParts
@@ -33,4 +33,3 @@ object Request {
 		index: Indices
 	)
 }
-

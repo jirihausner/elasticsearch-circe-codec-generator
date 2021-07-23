@@ -21,11 +21,11 @@ package org.elasticsearch.circecodecs.ccr.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ccr._types.FollowIndexStats.{ FollowIndexStats }
-import org.elasticsearch.circecodecs._types.Errors.{ ErrorCause }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.common.{ Name, VersionNumber }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.ccr.types.FollowIndexStats.{ FollowIndexStats }
+import org.elasticsearch.circecodecs.types.Errors.{ ErrorCause }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.common.{ Name, VersionNumber }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 @JsonCodec case class AutoFollowedCluster(
 	cluster_name: Name, 

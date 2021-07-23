@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.invalidate_api_key
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id, Name, Username }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id, Name, Username }
 
 @JsonCodec case class Request(
 	query_parameters: QueryParameters, 
@@ -41,4 +41,3 @@ object Request {
 		username: Username
 	)
 }
-

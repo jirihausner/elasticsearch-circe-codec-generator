@@ -35,4 +35,3 @@ object Response {
 		tagline: String
 	)
 }
-

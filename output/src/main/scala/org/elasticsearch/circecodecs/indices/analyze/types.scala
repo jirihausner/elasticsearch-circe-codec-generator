@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.indices.analyze
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 
 @JsonCodec case class AnalyzeDetail(
 	analyzer: AnalyzerDetail, 

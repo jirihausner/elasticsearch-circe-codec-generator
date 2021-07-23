@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.cluster.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._cluster._types.ClusterStatus.{ ClusterStatus }
-import org.elasticsearch.circecodecs._nodes._types.NodesResponseBase.{ NodesResponseBase }
-import org.elasticsearch.circecodecs._types.common.{ Name, Uuid }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
+import org.elasticsearch.circecodecs.cluster.types.ClusterStatus.{ ClusterStatus }
+import org.elasticsearch.circecodecs.nodes.types.NodesResponseBase.{ NodesResponseBase }
+import org.elasticsearch.circecodecs.types.common.{ Name, Uuid }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
 import org.elasticsearch.circecodecs.cluster.stats.{ ClusterIndices, ClusterNodes }
 
 @JsonCodec case class Response(
@@ -41,4 +41,3 @@ object Response {
 		timestamp: long
 	)
 }
-

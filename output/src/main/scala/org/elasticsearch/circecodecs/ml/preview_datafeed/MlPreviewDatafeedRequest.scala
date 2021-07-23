@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.ml.preview_datafeed
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._ml._types.Job.{ Job }
-import org.elasticsearch.circecodecs._ml._types.Datafeed.{ Datafeed }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.ml.types.Job.{ Job }
+import org.elasticsearch.circecodecs.ml.types.Datafeed.{ Datafeed }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -40,4 +40,3 @@ object Request {
 		datafeed_config: Datafeed
 	)
 }
-

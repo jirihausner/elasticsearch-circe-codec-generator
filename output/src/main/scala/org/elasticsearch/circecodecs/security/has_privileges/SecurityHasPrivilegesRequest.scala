@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.has_privileges
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name }
 import org.elasticsearch.circecodecs.security.has_privileges.{ ApplicationPrivilegesCheck, IndexPrivilegesCheck }
 
 @JsonCodec case class Request(
@@ -43,4 +43,3 @@ object Request {
 		index: Seq[IndexPrivilegesCheck]
 	)
 }
-

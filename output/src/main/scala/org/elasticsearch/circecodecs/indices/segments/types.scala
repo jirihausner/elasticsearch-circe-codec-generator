@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.indices.segments
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ VersionString }
-import org.elasticsearch.circecodecs._types.Numeric.{ long, integer, double }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ VersionString }
+import org.elasticsearch.circecodecs.types.Numeric.{ long, integer, double }
 
 @JsonCodec case class IndexSegment(
 	shards: Dictionary[String, ShardsSegment | Seq[ShardsSegment]]

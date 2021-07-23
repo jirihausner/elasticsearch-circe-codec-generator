@@ -31,4 +31,3 @@ object Response {
 		found: Boolean
 	)
 }
-

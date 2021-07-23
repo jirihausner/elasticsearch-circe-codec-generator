@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.indices.create
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,4 +34,3 @@ object Response {
 		shards_acknowledged: Boolean
 	)
 }
-

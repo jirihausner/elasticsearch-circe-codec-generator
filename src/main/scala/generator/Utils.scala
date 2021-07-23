@@ -12,6 +12,9 @@ object Utils {
   def normalize(key: String): String =
     key.replaceAllLiterally("-", "").replaceAllLiterally(".", "").replaceAllLiterally("_", "")
 
+  def normalizeStart(key: String): String =
+    key.replaceFirst("^(_|-)*", "")
+
   val isScalaKeyword: Set[String] = Set(
     "abstract", "case", "class", "catch", "def", "do", "else", "extends",
     "false", "final", "finally", "for", "forSome", "if", "implicit",

@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.cluster.reroute
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Metrics }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Metrics }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 import org.elasticsearch.circecodecs.cluster.reroute.{ Command }
 
 @JsonCodec case class Request(
@@ -44,4 +44,3 @@ object Request {
 		commands: Seq[Command]
 	)
 }
-

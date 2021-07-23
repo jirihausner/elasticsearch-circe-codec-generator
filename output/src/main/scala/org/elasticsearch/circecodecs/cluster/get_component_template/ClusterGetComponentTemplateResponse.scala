@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cluster.get_component_template
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._cluster._types.ComponentTemplate.{ ComponentTemplate }
+import org.elasticsearch.circecodecs.cluster.types.ComponentTemplate.{ ComponentTemplate }
 
 @JsonCodec case class Response(
 	body: Body
@@ -32,4 +32,3 @@ object Response {
 		component_templates: Seq[ComponentTemplate]
 	)
 }
-

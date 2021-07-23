@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.enrich.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._task._types.TaskInfo.{ Info }
-import org.elasticsearch.circecodecs._types.common.{ Id, Name }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.task.types.TaskInfo.{ Info }
+import org.elasticsearch.circecodecs.types.common.{ Id, Name }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
 
 @JsonCodec case class ExecutingPolicy(
 	name: Name, 

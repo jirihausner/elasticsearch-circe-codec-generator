@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.watcher.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
 import org.elasticsearch.circecodecs.watcher.stats.{ WatcherMetric }
 
 @JsonCodec case class Request(
@@ -38,4 +38,3 @@ object Request {
 		metric: WatcherMetric | Seq[WatcherMetric]
 	)
 }
-

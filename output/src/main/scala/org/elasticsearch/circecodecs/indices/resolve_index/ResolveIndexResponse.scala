@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.indices.resolve_index
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ DataStreamName, Field, Indices, Name }
+import org.elasticsearch.circecodecs.types.common.{ DataStreamName, Field, Indices, Name }
 
 @JsonCodec case class Response(
 	body: Body
@@ -34,7 +34,6 @@ object Response {
 		data_streams: Seq[ResolveIndexDataStreamsItem]
 	)
 }
-
 
 @JsonCodec case class ResolveIndexItem(
 	name: Name, 

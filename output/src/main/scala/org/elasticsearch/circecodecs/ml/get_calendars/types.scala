@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ml.get_calendars
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id }
+import org.elasticsearch.circecodecs.types.common.{ Id }
 
 @JsonCodec case class Calendar(
 	calendar_id: Id, 

@@ -58,4 +58,3 @@ object Response {
 		voting_only: Base
 	)
 }
-

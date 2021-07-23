@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.security.delete_privileges
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name, Refresh }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name, Refresh }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -38,4 +38,3 @@ object Request {
 		refresh: Refresh
 	)
 }
-

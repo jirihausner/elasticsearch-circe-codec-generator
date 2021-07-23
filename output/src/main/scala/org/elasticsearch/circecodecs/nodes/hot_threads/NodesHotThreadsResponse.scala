@@ -32,4 +32,3 @@ object Response {
 		hot_threads: Seq[HotThread]
 	)
 }
-

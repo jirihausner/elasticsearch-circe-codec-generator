@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.license.get
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._license._types.License.{ LicenseStatus, LicenseType }
-import org.elasticsearch.circecodecs._types.common.{ Uuid }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
-import org.elasticsearch.circecodecs._types.Time.{ DateString, EpochMillis }
+import org.elasticsearch.circecodecs.license.types.License.{ LicenseStatus, LicenseType }
+import org.elasticsearch.circecodecs.types.common.{ Uuid }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.types.Time.{ DateString, EpochMillis }
 
 @JsonCodec case class LicenseInformation(
 	expiry_date: DateString, 

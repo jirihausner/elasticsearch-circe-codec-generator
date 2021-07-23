@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.security.get_role
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.ApplicationPrivileges.{ ApplicationPrivileges }
-import org.elasticsearch.circecodecs._security._types.IndicesPrivileges.{ IndicesPrivileges }
-import org.elasticsearch.circecodecs._types.common.{ Metadata }
+import org.elasticsearch.circecodecs.security.types.ApplicationPrivileges.{ ApplicationPrivileges }
+import org.elasticsearch.circecodecs.security.types.IndicesPrivileges.{ IndicesPrivileges }
+import org.elasticsearch.circecodecs.types.common.{ Metadata }
 
 @JsonCodec case class Role(
 	cluster: Seq[String], 

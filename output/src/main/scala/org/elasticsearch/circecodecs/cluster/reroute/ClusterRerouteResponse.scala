@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cluster.reroute
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ AcknowledgedResponseBase }
+import org.elasticsearch.circecodecs.types.Base.{ AcknowledgedResponseBase }
 import org.elasticsearch.circecodecs.cluster.reroute.{ RerouteExplanation, RerouteState }
 
 @JsonCodec case class Response(
@@ -34,4 +34,3 @@ object Response {
 		state: RerouteState
 	)
 }
-

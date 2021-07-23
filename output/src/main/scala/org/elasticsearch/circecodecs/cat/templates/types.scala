@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.templates
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Name, VersionString }
+import org.elasticsearch.circecodecs.types.common.{ Name, VersionString }
 
 @JsonCodec case class TemplatesRecord(
 	name: Name, 

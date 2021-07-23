@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.rollup.get_rollup_index_capabilities
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
 import org.elasticsearch.circecodecs.rollup.get_rollup_index_capabilities.{ IndexCapabilities }
 
 @JsonCodec case class Response extends DictionaryResponseBase[IndexName, IndexCapabilities]

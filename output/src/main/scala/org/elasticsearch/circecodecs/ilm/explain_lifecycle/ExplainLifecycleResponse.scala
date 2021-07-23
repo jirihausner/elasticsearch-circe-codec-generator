@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ilm.explain_lifecycle
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
 import org.elasticsearch.circecodecs.ilm.explain_lifecycle.{ LifecycleExplain, LifecycleExplainProject }
 
 @JsonCodec case class Response(
@@ -34,4 +34,3 @@ object Response {
 		indices: Dictionary[IndexName, LifecycleExplain] | LifecycleExplainProject
 	)
 }
-

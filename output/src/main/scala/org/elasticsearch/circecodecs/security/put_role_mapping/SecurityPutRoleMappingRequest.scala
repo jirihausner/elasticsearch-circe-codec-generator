@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.security.put_role_mapping
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._security._types.RoleMappingRuleBase.{ RoleMappingRuleBase }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Metadata, Name, Refresh }
+import org.elasticsearch.circecodecs.security.types.RoleMappingRuleBase.{ RoleMappingRuleBase }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Metadata, Name, Refresh }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -46,4 +46,3 @@ object Request {
 		run_as: Seq[String]
 	)
 }
-

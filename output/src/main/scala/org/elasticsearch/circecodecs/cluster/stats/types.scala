@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.cluster.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Name, VersionString }
-import org.elasticsearch.circecodecs._types.Numeric.{ double, integer, long }
-import org.elasticsearch.circecodecs._types.Stats.{ CompletionStats, DocStats, FielddataStats, QueryCacheStats, SegmentsStats, StoreStats, PluginStats }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Name, VersionString }
+import org.elasticsearch.circecodecs.types.Numeric.{ double, integer, long }
+import org.elasticsearch.circecodecs.types.Stats.{ CompletionStats, DocStats, FielddataStats, QueryCacheStats, SegmentsStats, StoreStats, PluginStats }
 
 @JsonCodec case class ClusterFileSystem(
 	available_in_bytes: long, 

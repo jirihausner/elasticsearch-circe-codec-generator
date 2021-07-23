@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.cat.templates
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._cat._types.CatBase.{ CatRequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Name }
+import org.elasticsearch.circecodecs.cat.types.CatBase.{ CatRequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Name }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -39,4 +39,3 @@ object Request {
 	@JsonCodec case class Body(
 	)
 }
-

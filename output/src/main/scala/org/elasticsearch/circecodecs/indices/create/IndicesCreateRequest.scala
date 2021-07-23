@@ -21,13 +21,13 @@ package org.elasticsearch.circecodecs.indices.create
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._indices._types.Alias.{ Alias }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName, WaitForActiveShards }
-import org.elasticsearch.circecodecs._types.mapping.TypeMapping.{ TypeMapping }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.indices.types.Alias.{ Alias }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName, WaitForActiveShards }
+import org.elasticsearch.circecodecs.types.mapping.TypeMapping.{ TypeMapping }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -51,4 +51,3 @@ object Request {
 		settings: Dictionary[String, UserDefinedValue]
 	)
 }
-

@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ccr.follow_info
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ IndexName, Name }
+import org.elasticsearch.circecodecs.types.common.{ IndexName, Name }
 
 @JsonCodec case class FollowerIndex(
 	follower_index: IndexName, 
@@ -40,8 +40,8 @@ object FollowerIndexStatus extends Enumeration {
 
 implicit val followerIndexStatusDecoder: Decoder[FollowerIndexStatus.Value] = Decoder.decodeEnumeration(FollowerIndexStatus)
 implicit val followerIndexStatusEncoder: Encoder[FollowerIndexStatus.Value] = Decoder.encodeEnumeration(FollowerIndexStatus)
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class FollowerIndexParameters(
 	max_outstanding_read_requests: integer, 

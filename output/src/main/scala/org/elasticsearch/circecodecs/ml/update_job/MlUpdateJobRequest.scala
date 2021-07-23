@@ -21,15 +21,15 @@ package org.elasticsearch.circecodecs.ml.update_job
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ml._types.Analysis.{ PerPartitionCategorization, AnalysisMemoryLimit }
-import org.elasticsearch.circecodecs._ml._types.Detector.{ Detector }
-import org.elasticsearch.circecodecs._ml._types.ModelPlot.{ ModelPlotConfig }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.ml.types.Analysis.{ PerPartitionCategorization, AnalysisMemoryLimit }
+import org.elasticsearch.circecodecs.ml.types.Detector.{ Detector }
+import org.elasticsearch.circecodecs.ml.types.ModelPlot.{ ModelPlotConfig }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -57,4 +57,3 @@ object Request {
 		per_partition_categorization: PerPartitionCategorization
 	)
 }
-

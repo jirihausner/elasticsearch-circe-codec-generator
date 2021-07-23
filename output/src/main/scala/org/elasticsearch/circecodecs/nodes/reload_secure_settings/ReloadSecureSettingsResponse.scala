@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.nodes.reload_secure_settings
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._nodes._types.Stats.{ Stats }
-import org.elasticsearch.circecodecs._nodes._types.NodesResponseBase.{ NodesResponseBase }
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._types.common.{ Name }
+import org.elasticsearch.circecodecs.nodes.types.Stats.{ Stats }
+import org.elasticsearch.circecodecs.nodes.types.NodesResponseBase.{ NodesResponseBase }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.types.common.{ Name }
 import org.elasticsearch.circecodecs.nodes.reload_secure_settings.{ NodeReloadException }
 
 @JsonCodec case class Response(
@@ -37,4 +37,3 @@ object Response {
 		nodes: Dictionary[String, Stats | NodeReloadException]
 	)
 }
-

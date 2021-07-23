@@ -32,4 +32,3 @@ object Response {
 		api_keys: Seq[ApiKey]
 	)
 }
-

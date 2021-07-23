@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.eql.search
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Field }
+import org.elasticsearch.circecodecs.types.common.{ Field }
 
 @JsonCodec case class SearchFieldFormatted(
 	field: Field, 

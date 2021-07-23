@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.eql.get_status
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.Time.{ EpochMillis }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Time.{ EpochMillis }
 
 @JsonCodec case class Response(
 	body: Body
@@ -39,4 +39,3 @@ object Response {
 		completion_status: integer
 	)
 }
-

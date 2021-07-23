@@ -21,10 +21,10 @@ package org.elasticsearch.circecodecs.watcher.stats
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._watcher._types.Execution.{ ExecutionPhase, ExecutionThreadPool }
-import org.elasticsearch.circecodecs._types.common.{ Id }
-import org.elasticsearch.circecodecs._types.Numeric.{ long }
-import org.elasticsearch.circecodecs._types.Time.{ DateString }
+import org.elasticsearch.circecodecs.watcher.types.Execution.{ ExecutionPhase, ExecutionThreadPool }
+import org.elasticsearch.circecodecs.types.common.{ Id }
+import org.elasticsearch.circecodecs.types.Numeric.{ long }
+import org.elasticsearch.circecodecs.types.Time.{ DateString }
 
 object WatcherState extends Enumeration {
 	type WatcherState = Value

@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.ingest.get_pipeline
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._ingest._types.Pipeline.{ Pipeline }
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.ingest.types.Pipeline.{ Pipeline }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, Pipeline]

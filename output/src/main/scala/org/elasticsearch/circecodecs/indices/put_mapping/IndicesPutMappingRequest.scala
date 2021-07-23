@@ -21,15 +21,15 @@ package org.elasticsearch.circecodecs.indices.put_mapping
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._spec_utils.Dictionary.{ Dictionary }
-import org.elasticsearch.circecodecs._spec_utils.UserDefinedValue.{ UserDefinedValue }
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ ExpandWildcards, Indices, PropertyName, Type }
-import org.elasticsearch.circecodecs._types.mapping.dynamic-template.{ DynamicMapping, DynamicTemplate }
-import org.elasticsearch.circecodecs._types.mapping.meta-fields.{ AllField, FieldNamesField, IndexField, RoutingField, SizeField, SourceField }
-import org.elasticsearch.circecodecs._types.mapping.Property.{ Property }
-import org.elasticsearch.circecodecs._types.mapping.RuntimeFields.{ RuntimeFields }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.spec_utils.Dictionary.{ Dictionary }
+import org.elasticsearch.circecodecs.spec_utils.UserDefinedValue.{ UserDefinedValue }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ ExpandWildcards, Indices, PropertyName, Type }
+import org.elasticsearch.circecodecs.types.mapping.dynamic-template.{ DynamicMapping, DynamicTemplate }
+import org.elasticsearch.circecodecs.types.mapping.meta-fields.{ AllField, FieldNamesField, IndexField, RoutingField, SizeField, SourceField }
+import org.elasticsearch.circecodecs.types.mapping.Property.{ Property }
+import org.elasticsearch.circecodecs.types.mapping.RuntimeFields.{ RuntimeFields }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Request(
 	path_parts: PathParts, 
@@ -68,4 +68,3 @@ object Request {
 		runtime: RuntimeFields
 	)
 }
-

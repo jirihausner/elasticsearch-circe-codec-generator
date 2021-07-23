@@ -21,6 +21,6 @@ package org.elasticsearch.circecodecs.transform.update_transform
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._transform.put_transform.PutTransformRequest.{ Request as PutTransformRequest }
+import org.elasticsearch.circecodecs.transform.put_transform.PutTransformRequest.{ Request as PutTransformRequest }
 
 @JsonCodec case class Request extends PutTransformRequest

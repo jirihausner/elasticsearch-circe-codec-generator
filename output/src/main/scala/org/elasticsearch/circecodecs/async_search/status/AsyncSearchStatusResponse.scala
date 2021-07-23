@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.async_search.status
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._async_search._types.AsyncSearchResponseBase.{ AsyncSearchResponseBase }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer }
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.async_search.types.AsyncSearchResponseBase.{ AsyncSearchResponseBase }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 
 @JsonCodec case class Response[TDocument](
 	body: Body
@@ -35,4 +35,3 @@ object Response {
 		completion_status: integer
 	)
 }
-

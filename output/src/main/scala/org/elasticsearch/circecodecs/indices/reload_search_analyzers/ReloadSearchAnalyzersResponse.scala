@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.indices.reload_search_analyzers
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Stats.{ ShardStatistics }
+import org.elasticsearch.circecodecs.types.Stats.{ ShardStatistics }
 import org.elasticsearch.circecodecs.indices.reload_search_analyzers.{ ReloadDetails }
 
 @JsonCodec case class Response(
@@ -34,4 +34,3 @@ object Response {
 		_shards: ShardStatistics
 	)
 }
-

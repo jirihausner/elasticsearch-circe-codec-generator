@@ -32,4 +32,3 @@ object Response {
 		follower_indices: Seq[FollowerIndex]
 	)
 }
-

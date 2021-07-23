@@ -21,7 +21,7 @@ package org.elasticsearch.circecodecs.cat.plugins
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.common.{ Name, NodeId, Type, VersionString }
+import org.elasticsearch.circecodecs.types.common.{ Name, NodeId, Type, VersionString }
 
 @JsonCodec case class PluginsRecord(
 	id: NodeId, 

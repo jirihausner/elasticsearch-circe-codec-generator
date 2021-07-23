@@ -21,8 +21,8 @@ package org.elasticsearch.circecodecs.ilm.move_to_step
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ RequestBase }
-import org.elasticsearch.circecodecs._types.common.{ IndexName }
+import org.elasticsearch.circecodecs.types.Base.{ RequestBase }
+import org.elasticsearch.circecodecs.types.common.{ IndexName }
 import org.elasticsearch.circecodecs.ilm.move_to_step.{ StepKey }
 
 @JsonCodec case class Request(
@@ -39,4 +39,3 @@ object Request {
 		next_step: StepKey
 	)
 }
-

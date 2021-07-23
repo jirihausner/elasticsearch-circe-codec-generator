@@ -31,4 +31,3 @@ object Response {
 		deleted: Boolean
 	)
 }
-

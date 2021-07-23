@@ -21,9 +21,9 @@ package org.elasticsearch.circecodecs.cluster.remote_info
 
 import io.circe._, io.circe.generic.semiauto._
 import io.circe.generic.JsonCodec, io.circe.syntax._
-import org.elasticsearch.circecodecs._types.Base.{ DictionaryResponseBase }
-import org.elasticsearch.circecodecs._types.Numeric.{ integer, long }
-import org.elasticsearch.circecodecs._types.Time.{ Time }
+import org.elasticsearch.circecodecs.types.Base.{ DictionaryResponseBase }
+import org.elasticsearch.circecodecs.types.Numeric.{ integer, long }
+import org.elasticsearch.circecodecs.types.Time.{ Time }
 
 @JsonCodec case class Response extends DictionaryResponseBase[String, ClusterRemoteInfo]
 
