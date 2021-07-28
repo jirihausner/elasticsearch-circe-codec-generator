@@ -1,5 +1,5 @@
-# elasticsearch-codec-generator
-Converts Elasticsearch specification (TypeScript definitions) to equivalent Scala code with circe codecs.
+# elasticsearch-circle-codec-generator
+Converts Elasticsearch specification (TypeScript definitions) to equivalent Scala code with Circe codecs.
 
 ## Required tools 
 
